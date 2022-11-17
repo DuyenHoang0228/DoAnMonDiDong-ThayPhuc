@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.nhom4.adapters.Danhmuc1Adapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.DanhMuc1;
@@ -15,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     Danhmuc1Adapter adapter;
     ArrayList<DanhMuc1> danhmuc;
+    private ImageSlider imageSlider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +28,19 @@ public class MainActivity extends AppCompatActivity {
         // setContentView(binding.getRoot());
         View view = binding.getRoot();
         setContentView(view);
+
+        imageSlider = findViewById(R.id.image_slider);
+        ArrayList<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.icon_shopchocho_home,ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.icon_shopchocho_home,ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.icon_shopchocho_home,ScaleTypes.FIT));
+
+         imageSlider.setImageList(slideModels,ScaleTypes.FIT);
         
+
         loadData();
     }
+
 
     private void loadData() {
         danhmuc = new ArrayList<>();
@@ -38,5 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new Danhmuc1Adapter(MainActivity.this,R.layout.danhmuc1_list,danhmuc);
         binding.gvDanhmuchome.setAdapter(adapter);
+
+
     }
 }
