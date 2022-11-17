@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UuDaiMain"
+    android:orientation="vertical">
+
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/slider_banneruudai"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMargin="15dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="#5A5A5A"
+        app:sliderIndicatorUnselectedColor="#FFF"
+        app:sliderScrollTimeInSec="2"
+        app:sliderStartAutoCycle="true" />
+
+    <GridView
+        android:id="@+id/gv_vouchernguoidungmoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="13dp"
+        android:horizontalSpacing="12dp"
+        android:verticalSpacing="12dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="16dp"
+        android:background="@drawable/backgroundvoucher"
+        android:numColumns="2"
+        android:stretchMode="columnWidth" />
+
+    <GridView
+        android:id="@+id/gv_vouchermuanhieu"
+        android:layout_width="wrap_content"
+        android:layout_height="249dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/backgroundvoucher"
+        android:numColumns="2"
+        android:textAlignment="center" />
+
+    <GridView
+        android:id="@+id/gv_voucherthuonghieu"
+        android:layout_width="wrap_content"
+        android:layout_height="249dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/backgroundvoucher"
+        android:numColumns="2"
+        android:textAlignment="center" />
+
+</LinearLayout>
