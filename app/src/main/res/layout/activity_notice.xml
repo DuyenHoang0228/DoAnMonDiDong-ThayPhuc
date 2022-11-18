@@ -7,5 +7,9 @@
     tools:context=".NoticeActivity"
     android:orientation="vertical"
     android:padding="20dp">
+    <ListView
+        android:id="@+id/lv_thongbao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
