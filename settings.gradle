@@ -5,6 +5,8 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
+
     }
 }
 dependencyResolutionManagement {
@@ -12,12 +14,16 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
         jcenter()
         maven {
 
             url "https://jitpack.io"
 
         }
+
+    
+
     }
 }
 rootProject.name = "LilpawHome_Application"
