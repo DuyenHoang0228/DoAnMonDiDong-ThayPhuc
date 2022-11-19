@@ -1,16 +1,34 @@
 package com.nhom4.models;
 
+import android.widget.ImageView;
+
 public class VoucherUuDai {
 
-    String vouchertitle, vouchersubtitle;
+    int brandImage;
+    String vouchertitle, vouchersubtitle, brandvoucher;
 
-    public VoucherUuDai(String vouchertitle, String vouchersubtitle) {
-
+    public VoucherUuDai(int brandImage, String brandvoucher, String vouchertitle, String vouchersubtitle) {
+        this.brandImage = brandImage;
         this.vouchertitle = vouchertitle;
         this.vouchersubtitle = vouchersubtitle;
+        this.brandvoucher = brandvoucher;
     }
 
+    public int getBrandImage() {
+        return brandImage;
+    }
 
+    public void setBrandImage(int brandImage) {
+        this.brandImage = brandImage;
+    }
+
+    public String getBrandvoucher() {
+        return brandvoucher;
+    }
+
+    public void setBrandvoucher(String brandvoucher) {
+        this.brandvoucher = brandvoucher;
+    }
 
     public String getVouchertitle() {
         return vouchertitle;

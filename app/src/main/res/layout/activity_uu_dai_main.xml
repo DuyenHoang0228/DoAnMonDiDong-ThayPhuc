@@ -1,68 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UuDaiMain"
-    android:orientation="vertical">
+    android:background="#FFA8CF">
 
-    <com.smarteist.autoimageslider.SliderView
-        android:id="@+id/slider_banneruudai"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:sliderAnimationDuration="600"
-        app:sliderAutoCycleDirection="back_and_forth"
-        app:sliderAutoCycleEnabled="true"
-        app:sliderIndicatorAnimationDuration="600"
-        app:sliderIndicatorGravity="center_horizontal|bottom"
-        app:sliderIndicatorMargin="15dp"
-        app:sliderIndicatorOrientation="horizontal"
-        app:sliderIndicatorPadding="3dp"
-        app:sliderIndicatorRadius="2dp"
-        app:sliderIndicatorSelectedColor="#5A5A5A"
-        app:sliderIndicatorUnselectedColor="#FFF"
-        app:sliderScrollTimeInSec="2"
-        app:sliderStartAutoCycle="true" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
 
-    <GridView
-        android:id="@+id/gv_vouchernguoidungmoi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_margin="13dp"
-        android:horizontalSpacing="12dp"
-        android:verticalSpacing="12dp"
-        android:paddingTop="11dp"
-        android:paddingBottom="20dp"
-        android:paddingLeft="13dp"
-        android:paddingRight="16dp"
-        android:background="@drawable/backgroundvoucher"
-        android:numColumns="2"
-        android:stretchMode="columnWidth" />
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/slider_banneruudai"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="10dp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="2"
+            app:sliderStartAutoCycle="true" />
 
-    <GridView
-        android:id="@+id/gv_vouchermuanhieu"
-        android:layout_width="wrap_content"
-        android:layout_height="249dp"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/backgroundvoucher"
-        android:numColumns="2"
-        android:textAlignment="center" />
 
-    <GridView
-        android:id="@+id/gv_voucherthuonghieu"
-        android:layout_width="wrap_content"
-        android:layout_height="249dp"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/backgroundvoucher"
-        android:numColumns="2"
-        android:textAlignment="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgroundvouchershadow"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
 
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="SĂN VOUCHER"
+                android:layout_gravity="center"
+                android:textColor="#A200A6"
+                android:textSize="20sp"
+                android:paddingTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHÀO MỪNG &quot;CON SEN&quot; MỚI"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunito_black"
+                android:textColor="#FF0071"
+                android:textSize="22sp" />
+
+            <com.nhom4.view.ExpandableHeightGridView
+                android:id="@+id/gv_vouchernguoidungmoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:horizontalSpacing="5dp"
+                android:numColumns="2"
+                android:paddingRight="5dp"
+                android:paddingBottom="10dp"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="12dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgroundvouchershadow"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="SĂN VOUCHER"
+                android:layout_gravity="center"
+                android:textColor="#A200A6"
+                android:textSize="20sp"
+                android:paddingTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MUA CÀNG NHIỀU, SEN CÀNG LỢI"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunito_black"
+                android:textColor="#FF0071"
+                android:textSize="22sp" />
+
+            <com.nhom4.view.ExpandableHeightGridView
+                android:id="@+id/gv_vouchermuanhieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:horizontalSpacing="5dp"
+                android:numColumns="2"
+                android:paddingRight="5dp"
+                android:paddingBottom="10dp"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="12dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgroundvouchershadow"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="VOUCHER THƯƠNG HIỆU"
+                android:layout_gravity="center"
+                android:textColor="#A200A6"
+                android:textSize="20sp"
+                android:paddingTop="10dp"/>
+
+            <com.nhom4.view.ExpandableHeightGridView
+                android:id="@+id/gv_voucherthuonghieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:horizontalSpacing="5dp"
+                android:numColumns="2"
+                android:paddingRight="5dp"
+                android:paddingBottom="10dp"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="12dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

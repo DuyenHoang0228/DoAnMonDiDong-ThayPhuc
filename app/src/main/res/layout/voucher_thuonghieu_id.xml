@@ -20,13 +20,13 @@
         android:id="@+id/txt_tieudephuvoucher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="22dp"
         android:fontFamily="@font/montserrat_medium"
         android:text="Đơn hàng từ 100K"
         android:textColor="#C66666"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/imv_logovoucher"
+        app:layout_constraintStart_toStartOf="@+id/imv_voucheruudai"
         app:layout_constraintTop_toTopOf="@+id/txt_tieudevoucher" />
 
     <TextView
@@ -63,26 +63,26 @@
 
     <ImageView
         android:id="@+id/imv_logovoucher"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/imv_voucheruudai"
         app:layout_constraintStart_toStartOf="@+id/imv_voucheruudai"
         app:layout_constraintTop_toTopOf="@+id/imv_voucheruudai"
         app:layout_constraintVertical_bias="0.555"
-        app:srcCompat="@drawable/lilpaw" />
+        app:srcCompat="@drawable/petsoft" />
 
     <TextView
         android:id="@+id/txt_brandvoucher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="40dp"
-        android:text="Brand"
+        android:text="Royal Canin"
         android:textAlignment="center"
         android:textColor="#C66666"
         android:textSize="8sp"
-        app:layout_constraintStart_toStartOf="@+id/imv_voucheruudai"
-        app:layout_constraintTop_toTopOf="@+id/imv_voucheruudai" />
+        app:layout_constraintEnd_toEndOf="@+id/imv_logovoucher"
+        app:layout_constraintStart_toStartOf="@+id/imv_logovoucher"
+        app:layout_constraintTop_toBottomOf="@+id/imv_logovoucher" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

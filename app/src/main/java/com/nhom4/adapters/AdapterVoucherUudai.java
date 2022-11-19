@@ -26,6 +26,7 @@ public class AdapterVoucherUudai extends BaseAdapter {
     int item_layout;
     List<VoucherUuDai> vouchers;
 
+
     public AdapterVoucherUudai(Activity activity, int item_layout, List<VoucherUuDai> vouchers){
         this.activity = activity;
         this.item_layout = item_layout;
@@ -54,12 +55,15 @@ public class AdapterVoucherUudai extends BaseAdapter {
         {
             LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(item_layout, null);
-        }
 
+        }
+        TextView txt_brandvoucher = convertView.findViewById(R.id.txt_brandvoucher);
+        ImageView imv_logovoucher = convertView.findViewById(R.id.imv_logovoucher);
         TextView txt_tieudevoucher = convertView.findViewById(R.id.txt_tieudevoucher);
         TextView txt_tieudephuvoucher = convertView.findViewById(R.id.txt_tieudephuvoucher);
-
         VoucherUuDai v = vouchers.get(position);
+        txt_brandvoucher.setText(v.getBrandvoucher());
+        imv_logovoucher.setImageResource(v.getBrandImage());
         txt_tieudevoucher.setText(v.getVouchertitle());
         txt_tieudephuvoucher.setText(v.getVouchersubtitle());
 
