@@ -32,8 +32,6 @@ public class dangky extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Hiện dialog nhập otp
-                Intent intent = new Intent(dangky.this, khachhangbac.class);
-                startActivity(intent);
             }
         });
     }

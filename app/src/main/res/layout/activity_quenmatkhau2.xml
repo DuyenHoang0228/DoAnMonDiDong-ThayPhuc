@@ -46,8 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:hint="Mật khẩu"
-                android:layout_marginEnd="50dp"
-                android:textSize="16sp"/>
+                android:layout_marginEnd="50dp"/>
 
             <ImageView
                 android:id="@+id/imv_eye1"
@@ -85,8 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:hint="Nhập lại mật khẩu"
-                android:layout_marginEnd="50dp"
-                android:textSize="16sp"/>
+                android:layout_marginEnd="50dp"/>
 
             <ImageView
                 android:id="@+id/imv_eye2"
