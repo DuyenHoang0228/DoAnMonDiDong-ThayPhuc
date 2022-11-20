@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gioithieuapp1"
+    android:orientation="vertical"
+    android:background="#FFA0CA">
+
+    <ImageView
+        android:layout_width="380dp"
+        android:layout_height="360dp"
+        android:src="@drawable/introduction1"
+        android:layout_marginStart="-20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHĂM SÓC THÚ"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CƯNG HIỆN ĐẠI"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đảm bảo thú cưng có môi trường sống tốt nhất"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_marginTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+            <Button
+                android:id="@+id/btn_tieptheo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:layout_margin="10dp"
+                android:text="tiếp theo"
+                android:textColor="#FFA0CA"
+                android:textSize="16sp"
+                android:layout_gravity="bottom"
+                android:shadowColor="@color/black"/>
+    </LinearLayout>
+
+</LinearLayout>

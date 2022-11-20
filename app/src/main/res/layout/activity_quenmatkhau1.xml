@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".quenmatkhau1"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/imv_quaylai"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_return_pink"
+        android:layout_marginStart="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đặt lại mật khẩu"
+        android:textColor="#FA579F"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FFC6DF"
+        android:background="@drawable/customshape">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_account"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"/>
+
+        <EditText
+            android:id="@+id/edt_nhapemailhoacsdt"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Email hoặc số điện thoại"
+            android:layout_marginEnd="10dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/txt_tieptheo"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Tiếp theo"
+            android:textSize="20sp"
+            android:textColor="#FFA0CA"
+            android:textStyle="bold"
+            android:gravity="center"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_arrow_right_alt_24"/>
+    </LinearLayout>
+
+</LinearLayout>

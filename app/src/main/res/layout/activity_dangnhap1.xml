@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dangnhap1"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="280dp"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/introduction3"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo_circle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hey,"
+            android:textColor="#FFA0CA"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XIN CHÀO"
+            android:textColor="#FFA0CA"
+            android:textStyle="bold"
+            android:textSize="30sp"/>
+        
+        <LinearLayout
+            android:id="@+id/btn_dangnhapbangfacebook"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/customshape"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#3B5999"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_facebook_white"
+                android:layout_marginStart="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Đăng nhập bằng Facebook"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_dangnhapbanggoogle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/customshape"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#D44837"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_google"
+                android:layout_marginStart="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Đăng nhập bằng Google"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="---Hoặc---"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/btn_dangnhapbanglilpawhome"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/customshape"
+            android:layout_marginTop="10dp"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Đăng nhập bằng tài khoản
+                Lilpaw Home"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Bấm đăng nhập có nghĩa là bạn đồng ý"
+            android:textSize="12sp"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/txt_dieukhoansudung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Các điều khoản sử dụng của Lilpaw Home"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right|bottom">
+
+        <TextView
+            android:id="@+id/txt_boquadangnhap"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Bỏ qua đăng nhập"
+            android:textSize="20sp"
+            android:textColor="#FFA0CA"
+            android:textStyle="bold"
+            android:gravity="center"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_arrow_right_alt_24"/>
+    </LinearLayout>
+
+</LinearLayout>
