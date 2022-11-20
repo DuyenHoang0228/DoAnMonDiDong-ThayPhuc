@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NoticeActivity"
-    android:orientation="vertical"
-    android:padding="20dp">
+    tools:context=".HelpActivity"
+    android:orientation="vertical">
+
     <ListView
-        android:id="@+id/lv_thongbao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@null"/>
+
+
+
+
 
 </LinearLayout>
