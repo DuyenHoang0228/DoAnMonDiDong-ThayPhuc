@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/lilpawhome"
+                android:background="@drawable/customborder"
+                android:layout_gravity="bottom"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chào mừng bạn đến với ứng dụng mua sắm trực tuyến sản phấm cho thú cưng, Lilpaw Home có thể giúp gì cho bạn?"
+                android:background="@drawable/customshapeborder"
+                android:backgroundTint="#FFCFE4"
+                android:layout_marginStart="15dp"/>
+
+                
+        </LinearLayout>
+
+        </ScrollView>
+        <EditText
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/customshapeborder"
+            android:backgroundTint="#FFCFE4"
+            android:layout_margin="15dp"
+            android:drawableEnd="@drawable/icon_them_chat"
+            android:hint="Nhập tin nhắn của bạn..."/>
+    </RelativeLayout>
+
+    
+</LinearLayout>
