@@ -1,13 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".thietlaptaikhoan">
- <TextView
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:text="Xuân Lê nè"
-     android:layout_gravity="center"></TextView>
-</LinearLayout>
+    tools:context=".thietlaptaikhoan"
+    android:background="#FAE5EC" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tài khoản của tôi"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></TextView>
+    <Button
+        android:id="@+id/btn_taikhoanvabaomat"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/customshapeborderwhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Tài khoản và Bảo mật"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></Button>
+    <Button
+        android:id="@+id/btn_diachi"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/customshapeborderwhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Địa chỉ"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></Button>
+    <Button
+        android:id="@+id/btn_taikhoanvathenganhang"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/customshapeborderwhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Tài khoản/Thẻ ngân hàng"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></Button>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cài đặt"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></TextView>
+    <Button
+        android:id="@+id/btn_caidatthongbao"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/customshapeborderwhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Địa chỉ"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></Button>
+    <Button
+        android:id="@+id/btn_btn_caidathethong"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/customshapeborderwhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Tài khoản/Thẻ ngân hàng"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></Button>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hỗ trợ"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></TextView>
+    <Button
+        android:id="@+id/btn_trungtamhotro"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/customshapeborderwhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Trung tâm hỗ trợ"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></Button>
+    <Button
+        android:id="@+id/btn_huytaikhoan"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/customshapeborderwhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Yêu cầu hủy tài khoản"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></Button>
+    <Button
+        android:id="@+id/btn_dangxuat"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/customshapeborder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Đăng xuất"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></Button>
+    </LinearLayout>
+</ScrollView>
