@@ -1,11 +1,13 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +28,8 @@ public class ChatActivity extends AppCompatActivity {
      List<message> Listmessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
@@ -45,6 +49,7 @@ public class ChatActivity extends AppCompatActivity {
         addEvent();
 
     }
+
 
     private void addEvent() {
         btnSend.setOnClickListener(new View.OnClickListener() {
@@ -66,4 +71,19 @@ public class ChatActivity extends AppCompatActivity {
         rcvchat.scrollToPosition(Listmessage.size() - 1);
         edMessage.setText("");
     }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:break;
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
