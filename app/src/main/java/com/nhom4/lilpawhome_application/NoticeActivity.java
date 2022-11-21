@@ -1,8 +1,10 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.nhom4.adapters.ThongbaoAdapter;
@@ -18,6 +20,8 @@ public class NoticeActivity extends AppCompatActivity {
     ArrayList<ThongBao> thongbao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         super.onCreate(savedInstanceState);
 
         binding = ActivityNoticeBinding.inflate(getLayoutInflater());
@@ -39,4 +43,20 @@ public class NoticeActivity extends AppCompatActivity {
         adapter = new ThongbaoAdapter(NoticeActivity.this,R.layout.thongbao_list,thongbao);
         binding.lvThongbao.setAdapter(adapter);
     }
+
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:break;
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }

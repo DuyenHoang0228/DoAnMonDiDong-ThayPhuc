@@ -2,6 +2,7 @@ package com.nhom4.lilpawhome_application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -42,6 +43,18 @@ public class MainActivity extends AppCompatActivity {
         
 
         loadData();
+        addEvent();
+    }
+
+    private void addEvent() {
+        binding.imvChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ChatActivity.class);
+
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -59,4 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 }

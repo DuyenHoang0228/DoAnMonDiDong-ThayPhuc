@@ -1,9 +1,11 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -22,6 +24,8 @@ public class HelpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_help);
         binding = ActivityHelpBinding.inflate(getLayoutInflater());
@@ -59,4 +63,19 @@ public class HelpActivity extends AppCompatActivity {
         binding.lvHelp.setAdapter(adapter);
 
     }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:break;
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
