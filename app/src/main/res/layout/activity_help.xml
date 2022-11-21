@@ -8,9 +8,13 @@
     android:orientation="vertical">
 
     <ListView
+        android:layout_margin="10dp"
+        android:id="@+id/lv_help"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@null"/>
+        android:divider="@null"
+        android:dividerHeight="10dp"
+        />
 
 
 
