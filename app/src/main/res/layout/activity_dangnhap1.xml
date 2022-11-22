@@ -119,7 +119,6 @@
                 Lilpaw Home"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:layout_marginStart="10dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:padding="10dp"/>
