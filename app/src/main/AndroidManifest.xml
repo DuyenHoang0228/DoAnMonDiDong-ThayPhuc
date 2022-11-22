@@ -13,13 +13,62 @@
         android:theme="@style/Theme.LilpawHome_Application"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".SubHelpActivity2"
+            android:exported="false"
+            android:label="Trợ giúp"
+            >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HelpActivity"
+            android:exported="true"
+            android:label="Trợ giúp"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".NoticeActivity"
+            android:exported="false"
+            android:label="Thông báo"
+            >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ChatActivity"
+            android:exported="true"
+            android:label="Nhắn tin"
+            >
+
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar"
+            >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UserActivity"
+            android:exported="true"
+            android:theme="@style/Theme.offactionbar"
+            >
 
             <meta-data
                 android:name="android.app.lib_name"

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">LilpawHome_Application</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="help_conten1">
+        Lilpaw Home có 3 cách thức thanh toán chính đó là: thanh toán khi nhận hàng COD, thanh toán chuyển khoản và thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY.\n \n Trong trường hợp khách hàng cần phương thức thanh toán khác, vui lòng liên hệ trực tiếp với LilPaw Home.\n\n Thanh toán khi nhận hàng (COD) cho nhân viên giao hàng.\n\n Thanh toán qua chuyển khoản ngân hàng\n\n Thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY\n\nĐối với các phương thức khác sau khi chuyển khoản xong, quý khách hàng vui lòng gửi ủy nhiệm chi, sao kê hoặc chụp ảnh màn hình gửi Lilpaw Home qua zalo, viber, inbox fanpage.\n
+        Lưu ý:  Lilpaw Home chỉ chuẩn bị và đóng hàng khi nhận được thông báo chuyển tiền từ ngân hàng.
+
+    </string>
+    <string name="help_content2">2</string>
+    <string name="help_content3">3</string>
+    <string name="help_content4">4</string>
+    <string name="help_content0">0</string>
 </resources>
