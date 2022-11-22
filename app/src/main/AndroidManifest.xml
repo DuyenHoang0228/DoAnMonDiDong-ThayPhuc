@@ -13,9 +13,18 @@
         android:theme="@style/Theme.LilpawHome_Application"
         tools:targetApi="31">
         <activity
+            android:name=".khachhangbac"
+            android:exported="true"
+            android:label="Khách hàng thân thiết">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+        </activity>
+        <activity
             android:name=".quenmatkhau2"
             android:exported="false"
-            android:theme="@style/Theme.manhinhkhoidong">
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -23,7 +32,7 @@
         <activity
             android:name=".quenmatkhau1"
             android:exported="false"
-            android:theme="@style/Theme.manhinhkhoidong">
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -31,7 +40,7 @@
         <activity
             android:name=".dangky"
             android:exported="false"
-            android:theme="@style/Theme.manhinhkhoidong">
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -39,7 +48,7 @@
         <activity
             android:name=".dangnhap2"
             android:exported="false"
-            android:theme="@style/Theme.manhinhkhoidong">
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -47,7 +56,7 @@
         <activity
             android:name=".dangnhap1"
             android:exported="false"
-            android:theme="@style/Theme.manhinhkhoidong">
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -55,21 +64,21 @@
         <activity
             android:name=".manhinhkhoidong"
             android:exported="true"
-            android:theme="@style/Theme.manhinhkhoidong">
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".gioithieuapp2"
             android:exported="false"
-            android:theme="@style/Theme.manhinhkhoidong">
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -77,7 +86,7 @@
         <activity
             android:name=".gioithieuapp1"
             android:exported="false"
-            android:theme="@style/Theme.manhinhkhoidong">
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
