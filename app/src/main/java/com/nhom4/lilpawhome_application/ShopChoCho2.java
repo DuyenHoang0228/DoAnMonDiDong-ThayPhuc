@@ -3,6 +3,7 @@ package com.nhom4.lilpawhome_application;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import com.nhom4.adapters.SanphamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityShopChoCho2Binding;
@@ -39,5 +40,11 @@ public class ShopChoCho2 extends AppCompatActivity {
         adapter=new SanphamAdapter(ShopChoCho2.this,R.layout.list_sanpham_id,sanPhamArrayList);
         binding.gvShopchocho2.setAdapter(adapter);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.shopchocho2_option_menu,menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
