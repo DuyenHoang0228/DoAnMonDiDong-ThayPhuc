@@ -48,7 +48,7 @@ public class ShopChoCho1 extends AppCompatActivity {
         sanPhamArrayList.add(new SanPham(R.drawable.spvongcocho,"Vòng cổ chó cute",60000,80000,
                 "Thương hiệu 3","phukiencho","vongcocho"));
 
-        adapter=new SanphamAdapter(ShopChoCho1.this,R.layout.sanpham_list,sanPhamArrayList);
+        adapter=new SanphamAdapter(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
         binding.gvOptionchocho.setAdapter(adapter);
 
     }
@@ -70,7 +70,7 @@ public class ShopChoCho1 extends AppCompatActivity {
         sanPhamArrayList.add(new SanPham(R.drawable.sptaimatmiengcho,"Cây chà răng chó",25000,40000,
                 "Thương hiệu 4","dodungcho","taimatcho"));
 
-        adapter=new SanphamAdapter(ShopChoCho1.this,R.layout.sanpham_list,sanPhamArrayList);
+        adapter=new SanphamAdapter(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
         binding.gvOptionchocho.setAdapter(adapter);
 
     }
