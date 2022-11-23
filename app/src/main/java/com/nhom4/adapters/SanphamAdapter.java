@@ -55,9 +55,9 @@ public class SanphamAdapter extends BaseAdapter {
 
             holder.imvAnhSanPham=view.findViewById(R.id.imv_hinhsanpham);
             holder.txtTenSanPham=view.findViewById(R.id.txt_tensanpham);
-            holder.txtTenThuongHieu=view.findViewById(R.id.txt_thuonghieu);
-            holder.txtGiaMoi=view.findViewById(R.id.txt_giamoi);
-            holder.txtGiaCu=view.findViewById(R.id.txt_giacu);
+            holder.txtTenThuongHieu=view.findViewById(R.id.txt_brandsanpham);
+            holder.txtGiaMoi=view.findViewById(R.id.txt_giasanphamchuagiam);
+            holder.txtGiaCu=view.findViewById(R.id.txt_giasanphamdagiam);
 
             view.setTag(holder);
 
