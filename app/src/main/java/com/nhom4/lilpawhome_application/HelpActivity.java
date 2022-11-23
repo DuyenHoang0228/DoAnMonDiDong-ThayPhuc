@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class HelpActivity extends AppCompatActivity {
 
-    ActivityHelpBinding binding;
+     ActivityHelpBinding binding;
     HelpAdapter adapter;
     ArrayList<TroGIup> trogiup;
 

@@ -102,7 +102,7 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_baseline_keyboard_double_arrow_right_24"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
                 android:layout_gravity="center"/>
 
 
