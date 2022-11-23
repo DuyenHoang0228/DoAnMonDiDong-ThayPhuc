@@ -37,10 +37,15 @@
 
         </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_message"
+    <ListView
+        android:id="@+id/lv_message"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="20dp"
+        android:divider="@null"
+        android:dividerHeight="20dp"
+        />
         </LinearLayout>
 
         <RelativeLayout

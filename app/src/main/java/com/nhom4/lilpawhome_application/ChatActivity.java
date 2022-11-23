@@ -12,7 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.nhom4.adapters.ChatAdapter;
 import com.nhom4.adapters.MessageAdapter;
+import com.nhom4.lilpawhome_application.databinding.ActivityChatBinding;
+import com.nhom4.lilpawhome_application.databinding.ActivityHelpBinding;
 import com.nhom4.models.message;
 
 import java.util.ArrayList;
@@ -21,56 +24,50 @@ import java.util.List;
 import kotlin.contracts.Returns;
 
 public class ChatActivity extends AppCompatActivity {
-     RecyclerView rcvchat;
-     EditText edMessage;
-     Button btnSend;
-     MessageAdapter messageAdapter;
-     List<message> Listmessage;
+    ActivityChatBinding binding;
+     ChatAdapter adapter;
+     ArrayList<message> Listmessage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
-
-        edMessage = findViewById(R.id.edt_chat);
-        btnSend = findViewById(R.id.btn_sendmessage);
-        rcvchat = findViewById(R.id.rcv_message);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        rcvchat.setLayoutManager(linearLayoutManager);
-
-        Listmessage = new ArrayList<>();
-        messageAdapter= new MessageAdapter();
-        messageAdapter.setData(Listmessage);
-
-        rcvchat.setAdapter(messageAdapter);
-
+       // setContentView(R.layout.activity_chat);
+        binding = ActivityChatBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+        initAdapter();
         addEvent();
+
+
+    }
+
+    private void initAdapter() {
+        Listmessage = new ArrayList<>();
+        addEvent();
+
 
     }
 
 
     private void addEvent() {
-        btnSend.setOnClickListener(new View.OnClickListener() {
+        binding.btnSendmessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendmess();
+                message ms = new message(binding.edtChat.getText().toString());
+
+                Listmessage.add(ms);
+
+                binding.edtChat.setText("");
+                adapter = new ChatAdapter(ChatActivity.this,R.layout.chat_list,Listmessage);
+
+                binding.lvMessage.setAdapter(adapter);
             }
         });
     }
 
-    private void sendmess() {
-        String strMess = edMessage.getText().toString().trim();
-        if ( TextUtils.isEmpty(strMess))
-        {
-            return;
-        }
-        Listmessage.add((new message(strMess)));
-        messageAdapter.notifyDataSetChanged();
-        rcvchat.scrollToPosition(Listmessage.size() - 1);
-        edMessage.setText("");
-    }
+
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId())
