@@ -6,16 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.GridView;
 
 import com.nhom4.adapters.AdapterBannerUudai;
-import com.nhom4.adapters.AdapterSanPham;
+import com.nhom4.adapters.HorSanPhamAdapter;
 import com.nhom4.adapters.AdapterVoucherUudai;
-import com.nhom4.lilpawhome_application.databinding.ActivityUuDaiMainBinding;
-import com.nhom4.lilpawhome_application.databinding.SliderLayoutBanneruudaiBinding;
 import com.nhom4.models.Product;
 import com.nhom4.models.VoucherUuDai;
 import com.nhom4.view.ExpandableHeightGridView;
@@ -23,12 +17,7 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-
-import in.srain.cube.views.GridViewWithHeaderAndFooter;
 
 public class UuDaiMain extends AppCompatActivity {
 
@@ -39,7 +28,7 @@ public class UuDaiMain extends AppCompatActivity {
     ArrayList<VoucherUuDai> voucherNewUser, voucherMuaNhieu, voucherThuongHieu;
     ArrayList<Product> products;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
-    AdapterSanPham adapter;
+    HorSanPhamAdapter adapter;
     LinearLayoutManager HorizontalLayout;
     AdapterVoucherUudai adapterVoucherNewUser, adapterVoucherMuaNhieu, adapterVoucherThuongHieu;
     ExpandableHeightGridView gridViewnewuser, gridViewmuanhieu, gridViewthuonghieu;
@@ -64,31 +53,20 @@ public class UuDaiMain extends AppCompatActivity {
 
         loadData();
 
-        recyclerView
-                = (RecyclerView)findViewById(
-                R.id.rv_flashsale);
-        RecyclerViewLayoutManager
-                = new LinearLayoutManager(
-                getApplicationContext());
+        recyclerView = (RecyclerView)findViewById(R.id.rv_flashsale);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
 
         // Set LayoutManager on Recycler View
-        recyclerView.setLayoutManager(
-                RecyclerViewLayoutManager);
+        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
 
         // Adding items to RecyclerView.
         AddItemsToRecyclerViewArrayList();
 
-        // calling constructor of adapter
-        // with source list as a parameter
-        adapter = new AdapterSanPham(products);
+        // calling constructor of adapter with source list as a parameter
+        adapter = new HorSanPhamAdapter(products);
 
-        // Set Horizontal Layout Manager
-        // for Recycler view
-        HorizontalLayout
-                = new LinearLayoutManager(
-                UuDaiMain.this,
-                LinearLayoutManager.HORIZONTAL,
-                false);
+        // Set Horizontal Layout Manager for Recycler view
+        HorizontalLayout = new LinearLayoutManager(UuDaiMain.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(HorizontalLayout);
 
         // Set adapter on recycler view

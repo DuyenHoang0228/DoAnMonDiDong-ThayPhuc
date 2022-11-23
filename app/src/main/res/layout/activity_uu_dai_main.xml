@@ -160,95 +160,112 @@
             android:background="@color/white"
             android:padding="5dp">
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="60dp"
-                android:src="@drawable/flashsalelogo"/>
-
-            <TextView
-                android:id="@+id/cd_hour"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="99"
-                android:textColor="@color/white"
-                android:background="@drawable/hinhvuongflashsale"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="3dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="7dp"
-                android:fontFamily="@font/nunito_extrabold"
-                android:textSize="20sp"/>
+                android:gravity="start">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textColor="@color/black"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="7dp"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/nunito_black"
-                android:textSize="20sp"/>
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/flashsalelogo"/>
+
+                <TextView
+                    android:id="@+id/cd_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99"
+                    android:textColor="@color/white"
+                    android:background="@drawable/hinhvuongflashsale"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="3dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:textSize="20sp"/>
 
 
-            <TextView
-                android:id="@+id/cd_minute"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/hinhvuongflashsale"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="3dp"
-                android:text="99"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="7dp"
-                android:layout_marginTop="7dp"
-                android:fontFamily="@font/nunito_extrabold"
-                android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/cd_minute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hinhvuongflashsale"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="3dp"
+                    android:text="99"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:textSize="20sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textColor="@color/black"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="7dp"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/nunito_black"
-                android:textSize="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/cd_second"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/hinhvuongflashsale"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="3dp"
-                android:text="00"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="7dp"
-                android:layout_marginTop="7dp"
-                android:fontFamily="@font/nunito_extrabold"
-                android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/cd_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hinhvuongflashsale"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="3dp"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:textSize="20sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="Xem tất cả >>"
-                android:textColor="#FF0071"
-                android:layout_gravity="center"
-                android:layout_marginLeft="47dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Xem tất cả >>"
+                    android:textColor="#FF0071"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+
+
 
         </LinearLayout>
 

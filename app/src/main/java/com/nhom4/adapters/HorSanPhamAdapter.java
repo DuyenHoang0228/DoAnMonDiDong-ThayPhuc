@@ -1,11 +1,8 @@
 package com.nhom4.adapters;
 
-import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,21 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.nhom4.lilpawhome_application.R;
 import com.nhom4.models.Product;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.security.auth.Subject;
+public class HorSanPhamAdapter extends RecyclerView.Adapter<HorSanPhamAdapter.MyView>{
 
-public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.MyView>{
+    List<Product> products;
 
-    // List with String type
-    private List<Product> products;
-
-    // View Holder class which
-    // extends RecyclerView.ViewHolder
+    // Tạo MyView class từ Adapter để mở rộng sang class ViewHolder
     public class MyView extends RecyclerView.ViewHolder {
 
-        // Text View
         ImageView imvhinhsanpham;
         TextView txttensanpham, txtbrandsanpham, txtgiasanphamchuagiam, txtgiasanphamdagiam;
 
@@ -38,7 +29,7 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.MyView>{
         {
             super(view);
 
-            // initialise TextView with id
+            // Tìm các thuộc tính có trong file layout list sản phẩm
             txttensanpham = (TextView)view.findViewById(R.id.txt_tensanpham);
             txtbrandsanpham = (TextView)view.findViewById(R.id.txt_brandsanpham);
             txtgiasanphamchuagiam = (TextView)view.findViewById(R.id.txt_giasanphamchuagiam);
@@ -47,7 +38,7 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.MyView>{
         }
     }
 
-    public AdapterSanPham(List<Product> products) {
+    public HorSanPhamAdapter(List<Product> products) {
         this.products = products;
     }
 
@@ -56,22 +47,13 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.MyView>{
                                      int viewType)
     {
 
-        // Inflate item.xml using LayoutInflator
-        View itemView
-                = LayoutInflater
-                .from(parent.getContext())
-                .inflate(R.layout.list_sanpham_id,
-                        parent,
-                        false);
+        // Nạp layout của file list_sanpham_id vào LayoutInflater
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_sanpham_id, parent, false);
 
-        // return itemView
         return new MyView(itemView);
     }
 
-    // Override onBindViewHolder which deals
-    // with the setting of different data
-    // and methods related to clicks on
-    // particular items of the RecyclerView.
+    // Binding dữ liệu
     @Override
     public void onBindViewHolder(final MyView holder,
                                  final int position)

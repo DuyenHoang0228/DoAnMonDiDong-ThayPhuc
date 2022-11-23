@@ -13,7 +13,6 @@ public class Product {
         this.productPriceDiscounted = productPriceDiscounted;
     }
 
-
     public int getProductImage() {
         return productImage;
     }
