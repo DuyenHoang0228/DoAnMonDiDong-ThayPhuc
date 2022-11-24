@@ -9,13 +9,13 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom4.lilpawhome_application.R;
-import com.nhom4.models.Product;
+import com.nhom4.models.SanPham;
 
 import java.util.List;
 
 public class HorSanPhamAdapter extends RecyclerView.Adapter<HorSanPhamAdapter.MyView>{
 
-    List<Product> products;
+    List<SanPham> sanPhams;
 
     // Tạo MyView class từ Adapter để mở rộng sang class ViewHolder
     public class MyView extends RecyclerView.ViewHolder {
@@ -38,8 +38,8 @@ public class HorSanPhamAdapter extends RecyclerView.Adapter<HorSanPhamAdapter.My
         }
     }
 
-    public HorSanPhamAdapter(List<Product> products) {
-        this.products = products;
+    public HorSanPhamAdapter(List<SanPham> sanPhams) {
+        this.sanPhams = sanPhams;
     }
 
     @Override
@@ -58,12 +58,12 @@ public class HorSanPhamAdapter extends RecyclerView.Adapter<HorSanPhamAdapter.My
     public void onBindViewHolder(final MyView holder,
                                  final int position)
     {
-        Product p = products.get(position);
-        holder.txttensanpham.setText(p.getBrandName());
-        holder.txtbrandsanpham.setText(p.getBrandName());
-        holder.txtgiasanphamchuagiam.setText(String.valueOf(p.getProductPrice()));
-        holder.txtgiasanphamdagiam.setText(String.valueOf(p.getProductPriceDiscounted()));
-        holder.imvhinhsanpham.setImageResource(p.getProductImage());
+        SanPham p = sanPhams.get(position);
+        holder.txttensanpham.setText(p.getTenSanPham());
+        holder.txtbrandsanpham.setText(p.getThuongHieu());
+        holder.txtgiasanphamchuagiam.setText(String.valueOf(p.getGiaCuSanPham()));
+        holder.txtgiasanphamdagiam.setText(String.valueOf(p.getGiaMoiSanPham()));
+        holder.imvhinhsanpham.setImageResource(p.getAnhSanPham());
     }
 
     // Override getItemCount which Returns
@@ -71,6 +71,6 @@ public class HorSanPhamAdapter extends RecyclerView.Adapter<HorSanPhamAdapter.My
     @Override
     public int getItemCount()
     {
-        return products.size();
+        return sanPhams.size();
     }
 }

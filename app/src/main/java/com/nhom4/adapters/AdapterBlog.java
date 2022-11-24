@@ -1,22 +1,16 @@
 package com.nhom4.adapters;
 
-import android.app.Activity;
-import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nhom4.lilpawhome_application.BlogActivity;
 import com.nhom4.lilpawhome_application.R;
 import com.nhom4.models.Blog;
-import com.nhom4.models.Product;
 
 import java.util.List;
 

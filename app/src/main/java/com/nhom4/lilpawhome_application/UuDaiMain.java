@@ -10,7 +10,7 @@ import android.os.Bundle;
 import com.nhom4.adapters.AdapterBannerUudai;
 import com.nhom4.adapters.HorSanPhamAdapter;
 import com.nhom4.adapters.AdapterVoucherUudai;
-import com.nhom4.models.Product;
+import com.nhom4.models.SanPham;
 import com.nhom4.models.VoucherUuDai;
 import com.nhom4.view.ExpandableHeightGridView;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -26,7 +26,7 @@ public class UuDaiMain extends AppCompatActivity {
     RecyclerView recyclerView;
     int[] images = {R.drawable.banneruudai1, R.drawable.banneruudai2};
     ArrayList<VoucherUuDai> voucherNewUser, voucherMuaNhieu, voucherThuongHieu;
-    ArrayList<Product> products;
+    ArrayList<SanPham> sanPhams;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     HorSanPhamAdapter adapter;
     LinearLayoutManager HorizontalLayout;
@@ -63,7 +63,7 @@ public class UuDaiMain extends AppCompatActivity {
         AddItemsToRecyclerViewArrayList();
 
         // calling constructor of adapter with source list as a parameter
-        adapter = new HorSanPhamAdapter(products);
+        adapter = new HorSanPhamAdapter(sanPhams);
 
         // Set Horizontal Layout Manager for Recycler view
         HorizontalLayout = new LinearLayoutManager(UuDaiMain.this, LinearLayoutManager.HORIZONTAL, false);
@@ -74,11 +74,12 @@ public class UuDaiMain extends AppCompatActivity {
     }
 
     private void AddItemsToRecyclerViewArrayList() {
-        products = new ArrayList<>();
-        products.add(new Product(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", "Hãng: Felipiro", 36000, 32000));
-        products.add(new Product(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", "Hãng: Felipiro", 36000, 32000));
-        products.add(new Product(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", "Hãng: Felipiro", 36000, 32000));
-        products.add(new Product(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", "Hãng: Felipiro", 36000, 32000));
+        sanPhams = new ArrayList<>();
+        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
     }
 
     private void loadData() {
