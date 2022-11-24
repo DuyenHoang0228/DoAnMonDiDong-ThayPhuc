@@ -1,6 +1,7 @@
 package com.nhom4.lilpawhome_application;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -27,6 +28,9 @@ public class ShopChoCho1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_shop_cho_cho1);
         binding=ActivityShopChoCho1Binding.inflate(getLayoutInflater());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.custom_actionbar_shopchocho12);
         setContentView(binding.getRoot());
 
         loadData();
