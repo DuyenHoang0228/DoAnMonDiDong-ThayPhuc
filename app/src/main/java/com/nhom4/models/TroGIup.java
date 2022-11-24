@@ -1,13 +1,13 @@
 package com.nhom4.models;
 
 public class TroGIup {
-    String TieudeTroGiup;
+    String TieudeTroGiup, NoidungTroGiup;
 
-    public TroGIup(String tieudeTroGiup) {
+    public TroGIup(String tieudeTroGiup, String noidungTroGiup) {
         TieudeTroGiup = tieudeTroGiup;
-    
+        NoidungTroGiup = noidungTroGiup;
+    }
 
-}
     public String getTieudeTroGiup() {
         return TieudeTroGiup;
     }
@@ -16,5 +16,11 @@ public class TroGIup {
         TieudeTroGiup = tieudeTroGiup;
     }
 
-    
+    public String getNoidungTroGiup() {
+        return NoidungTroGiup;
+    }
+
+    public void setNoidungTroGiup(String noidungTroGiup) {
+        NoidungTroGiup = noidungTroGiup;
+    }
 }

@@ -63,6 +63,7 @@ public class HelpAdapter extends BaseAdapter {
 
         holder.txthelpTittle.setText(dm.getTieudeTroGiup());
 
+
         return view;
     }
         //return null;

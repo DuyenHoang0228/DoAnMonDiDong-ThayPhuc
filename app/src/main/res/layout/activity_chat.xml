@@ -33,7 +33,8 @@
                 android:layout_marginStart="15dp"
                 android:background="@drawable/customshapeborder"
                 android:backgroundTint="#FFCFE4"
-                android:text="Chào mừng bạn đến với ứng dụng mua sắm trực tuyến sản phấm cho thú cưng, Lilpaw Home có thể giúp gì cho bạn?" />
+                android:text="Chào mừng bạn đến với ứng dụng mua sắm trực tuyến sản phấm cho thú cưng, Lilpaw Home có thể giúp gì cho bạn?"
+                android:fontFamily="@font/montserrat"/>
 
         </LinearLayout>
 
