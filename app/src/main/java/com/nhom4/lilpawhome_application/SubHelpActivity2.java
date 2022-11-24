@@ -12,6 +12,7 @@ import com.nhom4.lilpawhome_application.databinding.ActivitySubHelp2Binding;
 
 public class SubHelpActivity2 extends AppCompatActivity {
     ActivitySubHelp2Binding binding;
+    String [] helpContent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -27,10 +28,11 @@ public class SubHelpActivity2 extends AppCompatActivity {
     private void showData() {
         Intent intent = getIntent();
         int index = intent.getIntExtra("index",0);
-        String helpContent = "R.string.help_content"+index;
+         helpContent = getResources().getStringArray(R.array.helpContent);
         String helpTittle = intent.getStringExtra("helpTittle");
         binding.txtHelpTittle.setText(helpTittle);
-        binding.txtHelpContent.setText(R.string.help_conten1);
+        String cont = helpContent[index];
+        binding.txtHelpContent.setText(cont);
 
 
     }

@@ -32,6 +32,8 @@ public class HelpActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+
+
         loadData();
         addEvent();
     }
@@ -46,6 +48,7 @@ public class HelpActivity extends AppCompatActivity {
                 intent.putExtra("index",i);
 
 
+
                 startActivity(intent);
             }
         });
@@ -53,11 +56,12 @@ public class HelpActivity extends AppCompatActivity {
 
     private void loadData() {
         trogiup = new ArrayList<>();
-        trogiup.add(new TroGIup("Hướng dẫn đặt hàng"));
-        trogiup.add(new TroGIup("Phương thức thanh toán"));
-        trogiup.add(new TroGIup("Quy định đổi trả sản phẩm"));
-        trogiup.add(new TroGIup("Chính sách giao hàng"));
-        trogiup.add(new TroGIup("Chính sách bảo vệ thông tin người tiêu dùng"));
+
+        trogiup.add(new TroGIup("Hướng dẫn đặt hàng",""));
+        trogiup.add(new TroGIup("Phương thức thanh toán",""));
+        trogiup.add(new TroGIup("Quy định đổi trả sản phẩm",""));
+        trogiup.add(new TroGIup("Chính sách giao hàng",""));
+        trogiup.add(new TroGIup("Chính sách bảo vệ thông tin người tiêu dùng",""));
 
         adapter = new HelpAdapter(HelpActivity.this,R.layout.help_list,trogiup);
         binding.lvHelp.setAdapter(adapter);

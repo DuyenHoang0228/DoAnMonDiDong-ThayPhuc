@@ -18,6 +18,7 @@
         android:textColor="@color/black"
         android:backgroundTint="#FFA0CA"
         android:padding="10dp"
+        android:fontFamily="@font/montserrat"
        />
 
 </LinearLayout>
