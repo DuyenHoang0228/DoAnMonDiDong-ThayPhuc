@@ -35,6 +35,17 @@ public class DanhmucActivity extends AppCompatActivity {
     private void addEvent() {
 
     }
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()== R.id.imv_chat)
+        {
+                    Intent intent = new Intent(DanhmucActivity.this,ChatActivity.class);
+
+                    startActivity(intent);
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
 
 
 }
