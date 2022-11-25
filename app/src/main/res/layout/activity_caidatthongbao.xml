@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".caidatthongbao"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#FAE5EC">
+    <Button
+        android:id="@+id/btn_thongbaocd"
+        android:layout_marginTop="5dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/customshapeborderwhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Thông báo"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></Button>
+    <Button
+        android:id="@+id/btn_thongbaoemailcd"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:background="@drawable/customshapeborderwhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Thông báo Email"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></Button>
+</LinearLayout>

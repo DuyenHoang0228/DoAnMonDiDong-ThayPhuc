@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/customshapeborderwhite">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+        android:id="@+id/txt_tennguoimua"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thảo Duyên"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></TextView>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserratregular"
+            android:textSize="15sp"></TextView>
+        <TextView
+            android:id="@+id/txt_sdtnguoimua"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(+84)12345678"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserratregular"
+            android:textSize="15sp"></TextView>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txt_diachinguoimua"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Số 106, khu phố 3, Linh Xuân, Thủ Đức, TP.HCM"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"></TextView>
+</LinearLayout>
