@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gioithieuapp2"
+    android:orientation="vertical"
+    android:background="#FDE7F1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/introduction2"
+        android:layout_gravity="center"
+        android:layout_marginTop="-20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XIN CHÀO"
+        android:textColor="#FA579F"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LILPAW HOME là ứng dụng đặt lịch chăm sóc thú cưng hiện đại và nhân văn"
+        android:textColor="#FA579F"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_marginTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
+        <Button
+            android:id="@+id/btn_tieptheo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFA0CA"
+            android:layout_margin="10dp"
+            android:text="tiếp theo"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:layout_gravity="bottom"
+            android:shadowColor="@color/black"/>
+    </LinearLayout>
+
+</LinearLayout>
