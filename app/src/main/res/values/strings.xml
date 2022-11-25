@@ -106,4 +106,6 @@ Bảo mật tuyệt đối mọi thông tin giao dịch trực tuyến của th�
         Lưu ý:  Lilpaw Home chỉ chuẩn bị và đóng hàng khi nhận được thông báo chuyển tiền từ ngân hàng.
 
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
