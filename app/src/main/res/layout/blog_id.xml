@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundvoucher"
+    android:backgroundTint="#FFA0CA"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imv_hinhblog"
+        android:layout_width="wrap_content"
+        android:layout_height="212dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/blog_uongnuoc" />
+
+    <TextView
+        android:id="@+id/txt_blogtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Mèo uống nước bồn cầu có sao không?"
+        android:textColor="@color/black"
+        android:textSize="23sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/txt_blogcategory1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgroundvoucher"
+            android:text="Hỏi đáp"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/txt_blogcategory2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/backgroundvoucher"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingLeft="25dp"
+            android:paddingTop="5dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="5dp"
+            android:text="Hành vi mèo"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_blogsubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cùng chuyên gia của Lilpaw Home giải đáp vấn đề này nhé"
+        android:textSize="18sp"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:layout_width="165dp"
+        android:layout_height="45dp"
+        android:layout_gravity="end"
+        android:src="@drawable/blog_docthem"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>
