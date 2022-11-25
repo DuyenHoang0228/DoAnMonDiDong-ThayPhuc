@@ -1,3 +1,111 @@
 <resources>
     <string name="app_name">LilpawHome_Application</string>
+
+    <string name="action_settings">Settings</string>
+    <string-array name="helpContent">
+        <item> Khách hàng đặt hàng qua Lilpaw Home tại giỏ hàng trên app và chọn phương thức thanh toán và vận chuyển phù hợp.
+        </item>
+        <item>Lilpaw Home có 3 cách thức thanh toán chính đó là: thanh toán khi nhận hàng COD, thanh toán chuyển khoản và thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY.\n \n Trong trường hợp khách hàng cần phương thức thanh toán khác, vui lòng liên hệ trực tiếp với LilPaw Home.\n\n Thanh toán khi nhận hàng (COD) cho nhân viên giao hàng.\n\n Thanh toán qua chuyển khoản ngân hàng\n\n Thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY\n\nĐối với các phương thức khác sau khi chuyển khoản xong, quý khách hàng vui lòng gửi ủy nhiệm chi, sao kê hoặc chụp ảnh màn hình gửi Lilpaw Home qua zalo, viber, inbox fanpage.\n
+        Lưu ý:  Lilpaw Home chỉ chuẩn bị và đóng hàng khi nhận được thông báo chuyển tiền từ ngân hàng.</item>
+        <item> Nếu bạn không hài lòng với sản phẩm mới được giao hàng hoặc dịch vụ khách hàng của Lilpaw Home và muốn đổi trả sản phẩm, Lilpaw Home sẵn sàng đổi trả cho bạn. Bên dưới đây là 1 số thông tin hữu ích về đổi trả sản phẩm.
+
+Lilpaw Home sẵn sàng đổi trả sản phẩm đã bán.
+Lilpaw Home khuyến khích quý khách hàng nên kiểm tra sản phẩm trước khi thanh toán.
+Lilpaw Home có chính sách đổi trả 30 ngày cho đơn hàng giao tại TP Hồ Chí Minh.\n \n
+
+1. Tình trạng sản phẩm được đổi trả\n
+Còn nguyên tem nhãn bao bì, mới 100%
+Còn hạn sử dụng (date) trên 06 tháng
+Có hóa đơn mua hàng từ Lilpaw Home
+Còn mới, không dơ bẩn bám vết bẩn, có mùi hôi..
+Không có dấu hiệu đã sử dụng như mở nắp bao bì, chai, lọ…
+Không có ghi chú, băng dính do thêm vào từ bên ngoài\n\n
+
+2. Phương thức đổi trả và thời gian giải quyết\n
+Chụp ảnh sản phẩm muốn đổi trả kèm hóa đơn mua hàng gửi về zalo, viber hoặc inbox fanpage.
+Thời gian xử lý đổi trả là 2 – 4 giờ kể từ lúc nhận được yêu cầu.
+Khách hàng không tốn phí hay phụ phí khi đổi trả.
+Áp dụng đổi trả tại văn phòng kho của Lilpaw Home, tại số 5 đường 11B,  KDC Dương Hồng, Bình Hưng, Bình Chánh, TPHCM
+Nếu khách hàng muốn đổi trả tận nơi, cần chi trả tiền ship cho dịch vụ giao hàng.
+Không xử lý đổi trả sau thời gian 30 ngày kể từ ngày giao hàng.
+Khách hàng có thể đổi sản phẩm khác; hoặc nhận giftcash có giá trị tương đương; hoặc nhận tiền chuyển khoản.
+Hàng khuyến mãi, hàng tặng, hàng mua bằng Giftcash không đổi trả.
+Nếu đơn hàng yêu cầu đổi trả phát sinh từ sai sót của Lilpaw Home, Lilpaw Home sẽ xử lý lỗi trong 2 giờ kể từ khi nhận thông báo, khách hàng không tốn phí và áp dụng cho tất cả đơn hàng nội thành TP Hồ Chí Minh và ở các tỉnh thành khác.\n\n
+
+3. Hướng dẫn đóng gói để đổi trả sản phẩm\n
+Sản phẩm nếu đổi trả nên cho lại vào thùng carton Lilpaw Home đã giao hàng. Nếu không còn, quý khách hàng tham khảo cách đóng gói sản phẩm bên dưới.
+
+Hàng nhẹ, nhỏ, gọn, không dễ vỡ: Cho vào túi giấy / bọc / màng quấn nylon, dán băng keo ôm sát vào hàng hóa để định hình và niêm phong kiện hàng. Nhỡ dán nhãn tên người nhận là Lilpaw Home kèm số điện thoại và địa chỉ.
+Hàng chất lỏng, thủy tinh, dễ vỡ: Đóng gói với màng xốp khí (bubble wrap), dán băng keo kín xung quanh, và cho vào thùng giấy carton, chèn kín giấy báo xung quanh để tránh xê dịch khi vận chuyển, niêm phong kỹ miệng và đáy thùng. Nhỡ dán nhãn tên người nhận là Lilpaw Home kèm số điện thoại và địa chỉ. Nhớ ghi chú hàng dễ vỡ.
+Hàng nặng, lớn, cồng kềnh: Đóng gói trong thùng giấy carton, chèn kín giấy báo xung quanh để tránh hàng hóa bị xê dịch, niêm phong kỹ miệng và đáy thùng. Nhỡ dán nhãn tên người nhận là Lilpaw Home kèm số điện thoại và địa chỉ. Nhớ ghi chú hàng nặng.
+Nhằm tránh rắc rối và tiết kiệm thời gian cho khách hàng, Lilpaw Home khuyến khích bạn nên kiểm tra sản phẩm trước khi thanh toán. </item>
+        <item>1. Mục đích thu thập thông tin cá nhân\n
+Việc thu thập dữ liệu chủ yếu trên website LilPaw Home bao gồm: họ tên, email, điện thoại, địa chỉ khách hàng.
+
+Đây là các thông tin mà chúng tôi cần thành viên cung cấp bắt buộc khi gửi thông tin nhờ tư vấn hay muốn mua sản phẩm và để chúng tôi liên hệ xác nhận lại với khách hàng trên website nhằm đảm bảo quyền lợi cho cho người tiêu dùng.
+
+Ngoài ra, thành viên có trách nhiệm thông báo kịp thời cho website chúng tôi về những hành vi sử dụng trái phép, lạm dụng, vi phạm bảo mật, lưu giữ tên đăng ký và mật khẩu của bên thứ ba để có biện pháp giải quyết phù hợp.\n\n
+
+2. Phạm vi sử dụng thông tin\n
+Chúng tôi sử dụng thông tin thành viên cung cấp để:
+
+Liên hệ xác nhận đơn hàng và giao hàng cho thành viên khi nhận được yêu cầu từ thành viên;
+
+Cung cấp thông tin về sản phẩm đến khách hàng nếu có yêu cầu từ khách hàng;
+
+Gửi email tiếp thị, khuyến mại về sản phẩm, kiến thức liên quan
+
+Gửi các thông báo về các hoạt động trên website
+
+Liên lạc và giải quyết với người dùng trong những trường hợp đặc biệt;
+
+Khi có yêu cầu của cơ quan tư pháp bao gồm: Viện kiểm sát, tòa án, cơ quan công an điều tra liên quan đến hành vi vi phạm pháp luật nào đó của khách hàng.\n\n
+
+3. Thời gian lưu trữ thông tin\n
+Dữ liệu cá nhân của thành viên sẽ được lưu trữ cho đến khi có yêu cầu ban quản trị hủy bỏ.
+
+Còn lại trong mọi trường hợp thông tin cá nhân thành viên sẽ được bảo mật trên máy chủ của chúng tôi\n\n
+
+4. Những người hoặc tổ chức có thể được tiếp cận với thông tin đó\n
+Những thông tin thu thập của thành viên sẽ được ban quản trị tiếp cận
+
+Các cơ quan chức năng khi có yêu cầu\n\n
+
+5. Địa chỉ của đơn vị thu thập và quản lý thông tin, bao gồm cách thức liên lạc để người tiêu dùng có thể hỏi về hoạt động thu thập, xử lý thông tin liên quan đến cá nhân mình
+HỘ KINH DOANH THÚ CƯNG SÀI GÒN
+
+Địa chỉ:
+
+05 đường số 11B, khu nhà ở tại Lô số 8 thuộc khu 9A+B (9B8), Khu chức năng số 9, đô thị mới Nam Thành phố, Bình Hưng, Bình Chánh, TPHCM
+
+Điện thoại: 0707.76.07.96\n\n
+
+6. Phương thức và công cụ để người tiêu dùng tiếp cận và chỉnh sửa dữ liệu cá nhân của mình trên hệ thống thương mại điện tử của đơn vị thu thập thông tin
+Thành viên có quyền tự kiểm tra, cập nhật, điều chỉnh hoặc hủy bỏ thông tin cá nhân của mình bằng cách liên hệ với ban quản trị website thực hiện việc này.
+
+Thành viên có quyền gửi khiếu nại về nội dung bảo mật thông tin đề nghị liên hệ Ban quản trị của website. Khi tiếp nhận những phản hồi này, chúng tôi sẽ xác nhận lại thông tin, trường hợp đúng như phản ánh của thành viên tùy theo mức độ, chúng tôi sẽ có những biện pháp xử lý kịp thời.\n\n
+
+7. Cơ chế tiếp nhận và giải quyết khiếu nại của người tiêu dùng liên quan đến việc thông tin cá nhân bị sử dụng sai mục đích hoặc phạm vi đã thông báo
+Thông tin cá nhân của thành viên được cam kết bảo mật tuyệt đối theo chính sách bảo vệ thông tin cá nhân.
+
+Việc thu thập và sử dụng thông tin của mỗi thành viên chỉ được thực hiện khi có sự đồng ý của khách hàng đó trừ những trường hợp pháp luật có quy định khác.
+
+Không sử dụng, không chuyển giao, cung cấp hay tiết lộ cho  bên thứ 3 nào về thông tin cá nhân của thành viên khi không có sự cho phép đồng ý từ thành viên.
+
+Trong trường hợp máy chủ lưu trữ thông tin bị hacker tấn công dẫn đến mất mát dữ liệu cá nhân thành viên, chúng tôi sẽ có trách nhiệm thông báo vụ việc cho cơ quan chức năng điều tra xử lý kịp thời và thông báo cho thành viên được biết.
+
+Bảo mật tuyệt đối mọi thông tin giao dịch trực tuyến của thành viên bao gồm thông tin hóa đơn kế toán chứng từ số hóa</item>
+        <item>Lilpaw Home miễn phí vận chuyển tại nội thành Tiền Giang, Kiên Giang, Cần Thơ, Bà Rịa - Vũng Tàu, Bình Dương, Đồng Nai, Thành phố Hồ Chí Minh và Thủ đô Hà Nội cho các đơn hàng từ 90.000đ trở lên. Các đơn hàng dưới 90.000đ Quý khách chỉ mất 10.000đ phí vận chuyển.
+
+Đối với những khách hàng thuộc khu vực khác miễn phí vận chuyển đối với đơn hàng từ 249.000đ trở lên. Cước phí vận chuyển 25.000đ đơn hàng dưới 249.000đ (Áp dụng đối với trọng lượng đơn hàng từ 1 kg trở xuống và kích thước thùng đóng gói đơn hàng nhỏ hơn 25 x 18 x 15):</item>
+
+
+    </string-array>
+    <string name="help_conten1">
+        Lilpaw Home có 3 cách thức thanh toán chính đó là: thanh toán khi nhận hàng COD, thanh toán chuyển khoản và thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY.\n \n Trong trường hợp khách hàng cần phương thức thanh toán khác, vui lòng liên hệ trực tiếp với LilPaw Home.\n\n Thanh toán khi nhận hàng (COD) cho nhân viên giao hàng.\n\n Thanh toán qua chuyển khoản ngân hàng\n\n Thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY\n\nĐối với các phương thức khác sau khi chuyển khoản xong, quý khách hàng vui lòng gửi ủy nhiệm chi, sao kê hoặc chụp ảnh màn hình gửi Lilpaw Home qua zalo, viber, inbox fanpage.\n
+        Lưu ý:  Lilpaw Home chỉ chuẩn bị và đóng hàng khi nhận được thông báo chuyển tiền từ ngân hàng.
+
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
