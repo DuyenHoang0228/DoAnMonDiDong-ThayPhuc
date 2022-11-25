@@ -108,7 +108,6 @@
                     app:iss_corner_radius="50"
                     />
 
-               </LinearLayout>
 
            </androidx.cardview.widget.CardView>
 

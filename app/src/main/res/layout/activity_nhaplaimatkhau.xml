@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".nhaplaimatkhau"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#FAE5EC">
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Để đảm bảo tài khoản của bạn luôn an toàn, vui lòng nhập lại mật khẩu tài khoản của bạn để tiếp tục."
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"></TextView>
+    <EditText
+        android:id="@+id/edt_nhapmatkhauhientai"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/customshapeborderwhite"
+        android:hint="Mật khẩu hiện tại"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></EditText>
+    <Button
+        android:id="@+id/btn_tieptucmatkhau"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/customshapeborder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Tiếp tục"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></Button>
+</LinearLayout>
