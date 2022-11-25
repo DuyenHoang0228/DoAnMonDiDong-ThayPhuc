@@ -14,6 +14,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.nhom4.adapters.Danhmuc1Adapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.DanhMuc1;
+import com.nhom4.models.SanPham;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     Danhmuc1Adapter adapter;
     ArrayList<DanhMuc1> danhmuc;
+    ArrayList<SanPham> sanPhams;
+
     private ImageSlider imageSlider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
