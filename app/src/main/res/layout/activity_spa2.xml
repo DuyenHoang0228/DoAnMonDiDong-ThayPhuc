@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SpaActivity2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:src="@drawable/bannerspa"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ĐĂNG KÝ DỊCH VỤ CHĂM SÓC THÚ CƯNG"
+            android:fontFamily="@font/nunito_black"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/icon_thong_tin_khac"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thông tin khác"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn cơ sở"
+                android:fontFamily="@font/montserrat"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_choncoso"
+                android:layout_width="190dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/backgroundvoucher"
+                android:backgroundTint="#4DFFA0CA"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn dịch vụ"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp"/>
+
+        <RadioGroup
+            android:id="@+id/rg_chondichvu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="5dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+                <TableRow>
+
+                    <CheckBox
+                        android:id="@+id/cb_tamvesinh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tắm, vệ sinh"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textSize="16sp"
+                        android:buttonTint="#FFA0CA"
+                        android:layoutDirection="ltr" />
+
+                    <CheckBox
+                        android:id="@+id/cb_duonglong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dưỡng lông"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textSize="16sp"
+                        android:buttonTint="#FFA0CA" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <CheckBox
+                        android:id="@+id/cb_cattialong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cắt tỉa lông móng"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textSize="16sp"
+                        android:buttonTint="#FFA0CA"
+                        android:layoutDirection="ltr"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_nhuomlong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nhuộm lông"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textSize="16sp"
+                        android:buttonTint="#FFA0CA" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn thời gian"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="50dp">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_dat_lich" />
+
+            <GridView
+                android:id="@+id/gv_datlich"
+                android:layout_width="wrap_content"
+                android:layout_height="190dp"
+                android:numColumns="2" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:paddingBottom="25dp"
+            android:layout_marginTop="40dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Xác nhận"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="18sp"
+                android:backgroundTint="#FFA0CA"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
