@@ -21,6 +21,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_trang_san_pham);
         binding=ActivityTrangSanPhamBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.btnXemthem.setText("Xem thêm");
         binding.txtThongtinsanpham.setMaxLines(3);
         loadData();
         addEvents();
