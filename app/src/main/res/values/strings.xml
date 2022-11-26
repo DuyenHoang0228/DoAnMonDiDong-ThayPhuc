@@ -2,4 +2,7 @@
     <string name="app_name">LilpawHome_Application</string>
 
     <string name="action_settings">Settings</string>
+    <string name="be_cung">Bé cưng %1$s</string>
+    <string name="mo_ta_thu_cung">Hơi ngáo xíu thôi nhưng mà dễ thương thân thiện, chỉ cần nhìn mặt nó thôi là đủ làm mình cười cả ngày rồi chứ không cần phải xem hài nữa. Tính nuôi để giữ nhà mà ai tới nó cũng vẫy đuôi, thấy nuôi tốn cơm quá.</string>
+    <string name="mo_ta_thu_cung_meo">Nhìn mặt bé là đủ biết bé nó hiền lành mức nào rồi. Bé rất nhút nhát trước người lạ nhưng khi quen hơi rồi thì quấn mãi không thôi. Rất thích ăn chúc chích và hạt.</string>
 </resources>
