@@ -74,7 +74,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/montserrat_light"
-                android:foreground="@drawable/strikethroughtext"
                 android:text="36.000 đ"
                 android:textSize="12sp"
                 android:layout_below="@+id/txt_giasanphamchuagiam"/>
