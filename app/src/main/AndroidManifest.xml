@@ -15,6 +15,20 @@
         android:theme="@style/Theme.LilpawHome_Application"
         tools:targetApi="31">
         <activity
+            android:name=".ShopChoMeo2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ShopChoMeo1"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ShopChoCho1"
             android:exported="false">
             <meta-data
