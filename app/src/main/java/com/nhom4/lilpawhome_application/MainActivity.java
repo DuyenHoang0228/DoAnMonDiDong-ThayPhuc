@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -55,20 +58,30 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_action_home:
                        return true;
                     case  R.id.nav_action_danhmuc:
-                        startActivity(new Intent(getApplicationContext(),DanhmucActivity.class));
+                        Intent intent1 =new Intent(getApplicationContext(),DanhmucActivity.class);
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent1);
                         overridePendingTransition(0,0);
                         return true;
                     case  R.id.nav_action_thongbao:
-                        startActivity(new Intent(getApplicationContext(),NoticeActivity.class));
+                        Intent intent2 =new Intent(getApplicationContext(),NoticeActivity.class);
+                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent2);
                         overridePendingTransition(0,0);
                         return true;
                     case  R.id.nav_action_taikhoan:
-                        startActivity(new Intent(getApplicationContext(),UserActivity.class));
+                        Intent intent3 =new Intent(getApplicationContext(),UserActivity.class);
+                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent3);
                         overridePendingTransition(0,0);
                         return true;
-
+                    case  R.id.nav_action_qr:
+                        Dialog dialog = new Dialog(MainActivity.this);
+                        dialog.setContentView(R.layout.qr_user);
+                        dialog.show();
+                        return true;
                 }
-                return true;
+                return false;
             }
         });
         loadBanner();

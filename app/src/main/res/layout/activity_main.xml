@@ -205,5 +205,8 @@
         app:menu="@menu/menu_navigation_bottom"
         app:itemBackground="@color/bottom_nav"
         app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"/>
+        app:itemTextColor="@color/white"
+        app:itemIconSize="25dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"/>
 </RelativeLayout>
