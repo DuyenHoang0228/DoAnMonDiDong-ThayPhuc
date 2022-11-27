@@ -2,11 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/nav_action_home"
         android:title="Trang chủ"
-        android:icon="@drawable/icon_home_pink"/>
+        android:icon="@drawable/icon_home_pink"
+        />
 
     <item android:id="@+id/nav_action_danhmuc"
-        android:title="Doanh mục"
-        android:icon="@drawable/icon_danh_muc_pink"/>
+        android:title="Danh mục"
+        android:icon="@drawable/icon_danh_muc_pink"
+        />
 
     <item android:id="@+id/nav_action_qr"
         android:title="mã Qr"
