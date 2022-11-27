@@ -1,5 +1,6 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -19,6 +20,9 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_trang_san_pham);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.custom_actionbar_trangsanpham);
         binding=ActivityTrangSanPhamBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.btnXemthem.setText("Xem thêm");
