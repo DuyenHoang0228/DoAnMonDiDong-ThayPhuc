@@ -42,7 +42,7 @@ public class DanhmucActivity extends AppCompatActivity {
         setContentView(view);
 
         expandableListView = findViewById(R.id.lv_danhmucchocho);
-        listItemGr = getListitems();
+        listItemGr = getListitemscho();
         listGroup = new ArrayList<>(listItemGr.keySet());
         expandableDMAdapter = new ExpandableDMAdapter(DanhmucActivity.this,listGroup,listItemGr);
         expandableListView.setAdapter(expandableDMAdapter);
@@ -80,7 +80,7 @@ public class DanhmucActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private Map<GroupDanhmuc, ArrayList<GroupDanhmuc>> getListitems(){
+    private Map<GroupDanhmuc, ArrayList<GroupDanhmuc>> getListitemscho(){
         Map<GroupDanhmuc, ArrayList<GroupDanhmuc>> listMap = new HashMap<>();
 
         GroupDanhmuc groupThucancho = new GroupDanhmuc(R.drawable.thucanchocho,1,"Thức ăn");
@@ -97,32 +97,36 @@ public class DanhmucActivity extends AppCompatActivity {
        // GroupDanhmuc groupdanhmuc3 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
 
         ArrayList<GroupDanhmuc> listItemgr1 = new ArrayList<>();
-        listItemgr1.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr1.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr1.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr1.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr1.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
+        listItemgr1.add((new GroupDanhmuc(R.drawable.sphatcho,1,"Hạt")));
+        listItemgr1.add((new GroupDanhmuc(R.drawable.sppatecho,2,"Pate")));
+        listItemgr1.add((new GroupDanhmuc(R.drawable.spsuacho,3,"Sữa")));
+        listItemgr1.add((new GroupDanhmuc(R.drawable.spsnackcho,1,"Snack, bánh thưởng")));
+        listItemgr1.add((new GroupDanhmuc(R.drawable.spdinhduongcho,1,"Sản phẩm dinh dưỡng")));
 
 
 
         ArrayList<GroupDanhmuc> listItemgr2 = new ArrayList<>();
-        listItemgr2.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr2.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr2.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
+        listItemgr2.add((new GroupDanhmuc(R.drawable.spkhay,1,"Khay vệ sinh")));
+        listItemgr2.add((new GroupDanhmuc(R.drawable.spchenan,2,"Chén ăn, bình nước")));
+        listItemgr2.add((new GroupDanhmuc(R.drawable.splongmong,3,"Vệ sinh lông móng")));
+        listItemgr2.add((new GroupDanhmuc(R.drawable.sptaimatmiengcho,4,"Vệ sinh tai, mắt, miệng")));
+        listItemgr2.add((new GroupDanhmuc(R.drawable.spsuacho,5,"Sữa tắm, dầu gội")));
 
 
 
         ArrayList<GroupDanhmuc> listItemgr3 = new ArrayList<>();
-        listItemgr3.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr3.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr3.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
+        listItemgr3.add((new GroupDanhmuc(R.drawable.spxuongcho,1,"Xương đồ chơi")));
+        listItemgr3.add((new GroupDanhmuc(R.drawable.spgoiomcho,2,"Gối ôm")));
+        listItemgr3.add((new GroupDanhmuc(R.drawable.spcaomong,3,"Đồ cào móng")));
+        listItemgr3.add((new GroupDanhmuc(R.drawable.spbong,4,"Banh bóng")));
 
 
 
         ArrayList<GroupDanhmuc> listItemgr4 = new ArrayList<>();
-        listItemgr4.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr4.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr4.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
+        listItemgr4.add((new GroupDanhmuc(R.drawable.spvongcocho,1,"Vòng cỏ")));
+        listItemgr4.add((new GroupDanhmuc(R.drawable.spquanao,2,"Quần áo")));
+        listItemgr4.add((new GroupDanhmuc(R.drawable.spdaydatvayem,3,"Dây dắt và yểm")));
+        listItemgr4.add((new GroupDanhmuc(R.drawable.spromom,4,"Rõ mõm")));
 
 
 

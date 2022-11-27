@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_action_home"
+        android:title="Trang chủ"
+        android:icon="@drawable/icon_home_pink"/>
+
+    <item android:id="@+id/nav_action_danhmuc"
+        android:title="Doanh mục"
+        android:icon="@drawable/icon_danh_muc_pink"/>
+
+    <item android:id="@+id/nav_action_qr"
+        android:title="mã Qr"
+        android:icon="@drawable/icon_qr"/>
+
+    <item android:id="@+id/nav_action_thongbao"
+        android:title="Thông báo"
+        android:icon="@drawable/icon_bell_pink"/>
+
+    <item android:id="@+id/nav_action_taikhoan"
+        android:title="Trang chủ"
+        android:icon="@drawable/icon_taikhoan_pink"/>
+
+</menu>
