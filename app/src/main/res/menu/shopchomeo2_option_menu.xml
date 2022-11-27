@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:title="Lọc"
-        android:id="@+id/mn_locshopchocho2"
+        android:id="@+id/mn_locshopchomeo2"
         app:showAsAction="always"
         android:icon="@drawable/icon_filter_pink">
         <menu>
