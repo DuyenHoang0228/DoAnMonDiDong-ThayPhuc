@@ -1,11 +1,13 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
@@ -13,6 +15,7 @@ import android.widget.RelativeLayout;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nhom4.adapters.Danhmuc1Adapter;
 import com.nhom4.adapters.HorSanPhamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
@@ -43,6 +46,31 @@ public class MainActivity extends AppCompatActivity {
         // setContentView(binding.getRoot());
         View view = binding.getRoot();
         setContentView(view);
+
+        BottomNavigationView navigationView = findViewById(R.id.bottom_nav);
+        navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_action_home:
+                       return true;
+                    case  R.id.nav_action_danhmuc:
+                        startActivity(new Intent(getApplicationContext(),DanhmucActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.nav_action_thongbao:
+                        startActivity(new Intent(getApplicationContext(),NoticeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.nav_action_taikhoan:
+                        startActivity(new Intent(getApplicationContext(),UserActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return true;
+            }
+        });
         loadBanner();
 
         loadData();

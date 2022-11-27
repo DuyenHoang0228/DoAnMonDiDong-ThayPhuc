@@ -17,7 +17,7 @@
         android:icon="@drawable/icon_bell_pink"/>
 
     <item android:id="@+id/nav_action_taikhoan"
-        android:title="Trang chủ"
+        android:title="Tài khoản"
         android:icon="@drawable/icon_taikhoan_pink"/>
 
 </menu>
