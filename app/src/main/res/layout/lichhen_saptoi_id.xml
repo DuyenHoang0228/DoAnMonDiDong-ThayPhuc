@@ -95,7 +95,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:backgroundTint="@color/black"
-                android:src="@drawable/line_hr" />
+                android:src="@drawable/line_hr_pink" />
 
             <TextView
                 android:id="@+id/txt_gio"

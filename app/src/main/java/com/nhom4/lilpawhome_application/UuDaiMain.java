@@ -44,9 +44,12 @@ public class UuDaiMain extends AppCompatActivity {
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
         sliderView.startAutoCycle();
+
+        //Không binding nên phải tìm id của gridview
         gridViewnewuser = findViewById(R.id.gv_vouchernguoidungmoi);
         gridViewmuanhieu = findViewById(R.id.gv_vouchermuanhieu);
         gridViewthuonghieu = findViewById(R.id.gv_voucherthuonghieu);
+        //Set gridView về dạng đã mở rộng
         gridViewnewuser.setExpanded(true);
         gridViewmuanhieu.setExpanded(true);
         gridViewthuonghieu.setExpanded(true);
