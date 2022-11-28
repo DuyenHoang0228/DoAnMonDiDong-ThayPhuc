@@ -14,13 +14,13 @@ import com.nhom4.models.KhachHang;
 
 import java.util.List;
 
-public class AdapterKhachHang extends BaseAdapter {
+public class AdapterKhachHangThanThiet extends BaseAdapter {
 
     Activity activity;
     int item_layout;
     List<KhachHang> danhsachkhachhang;
 
-    public AdapterKhachHang(Activity activity, int item_layout, List<KhachHang> danhsachkhachhang) {
+    public AdapterKhachHangThanThiet(Activity activity, int item_layout, List<KhachHang> danhsachkhachhang) {
         this.activity = activity;
         this.item_layout = item_layout;
         this.danhsachkhachhang = danhsachkhachhang;
