@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.nhom4.lilpawhome_application.R;
@@ -56,6 +57,7 @@ public class AdapterDanhGiaSanPham extends BaseAdapter {
             holder.imvFeedbackImage2 = view.findViewById(R.id.imv_anhdanhgia2);
             holder.imvFeedbackImage3 = view.findViewById(R.id.imv_anhdanhgia3);
             holder.txtDateOfFeedback = view.findViewById(R.id.txt_ngaydanhgia);
+            holder.rbpawRating = view.findViewById(R.id.rb_ratingdanhgia);
 
             view.setTag(holder);
         }else {
@@ -70,6 +72,8 @@ public class AdapterDanhGiaSanPham extends BaseAdapter {
         holder.imvFeedbackImage1.setImageResource(dgsp.getImvFeedbackImage1());
         holder.imvFeedbackImage2.setImageResource(dgsp.getImvFeedbackImage2());
         holder.imvFeedbackImage3.setImageResource(dgsp.getImvFeedbackImage3());
+        holder.rbpawRating.setRating(dgsp.getPawRate());
+
         return view;
     }
     public static class ViewHolder{
@@ -77,5 +81,6 @@ public class AdapterDanhGiaSanPham extends BaseAdapter {
         TextView txtUserName, txtFeedback;
         ImageView imvFeedbackImage1, imvFeedbackImage2,imvFeedbackImage3;
         TextView txtDateOfFeedback;
+        RatingBar rbpawRating;
     }
 }

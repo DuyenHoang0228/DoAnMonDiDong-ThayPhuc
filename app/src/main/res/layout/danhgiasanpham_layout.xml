@@ -32,11 +32,14 @@
             android:fontFamily="@font/montserrat"
             android:textSize="15sp"
             android:layout_marginTop="10dp"/>
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="15dp"
-            android:src="@color/black"
-            android:layout_marginTop="5dp"/>
+        <RatingBar
+            android:id="@+id/rb_ratingdanhgia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="4"
+            android:stepSize="1"
+            style="@style/CustomRatingBarStyle"/>
         <TextView
             android:id="@+id/txt_noidungdanhgiasanpham"
             android:layout_width="match_parent"

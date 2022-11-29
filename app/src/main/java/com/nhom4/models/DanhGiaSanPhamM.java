@@ -3,15 +3,16 @@ package com.nhom4.models;
 public class DanhGiaSanPhamM {
     int avatar;
     String userName;
-    //Start rate
+    int pawRate;
     String feedback;
     int imvFeedbackImage1, imvFeedbackImage2, imvFeedbackImage3;
     //Cái dưới này phải là ngày tháng nhưng chưa biết xài
     String dateOfFeedback;
 
-    public DanhGiaSanPhamM(int avatar, String userName, String feedback, int imvFeedbackImage1, int imvFeedbackImage2, int imvFeedbackImage3, String dateOfFeedback) {
+    public DanhGiaSanPhamM(int avatar, String userName, int pawRate, String feedback, int imvFeedbackImage1, int imvFeedbackImage2, int imvFeedbackImage3, String dateOfFeedback) {
         this.avatar = avatar;
         this.userName = userName;
+        this.pawRate = pawRate;
         this.feedback = feedback;
         this.imvFeedbackImage1 = imvFeedbackImage1;
         this.imvFeedbackImage2 = imvFeedbackImage2;
@@ -73,5 +74,13 @@ public class DanhGiaSanPhamM {
 
     public void setDateOfFeedback(String dateOfFeedback) {
         this.dateOfFeedback =dateOfFeedback;
+    }
+
+    public int getPawRate() {
+        return pawRate;
+    }
+
+    public void setPawRate(int pawRate) {
+        this.pawRate = pawRate;
     }
 }

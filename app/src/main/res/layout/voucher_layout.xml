@@ -1,100 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
-    <LinearLayout
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:foreground="@drawable/customborder2"
-        android:foregroundTint="#9E7E44"
-        android:weightSum="7">
-        <ImageView
-            android:id="@+id/imv_voucherThumb"
-            android:layout_weight="3"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:src="@drawable/voucher_giam_gia1"
-            android:scaleX="1.3"
-            android:scaleY="1.3"/>
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="10dp">
         <LinearLayout
-            android:layout_weight="4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:layout_marginStart="20dp"
-            android:padding="2dp">
-            <TextView
-                android:id="@+id/txt_tenvoucher"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tên voucher"
-                android:textColor="@color/black"
-                android:fontFamily="@font/montserrat_bold"
-                android:textSize="15dp"/>
-            <TextView
-                android:id="@+id/txt_vouchertoida"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:foreground="@drawable/customborder"
-                android:foregroundTint="#EC1313"
-                android:text="Tối đa 25K"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:fontFamily="@font/montserrat_medium"
-                android:textSize="12dp"
-                android:textColor="#EC1313"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="7">
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/icon_hsd"/>
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="#FFA0CA"
+                android:orientation="vertical">
                 <TextView
-                    android:id="@+id/txt_hsdvoucher"
+                    android:id="@+id/txt_soluongcohan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12dp"
-                    android:fontFamily="@font/montserrat_thin"
-                    android:text="Sắp hết hạn: Còn 2 ngày"
-                    android:layout_marginTop="5dp"
-                    android:textColor="#EC1313"/>
+                    android:textSize="8dp"
+                    android:text="Số lượng có hạn"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:background="#EC1313"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat_bold"/>
+                <TextView
+                    android:id="@+id/txt_chutronganhvoucher"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="Giảm 15%"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"/>
+
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_weight="4"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right">
+                android:orientation="vertical"
+                android:layout_marginStart="20dp"
+                android:padding="2dp">
                 <TextView
-                    android:id="@+id/txt_dungngayvoucher"
+                    android:id="@+id/txt_tenvoucher"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dùng ngay"
-                    android:layout_marginEnd="5dp"
+                    android:text="Tên voucher"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/montserrat_bold"
-                    android:textColor="#EC1313"/>
-                <TextView
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/black"/>
-                <TextView
-                    android:id="@+id/txt_dieukienvoucher"
+                    android:textSize="15dp"/>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Điều kiện"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:fontFamily="@font/montserrat_thin"
-                    android:textColor="#5470FF"/>
+                    android:layout_marginTop="5dp"
+                    android:foreground="@drawable/customborder"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:foregroundTint="#EC1313">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tối đa "
+                        android:textColor="#EC1313"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:id="@+id/txt_vouchertoida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100"
+                        android:textColor="#EC1313"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="K"
+                        android:textColor="#EC1313"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/icon_hsd"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="HSD: "
+                        android:layout_marginTop="5dp"
+                        android:textColor="#EC1313"/>
+                    <TextView
+                        android:id="@+id/txt_hsdvoucher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="28/11/2022"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#EC1313"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right">
+                    <TextView
+                        android:id="@+id/txt_dungngayvoucher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dùng ngay"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="#EC1313"/>
+                    <TextView
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/black"/>
+                    <TextView
+                        android:id="@+id/txt_dieukienvoucher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Điều kiện"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#5470FF"/>
+                </LinearLayout>
             </LinearLayout>
 
 
         </LinearLayout>
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
 
 
 
