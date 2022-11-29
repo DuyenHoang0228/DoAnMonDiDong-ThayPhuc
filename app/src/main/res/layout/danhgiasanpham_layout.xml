@@ -34,6 +34,7 @@
             android:layout_marginTop="10dp"/>
         <RatingBar
             android:id="@+id/rb_ratingdanhgia"
+            android:isIndicator="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
