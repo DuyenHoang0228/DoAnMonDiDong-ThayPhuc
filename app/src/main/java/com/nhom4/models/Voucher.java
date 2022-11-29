@@ -4,6 +4,7 @@ public class Voucher {
     String titleOfVoucher, hsdVoucher, chuTrongAnhVoucher;
     int maxValue;
     boolean limited;
+    //có thêm voucher id nữa
 
     public Voucher(String titleOfVoucher, String hsdVoucher, int maxOfValue, String chuTrongAnhVoucher,boolean limited) {
         this.titleOfVoucher = titleOfVoucher;

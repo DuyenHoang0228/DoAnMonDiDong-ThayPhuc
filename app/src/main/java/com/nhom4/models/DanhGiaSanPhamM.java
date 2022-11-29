@@ -8,6 +8,7 @@ public class DanhGiaSanPhamM {
     int imvFeedbackImage1, imvFeedbackImage2, imvFeedbackImage3;
     //Cái dưới này phải là ngày tháng nhưng chưa biết xài
     String dateOfFeedback;
+    //Phải thêm id của sản phẩm nữa
 
     public DanhGiaSanPhamM(int avatar, String userName, int pawRate, String feedback, int imvFeedbackImage1, int imvFeedbackImage2, int imvFeedbackImage3, String dateOfFeedback) {
         this.avatar = avatar;

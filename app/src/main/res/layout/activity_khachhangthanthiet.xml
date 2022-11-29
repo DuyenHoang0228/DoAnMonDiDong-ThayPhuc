@@ -178,7 +178,7 @@
             <ListView
                 android:id="@+id/lv_voucherdocquyen"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="220dp"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

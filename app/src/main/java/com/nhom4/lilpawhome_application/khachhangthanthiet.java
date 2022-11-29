@@ -3,17 +3,27 @@ package com.nhom4.lilpawhome_application;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 
+import com.nhom4.adapters.AdapterVoucher;
 import com.nhom4.lilpawhome_application.databinding.ActivityKhachhangthanthietBinding;
+import com.nhom4.models.Voucher;
+
+import java.util.ArrayList;
 
 public class khachhangthanthiet extends AppCompatActivity {
 
     ActivityKhachhangthanthietBinding binding;
+    AdapterVoucher adapter;
+    ArrayList<Voucher> vouchers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +33,27 @@ public class khachhangthanthiet extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         makeColor();
+        loadData();
+        addEvent();
+    }
+
+    private void loadData() {
+        vouchers = new ArrayList<>();
+        vouchers.add(new Voucher("Tất cả hình thức thanh toán", "28/02/2022", 15, "Miễn phí vận chuyển", false));
+        vouchers.add(new Voucher("GIẢM 15% ĐƠN TỪ 100K", "28/11/2022", 100, "Giảm 15%", true));
+        adapter = new AdapterVoucher(khachhangthanthiet.this, R.layout.voucher_layout, vouchers);
+        binding.lvVoucherdocquyen.setAdapter(adapter);
+
+    }
+
+
+    private void addEvent() {
+        binding.lvVoucherdocquyen.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+        });
     }
 
     private void makeColor() {
@@ -47,4 +78,5 @@ public class khachhangthanthiet extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
