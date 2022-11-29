@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -99,6 +100,38 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,ChatActivity.class);
 
                 startActivity(intent);
+            }
+        });
+        binding.gvDanhmuchome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = null;
+                switch (i){
+                    case 0:
+                         intent =new Intent(MainActivity.this,ShopChoCho1.class);
+                        break;
+
+                    case 1:
+
+                    case 2:
+                       intent =new Intent(MainActivity.this,SpaActivity1.class);
+                        break;
+
+                    case 3:
+                        intent =new Intent(MainActivity.this,ThuongHieuActivity.class);
+                        break;
+
+                    case 4:
+                         intent =new Intent(MainActivity.this,UuDaiMain.class);
+                        break;
+
+                    case 5:
+                        intent =new Intent(MainActivity.this,BlogActivity.class);
+                        break;
+
+                }
+                startActivity(intent);
+
             }
         });
     }

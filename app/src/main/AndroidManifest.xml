@@ -45,7 +45,7 @@
 
         <activity
             android:name=".TrangSanPhamActivity"
-            android:exported="true">
+            android:exported="false">
 
 
             <meta-data
@@ -187,7 +187,7 @@
         </activity>
         <activity
             android:name=".HelpActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="Trợ giúp">
             <meta-data
                 android:name="android.app.lib_name"
@@ -204,7 +204,7 @@
         <activity
 
             android:name=".khachhangbac"
-            android:exported="true"
+            android:exported="false"
             android:label="Khách hàng thân thiết">
             <meta-data
                 android:name="android.app.lib_name"
@@ -253,7 +253,7 @@
         </activity>
         <activity
             android:name=".manhinhkhoidong"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -262,7 +262,7 @@
         <activity
 
             android:name=".ChatActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="Nhắn tin">
             <meta-data
                 android:name="android.app.lib_name"
@@ -291,7 +291,7 @@
         </activity>
         <activity
             android:name=".UserActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.offactionbar">
 
             <meta-data
