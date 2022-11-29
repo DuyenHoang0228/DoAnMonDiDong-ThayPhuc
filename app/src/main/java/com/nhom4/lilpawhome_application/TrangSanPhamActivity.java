@@ -9,6 +9,7 @@ import android.view.View;
 import com.nhom4.adapters.SanphamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityTrangSanPhamBinding;
 import com.nhom4.models.SanPham;
+import com.nhom4.view.ExpandableHeightGridView;
 
 import java.util.ArrayList;
 
@@ -16,10 +17,13 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     ActivityTrangSanPhamBinding binding;
     SanphamAdapter adapter;
     ArrayList<SanPham> sanPhamArrayList;
+    ExpandableHeightGridView gvSanphamdexuat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_trang_san_pham);
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_trangsanpham);
@@ -49,6 +53,8 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     }
 
     private void loadData() {
+        gvSanphamdexuat=findViewById(R.id.gv_sanphamdexuat);
+        gvSanphamdexuat.setExpanded(true);
         sanPhamArrayList=new ArrayList<>();
         sanPhamArrayList.add(new SanPham(R.drawable.sphatcho,"Hạt cho chó",120000,200000,
                 "Thương hiệu 1","thucanchocho","hatchocho"));
@@ -66,7 +72,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                 "Thương hiệu 4","dodungcho","taimatcho"));
 
         adapter=new SanphamAdapter(TrangSanPhamActivity.this,R.layout.list_sanpham_id,sanPhamArrayList);
-        binding.gvSsanphamdexuat.setAdapter(adapter);
+        gvSanphamdexuat.setAdapter(adapter);
 
     }
 }

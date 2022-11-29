@@ -6,15 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".TrangSanPhamActivity"
     android:orientation="vertical"
-    android:padding="10dp">
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="5dp">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
@@ -83,30 +91,35 @@
                 android:orientation="horizontal"
                 android:background="@drawable/customborder">
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/icon_danh_gia_cua_toi"
-                    android:layout_gravity="center"/>
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/chanchonguyen"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/icon_danh_gia_cua_toi"
-                    android:layout_gravity="center"/>
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/chanchonguyen"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/icon_danh_gia_cua_toi"
-                    android:layout_gravity="center"/>
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/chanchonguyen"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/icon_danh_gia_cua_toi"
-                    android:layout_gravity="center"/>
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/chanchonguyen"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/icon_danh_gia_cua_toi"
-                    android:layout_gravity="center"/>
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/chanchomotnua"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
                 <TextView
                     android:id="@+id/txt_sosaodanhgia"
                     android:layout_width="wrap_content"
@@ -158,6 +171,7 @@
                 android:text="- Thương hiệu đến từ công ty uy tín Synergy Labs của Mỹ được đánh giá là 1 trong những công ty danh tiếng nhất toàn cầu về các sản phẩm chuyên dụng chăm sóc sức khỏe cho thú cưng. - Thương hiệu đến từ công ty uy tín Synergy Labs của Mỹ được đánh giá là 1 trong những công ty danh tiếng nhất toàn cầu về các sản phẩm chuyên dụng chăm sóc sức khỏe cho thú cưng. - Thương hiệu đến từ công ty uy tín Synergy Labs của Mỹ được đánh giá là 1 trong những công ty danh tiếng nhất toàn cầu về các sản phẩm chuyên dụng chăm sóc sức khỏe cho thú cưng."
                 android:id="@+id/txt_thongtinsanpham"
                 android:textColor="#000000"
+
                 android:fontFamily="@font/montserrat"
                 />
             <Button
@@ -165,8 +179,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_xemthem"
-                android:background="#FFA0CA"
-                android:textColor="#FFFFFF"/>
+                android:backgroundTint="#FFA0CA"
+                android:textColor="#FFFFFF"
+                android:text="Xem thêm"/>
 <!--            chưa xử lý-->
             <LinearLayout
                 android:layout_marginTop="10dp"
@@ -189,30 +204,35 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/icon_danh_gia_cua_toi"
-                        android:layout_gravity="center"/>
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/chanchonguyen"
+                        android:layout_gravity="center"
+                        android:layout_margin="3dp"/>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/chanchonguyen"
+                        android:layout_gravity="center"
+                        android:layout_margin="3dp"/>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/chanchonguyen"
+                        android:layout_gravity="center"
+                        android:layout_margin="3dp"/>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/chanchonguyen"
+                        android:layout_gravity="center"
+                        android:layout_margin="3dp"/>
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/icon_danh_gia_cua_toi"
-                        android:layout_gravity="center"/>
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/icon_danh_gia_cua_toi"
-                        android:layout_gravity="center"/>
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/icon_danh_gia_cua_toi"
-                        android:layout_gravity="center"/>
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/icon_danh_gia_cua_toi"
-                        android:layout_gravity="center"/>
+                        android:src="@drawable/chanchomotnua"
+                        android:layout_gravity="center"
+                        android:layout_margin="3dp"/>
                     <TextView
                         android:id="@+id/txt_sosaodanhgia_soluotdaban"
                         android:layout_width="wrap_content"
@@ -243,19 +263,12 @@
                 android:layout_height="wrap_content"/>
 <!--                đánh giá-->
 
-            <GridView
-                android:id="@+id/gv_ssanphamdexuat"
+
+            <com.nhom4.view.ExpandableHeightGridView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/gv_sanphamdexuat"
                 android:numColumns="2"/>
-
-<!--            sản phẩm có thể bạn thích-->
-            
-
-
-
-
-
         </LinearLayout>
 
     </ScrollView>
@@ -263,29 +276,51 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         >
-        <Button
+        <LinearLayout
+            android:background="@drawable/custom_rectangle_bg_button"
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Mua ngay"
-            android:fontFamily="@font/montserrat_bold"
-            android:textSize="12sp"
-            android:id="@+id/btn_muangay"
-            android:backgroundTint="#FFA0CA"
-            android:textColor="#FFFFFF"
-            />
-        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Mua ngay"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="13sp"
+                android:id="@+id/btn_muangay"
+                android:backgroundTint="#FFA0CA"
+                android:padding="0dp"
+                android:textColor="#FFFFFF"
+                android:layout_margin="0dp"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="0dp"
+                />
+        </LinearLayout>
+        <LinearLayout
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:textSize="12sp"
-            android:text="Thêm vào giỏ hàng"
-            android:backgroundTint="#FFFFFF"
-            android:textColor="#FFA0CA"
-            android:id="@+id/btn_themvaogiohang"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_rectangle_bg_button_white">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="13sp"
+                android:text="Thêm vào giỏ hàng"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#FFA0CA"
+                android:padding="0dp"
+                android:id="@+id/btn_themvaogiohang"
+                android:layout_margin="0dp"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="0dp"/>
+        </LinearLayout>
+
+
     </LinearLayout>
+    </RelativeLayout>
 
 
 
