@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         BottomNavigationView navigationView = findViewById(R.id.bottom_nav);
+        navigationView.setSelectedItemId(R.id.nav_action_home);
         navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

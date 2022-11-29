@@ -81,6 +81,8 @@ public class DanhmucActivity extends AppCompatActivity {
 
     private void addEvent() {
         BottomNavigationView navigationView = findViewById(R.id.bottom_nav);
+        //set cái icon
+        navigationView.setSelectedItemId(R.id.nav_action_danhmuc);
         navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

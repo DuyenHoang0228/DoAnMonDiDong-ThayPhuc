@@ -7,7 +7,7 @@
 
     <item android:id="@+id/nav_action_danhmuc"
         android:title="Danh mục"
-        android:icon="@drawable/icon_danh_muc_pink"
+        android:icon="@drawable/icon_danh_muc_pink_min"
         />
 
     <item android:id="@+id/nav_action_qr"

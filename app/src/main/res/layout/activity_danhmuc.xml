@@ -87,11 +87,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/menu_navigation_bottom"
+        android:background="@color/bottom_nav"
         app:itemBackground="@color/bottom_nav"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:itemIconSize="25dp"
         app:contentInsetEnd="0dp"
-        app:contentInsetStart="0dp"/>
+        app:contentInsetStart="0dp"
+
+        />
 
 </RelativeLayout>
