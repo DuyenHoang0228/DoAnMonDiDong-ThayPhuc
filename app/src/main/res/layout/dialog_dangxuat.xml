@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/customshapeborderpinkfillwhite">
+    <ImageButton
+        android:id="@+id/btn_exitdx"
+        android:layout_width="wrap_content"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cross"
+        android:layout_gravity="right"
+        android:backgroundTint="@color/white"></ImageButton>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Hồ sơ của bạn vừa được lưu. Hẹn gặp lại!"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></TextView>
+    <Button
+        android:id="@+id/btn_dangx"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/customshapeborder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Đăng xuất"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></Button>
+</LinearLayout>

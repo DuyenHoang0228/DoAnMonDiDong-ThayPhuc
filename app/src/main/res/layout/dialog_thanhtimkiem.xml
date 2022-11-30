@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/customshapeborderpinkfillwhite"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <ImageButton
+        android:id="@+id/btn_exittk"
+        android:layout_width="wrap_content"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cross"
+        android:layout_gravity="right"
+        android:backgroundTint="@color/white"></ImageButton>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText  android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/customshapeborder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Bạn cần tìm gì?"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"
+        android:gravity="center_vertical"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawablePadding="5dp"
+        ></EditText>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/FFA0CA"
+            android:text="Tìm"
+            android:fontFamily="@font/montserratbold"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"></Button>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/btn_suatamchocho"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/customborder"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:textColor="#B3B2B2"
+            android:fontFamily="@font/montserratregular"
+            android:text="Sữa tắm cho chó"
+            android:layout_weight="1"></Button>
+        <Button
+            android:layout_marginLeft="30dp"
+            android:id="@+id/btn_phukien"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/customborder"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:textColor="#B3B2B2"
+            android:fontFamily="@font/montserratregular"
+            android:text="Phụ kiện"
+            android:layout_weight="1"></Button>
+    </LinearLayout>
+    <Button
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_thucanchomeo"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/customborder"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:textColor="#B3B2B2"
+        android:fontFamily="@font/montserratregular"
+        android:text="Thức ăn cho mèo"></Button>
+</LinearLayout>
