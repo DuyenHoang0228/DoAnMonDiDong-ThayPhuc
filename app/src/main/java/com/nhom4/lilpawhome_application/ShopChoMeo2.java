@@ -31,7 +31,7 @@ public class ShopChoMeo2 extends AppCompatActivity {
                 "Thương hiệu 1","thucanchocho","hatchocho"));
         sanPhamArrayList.add(new SanPham(R.drawable.sppatecho,"Pate cho chó",350000,400000,
                 "Thương hiệu 1","thucanchocho","patechocho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spsuacho,"Sữa tắm chó",250000,300000,
+        sanPhamArrayList.add(new SanPham(R.drawable.spsuacho,"Sữa tắm mèo",250000,300000,
                 "Thương hiệu 2","thucanchocho","suacho"));
         sanPhamArrayList.add(new SanPham(R.drawable.spvongcocho,"Vòng cổ chó cute",60000,80000,
                 "Thương hiệu 3","phukiencho","vongcocho"));
