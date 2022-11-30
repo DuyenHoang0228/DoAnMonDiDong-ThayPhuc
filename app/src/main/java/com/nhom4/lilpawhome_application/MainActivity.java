@@ -112,7 +112,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 1:
-
+                        intent =new Intent(MainActivity.this,ShopChoMeo1.class);
+                        break;
                     case 2:
                        intent =new Intent(MainActivity.this,SpaActivity1.class);
                         break;
