@@ -90,36 +90,16 @@
                 android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:background="@drawable/customborder">
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/chanchonguyen"
-                    android:layout_gravity="center"
-                    android:layout_margin="3dp"/>
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/chanchonguyen"
-                    android:layout_gravity="center"
-                    android:layout_margin="3dp"/>
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/chanchonguyen"
-                    android:layout_gravity="center"
-                    android:layout_margin="3dp"/>
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/chanchonguyen"
-                    android:layout_gravity="center"
-                    android:layout_margin="3dp"/>
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/chanchomotnua"
-                    android:layout_gravity="center"
-                    android:layout_margin="3dp"/>
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="4.5"
+                    style="@style/CustomRatingBarStyle"
+                    android:isIndicator="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"/>
                 <TextView
                     android:id="@+id/txt_sosaodanhgia"
                     android:layout_width="wrap_content"
@@ -145,14 +125,15 @@
                     android:layout_height="30dp"
                     android:id="@+id/imv_traitim"
                     android:src="@drawable/icon_sp_yeu_thich"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"/>
                 <ImageView
-                    android:layout_marginLeft="5dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:id="@+id/imv_chiase"
                     android:src="@drawable/icon_share"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"/>
             </LinearLayout>
             <TextView
                 android:layout_marginTop="20dp"

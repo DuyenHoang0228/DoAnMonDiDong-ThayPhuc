@@ -175,10 +175,12 @@
             android:layout_height="1dp"
             android:src="@color/black"
             android:layout_marginTop="10dp"/>
-        <ListView
+        <com.nhom4.view.ExpandableHeightGridView
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:id="@+id/lv_voucherdocquyen"
             android:layout_width="match_parent"
-            android:layout_height="220dp"/>
+            android:layout_height="wrap_content"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -194,7 +196,9 @@
             android:textSize="20sp"
             android:layout_marginTop="10dp"/>
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_xemthemsanpham"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"/>
     </LinearLayout>
 </ScrollView>
