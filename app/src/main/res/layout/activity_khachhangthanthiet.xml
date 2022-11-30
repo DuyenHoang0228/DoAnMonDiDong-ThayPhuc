@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".khachhangbac"
+    tools:context=".khachhangthanthiet"
     android:orientation="vertical">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -61,7 +56,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:stretchColumns="*">
-
                             <TableRow>
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -75,43 +69,43 @@
                                     android:text="Chi tiêu"
                                     android:textSize="12sp"
                                     android:textColor="@color/white"/>
-
-
                             </TableRow>
                             <TableRow>
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
                                     <TextView
+                                        android:id="@+id/txt_sodonhang"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="19"
                                         android:textColor="#FB0202"
                                         android:textSize="12dp"/>
                                     <TextView
+                                        android:id="@+id/txt_sodonhangcandat"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="/20"
                                         android:textColor="#FFFFFF"
                                         android:textSize="12dp"/>
-
                                 </LinearLayout>
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
                                     <TextView
+                                        android:id="@+id/txt_chitieu"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="3.500.000"
                                         android:textColor="#FB0202"
                                         android:textSize="12dp"/>
                                     <TextView
+                                        android:id="@+id/txt_chitieucandat"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="/5tr"
                                         android:textColor="#FFFFFF"
                                         android:textSize="12dp"/>
-
                                 </LinearLayout>
                             </TableRow>
                             <TableRow>
@@ -121,19 +115,15 @@
                                     style="?android:attr/progressBarStyleHorizontal"
                                     android:progress="95"
                                     android:progressTint="@color/white"
-                                    android:layout_marginEnd="20dp"
-                                    />
+                                    android:layout_marginEnd="20dp"/>
                                 <ProgressBar
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     style="?android:attr/progressBarStyleHorizontal"
                                     android:progress="70"
                                     android:progressTint="@color/white"
-                                    android:layout_marginEnd="20dp"
-                                    />
+                                    android:layout_marginEnd="20dp"/>
                             </TableRow>
-
-
                         </TableLayout>
                         <TextView
                             android:layout_width="wrap_content"
@@ -141,12 +131,9 @@
                             android:text="Thứ hạng được cập nhật lại sau 31/12/2022"
                             android:textColor="@color/white"
                             android:textSize="12sp"/>
-                            
                     </LinearLayout>
                 </LinearLayout>
-                
             </RelativeLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -155,6 +142,7 @@
                 android:layout_margin="10dp"
                 android:padding="10dp">
                 <TextView
+                    android:id="@+id/txt_uudaithuhang"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -166,19 +154,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/txt_noidunguudaithuhang"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Được giảm 5% giá trị đơn hàng trên 50.000 NVD cho tất cả sản phẩm trên gian hàng Lilpaw Home. Được ưu tiên nhận các mã giảm giá độc quyền từ Lilpaw Home"
                         android:textColor="@color/white"
                         android:textSize="12sp"/>
-
                 </LinearLayout>
-
-
-
-
             </LinearLayout>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -195,7 +178,7 @@
             <ListView
                 android:id="@+id/lv_voucherdocquyen"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="220dp"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -214,7 +197,4 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-    </ScrollView>
-
-
-</LinearLayout>
+</ScrollView>

@@ -14,45 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LilpawHome_Application"
         tools:targetApi="31">
-        <activity
-            android:name=".ShopChoCho1"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".SanPhamTheoThuongHieuActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ShopChoCho2"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ThuongHieuActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-        <activity
-            android:name=".TrangSanPhamActivity"
-            android:exported="false">
-
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
   <activity
             android:name=".suadiachi"
             android:exported="false">
@@ -61,9 +22,7 @@
                 android:value="" />
         </activity>
         <activity
-
             android:name=".thongbao"
-
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -77,14 +36,26 @@
                 android:value="" />
         </activity>
         <activity
-
             android:name=".caidatthongbao"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
+        <activity
+            android:name=".Caidatthongbao"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".thongtintaikhoannganhang"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".themtaikhoannganhang"
             android:exported="false">
@@ -102,6 +73,8 @@
         <activity
             android:name=".themdiachi"
             android:exported="false">
+            
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -170,41 +143,9 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".DanhmucActivity"
-            android:exported="true">
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".SubHelpActivity2"
-            android:exported="false"
-            android:label="Trợ giúp">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HelpActivity"
-            android:exported="false"
-            android:label="Trợ giúp">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".NoticeActivity"
-            android:exported="false"
-            android:label="Thông báo">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
 
             android:name=".khachhangbac"
-            android:exported="false"
+            android:exported="true"
             android:label="Khách hàng thân thiết">
             <meta-data
                 android:name="android.app.lib_name"
@@ -253,47 +194,24 @@
         </activity>
         <activity
             android:name=".manhinhkhoidong"
-            android:exported="false"
-            android:theme="@style/Theme.offactionbar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-
-            android:name=".ChatActivity"
-            android:exported="false"
-            android:label="Nhắn tin">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.offactionbar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
 
-        <activity
-            android:name=".DSLichhenActivity"
+            android:name=".MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".UserActivity"
-            android:exported="false"
-            android:theme="@style/Theme.offactionbar">
+        
+                <activity
+            android:name=".DSLichhenActivity"
+            android:exported="true">
 
+           
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -349,14 +267,26 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-
+        
+        
     </application>
 
 </manifest>

@@ -108,4 +108,27 @@ Bảo mật tuyệt đối mọi thông tin giao dịch trực tuyến của th�
     </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="noidungvoucher"><b>Ưu đãi</b>
+Mã miễn phí vận chuyển | Tất cả hình thức thanh toán
+
+<b>Có hiệu lực</b>
+01/11/2022 - 08/11/2022
+
+<b>Thiết bị</b>
+iOS, Android
+
+<b>Phương thức thanh toán</b>
+Mọi phương thức thanh toán
+
+<b>Điều kiện</b>
+Sử dụng mã miễn phí vận chuyển cho đơn hàng từ 0Đ thỏa điều kiện ưu đãi khi mua hàng trên Lilpaw Home.
+
+Giảm tối đa 15K cho đơn hàng giao đến tỉnh bất kì
+
+Chỉ áp dụng cho khách hàng nhận được thông báo ưu đãi
+
+Số lượt sử dụng có hạn, chương trình và mã có thể kết thúc khi hết lượt ưu đãi hoặc khi hết hạn ưu đãi, tùy điều kiện nào đến trước</string>
+    <string name="title_activity_danh_gia_cua_toi">DanhGiaCuaToi</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
