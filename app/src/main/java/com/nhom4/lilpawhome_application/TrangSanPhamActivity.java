@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.nhom4.adapters.AdapterDanhGiaSanPham;
 import com.nhom4.adapters.SanphamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityTrangSanPhamBinding;
+import com.nhom4.models.DanhGiaSanPhamM;
 import com.nhom4.models.SanPham;
 import com.nhom4.view.ExpandableHeightGridView;
 
@@ -17,7 +19,10 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     ActivityTrangSanPhamBinding binding;
     SanphamAdapter adapter;
     ArrayList<SanPham> sanPhamArrayList;
-    ExpandableHeightGridView gvSanphamdexuat;
+    ExpandableHeightGridView gvSanphamdexuat, gvDanhgiasanpham;
+    AdapterDanhGiaSanPham adapterDanhGiaSanPham;
+    ArrayList<DanhGiaSanPhamM> dsDanhGiaSanPham;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +78,15 @@ public class TrangSanPhamActivity extends AppCompatActivity {
 
         adapter=new SanphamAdapter(TrangSanPhamActivity.this,R.layout.list_sanpham_id,sanPhamArrayList);
         gvSanphamdexuat.setAdapter(adapter);
+
+        gvDanhgiasanpham=findViewById(R.id.gv_danhgiasanpham);
+        gvDanhgiasanpham.setExpanded(true);
+        dsDanhGiaSanPham=new ArrayList<>();
+        dsDanhGiaSanPham.add(new DanhGiaSanPhamM(R.drawable.avatar_concho,"Kim Hạnh", 5, "Đóng gói sản phẩm cẩn thận, sản phẩm đẹp lắm, bé chó nhà mình thích mê", R.drawable.splongmong, R.drawable.spkhaymeo, R.drawable.spkhay, "28/11/2022"));
+        dsDanhGiaSanPham.add(new DanhGiaSanPhamM(R.drawable.avatar_concho,"Thảo Duyên", 4, "Mua lần đầu có hơi lo lắng, tới lúc nhận được sản phẩm bất ngờ quá chừng, tại nó cũng bình thường chứ không xuất sắc như mình đã nghĩ", R.drawable.splongmong, R.drawable.spkhaymeo, R.drawable.spkhay, "20/11/2022"));
+        dsDanhGiaSanPham.add(new DanhGiaSanPhamM(R.drawable.avatar_concho,"Ngọc Thẩm", 4, "Tại dư tiền thích mua sắm vậy thôi, chứ chó thì mình chưa nuôi", R.drawable.splongmong, R.drawable.spkhaymeo, R.drawable.spkhay, "02/01/2022"));
+        adapterDanhGiaSanPham=new AdapterDanhGiaSanPham(TrangSanPhamActivity.this, R.layout.danhgiasanpham_layout,dsDanhGiaSanPham);
+        gvDanhgiasanpham.setAdapter(adapterDanhGiaSanPham);
 
     }
 }

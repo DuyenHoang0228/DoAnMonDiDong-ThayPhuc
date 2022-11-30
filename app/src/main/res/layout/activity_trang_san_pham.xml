@@ -257,10 +257,10 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <ListView
-
+            <com.nhom4.view.ExpandableHeightGridView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/gv_danhgiasanpham"/>
 <!--                đánh giá-->
 
 
