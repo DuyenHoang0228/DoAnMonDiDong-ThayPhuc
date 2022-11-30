@@ -56,7 +56,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp">
     <ImageView
         android:id="@+id/imv_menu"
         android:layout_width="40dp"
@@ -185,14 +186,50 @@
                         android:gravity="end"/>
 
                 </LinearLayout>
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcv_spBanchay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Sản phẩm đang đề xuất"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/txt_allspdexuat"
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:paddingHorizontal="5dp"
+                        android:text="Xem tất cả →"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="end"/>
 
+                </LinearLayout>
+                <com.nhom4.view.ExpandableHeightGridView
+                    android:id="@+id/gv_spdexuat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="2"
+                    />
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -201,6 +238,7 @@
     </ScrollView>
 
     </LinearLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"

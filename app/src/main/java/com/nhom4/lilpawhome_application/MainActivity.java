@@ -22,9 +22,11 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nhom4.adapters.Danhmuc1Adapter;
 import com.nhom4.adapters.HorSanPhamAdapter;
+import com.nhom4.adapters.SanphamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.DanhMuc1;
 import com.nhom4.models.SanPham;
+import com.nhom4.view.ExpandableHeightGridView;
 
 import java.util.ArrayList;
 
@@ -34,10 +36,13 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<DanhMuc1> danhmuc;
     ArrayList<SanPham> sanPhams;
     ArrayList<SanPham> sanPhamsBanchay;
+    ArrayList<SanPham> sanPhamDexuathome;
     HorSanPhamAdapter adapter2;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager Horizontallayout;
+    ExpandableHeightGridView SPdexuat;
+    SanphamAdapter adapter3;
 
 
 
@@ -142,10 +147,35 @@ public class MainActivity extends AppCompatActivity {
         loadDanhmuc();
         loadSPgiamgia();
         loadSPbanchay();
+        loadSPdexuat();
 
 
 
     }
+
+    private void loadSPdexuat() {
+        SPdexuat=findViewById(R.id.gv_spdexuat);
+        SPdexuat.setExpanded(true);
+        sanPhamDexuathome =new ArrayList<>();
+        sanPhamDexuathome.add(new SanPham(R.drawable.sphatcho,"Hạt cho chó",120000,200000,
+                "Thương hiệu 1","thucanchocho","hatchocho"));
+        sanPhamDexuathome.add(new SanPham(R.drawable.sppatecho,"Pate cho chó",350000,400000,
+                "Thương hiệu 1","thucanchocho","patechocho"));
+        sanPhamDexuathome.add(new SanPham(R.drawable.spsuacho,"Sữa tắm chó",250000,300000,
+                "Thương hiệu 2","thucanchocho","suacho"));
+        sanPhamDexuathome.add(new SanPham(R.drawable.spsuatamcho,"Sữa tắm chó",120000,320000,
+                "Thương hiệu 2","dodungcho","suatamcho"));
+        sanPhamDexuathome.add(new SanPham(R.drawable.spxuongcho,"Xương chó đồ chơi",20000,50000,
+                "Thương hiệu 3","dochoicho","xuongcho"));
+        sanPhamDexuathome.add(new SanPham(R.drawable.spdinhduongcho,"Sữa dinh dưỡng cho chó",360000,500000,
+                "Thương hiệu 3","thucanchocho","dinhduongchocho"));
+        sanPhamDexuathome.add(new SanPham(R.drawable.sptaimatmiengcho,"Cây chà răng chó",25000,40000,
+                "Thương hiệu 4","dodungcho","taimatcho"));
+
+        adapter3=new SanphamAdapter(MainActivity.this,R.layout.list_sanpham_id,sanPhamDexuathome);
+        SPdexuat.setAdapter(adapter3);
+    }
+
     private void loadBanner(){
         imageSlider = findViewById(R.id.image_slider);
         ArrayList<SlideModel> slideModels = new ArrayList<>();
