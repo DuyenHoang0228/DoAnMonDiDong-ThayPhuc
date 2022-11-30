@@ -15,6 +15,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="MyButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless">@null</style>
 
     <style name="Theme.offactionbar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
