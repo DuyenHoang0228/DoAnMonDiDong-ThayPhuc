@@ -15,6 +15,11 @@ public class DanhGiaCuaToi extends AppCompatActivity {
         //setContentView(R.layout.activity_danh_gia_cua_toi);
 
         binding = ActivityDanhGiaCuaToiBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        
+        creatTabHost();
+    }
 
+    private void creatTabHost() {
     }
 }
