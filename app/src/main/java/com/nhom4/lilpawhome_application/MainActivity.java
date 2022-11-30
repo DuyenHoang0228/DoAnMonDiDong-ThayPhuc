@@ -1,18 +1,25 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nhom4.adapters.Danhmuc1Adapter;
 import com.nhom4.adapters.HorSanPhamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
@@ -43,6 +50,42 @@ public class MainActivity extends AppCompatActivity {
         // setContentView(binding.getRoot());
         View view = binding.getRoot();
         setContentView(view);
+
+        BottomNavigationView navigationView = findViewById(R.id.bottom_nav);
+        navigationView.setSelectedItemId(R.id.nav_action_home);
+        navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_action_home:
+                       return true;
+                    case  R.id.nav_action_danhmuc:
+                        Intent intent1 =new Intent(getApplicationContext(),DanhmucActivity.class);
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent1);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.nav_action_thongbao:
+                        Intent intent2 =new Intent(getApplicationContext(),NoticeActivity.class);
+                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent2);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.nav_action_taikhoan:
+                        Intent intent3 =new Intent(getApplicationContext(),UserActivity.class);
+                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent3);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.nav_action_qr:
+                        Dialog dialog = new Dialog(MainActivity.this);
+                        dialog.setContentView(R.layout.qr_user);
+                        dialog.show();
+                        return true;
+                }
+                return false;
+            }
+        });
         loadBanner();
 
         loadData();
@@ -57,6 +100,38 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,ChatActivity.class);
 
                 startActivity(intent);
+            }
+        });
+        binding.gvDanhmuchome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = null;
+                switch (i){
+                    case 0:
+                         intent =new Intent(MainActivity.this,ShopChoCho1.class);
+                        break;
+
+                    case 1:
+
+                    case 2:
+                       intent =new Intent(MainActivity.this,SpaActivity1.class);
+                        break;
+
+                    case 3:
+                        intent =new Intent(MainActivity.this,ThuongHieuActivity.class);
+                        break;
+
+                    case 4:
+                         intent =new Intent(MainActivity.this,UuDaiMain.class);
+                        break;
+
+                    case 5:
+                        intent =new Intent(MainActivity.this,BlogActivity.class);
+                        break;
+
+                }
+                startActivity(intent);
+
             }
         });
     }
