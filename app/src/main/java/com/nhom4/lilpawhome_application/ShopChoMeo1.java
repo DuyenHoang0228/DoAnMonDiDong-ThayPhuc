@@ -26,7 +26,7 @@ public class ShopChoMeo1 extends AppCompatActivity {
     }
     private void loadData() {
         sanPhamArrayList=new ArrayList<>();
-        sanPhamArrayList.add(new SanPham(R.drawable.sphatcho,"Hạt cho chó",120000,200000,
+        sanPhamArrayList.add(new SanPham(R.drawable.sphatcho,"Hạt cho mèo",120000,200000,
                 "Thương hiệu 1","thucanchocho","hatchocho"));
         sanPhamArrayList.add(new SanPham(R.drawable.sppatecho,"Pate cho chó",350000,400000,
                 "Thương hiệu 1","thucanchocho","patechocho"));
