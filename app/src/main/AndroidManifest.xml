@@ -14,7 +14,70 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LilpawHome_Application"
         tools:targetApi="31">
-  <activity
+        <activity
+            android:name=".FormDanhGiaSanPham"
+            android:exported="true"
+            android:label="Đánh giá sản phẩm">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SanPhamYeuThich"
+            android:exported="false"
+            android:label="Sản phẩm yêu thích">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HinhAnhDanhGiaSanPham"
+            android:exported="true"
+            android:label="Ảnh từ người mua">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DanhGiaCuaToi"
+            android:exported="true"
+            android:label="Đánh giá của tôi">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DanhGiaSanPham"
+            android:exported="true"
+            android:label="Đánh giá sản phẩm">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DungNgayVoucher"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ChiTietVoucher"
+            android:exported="false"
+            android:label="Chi tiết Voucher">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".KhoVoucher"
+            android:exported="true"
+            android:label="Kho Voucher">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".suadiachi"
             android:exported="false">
             <meta-data
@@ -37,13 +100,6 @@
         </activity>
         <activity
             android:name=".caidatthongbao"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Caidatthongbao"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -144,7 +200,7 @@
         </activity>
         <activity
 
-            android:name=".khachhangbac"
+            android:name=".khachhangthanthiet"
             android:exported="true"
             android:label="Khách hàng thân thiết">
             <meta-data
@@ -199,15 +255,14 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            android:name=".MainActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         
-                <activity
+        <activity
             android:name=".DSLichhenActivity"
             android:exported="true">
 
@@ -269,14 +324,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
