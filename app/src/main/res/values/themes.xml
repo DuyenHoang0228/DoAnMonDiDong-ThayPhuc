@@ -2,9 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.LilpawHome_Application" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-
         <item name="colorPrimary">#FFA0CA</item>
-
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -15,7 +13,6 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="MyButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless">@null</style>
 
     <style name="Theme.offactionbar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
@@ -24,8 +21,6 @@
     <style name="Theme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
-
-
     <style name="Theme.LilpawHome_Application.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -33,4 +28,11 @@
     <style name="Theme.LilpawHome_Application.AppBarOverlay"
         parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.LilpawHome_Application.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomRatingBarStyle" parent="Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+    <style name="MyButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless">@null</style>
 </resources>
