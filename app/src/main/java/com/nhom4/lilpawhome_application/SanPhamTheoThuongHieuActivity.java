@@ -1,5 +1,6 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -19,6 +20,9 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_san_pham_theo_thuong_hieu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.custom_actionbar_sanphamtheothuonghieu);
         binding=ActivitySanPhamTheoThuongHieuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 

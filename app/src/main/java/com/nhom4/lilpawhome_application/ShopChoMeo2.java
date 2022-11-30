@@ -1,48 +1,27 @@
 package com.nhom4.lilpawhome_application;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 
 import com.nhom4.adapters.SanphamAdapter;
-import com.nhom4.lilpawhome_application.databinding.ActivityShopChoCho2Binding;
+import com.nhom4.lilpawhome_application.databinding.ActivityShopChoMeo2Binding;
 import com.nhom4.models.SanPham;
 
 import java.util.ArrayList;
 
-public class ShopChoCho2 extends AppCompatActivity {
-    ActivityShopChoCho2Binding binding;
+public class ShopChoMeo2 extends AppCompatActivity {
+    ActivityShopChoMeo2Binding binding;
     SanphamAdapter adapter;
     ArrayList<SanPham> sanPhamArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_shop_cho_cho2);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.custom_actionbar_shopchocho12);
-        binding=ActivityShopChoCho2Binding.inflate(getLayoutInflater());
+        setContentView(R.layout.activity_shop_cho_meo2);
+        binding=ActivityShopChoMeo2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         loadData();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-
-            default:break;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     private void loadData() {
@@ -57,14 +36,14 @@ public class ShopChoCho2 extends AppCompatActivity {
         sanPhamArrayList.add(new SanPham(R.drawable.spvongcocho,"Vòng cổ chó cute",60000,80000,
                 "Thương hiệu 3","phukiencho","vongcocho"));
 
-        adapter=new SanphamAdapter(ShopChoCho2.this,R.layout.list_sanpham_id,sanPhamArrayList);
-        binding.gvShopchocho2.setAdapter(adapter);
+        adapter=new SanphamAdapter(ShopChoMeo2.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvShopchomeo2.setAdapter(adapter);
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.shopchocho2_option_menu,menu);
+        getMenuInflater().inflate(R.menu.shopchomeo2_option_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
 }

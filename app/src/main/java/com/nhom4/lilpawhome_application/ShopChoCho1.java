@@ -84,13 +84,15 @@ public class ShopChoCho1 extends AppCompatActivity {
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         getMenuInflater().inflate(R.menu.shopchocho1_option_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
         if (item.getItemId()==R.id.mn_thucanchocho)
         {
             binding.imvBannerthucanchocho.setImageResource(R.drawable.shopchochothucan);
