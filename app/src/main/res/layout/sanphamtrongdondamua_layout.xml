@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/imv_anhsanphamdamua"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/spbong"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:layout_marginStart="5dp">
+        <TextView
+            android:id="@+id/txt_tensanphamdamua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên sản phẩm"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="13sp"
+            android:textColor="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txt_giasanphamdamua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giá tiền"
+                android:fontFamily="@font/montserrat"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/txt_soluongsanphamdamua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="x Số lượng"
+                android:fontFamily="@font/montserrat"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
