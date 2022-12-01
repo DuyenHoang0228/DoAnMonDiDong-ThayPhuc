@@ -35,8 +35,35 @@ public class dangnhap2 extends AppCompatActivity {
         binding.btnDangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 Intent intent = new Intent(dangnhap2.this, MainActivity.class);
-                 startActivity(intent);
+                String tendangnhap = binding.edtNhapemailhoacsdt.getText().toString();
+                String matkhau = binding.edtPassword.getText().toString();
+                int dodaichuoi1 = tendangnhap.length();
+                int dodaichuoi2 = matkhau.length();
+                if(dodaichuoi1==0 || dodaichuoi2==0){
+                    Toast.makeText(dangnhap2.this, "Hãy điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                }else {
+                    String[] kituchuoi1 = tendangnhap.split("");
+                    String[] kituchuoi2 = matkhau.split("");
+                    int count = 0;
+                    for (int i = 0; i < dodaichuoi1; i++) {
+                        if (kituchuoi1[i].equals(" ")) {
+                            count++;
+                        }
+                    }
+                    for (int j = 0; j < dodaichuoi2; j++) {
+                        if (kituchuoi2[j].equals(" ")) {
+                            count++;
+                        }
+                    }
+                    if (count > 0) {
+                        Toast.makeText(dangnhap2.this, "Tên đăng nhập và mật khẩu không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(dangnhap2.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(dangnhap2.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                }
             }
         });
         binding.btnDangki.setOnClickListener(new View.OnClickListener() {
@@ -49,8 +76,8 @@ public class dangnhap2 extends AppCompatActivity {
         binding.txtQuenmatkhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(dangnhap2.this, quenmatkhau1.class);
-                startActivity(intent);
+                    Intent intent = new Intent(dangnhap2.this, quenmatkhau1.class);
+                    startActivity(intent);
             }
         });
     }
