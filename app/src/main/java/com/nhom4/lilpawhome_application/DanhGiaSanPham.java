@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import com.nhom4.adapters.AdapterDanhGiaSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityDanhGiaSanPhamBinding;
 import com.nhom4.models.DanhGiaSanPhamM;
-import com.nhom4.models.KhachHang;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -46,4 +46,3 @@ public class VoucherUuDai {
         this.vouchersubtitle = vouchersubtitle;
     }
 }
-

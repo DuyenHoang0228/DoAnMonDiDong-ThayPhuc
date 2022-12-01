@@ -41,24 +41,20 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="60dp">
-            <EditText
-                android:id="@+id/edt_nhapmatkhau"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:hint="Mật khẩu"
-                android:layout_marginEnd="50dp"
-                android:textSize="16sp"/>
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
 
-            <ImageView
-                android:id="@+id/imv_eye1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/icon_eye" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_nhapmatkhau"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFC6DF"
+                    android:hint="Mật khẩu mới"
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="textPassword" android:layout_marginRight="10dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
 
     </LinearLayout>
@@ -80,24 +76,20 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="60dp">
-            <EditText
-                android:id="@+id/edt_nhaplaimatkhau"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:hint="Nhập lại mật khẩu"
-                android:layout_marginEnd="50dp"
-                android:textSize="16sp"/>
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
 
-            <ImageView
-                android:id="@+id/imv_eye2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/icon_eye" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_nhaplaimatkhau"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFC6DF"
+                    android:hint="Nhập lại mật khẩu"
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="textPassword" android:layout_marginRight="10dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
 
     </LinearLayout>

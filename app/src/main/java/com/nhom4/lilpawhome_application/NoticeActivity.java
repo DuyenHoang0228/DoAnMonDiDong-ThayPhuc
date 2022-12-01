@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +33,7 @@ public class NoticeActivity extends AppCompatActivity {
         setContentView(view);
 
         loadData();
+        addEvent();
 
         BottomNavigationView navigationView = findViewById(R.id.bottom_nav);
         navigationView.setSelectedItemId(R.id.nav_action_thongbao);
@@ -69,6 +71,42 @@ public class NoticeActivity extends AppCompatActivity {
             }
     });}
 
+    private void addEvent() {
+        binding.lvThongbao.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = null;
+                switch (i){
+                    case 0:
+                        intent =new Intent(NoticeActivity.this,DSLichhenActivity.class);
+                        break;
+
+                    case 1:
+                        intent =new Intent(NoticeActivity.this,KhoVoucher.class);
+                        break;
+                    case 2:
+                        intent =new Intent(NoticeActivity.this,SpaActivity1.class);
+                        break;
+
+                    case 3:
+                        intent =new Intent(NoticeActivity.this,ThuongHieuActivity.class);
+                        break;
+
+                    case 4:
+                        intent =new Intent(NoticeActivity.this,KhoVoucher.class);
+                        break;
+
+                    case 5:
+                        intent =new Intent(NoticeActivity.this,BlogActivity.class);
+                        break;
+
+                }
+                startActivity(intent);
+
+            }
+        });
+    }
+
     private void loadData() {
         thongbao = new ArrayList<>();
         thongbao.add(new ThongBao(R.drawable.icon_clock,"Lịch hẹn sắp đến","Bạn sắp có lịch hẹn chăm sóc thú cưng tại Lilpaw Home, đừng bỏ lỡ nhé \uD83D\uDC31\uD83D\uDC31"));
@@ -80,8 +118,4 @@ public class NoticeActivity extends AppCompatActivity {
         adapter = new ThongbaoAdapter(NoticeActivity.this, R.layout.thongbao_list,thongbao);
         binding.lvThongbao.setAdapter(adapter);
     }
-
-
-
-
 }

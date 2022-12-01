@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="200dp"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bordersanpham">
+
 
     <RelativeLayout
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="190dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/bordersanpham"
+
         android:layout_gravity="center">
 
         <RelativeLayout
@@ -17,14 +19,17 @@
 
             <ImageView
                 android:id="@+id/imv_hinhsanpham"
-                android:layout_width="200dp"
+                android:layout_width="190dp"
                 android:layout_height="144dp"
-                android:src="@drawable/hinhsanpham"/>
+                android:src="@drawable/hinhsanpham"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="2dp"/>
             <TextView
                 android:id="@+id/txt_tensanpham"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
+
+                android:layout_marginHorizontal="10dp"
                 android:paddingTop="8dp"
                 android:text="Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản"
                 android:fontFamily="@font/montserrat_medium"
@@ -36,43 +41,59 @@
                 android:id="@+id/txt_brandsanpham"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
+
+                android:layout_marginLeft="10dp"
                 android:fontFamily="@font/montserrat_light"
                 android:text="Hãng: Felipro"
                 android:layout_below="@+id/txt_tensanpham"
                 android:textSize="14sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/txt_brandsanpham"
+                android:weightSum="3"
+                android:layout_marginHorizontal="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2"
+                >
+
 
             <TextView
                 android:id="@+id/txt_giasanphamchuagiam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:paddingLeft="5dp"
+
                 android:text="32.000 đ"
                 android:textColor="#D44837"
                 android:layout_below="@+id/txt_brandsanpham"
                 android:textSize="14sp" />
+            <TextView
+                android:id="@+id/txt_giasanphamdagiam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
+                android:fontFamily="@font/montserrat_light"
+                android:foreground="@drawable/strikethroughtext"
+                android:text="36.000 đ"
+                android:textSize="12sp"
+                android:layout_below="@+id/txt_giasanphamchuagiam"/>
+            </LinearLayout>
             <ImageView
                 android:id="@+id/imv_gioHang"
                 android:layout_width="48dp"
                 android:layout_height="32dp"
                 android:layout_below="@+id/txt_brandsanpham"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="83dp"
-                android:layout_marginTop="6dp"
-                android:layout_toRightOf="@+id/txt_giasanphamchuagiam"
-                android:src="@drawable/icon_cart" />
+                android:layout_weight="1"
 
-            <TextView
-                android:id="@+id/txt_giasanphamdagiam"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:fontFamily="@font/montserrat_light"
-                android:text="36.000 đ"
-                android:textSize="12sp"
-                android:layout_below="@+id/txt_giasanphamchuagiam"/>
+                android:layout_margin="6dp"
+
+                android:src="@drawable/icon_cart" />
+            </LinearLayout>
 
 
         </RelativeLayout>

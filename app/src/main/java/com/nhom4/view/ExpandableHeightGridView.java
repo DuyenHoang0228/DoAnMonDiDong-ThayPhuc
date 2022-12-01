@@ -1,9 +1,9 @@
 package com.nhom4.view;
 
 import android.content.Context;
-        import android.util.AttributeSet;
-        import android.view.ViewGroup;
-        import android.widget.GridView;
+import android.util.AttributeSet;
+import android.view.ViewGroup;
+import android.widget.GridView;
 
 public class ExpandableHeightGridView extends GridView {
     boolean expanded = false;
@@ -31,7 +31,6 @@ public class ExpandableHeightGridView extends GridView {
     @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
-        // HACK! TAKE THAT ANDROID!
         if (isExpanded())
         {
             // Calculate entire height by providing a very large height hint.

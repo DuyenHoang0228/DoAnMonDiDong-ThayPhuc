@@ -26,7 +26,7 @@ public class manhinhkhoidong extends AppCompatActivity {
                 finish();
 
             }
-            //delay 3s
-        },3000);
+            //delay 2s
+        },2000);
     }
 }
