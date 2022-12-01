@@ -9,15 +9,15 @@
         <menu>
             <item
                 android:title="Sản phẩm hiếm"
-                android:id="@+id/mn_sanphamhiemchocho"
+                android:id="@+id/mn_sanphamhiemchomeo"
                 app:showAsAction="withText"/>
             <item
                 android:title="Sản phẩm bán chạy"
-                android:id="@+id/mn_sanphambanchaychocho"
+                android:id="@+id/mn_sanphambanchaychomeo"
                 app:showAsAction="withText"/>
             <item
                 android:title="Sản phẩm mới nhất"
-                android:id="@+id/mn_sanphammoinhatchocho"
+                android:id="@+id/mn_sanphammoinhatchomeo"
                 app:showAsAction="withText"/>
         </menu>
     </item>

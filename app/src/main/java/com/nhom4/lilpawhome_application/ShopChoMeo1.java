@@ -1,70 +1,161 @@
 package com.nhom4.lilpawhome_application;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.nhom4.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.adapters.SanphamAdapter;
+import com.nhom4.databases.DBHelperSanPham;
+import com.nhom4.lilpawhome_application.databinding.ActivityShopChoCho1Binding;
 import com.nhom4.lilpawhome_application.databinding.ActivityShopChoMeo1Binding;
 import com.nhom4.models.SanPham;
+import com.nhom4.models.SanPhamLilPawHome;
 
 import java.util.ArrayList;
 
 public class ShopChoMeo1 extends AppCompatActivity {
     ActivityShopChoMeo1Binding binding;
-    SanphamAdapter adapter;
-    ArrayList<SanPham> sanPhamArrayList;
+    SanPhamAdapterLilPawHome adapter;
+    ArrayList<SanPhamLilPawHome> sanPhamArrayList;
+    DBHelperSanPham dbHelperSanPham;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_shop_cho_meo1);
         binding=ActivityShopChoMeo1Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-    }
-    private void loadData() {
-        sanPhamArrayList=new ArrayList<>();
-        sanPhamArrayList.add(new SanPham(R.drawable.sphatcho,"Hạt cho mèo",120000,200000,
-                "Thương hiệu 1","thucanchocho","hatchocho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.sppatecho,"Pate cho mèo",350000,400000,
-                "Thương hiệu 1","thucanchocho","patechocho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spsuacho,"Sữa tắm chó",250000,300000,
-                "Thương hiệu 2","thucanchocho","suacho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spsuatamcho,"Sữa tắm chó",120000,320000,
-                "Thương hiệu 2","dodungcho","suatamcho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spxuongcho,"Xương chó đồ chơi",20000,50000,
-                "Thương hiệu 3","dochoicho","xuongcho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spdinhduongcho,"Sữa dinh dưỡng cho chó",360000,500000,
-                "Thương hiệu 3","thucanchocho","dinhduongchocho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.sptaimatmiengcho,"Cây chà răng chó",25000,40000,
-                "Thương hiệu 4","dodungcho","taimatcho"));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.custom_actionbar_shopchomeo12);
+        binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
 
-        adapter=new SanphamAdapter(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+
+        createDb();
+        loadData();
+        loadThucAn();
+        loadDoDung();
+        loadDoChoi();
+        loadPhuKien();
+        loadChuongLong();
+
+    }
+
+    private void loadChuongLong() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+        " WHERE "+ DBHelperSanPham.COL_CATE1+" = "+"'chuonglongchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+    }
+
+    private void loadPhuKien() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" = "+"'phukienchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+    }
+
+    private void loadDoChoi() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" = "+"'dochoichomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
         binding.gvOptionchomeo.setAdapter(adapter);
 
     }
-    private void loadData2() {
-        sanPhamArrayList=new ArrayList<>();
-        sanPhamArrayList.add(new SanPham(R.drawable.sphatcho,"Hạt cho chó",120000,200000,
-                "Thương hiệu 1","thucanchocho","hatchocho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.sppatecho,"Pate cho chó",350000,400000,
-                "Thương hiệu 1","thucanchocho","patechocho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spsuacho,"Sữa tắm chó",250000,300000,
-                "Thương hiệu 2","thucanchocho","suacho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spvongcocho,"Vòng cổ chó cute",60000,80000,
-                "Thương hiệu 3","phukiencho","vongcocho"));
 
-        adapter=new SanphamAdapter(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
-        binding.gvOptionchomeo .setAdapter(adapter);
+    private void loadDoDung() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" = "+"'dodungchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
 
     }
+
+    private void loadThucAn() {
+
+        //thứ tự các cột xem trong dbhelper, muốn lấy sản phẩm nào thì select thuộc tính như câu ở dưới
+        //
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" = "+"'thucanchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+
+    private void createDb() {
+        dbHelperSanPham=new DBHelperSanPham(ShopChoMeo1.this);
+        dbHelperSanPham.createSampleData();
+
+    }
+
+    private void loadData() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME);
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
+
         getMenuInflater().inflate(R.menu.shopchomeo1_option_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
@@ -75,12 +166,27 @@ public class ShopChoMeo1 extends AppCompatActivity {
         if (item.getItemId()==R.id.mn_thucanchomeo)
         {
             binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchochothucan);
-            loadData();
+            loadThucAn();
         }
         if (item.getItemId()==R.id.mn_dodungchomeo)
         {
-            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchochododung);
-            loadData2();
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+            loadDoDung();
+        }
+        if (item.getItemId()==R.id.mn_dochoichomeo)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeodochoi);
+            loadDoChoi();
+        }
+        if (item.getItemId()==R.id.mn_phukienchomeo)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeophukien);
+            loadPhuKien();
+        }
+        if (item.getItemId()==R.id.mn_chuonglongchomeo)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeochuong);
+            loadChuongLong();
         }
         return super.onOptionsItemSelected(item);
     }
