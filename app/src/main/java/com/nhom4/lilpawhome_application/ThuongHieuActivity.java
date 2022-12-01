@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.nhom4.adapters.ThuonghieuAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityThuongHieuBinding;
@@ -18,6 +20,8 @@ public class ThuongHieuActivity extends AppCompatActivity {
     ActivityThuongHieuBinding binding;
     ThuonghieuAdapter adapter;
     ArrayList<ThuongHieu> thuongHieuArrayList;
+    ImageView imvTimKiem;
+    EditText edtTimKiem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +32,8 @@ public class ThuongHieuActivity extends AppCompatActivity {
 
         binding=ActivityThuongHieuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        imvTimKiem=findViewById(R.id.imv_timkiem);
+        edtTimKiem=findViewById(R.id.edt_timkiem);
 
         loadData();
         addEvents();
@@ -41,6 +47,7 @@ public class ThuongHieuActivity extends AppCompatActivity {
                 //đẩy dữ liệu qua bên sản phẩm theo thương hiệu, string thuonghieu, qua bên kia lấy string đó rồi thiết lập điều kiện
             }
         });
+
     }
 
     private void loadData() {
