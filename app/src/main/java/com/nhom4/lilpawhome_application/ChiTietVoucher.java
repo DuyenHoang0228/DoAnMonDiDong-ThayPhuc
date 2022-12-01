@@ -12,6 +12,8 @@ import com.nhom4.adapters.AdapterVoucher;
 import com.nhom4.lilpawhome_application.databinding.ActivityChiTietVoucherBinding;
 import com.nhom4.models.Voucher;
 
+import java.util.Locale;
+
 public class ChiTietVoucher extends AppCompatActivity {
 
     ActivityChiTietVoucherBinding binding;
@@ -24,12 +26,12 @@ public class ChiTietVoucher extends AppCompatActivity {
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getIntentData();
         loadData();
         addEvent();
     }
 
-    private void getIntentData() {
+    private void loadData() {
+        //hinh voucher
         Intent intent = getIntent();
         String chuTrongAnhVoucher = intent.getStringExtra("ChuTrongAnhVoucher");
         String titleOfVoucher = intent.getStringExtra("TitleOfVoucher");
@@ -46,10 +48,15 @@ public class ChiTietVoucher extends AppCompatActivity {
         }else{
             binding.txtSoluongcohan.setVisibility(View.INVISIBLE);
         }
-    }
-
-    private void loadData() {
-
+        //noi dung ben duoi voucher
+        binding.txtNoidunguudai.setText(chuTrongAnhVoucher + " | " + titleOfVoucher);
+        String[] hsd = HSD.split("/");
+        int ngay = Integer.parseInt(hsd[0]) - 5;
+        binding.txtNoidunghieuluc.setText(ngay + "/" + hsd[1] + "/" + hsd[2] + " - " + HSD);
+        binding.txtNoidungphuongthucthanhtoan.setText("Mọi phương thức thanh toán");
+        binding.txtDieukiensudungvoucher.setText("Sử dụng mã " + titleOfVoucher.toLowerCase(Locale.ROOT) + " cho đơn hàng bất kì thỏa mãn điều kiện ưu đãi của Lilpaw Home\n \n" + "Giảm tối đa " + maxValue +"K trên giá trị tổng của đơn hàng\n \n" + "Chỉ áp dụng cho khách hàng nhận được thông báo ưu đãi\n" +
+                "\n" +
+                "Số lượt sử dụng có hạn, chương trình và mã có thể kết thúc khi hết lượt ưu đãi hoặc khi hết hạn ưu đãi, tùy điều kiện nào đến trước");
     }
 
     private void addEvent() {

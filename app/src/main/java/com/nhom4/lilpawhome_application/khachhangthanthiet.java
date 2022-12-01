@@ -50,7 +50,7 @@ public class khachhangthanthiet extends AppCompatActivity {
     }
 
     private void level() {
-        //du lieu thu hang
+        //du lieu khach hang
         chitieu = new ChiTieuKhachHang("littlemermaid@user", 25, 6000000);
         int orders = chitieu.getOrders();
         double spent = chitieu.getSpent();
