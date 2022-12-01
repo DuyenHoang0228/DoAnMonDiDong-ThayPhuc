@@ -34,6 +34,7 @@
     <EditText
         android:id="@+id/edt_sodienthoai"
         android:layout_marginTop="10dp"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/customshapeborderwhite"

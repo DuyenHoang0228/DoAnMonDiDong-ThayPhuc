@@ -3,6 +3,7 @@ package com.nhom4.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.nhom4.lilpawhome_application.ChiTietVoucher;
+import com.nhom4.lilpawhome_application.DungNgayVoucher;
 import com.nhom4.lilpawhome_application.KhoVoucher;
 import com.nhom4.lilpawhome_application.R;
 import com.nhom4.models.Voucher;
@@ -80,24 +82,33 @@ public class AdapterVoucher extends BaseAdapter {
         holder.btnDieuKien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //intent qua trang khác mà chưa biết làm
+                //activity là trang xài adapter này
+                Intent intent = new Intent(activity, ChiTietVoucher.class);
+                intent.putExtra("ChuTrongAnhVoucher", v.getChuTrongAnhVoucher());
+                intent.putExtra("TitleOfVoucher", v.getTitleOfVoucher());
+                intent.putExtra("HSDVoucher", v.getHsdVoucher());
+                intent.putExtra("MaxOfValue", v.getMaxValue());
+                intent.putExtra("isLimited", v.isLimited());
+                activity.startActivity(intent);
             }
         });
         holder.btnDungNgay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //như trên
+                Intent intent = new Intent(activity, DungNgayVoucher.class);
+                intent.putExtra("ChuTrongAnhVoucher", v.getChuTrongAnhVoucher());
+                intent.putExtra("TitleOfVoucher", v.getTitleOfVoucher());
+                intent.putExtra("HSDVoucher", v.getHsdVoucher());
+                intent.putExtra("MaxOfValue", v.getMaxValue());
+                intent.putExtra("isLimited", v.isLimited());
+                activity.startActivity(intent);
             }
         });
-
         return view;
-
-
     }
 
     public static class ViewHolder {
         TextView txtTitleOfVoucher, txtHSDVoucher, txtMaxValue, txtChuTrongAnhVoucher, txtSoLuongCoHan;
         TextView btnDungNgay, btnDieuKien;
-
     }
 }

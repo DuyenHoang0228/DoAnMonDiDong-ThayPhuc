@@ -152,6 +152,7 @@
                     android:id="@+id/rcv_spgiamgia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     />
             </LinearLayout>
 
@@ -228,6 +229,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:numColumns="2"
+
                     />
             </LinearLayout>
 

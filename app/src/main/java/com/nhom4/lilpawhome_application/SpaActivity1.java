@@ -1,20 +1,16 @@
 package com.nhom4.lilpawhome_application;
 
-import static com.nhom4.lilpawhome_application.Utils_Spa.COL_NAME;
 import static com.nhom4.lilpawhome_application.Utils_Spa.DB_NAME;
 import static com.nhom4.lilpawhome_application.Utils_Spa.DB_PATH_SUFFIX;
-import static com.nhom4.lilpawhome_application.Utils_Spa.DB_VERSION;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.UnderlineSpan;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,8 +27,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -78,11 +72,6 @@ public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnIte
         thuCungs = new ArrayList<>();
         Weight = new ArrayList<>();
         db = openOrCreateDatabase(DB_NAME, MODE_PRIVATE,null);
-//        Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME, null);
-//        Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE " + Utils.COL_PRICE + ">=?",
-//                new String[]{"16000"});
-//        Cursor c= db.query(Utils_Spa.TBL_NAME,null,null,
-//                null,null,null,null);
 
         Cursor c = db.query(Utils_Spa.TBL_NAME, null,null,
                 null,null,null,null);

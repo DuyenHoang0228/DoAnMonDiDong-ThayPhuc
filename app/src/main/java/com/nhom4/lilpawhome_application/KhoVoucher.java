@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.nhom4.adapters.AdapterVoucher;
 import com.nhom4.lilpawhome_application.databinding.ActivityKhoVoucherBinding;
@@ -43,9 +45,8 @@ public class KhoVoucher extends AppCompatActivity {
         vouchers.add(new Voucher("Tất cả hình thức thanh toán", "28/02/2022", 15, "Miễn phí vận chuyển", true));
         vouchers.add(new Voucher("GIẢM 5% ĐƠN TỪ 50K", "30/11/2022", 30, "Giảm 5%", false));
         adapter = new AdapterVoucher(KhoVoucher.this, R.layout.voucher_layout, vouchers);
+
         binding.lvKhovoucher.setAdapter(adapter);
-
-
 
     }
 
