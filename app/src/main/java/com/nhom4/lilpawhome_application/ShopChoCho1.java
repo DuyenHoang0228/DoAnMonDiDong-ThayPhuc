@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,7 +12,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.nhom4.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.adapters.SanphamAdapter;
@@ -29,6 +34,9 @@ public class ShopChoCho1 extends AppCompatActivity {
     ArrayList<SanPhamLilPawHome> sanPhamArrayList;
     DBHelperSanPham dbHelperSanPham;
 
+    ImageView imvTimKiem;
+    EditText edtTimKiem;
+
 
 
     @Override
@@ -43,16 +51,55 @@ public class ShopChoCho1 extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_shopchocho12);
+        imvTimKiem=findViewById(R.id.imv_timkiem);
+        edtTimKiem=findViewById(R.id.edt_timkiem);
         getSupportActionBar().setBackgroundDrawable(
                 new ColorDrawable(Color.parseColor("#ffffff")));
         setContentView(binding.getRoot());
 
+
         createDb();
         loadData();
+        addEvents();
 
 
 
     }
+
+    private void addEvents() {
+        imvTimKiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String s=edtTimKiem.getText().toString();
+                sanPhamArrayList=new ArrayList<>();
+                Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME
+                +" WHERE "+ DBHelperSanPham.COL_NAME+" LIKE "+"'%"+s+"%'"+" AND "+DBHelperSanPham.COL_CATE1+
+                        " LIKE "+"'%chocho'");
+                while(c.moveToNext())
+                {
+                    sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                            c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                            c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+                }
+                c.close();
+                adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+                binding.gvOptionchocho.setAdapter(adapter);
+                hideKeyboard(ShopChoCho1.this);
+
+            }
+        });
+    }
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
 
     private void createDb() {
         dbHelperSanPham=new DBHelperSanPham(ShopChoCho1.this);
@@ -179,7 +226,7 @@ public class ShopChoCho1 extends AppCompatActivity {
         }
         if (item.getItemId()==R.id.mn_dodungchocho)
         {
-            binding.imvBannerthucanchocho.setImageResource(R.drawable.shopchochothucan);
+            binding.imvBannerthucanchocho.setImageResource(R.drawable.shopchochododung);
             loadDoDung();
         }
         if (item.getItemId()==R.id.mn_dochoichocho)
