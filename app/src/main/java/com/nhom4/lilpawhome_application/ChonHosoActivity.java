@@ -53,6 +53,7 @@ public class ChonHosoActivity extends AppCompatActivity {
                 R.drawable.line_divider));
 
         binding.rvHosothucung.setAdapter(adapter);
+        binding.rvHosothucung.setNestedScrollingEnabled(true);
     }
 
     private void loadData() {

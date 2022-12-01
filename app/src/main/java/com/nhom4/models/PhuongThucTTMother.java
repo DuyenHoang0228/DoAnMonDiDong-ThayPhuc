@@ -1,26 +1,29 @@
 package com.nhom4.models;
 
-import android.widget.RadioButton;
+import java.util.List;
 
-public class PhuongThucTT {
+public class PhuongThucTTMother {
+    List<PhuongThucTTChild> list;
     int iconphuongthuc;
     String tenphuongthuc, tenphuphuongthuc;
     public boolean isSelected;
+    public boolean isExpandable;
 
-
-    public PhuongThucTT(int iconphuongthuc, String tenphuongthuc, String tenphuphuongthuc, boolean isSelected) {
+    public PhuongThucTTMother(List<PhuongThucTTChild> list, int iconphuongthuc, String tenphuongthuc, String tenphuphuongthuc, boolean isSelected) {
+        this.list = list;
         this.iconphuongthuc = iconphuongthuc;
         this.tenphuongthuc = tenphuongthuc;
         this.tenphuphuongthuc = tenphuphuongthuc;
         this.isSelected = isSelected;
+        isExpandable = false;
     }
 
-    public boolean isSelected() {
-        return isSelected;
+    public List<PhuongThucTTChild> getList() {
+        return list;
     }
 
-    public void setSelected(boolean selected) {
-        isSelected = selected;
+    public void setList(List<PhuongThucTTChild> list) {
+        this.list = list;
     }
 
     public int getIconphuongthuc() {
@@ -45,5 +48,21 @@ public class PhuongThucTT {
 
     public void setTenphuphuongthuc(String tenphuphuongthuc) {
         this.tenphuphuongthuc = tenphuphuongthuc;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
+
+    public boolean isExpandable() {
+        return isExpandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        isExpandable = expandable;
     }
 }
