@@ -29,29 +29,22 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(view);
         initAdapter();
         addEvent();
-
-
     }
 
     private void initAdapter() {
-        Listmessage = new ArrayList<>();
         addEvent();
-
+        Listmessage = new ArrayList<>();
+        adapter = new ChatAdapter(ChatActivity.this,R.layout.chat_list,Listmessage);
 
     }
-
 
     private void addEvent() {
         binding.btnSendmessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 message ms = new message(binding.edtChat.getText().toString());
-
                 Listmessage.add(ms);
-
                 binding.edtChat.setText("");
-                adapter = new ChatAdapter(ChatActivity.this,R.layout.chat_list,Listmessage);
-
                 binding.lvMessage.setAdapter(adapter);
             }
         });
