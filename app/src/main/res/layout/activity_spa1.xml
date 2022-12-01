@@ -169,19 +169,25 @@
             android:layout_marginTop="5dp"
             android:layout_marginLeft="25dp"/>
 
-        <Spinner
+        <EditText
+            android:id="@+id/edt_giongchomeo"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/backgroundvoucher"
-            android:backgroundTint="#4AFFA0CA"
+            android:layout_gravity="center"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:layout_marginTop="15dp"/>
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:hint="Nhập giống"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/backgroundvoucher"
+            android:backgroundTint="#4DFFA0CA"
+            android:layout_marginTop="15dp"  />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chọn thú cưng"
+            android:text="Cân nặng"
             android:fontFamily="@font/montserrat"
             android:textSize="20sp"
             android:textColor="@color/black"
@@ -190,7 +196,7 @@
             android:layout_marginTop="20dp"/>
 
         <EditText
-            android:id="@+id/edt_choncannang"
+            android:id="@+id/edt_cannang"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center"
@@ -198,7 +204,6 @@
             android:layout_marginRight="25dp"
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
-            android:spinnerMode="dropdown"
             android:hint="Nhập cân nặng (kg)"
             android:fontFamily="@font/montserrat"
             android:background="@drawable/backgroundvoucher"
@@ -214,6 +219,7 @@
             android:layout_marginTop="40dp">
 
             <Button
+                android:id="@+id/btn_next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tiếp tục"
