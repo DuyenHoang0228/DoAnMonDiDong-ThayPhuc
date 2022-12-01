@@ -14,10 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom4.lilpawhome_application.R;
 import com.nhom4.models.VoucherTT;
-import com.nhom4.models.VoucherUuDai;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AdapterVoucherTT extends RecyclerView.Adapter<AdapterVoucherTT.MyView> {
 
@@ -73,7 +71,7 @@ public class AdapterVoucherTT extends RecyclerView.Adapter<AdapterVoucherTT.MyVi
     @NonNull
     @Override
     public AdapterVoucherTT.MyView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.voucher_layout, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.voucher_layout_tt, parent, false);
 
         return new AdapterVoucherTT.MyView(itemView);
     }
