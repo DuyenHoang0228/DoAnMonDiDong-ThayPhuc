@@ -23,7 +23,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="5dp"
-            android:src="@drawable/line_hr"/>
+            android:src="@drawable/line_hr_pink"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_lichsaptoi"
@@ -43,7 +43,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="5dp"
-            android:src="@drawable/line_hr"/>
+            android:src="@drawable/line_hr_pink"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
