@@ -183,9 +183,9 @@ public class DanhmucActivity extends AppCompatActivity {
 
 
         ArrayList<GroupDanhmuc> listItemgr5 = new ArrayList<>();
-        listItemgr5.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr5.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr5.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
+        listItemgr5.add((new GroupDanhmuc(R.drawable.balo,1,"Balo vận chuyển")));
+        listItemgr5.add((new GroupDanhmuc(R.drawable.chuongnha,2,"Chuồng nệm")));
+        listItemgr5.add((new GroupDanhmuc(R.drawable.splongvanchuyen,3,"Lồng vận chuyển")));
 
         listMap.put(groupThucancho, listItemgr1);
         listMap.put(groupDodungcho, listItemgr2);
@@ -210,43 +210,45 @@ public class DanhmucActivity extends AppCompatActivity {
          GroupDanhmuc groupdanhmuc3 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
 
         ArrayList<GroupDanhmuc> listItemgr6 = new ArrayList<>();
-        listItemgr6.add((new GroupDanhmuc(R.drawable.sphatcho,1,"Hạt")));
-        listItemgr6.add((new GroupDanhmuc(R.drawable.sppatecho,2,"Pate")));
-        listItemgr6.add((new GroupDanhmuc(R.drawable.spsuacho,3,"Sữa")));
-        listItemgr6.add((new GroupDanhmuc(R.drawable.spsnackcho,1,"Snack, bánh thưởng")));
-        listItemgr6.add((new GroupDanhmuc(R.drawable.spdinhduongcho,1,"Sản phẩm dinh dưỡng")));
+        listItemgr6.add((new GroupDanhmuc(R.drawable.sphatmeo,1,"Hạt")));
+        listItemgr6.add((new GroupDanhmuc(R.drawable.sppatemeo,2,"Pate")));
+        listItemgr6.add((new GroupDanhmuc(R.drawable.spsuameo,3,"Sữa")));
+        listItemgr6.add((new GroupDanhmuc(R.drawable.spsnackmeo,1,"Snack, bánh thưởng")));
+        listItemgr6.add((new GroupDanhmuc(R.drawable.spdinhduongmeo,1,"Sản phẩm dinh dưỡng")));
 
 
 
         ArrayList<GroupDanhmuc> listItemgr7 = new ArrayList<>();
-        listItemgr7.add((new GroupDanhmuc(R.drawable.spkhay,1,"Khay vệ sinh")));
+        listItemgr7.add((new GroupDanhmuc(R.drawable.spkhaymeo,1,"Khay vệ sinh")));
+        listItemgr7.add((new GroupDanhmuc(R.drawable.spcat,6,"Cát vệ sinh")));
         listItemgr7.add((new GroupDanhmuc(R.drawable.spchenan,2,"Chén ăn, bình nước")));
         listItemgr7.add((new GroupDanhmuc(R.drawable.splongmong,3,"Vệ sinh lông móng")));
-        listItemgr7.add((new GroupDanhmuc(R.drawable.sptaimatmiengcho,4,"Vệ sinh tai, mắt, miệng")));
-        listItemgr7.add((new GroupDanhmuc(R.drawable.spsuacho,5,"Sữa tắm, dầu gội")));
+        listItemgr7.add((new GroupDanhmuc(R.drawable.sptaimatmiengmeo,4,"Vệ sinh tai, mắt, miệng")));
+        listItemgr7.add((new GroupDanhmuc(R.drawable.spsuatammeo,5,"Sữa tắm, dầu gội")));
+        listItemgr7.add((new GroupDanhmuc(R.drawable.spcomeo,7,"Cỏ mèo")));
 
 
 
         ArrayList<GroupDanhmuc> listItemgr8 = new ArrayList<>();
-        listItemgr8.add((new GroupDanhmuc(R.drawable.spxuongcho,1,"Xương đồ chơi")));
-        listItemgr8.add((new GroupDanhmuc(R.drawable.spgoiomcho,2,"Gối ôm")));
+        listItemgr8.add((new GroupDanhmuc(R.drawable.spcancau,1,"Cần câu mèo")));
+        listItemgr8.add((new GroupDanhmuc(R.drawable.spgoiommeo,2,"Gối ôm")));
         listItemgr8.add((new GroupDanhmuc(R.drawable.spcaomong,3,"Đồ cào móng")));
         listItemgr8.add((new GroupDanhmuc(R.drawable.spbong,4,"Banh bóng")));
 
 
 
         ArrayList<GroupDanhmuc> listItemgr9 = new ArrayList<>();
-        listItemgr9.add((new GroupDanhmuc(R.drawable.spvongcocho,1,"Vòng cỏ")));
+        listItemgr9.add((new GroupDanhmuc(R.drawable.spvongcomeo,1,"Vòng cỏ")));
         listItemgr9.add((new GroupDanhmuc(R.drawable.spquanao,2,"Quần áo")));
-        listItemgr9.add((new GroupDanhmuc(R.drawable.spdaydatvayem,3,"Dây dắt và yểm")));
-        listItemgr9.add((new GroupDanhmuc(R.drawable.spromom,4,"Rõ mõm")));
+
+
 
 
 
         ArrayList<GroupDanhmuc> listItemgr10 = new ArrayList<>();
-        listItemgr10.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr10.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
-        listItemgr10.add((new GroupDanhmuc(R.drawable.icon_uudai_home,1,"abc")));
+        listItemgr10.add((new GroupDanhmuc(R.drawable.balo,1,"Balo vận chuyển")));
+        listItemgr10.add((new GroupDanhmuc(R.drawable.chuongnha,2,"Chuồng nệm")));
+        listItemgr10.add((new GroupDanhmuc(R.drawable.splongvanchuyen,3,"Lồng vận chuyển")));
 
         listMap2.put(groupThucanmeo, listItemgr6);
         listMap2.put(groupDodungmeo, listItemgr7);

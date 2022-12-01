@@ -7,6 +7,7 @@
     tools:context=".DanhGiaCuaToi">
 
     <TabHost
+        android:id="@+id/th_danhgiacuatoi"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -26,18 +27,41 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/tab1"
+                    android:id="@+id/tab_chuadanhgia"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
-
+                    <com.nhom4.view.ExpandableHeightGridView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/gv_chuadanhgia"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Không còn đánh giá nào"
+                        android:gravity="center"
+                        android:layout_margin="5dp"
+                        android:textColor="#EC1313"
+                        android:fontFamily="@font/montserrat"/>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab2"
+                    android:id="@+id/tab_dadanhgia"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+                    <com.nhom4.view.ExpandableHeightGridView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/gv_dadanhgia"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Không còn đánh giá nào"
+                        android:gravity="center"
+                        android:layout_margin="5dp"
+                        android:textColor="#EC1313"
+                        android:fontFamily="@font/montserrat"/>
 
                 </LinearLayout>
 

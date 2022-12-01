@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/customshapeborderpinkfillwhite">
+    <ImageButton
+        android:id="@+id/btn_exitxlh"
+        android:layout_width="wrap_content"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cross"
+        android:layout_gravity="right"
+        android:backgroundTint="@color/white"></ImageButton>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Xin lưu ý lịch sử buổi hẹn sẽ bị xóa sau khi bạn nhấn Xác nhận"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></TextView>
+    <Button
+        android:id="@+id/btn_xacnhanxlh"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/customshapeborder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Xác nhận"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></Button>
+</LinearLayout>
