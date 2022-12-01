@@ -57,8 +57,6 @@ public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnIte
                 .show();
     }
 
-
-
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
