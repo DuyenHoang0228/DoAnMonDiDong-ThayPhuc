@@ -85,7 +85,7 @@ public class NoticeActivity extends AppCompatActivity {
                         intent =new Intent(NoticeActivity.this,KhoVoucher.class);
                         break;
                     case 2:
-                        intent =new Intent(NoticeActivity.this,SpaActivity1.class);
+                        intent =new Intent(NoticeActivity.this,DsDonmuaActivity.class);
                         break;
 
                     case 3:
@@ -93,11 +93,11 @@ public class NoticeActivity extends AppCompatActivity {
                         break;
 
                     case 4:
-                        intent =new Intent(NoticeActivity.this,KhoVoucher.class);
+                        intent =new Intent(NoticeActivity.this,UuDaiMain.class);
                         break;
 
                     case 5:
-                        intent =new Intent(NoticeActivity.this,BlogActivity.class);
+                        intent =new Intent(NoticeActivity.this,GioHangActivity.class);
                         break;
 
                 }

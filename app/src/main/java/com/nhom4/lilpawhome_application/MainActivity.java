@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 1:
-                        intent =new Intent(MainActivity.this,ShopChoMeo1.class);
+                        intent =new Intent(MainActivity.this,ShopChoMeo2.class);
                         break;
                     case 2:
                        intent =new Intent(MainActivity.this,SpaActivity1.class);
@@ -138,6 +138,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 startActivity(intent);
 
+            }
+        });
+        binding.imvGiohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,GioHangActivity.class);
+
+                startActivity(intent);
             }
         });
     }
