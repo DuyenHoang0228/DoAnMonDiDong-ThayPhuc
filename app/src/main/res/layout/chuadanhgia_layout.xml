@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/customborder"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="10"
+            android:padding="5dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon_madonhang"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/txt_madonhang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Mã đơn hàng"
+                android:fontFamily="@font/montserrat"
+                android:textSize="12dp"
+                android:layout_gravity="center"
+                android:layout_weight="6"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_gravity="center"
+                android:text="Đã hoàn thành"
+                android:textSize="12sp"
+                android:textColor="#EC1313"
+                android:layout_weight="3"
+                android:fontFamily="@font/montserrat"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFA0CA"/>
+        <com.nhom4.view.ExpandableHeightGridView
+            android:id="@+id/gr_sanphamtrongdondamua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_tongthanhtoan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thành tiền"
+            android:fontFamily="@font/montserrat"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFA0CA"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="Đánh giá sản phẩm trước ngày 20/12/2022"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_marginTop="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:weightSum="10">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đánh giá và nhận ngay 2 điểm!"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#EC1313"
+                android:layout_weight="8"/>
+            <Button
+                android:id="@+id/btn_danhgia_danhgiacuatoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đánh giá"
+                android:fontFamily="@font/montserrat"
+                android:background="@drawable/customshape"
+                android:textColor="@color/white"
+                android:layout_weight="2"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
