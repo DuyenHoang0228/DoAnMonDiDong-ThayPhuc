@@ -18,6 +18,10 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user);
 
         showActionBar();
+        addEvent();
+    }
+
+    private void addEvent() {
     }
 
     private void showActionBar() {

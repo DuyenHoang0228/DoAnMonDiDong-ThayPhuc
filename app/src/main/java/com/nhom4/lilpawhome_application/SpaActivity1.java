@@ -43,6 +43,8 @@ public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnIte
         UnderlineSpan underlineSpan = new UnderlineSpan();
         s.setSpan(underlineSpan, 0,18, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         banggia.setText(s);
+
+
     }
 
     // Performing action when ItemSelected
