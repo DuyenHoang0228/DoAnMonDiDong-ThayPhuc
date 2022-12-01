@@ -37,7 +37,6 @@
                 android:layout_gravity="center"
                 android:src="@drawable/icon_cart"
                 />
-
             <ImageView
                 android:id="@+id/imv_chat"
                 android:layout_width="20dp"
@@ -46,10 +45,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/icon_chat"
-
-
                 />
-
         </LinearLayout>
 
     </RelativeLayout>
@@ -102,8 +98,8 @@
                     app:iss_auto_cycle="true"
                     app:iss_period="1000"
                     app:iss_delay="5000"
-                    app:iss_corner_radius="50"
-                    />
+                    app:iss_corner_radius="50">
+                </com.denzcoskun.imageslider.ImageSlider>
 
 
            </androidx.cardview.widget.CardView>

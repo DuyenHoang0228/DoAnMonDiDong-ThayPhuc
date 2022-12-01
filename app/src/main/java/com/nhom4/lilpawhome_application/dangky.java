@@ -17,7 +17,6 @@ public class dangky extends AppCompatActivity {
 
         binding = ActivityDangkyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         addEvent();
     }
 
@@ -32,8 +31,9 @@ public class dangky extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Hiện dialog nhập otp
-                Intent intent = new Intent(dangky.this, khachhangthanthiet.class);
-                startActivity(intent);
+                OTPVetification_Dialog_Dangky otpVetification_dialog_dangky= new OTPVetification_Dialog_Dangky(dangky.this,binding.edtNhapemailhoacsdtdk.getText().toString());
+                otpVetification_dialog_dangky.setCancelable(false);
+                otpVetification_dialog_dangky.show();
             }
         });
     }

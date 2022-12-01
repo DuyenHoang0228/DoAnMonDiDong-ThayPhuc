@@ -28,7 +28,7 @@
         android:fontFamily="@font/montserratbold"
         android:textSize="15sp"
         android:gravity="center_vertical"
-        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawableStart="@drawable/ic_baseline_search_white_24"
         android:drawablePadding="5dp"
         ></EditText>
         <Button
