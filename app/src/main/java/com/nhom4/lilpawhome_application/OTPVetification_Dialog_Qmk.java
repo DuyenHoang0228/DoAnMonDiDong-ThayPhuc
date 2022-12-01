@@ -1,8 +1,8 @@
 package com.nhom4.lilpawhome_application;
 
 
-import static androidx.core.content.ContextCompat.startActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-public class OTPVetification_Dialog_Sdt extends Dialog {
+public class OTPVetification_Dialog_Qmk extends Dialog {
     private EditText otp1, otp2, otp3, otp4;
     private TextView resend;
     private Button xacnhan;
@@ -32,25 +32,27 @@ public class OTPVetification_Dialog_Sdt extends Dialog {
     private boolean resendEnable = false;
     private int selectedETPosition = 0;
     private final String sdttxt;
-    public OTPVetification_Dialog_Sdt(@NonNull Context context,String sdt ) {
+    public OTPVetification_Dialog_Qmk(@NonNull Context context, String sdt ) {
         super(context);
         this.sdttxt=sdt;
     }
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         getWindow().setBackgroundDrawable(new ColorDrawable(getContext().getResources().getColor(android.R.color.transparent)));
-        setContentView(R.layout.dialog_nhapmaotpsdt);
-        otp1 = findViewById(R.id.edt_otpsdt1);
-        otp2 = findViewById(R.id.edt_otpsdt2);
-        otp3 = findViewById(R.id.edt_otpsdt3);
-        otp4 = findViewById(R.id.edt_otpsdt4);
-        xacnhan = findViewById(R.id.btn_xacnhanotpsdt);
-        resend = findViewById(R.id.txt_guilaiotp);
-        thoat = (ImageButton)findViewById(R.id.btn_exitotpsdt);
-        final TextView sdt=findViewById(R.id.txt_sdtotp);
+        setContentView(R.layout.dialog_nhapmaotpqmk);
+        otp1 = findViewById(R.id.edt_otpqmk1);
+        otp2 = findViewById(R.id.edt_otpqmk2);
+        otp3 = findViewById(R.id.edt_otpqmk3);
+        otp4 = findViewById(R.id.edt_otpqmk4);
+        xacnhan = findViewById(R.id.btn_xacnhanotpqmk);
+        resend = findViewById(R.id.txt_guilaiotpqmk);
+        thoat = (ImageButton)findViewById(R.id.btn_exitotpqmk);
+        final TextView sdt=findViewById(R.id.txt_qmkotp);
         otp1.addTextChangedListener(textWatcher);
         otp2.addTextChangedListener(textWatcher);
         otp3.addTextChangedListener(textWatcher);
@@ -72,9 +74,9 @@ public class OTPVetification_Dialog_Sdt extends Dialog {
             public void onClick(View view) {
                 final String getOTP = otp1.getText().toString() + otp2.getText().toString() + otp3.getText().toString() + otp4.getText().toString();
                 if (getOTP.length() == 4) {
-                    Toast.makeText(view.getContext(), "Xác nhận mã OTP thành công! Bạn đã cập nhật số điện thoại mới",
+                    Toast.makeText(view.getContext(), "Xác nhận mã OTP thành công!",
                             Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(view.getContext(), taikhoanvabaomat.class);
+                    Intent intent = new Intent(view.getContext(), quenmatkhau2.class);
                     view.getContext().startActivity(intent);
                     }
                 }
@@ -85,7 +87,7 @@ public class OTPVetification_Dialog_Sdt extends Dialog {
         thoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), nhapsodienthoaimoi.class);
+                Intent intent = new Intent(view.getContext(), quenmatkhau1.class);
                 view.getContext().startActivity(intent);
             }
         });

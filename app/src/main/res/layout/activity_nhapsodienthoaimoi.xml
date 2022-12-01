@@ -19,6 +19,7 @@
         android:textSize="14.5sp"></TextView>
     <EditText
         android:id="@+id/edt_nhapsodienthoaimoi"
+        android:inputType="phone"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
