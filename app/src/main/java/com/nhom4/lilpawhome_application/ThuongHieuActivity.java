@@ -46,7 +46,7 @@ public class ThuongHieuActivity extends AppCompatActivity {
     private void loadData() {
     thuongHieuArrayList=new ArrayList<>();
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.eight_in1_brand,"8 in 1"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.ANF,"anf"));
+
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.furminator,"furminator"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.ferplast,"ferplast"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.mon_ami,"mon_ami"));

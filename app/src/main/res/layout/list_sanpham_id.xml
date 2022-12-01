@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
 
         android:layout_gravity="center">
@@ -28,7 +28,8 @@
                 android:id="@+id/txt_tensanpham"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
+
+                android:layout_marginHorizontal="10dp"
                 android:paddingTop="8dp"
                 android:text="Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản"
                 android:fontFamily="@font/montserrat_medium"
@@ -40,7 +41,8 @@
                 android:id="@+id/txt_brandsanpham"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
+
+                android:layout_marginLeft="10dp"
                 android:fontFamily="@font/montserrat_light"
                 android:text="Hãng: Felipro"
                 android:layout_below="@+id/txt_tensanpham"
@@ -65,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:paddingLeft="5dp"
+
                 android:text="32.000 đ"
                 android:textColor="#D44837"
                 android:layout_below="@+id/txt_brandsanpham"
@@ -74,7 +76,7 @@
                 android:id="@+id/txt_giasanphamdagiam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+
                 android:fontFamily="@font/montserrat_light"
                 android:foreground="@drawable/strikethroughtext"
                 android:text="36.000 đ"

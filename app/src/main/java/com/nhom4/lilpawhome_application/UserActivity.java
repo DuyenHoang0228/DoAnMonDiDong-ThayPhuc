@@ -22,6 +22,7 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void addEvent() {
+
     }
 
     private void showActionBar() {
