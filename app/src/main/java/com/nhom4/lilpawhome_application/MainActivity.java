@@ -148,6 +148,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.gvSpdexuat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
+                SanPham spitem = sanPhamDexuathome.get(i);
+                intent.putExtra("anhSanPham",spitem.getAnhSanPham());
+                intent.putExtra("tenSanPham",spitem.getTenSanPham());
+                intent.putExtra("giaMoiSanPham",spitem.getGiaMoiSanPham());
+                intent.putExtra("giaCuSanPham",spitem.getGiaCuSanPham());
+                intent.putExtra("thuongHieu",spitem.getThuongHieu());
+                intent.putExtra("loaiSanPham",spitem.getLoaiSanPham());
+                intent.putExtra("looaiSanPham2",spitem.getLooaiSanPham2());
+//anhSanPham, String tenSanPham, double giaMoiSanPham, double giaCuSanPham, String thuongHieu, String loaiSanPham, String looaiSanPham2
+
+
+
+
+
+                startActivity(intent);
+            }
+        });
     }
 
 

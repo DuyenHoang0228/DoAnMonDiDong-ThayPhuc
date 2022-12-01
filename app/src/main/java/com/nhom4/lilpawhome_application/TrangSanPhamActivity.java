@@ -3,6 +3,7 @@ package com.nhom4.lilpawhome_application;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -38,7 +39,9 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         binding.txtThongtinsanpham.setMaxLines(3);
         loadData();
         addEvents();
+        showData();
     }
+
 
     private void addEvents() {
         binding.btnXemthem.setOnClickListener(new View.OnClickListener() {
@@ -89,4 +92,36 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         binding.gvDanhgiasanpham.setAdapter(adapterDanhGiaSanPham);
 
     }
+
+    private void showData() {
+        Intent intent = getIntent();
+        int anhSanPham = intent.getIntExtra("anhSanPham",0);
+        binding.imvAnhsanpham.setImageResource(anhSanPham);
+
+        String tenSanPham=intent.getStringExtra("tenSanPham");
+        binding.txtTensanphamTrangsanpham.setText(tenSanPham);
+
+        double giaMoiSanPham =intent.getDoubleExtra("giaMoiSanPham",0);
+        binding.txtGiamoiTrangsanpham.setText(giaMoiSanPham+"");
+
+        String thuongHieu = intent.getStringExtra("thuongHieu");
+        double giaCuSanPham =intent.getDoubleExtra("giaCuSanPham",0);
+        String loaiSanPham = intent.getStringExtra("loaiSanPham");
+        String loaiSanPham2 = intent.getStringExtra("loaiSanPham2");
+        //anhSanPham, String tenSanPham, double
+        // giaMoiSanPham, double giaCuSanPham, String thuongHieu, String loaiSanPham, String looaiSanPham2
+
+    }
+
+    // private void showData() {
+    //        Intent intent = getIntent();
+    //        int index = intent.getIntExtra("index",0);
+    //         helpContent = getResources().getStringArray(R.array.helpContent);
+    //        String helpTittle = intent.getStringExtra("helpTittle");
+    //        binding.txtHelpTittle.setText(helpTittle);
+    //        String cont = helpContent[index];
+    //        binding.txtHelpContent.setText(cont);
+    //
+    //
+    //    }
 }
