@@ -46,13 +46,20 @@ public class ThuongHieuActivity extends AppCompatActivity {
     private void loadData() {
     thuongHieuArrayList=new ArrayList<>();
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.eight_in1_brand,"8 in 1"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.a_pro_iq_formula_brand,"A Pro IQ Formula"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.ANF,"anf"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.furminator,"furminator"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.ferplast,"ferplast"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.mon_ami,"mon_ami"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.monge,"monge"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.thuonghieukhac,"thuonghieukhac"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.catsrang,"catstrang"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.kong,"kong"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.catbest,"catsbest"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.ciao,"ciao"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.nekko,"nekko"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.ag_science_brand,"AG SCIENCE BRAND"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.alkin_tbrandjpg,"Alkin TBrand"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.pawise,"pawise"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.genki_brand,"Genky Brand"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.maneki_neko_brand,"Maneki Neko Brand"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.o3vit_brand,"O3VIT Brand"));
-
     adapter=new ThuonghieuAdapter(ThuongHieuActivity.this,R.layout.thuonghieu_list,thuongHieuArrayList);
     binding.gvThuonghieu.setAdapter(adapter);
 
