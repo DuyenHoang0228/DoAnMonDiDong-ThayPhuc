@@ -27,7 +27,7 @@
             <TextView
                 android:id="@+id/txt_tensanpham"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
 
                 android:layout_marginHorizontal="10dp"
                 android:paddingTop="8dp"

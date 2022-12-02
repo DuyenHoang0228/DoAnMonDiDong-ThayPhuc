@@ -22,6 +22,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nhom4.adapters.Danhmuc1Adapter;
+import com.nhom4.adapters.HorAdapterSanphamLilPawHome;
 import com.nhom4.adapters.HorSanPhamAdapter;
 import com.nhom4.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.adapters.SanphamAdapter;
@@ -38,14 +39,12 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     Danhmuc1Adapter adapter;
     ArrayList<DanhMuc1> danhmuc;
-    ArrayList<SanPham> sanPhams;
-    ArrayList<SanPham> sanPhamsBanchay;
-    ArrayList<SanPhamLilPawHome> sanPhamDexuathome;
-    HorSanPhamAdapter adapter2;
+
+    ArrayList<SanPhamLilPawHome> sanPhamgiamgia, sanPhamsBanchay, sanPhamDexuathome, sanphamchocho,sanphamchomeo;
+    HorAdapterSanphamLilPawHome adapter2;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager Horizontallayout;
-    ExpandableHeightGridView SPdexuat;
     SanPhamAdapterLilPawHome adapter3;
     DBHelperSanPham dbHelperSanPham;
 
@@ -122,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 1:
-                        intent =new Intent(MainActivity.this,ShopChoMeo2.class);
+                        intent =new Intent(MainActivity.this,ShopChoMeo1.class);
                         break;
                     case 2:
                        intent =new Intent(MainActivity.this,SpaActivity1.class);
@@ -184,13 +183,65 @@ public class MainActivity extends AppCompatActivity {
         loadSPgiamgia();
         loadSPbanchay();
         loadSPdexuat();
-
+        loadSPchocho();
+        loadSPchomeo();
 
 
     }
+
+
+
+
     private void createDb() {
         dbHelperSanPham=new DBHelperSanPham(MainActivity.this);
         dbHelperSanPham.createSampleData();
+    }
+    private void loadSPchomeo() {
+        recyclerView = (RecyclerView) findViewById(R.id.rcv_spchoMeo);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+        //add sp
+        sanphamchomeo = new ArrayList<>();
+
+        //truy vấn
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" like '%chomeo' ");
+        while(c.moveToNext())
+        {
+            sanphamchomeo.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this,sanphamchomeo);
+        // truyen du lieu
+        Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(Horizontallayout);
+        recyclerView.setAdapter(adapter2);
+    }
+
+    private void loadSPchocho() {
+        recyclerView = (RecyclerView) findViewById(R.id.rcv_spchoCho);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+        //add sp
+        sanphamchocho = new ArrayList<>();
+
+        //truy vấn
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" like '%chocho' ");
+        while(c.moveToNext())
+        {
+            sanphamchocho.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this,sanphamchocho);
+        // truyen du lieu
+        Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(Horizontallayout);
+        recyclerView.setAdapter(adapter2);
     }
 
     private void loadSPdexuat() {
@@ -198,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
         sanPhamDexuathome=new ArrayList<>();
 
         Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
-                " WHERE "+ DBHelperSanPham.COL_NEWPRICE+" < "+" 300000 ");
+                " WHERE "+ DBHelperSanPham.COL_NEWPRICE+" < "+" 150000 ");
         while(c.moveToNext())
         {
             sanPhamDexuathome.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
@@ -242,22 +293,27 @@ public class MainActivity extends AppCompatActivity {
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
         //add sp
-        sanPhams = new ArrayList<>();
-        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        sanPhams.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        sanPhamgiamgia = new ArrayList<>();
 
+        //truy vấn
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
+                " WHERE "+ DBHelperSanPham.COL_DISCOUNT+" > 0.25 ");
+        while(c.moveToNext())
+        {
+            sanPhamgiamgia.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this,sanPhamgiamgia);
         // truyen du lieu
-        adapter2= new HorSanPhamAdapter(sanPhams);
         Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(Horizontallayout);
         recyclerView.setAdapter(adapter2);
 
     }
     private void loadSPbanchay(){
-        recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
+      /*  recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
         //add sp
@@ -270,6 +326,27 @@ public class MainActivity extends AppCompatActivity {
 
         // truyen du lieu
         adapter2= new HorSanPhamAdapter(sanPhamsBanchay);
+        Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(Horizontallayout);
+        recyclerView.setAdapter(adapter2);*/
+        recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+        //add sp
+        sanPhamsBanchay = new ArrayList<>();
+
+        //truy vấn
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
+                " WHERE "+ DBHelperSanPham.COL_CATE3+" = 'banchay' ");
+        while(c.moveToNext())
+        {
+            sanPhamsBanchay.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this,sanPhamsBanchay);
+        // truyen du lieu
         Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(Horizontallayout);
         recyclerView.setAdapter(adapter2);
