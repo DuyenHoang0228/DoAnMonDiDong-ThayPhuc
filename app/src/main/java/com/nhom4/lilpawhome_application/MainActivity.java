@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,10 +23,13 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nhom4.adapters.Danhmuc1Adapter;
 import com.nhom4.adapters.HorSanPhamAdapter;
+import com.nhom4.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.adapters.SanphamAdapter;
+import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.DanhMuc1;
 import com.nhom4.models.SanPham;
+import com.nhom4.models.SanPhamLilPawHome;
 import com.nhom4.view.ExpandableHeightGridView;
 
 import java.util.ArrayList;
@@ -36,13 +40,14 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<DanhMuc1> danhmuc;
     ArrayList<SanPham> sanPhams;
     ArrayList<SanPham> sanPhamsBanchay;
-    ArrayList<SanPham> sanPhamDexuathome;
+    ArrayList<SanPhamLilPawHome> sanPhamDexuathome;
     HorSanPhamAdapter adapter2;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager Horizontallayout;
     ExpandableHeightGridView SPdexuat;
-    SanphamAdapter adapter3;
+    SanPhamAdapterLilPawHome adapter3;
+    DBHelperSanPham dbHelperSanPham;
 
 
 
@@ -152,14 +157,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
-                SanPham spitem = sanPhamDexuathome.get(i);
-                intent.putExtra("anhSanPham",spitem.getAnhSanPham());
+                SanPhamLilPawHome spitem = sanPhamDexuathome.get(i);
+                intent.putExtra("anhSanPham",spitem.getIdAnhSanPham());
                 intent.putExtra("tenSanPham",spitem.getTenSanPham());
                 intent.putExtra("giaMoiSanPham",spitem.getGiaMoiSanPham());
                 intent.putExtra("giaCuSanPham",spitem.getGiaCuSanPham());
-                intent.putExtra("thuongHieu",spitem.getThuongHieu());
-                intent.putExtra("loaiSanPham",spitem.getLoaiSanPham());
-                intent.putExtra("looaiSanPham2",spitem.getLooaiSanPham2());
+                intent.putExtra("thuongHieu",spitem.getThuongHieuSanPham());
+                intent.putExtra("loaiSanPham",spitem.getLoaiSanPham1());
+                intent.putExtra("looaiSanPham2",spitem.getLoaiSanPham2());
+                intent.putExtra("looaiSanPham3",spitem.getLoaiSanPham3());
 //anhSanPham, String tenSanPham, double giaMoiSanPham, double giaCuSanPham, String thuongHieu, String loaiSanPham, String looaiSanPham2
 
 
@@ -173,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void loadData() {
+        createDb();
         loadDanhmuc();
         loadSPgiamgia();
         loadSPbanchay();
@@ -181,28 +188,27 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    private void createDb() {
+        dbHelperSanPham=new DBHelperSanPham(MainActivity.this);
+        dbHelperSanPham.createSampleData();
+    }
 
     private void loadSPdexuat() {
-        SPdexuat=findViewById(R.id.gv_spdexuat);
-        SPdexuat.setExpanded(true);
-        sanPhamDexuathome =new ArrayList<>();
-        sanPhamDexuathome.add(new SanPham(R.drawable.sphatcho,"Hạt cho chó",120000,200000,
-                "Thương hiệu 1","thucanchocho","hatchocho"));
-        sanPhamDexuathome.add(new SanPham(R.drawable.sppatecho,"Pate cho chó",350000,400000,
-                "Thương hiệu 1","thucanchocho","patechocho"));
-        sanPhamDexuathome.add(new SanPham(R.drawable.spsuacho,"Sữa tắm chó",250000,300000,
-                "Thương hiệu 2","thucanchocho","suacho"));
-        sanPhamDexuathome.add(new SanPham(R.drawable.spsuatamcho,"Sữa tắm chó",120000,320000,
-                "Thương hiệu 2","dodungcho","suatamcho"));
-        sanPhamDexuathome.add(new SanPham(R.drawable.spxuongcho,"Xương chó đồ chơi",20000,50000,
-                "Thương hiệu 3","dochoicho","xuongcho"));
-        sanPhamDexuathome.add(new SanPham(R.drawable.spdinhduongcho,"Sữa dinh dưỡng cho chó",360000,500000,
-                "Thương hiệu 3","thucanchocho","dinhduongchocho"));
-        sanPhamDexuathome.add(new SanPham(R.drawable.sptaimatmiengcho,"Cây chà răng chó",25000,40000,
-                "Thương hiệu 4","dodungcho","taimatcho"));
+        binding.gvSpdexuat.setExpanded(true);
+        sanPhamDexuathome=new ArrayList<>();
 
-        adapter3=new SanphamAdapter(MainActivity.this,R.layout.list_sanpham_id,sanPhamDexuathome);
-        SPdexuat.setAdapter(adapter3);
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
+                " WHERE "+ DBHelperSanPham.COL_NEWPRICE+" < "+" 300000 ");
+        while(c.moveToNext())
+        {
+            sanPhamDexuathome.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter3=new SanPhamAdapterLilPawHome(MainActivity.this,R.layout.list_sanpham_id,sanPhamDexuathome);
+        binding.gvSpdexuat.setAdapter(adapter3);
+
     }
 
     private void loadBanner(){
