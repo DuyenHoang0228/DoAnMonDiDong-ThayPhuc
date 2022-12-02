@@ -1,6 +1,7 @@
 package com.nhom4.adapters;
 
 import android.app.Activity;
+import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +21,12 @@ public class HorAdapterSanphamLilPawHome extends RecyclerView.Adapter<HorAdapter
     Activity activity;
 
     List<SanPhamLilPawHome> sanPhamLilPawHomes;
+    ItemClickListener mItemListener;
 
-    public HorAdapterSanphamLilPawHome(Activity activity, List<SanPhamLilPawHome> sanPhamLilPawHomes) {
+    public HorAdapterSanphamLilPawHome(Activity activity, List<SanPhamLilPawHome> sanPhamLilPawHomes, ItemClickListener mItemListener) {
         this.activity = activity;
-
         this.sanPhamLilPawHomes = sanPhamLilPawHomes;
+        this.mItemListener = mItemListener;
     }
 
     public class MyView extends RecyclerView.ViewHolder {
@@ -69,6 +71,9 @@ public class HorAdapterSanphamLilPawHome extends RecyclerView.Adapter<HorAdapter
         );
         //truyền id vào
         holder.imvhinhsanpham.setImageResource(img_id);
+        holder.itemView.setOnClickListener(view -> {
+            mItemListener.onItemClick(sanPhamLilPawHomes.get(position));
+        });
 
 
     }
@@ -76,5 +81,9 @@ public class HorAdapterSanphamLilPawHome extends RecyclerView.Adapter<HorAdapter
     @Override
     public int getItemCount() {
         return sanPhamLilPawHomes.size();
+    }
+
+    public interface ItemClickListener {
+        void onItemClick(SanPhamLilPawHome details);
     }
 }

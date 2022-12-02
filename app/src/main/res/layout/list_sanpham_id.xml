@@ -62,17 +62,35 @@
                 android:layout_weight="2"
                 >
 
-
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
             <TextView
                 android:id="@+id/txt_giasanphamchuagiam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
 
-                android:text="32.000 đ"
+                android:text="32.000"
                 android:textColor="#D44837"
                 android:layout_below="@+id/txt_brandsanpham"
                 android:textSize="14sp" />
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+
+                    android:text=" đ"
+                    android:textColor="#D44837"
+                    android:layout_below="@+id/txt_brandsanpham"
+                    android:textSize="14sp" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
             <TextView
                 android:id="@+id/txt_giasanphamdagiam"
                 android:layout_width="wrap_content"
@@ -80,9 +98,19 @@
 
                 android:fontFamily="@font/montserrat_light"
                 android:foreground="@drawable/strikethroughtext"
-                android:text="36.000 đ"
+                android:text="36.000"
                 android:textSize="12sp"
                 android:layout_below="@+id/txt_giasanphamchuagiam"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/montserrat_light"
+                        android:foreground="@drawable/strikethroughtext"
+                        android:text=" đ"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/txt_giasanphamchuagiam"/>
+            </LinearLayout>
             </LinearLayout>
             <ImageView
                 android:id="@+id/imv_gioHang"

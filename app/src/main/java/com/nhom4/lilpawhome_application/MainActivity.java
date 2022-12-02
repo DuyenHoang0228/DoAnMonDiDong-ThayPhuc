@@ -157,23 +157,12 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
                 SanPhamLilPawHome spitem = sanPhamDexuathome.get(i);
-                intent.putExtra("anhSanPham",spitem.getIdAnhSanPham());
-                intent.putExtra("tenSanPham",spitem.getTenSanPham());
-                intent.putExtra("giaMoiSanPham",spitem.getGiaMoiSanPham());
-                intent.putExtra("giaCuSanPham",spitem.getGiaCuSanPham());
-                intent.putExtra("thuongHieu",spitem.getThuongHieuSanPham());
-                intent.putExtra("loaiSanPham",spitem.getLoaiSanPham1());
-                intent.putExtra("looaiSanPham2",spitem.getLoaiSanPham2());
-                intent.putExtra("looaiSanPham3",spitem.getLoaiSanPham3());
-//anhSanPham, String tenSanPham, double giaMoiSanPham, double giaCuSanPham, String thuongHieu, String loaiSanPham, String looaiSanPham2
-
-
-
-
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
 
                 startActivity(intent);
             }
         });
+
     }
 
 
@@ -213,7 +202,15 @@ public class MainActivity extends AppCompatActivity {
                     c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
         }
         c.close();
-        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this,sanphamchomeo);
+        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this, sanphamchomeo, new HorAdapterSanphamLilPawHome.ItemClickListener() {
+            @Override
+            public void onItemClick(SanPhamLilPawHome details) {
+                Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
+                intent.putExtra("IDsanpham",details.getIdSanPham());
+
+                startActivity(intent);
+            }
+        });
         // truyen du lieu
         Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(Horizontallayout);
@@ -237,7 +234,15 @@ public class MainActivity extends AppCompatActivity {
                     c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
         }
         c.close();
-        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this,sanphamchocho);
+        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this, sanphamchocho, new HorAdapterSanphamLilPawHome.ItemClickListener() {
+            @Override
+            public void onItemClick(SanPhamLilPawHome details) {
+                Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
+                intent.putExtra("IDsanpham",details.getIdSanPham());
+
+                startActivity(intent);
+            }
+        });
         // truyen du lieu
         Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(Horizontallayout);
@@ -305,7 +310,15 @@ public class MainActivity extends AppCompatActivity {
                     c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
         }
         c.close();
-        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this,sanPhamgiamgia);
+        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this, sanPhamgiamgia, new HorAdapterSanphamLilPawHome.ItemClickListener() {
+            @Override
+            public void onItemClick(SanPhamLilPawHome details) {
+                Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
+                intent.putExtra("IDsanpham",details.getIdSanPham());
+
+                startActivity(intent);
+            }
+        });
         // truyen du lieu
         Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(Horizontallayout);
@@ -345,7 +358,15 @@ public class MainActivity extends AppCompatActivity {
                     c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
         }
         c.close();
-        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this,sanPhamsBanchay);
+        adapter2=new HorAdapterSanphamLilPawHome(MainActivity.this, sanPhamsBanchay, new HorAdapterSanphamLilPawHome.ItemClickListener() {
+            @Override
+            public void onItemClick(SanPhamLilPawHome details) {
+                Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
+                intent.putExtra("IDsanpham",details.getIdSanPham());
+
+                startActivity(intent);
+            }
+        });
         // truyen du lieu
         Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(Horizontallayout);
