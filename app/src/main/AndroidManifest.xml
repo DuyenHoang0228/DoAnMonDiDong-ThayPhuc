@@ -88,7 +88,8 @@
         </activity>
         <activity
             android:name=".ShopChoMeo2"
-            android:exported="false">
+            android:exported="true">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -250,7 +251,6 @@
         </activity>
         <activity
             android:name=".DanhmucActivity"
-            android:name=".HosoMeoDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -283,6 +283,14 @@
             android:name=".NoticeActivity"
             android:exported="false"
             android:label="Thông báo">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UserActivity"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -336,7 +344,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -437,49 +444,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".HosoMeoDetailActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".TaoHosoActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HosoChoDetailActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ChonHosoActivity"
-            android:exported="false">
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".LichhenDetailActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".DSLichhenActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".BlogDetailActivity"
             android:exported="false">
             <meta-data
@@ -504,11 +468,6 @@
             android:name=".SpaActivity1"
             android:exported="true"
             android:theme="@style/Theme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

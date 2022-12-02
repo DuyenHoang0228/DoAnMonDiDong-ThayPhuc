@@ -58,10 +58,10 @@ public class AdapterSanPhamTT extends RecyclerView.Adapter<AdapterSanPhamTT.MyVi
                                  final int position)
     {
         GioHang g = gioHangList.get(position);
-        holder.txttensanpham.setText(g.getTensanpham());
-        holder.txtgiasanphamchuagiam.setText(String.format("%.0f VNĐ",g.getGiasanphamchuagiam()));
-        holder.txtgiasanphamdagiam.setText(String.format("%.0f VNĐ",g.getGiasanphamdagiam()));
-        holder.imvhinhsanpham.setImageResource(g.getHinhsanpham());
+        holder.txttensanpham.setText(g.getTenSanPham());
+        holder.txtgiasanphamchuagiam.setText(String.format("%.0f VNĐ",g.getGiaCuSanPham()));
+        holder.txtgiasanphamdagiam.setText(String.format("%.0f VNĐ",g.getGiaMoiSanPham()));
+        holder.imvhinhsanpham.setImageResource(g.getIdAnhSanPham());
         holder.txtsoluongsp.setText(String.valueOf("x"+g.getSoluongsp()));
     }
 

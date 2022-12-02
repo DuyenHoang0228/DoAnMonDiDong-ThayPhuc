@@ -450,22 +450,6 @@ public class DBHelperSanPham extends SQLiteOpenHelper {
                     "Kích thước: 32*26*44cm\n" +
                     "Thích hợp với thú cưng dưới 7kg',5,802,80)");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 

@@ -25,6 +25,7 @@ import com.nhom4.adapters.HorSanPhamAdapter;
 import com.nhom4.adapters.SanphamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.DanhMuc1;
+import com.nhom4.models.GioHang;
 import com.nhom4.models.SanPham;
 import com.nhom4.view.ExpandableHeightGridView;
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayoutManager Horizontallayout;
     ExpandableHeightGridView SPdexuat;
     SanphamAdapter adapter3;
-
+    public static ArrayList<GioHang> manggiohang; //Khai báo mảng giỏ hàng public để làm mảng toàn cục, luôn xuất hiện ở màn hình khác
 
 
     private ImageSlider imageSlider;
@@ -92,10 +93,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         loadBanner();
-
         loadData();
         addEvent();
+        createCart();//Tạo function thực hiện tạo giỏ hàng nếu không có mảng giỏ hàng nào tồn tại
+    }
 
+    private void createCart() {
+        if (manggiohang == null) {
+            manggiohang = new ArrayList<>();
+        }
     }
 
     private void addEvent() {
@@ -148,9 +154,6 @@ public class MainActivity extends AppCompatActivity {
         loadSPgiamgia();
         loadSPbanchay();
         loadSPdexuat();
-
-
-
     }
 
     private void loadSPdexuat() {

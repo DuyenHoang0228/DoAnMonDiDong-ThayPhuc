@@ -25,7 +25,8 @@ public class ShopChoMeo2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop_cho_meo2);
+//        setContentView(R.layout.activity_shop_cho_meo2);
+
         binding=ActivityShopChoMeo2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         loadData();
@@ -33,7 +34,7 @@ public class ShopChoMeo2 extends AppCompatActivity {
 
     private void loadData() {
         sanPhamArrayList=new ArrayList<>();
-        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME);
+        Cursor c = dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME);
         while(c.moveToNext())
         {
             sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
@@ -43,8 +44,6 @@ public class ShopChoMeo2 extends AppCompatActivity {
         c.close();
         adapter=new SanPhamAdapterLilPawHome(ShopChoMeo2.this,R.layout.list_sanpham_id,sanPhamArrayList);
         binding.gvShopchomeo2.setAdapter(adapter);
-
-
 
     }
 

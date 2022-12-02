@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -12,6 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.nhom4.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.adapters.SanphamAdapter;
@@ -28,8 +32,7 @@ public class ShopChoCho1 extends AppCompatActivity {
     SanPhamAdapterLilPawHome adapter;
     ArrayList<SanPhamLilPawHome> sanPhamArrayList;
     DBHelperSanPham dbHelperSanPham;
-
-
+    ImageView imvGiohang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,15 @@ public class ShopChoCho1 extends AppCompatActivity {
         createDb();
         loadData();
 
-
+        //Intent qua màn hình giỏ hàng
+        ImageView imvgiohang = findViewById(R.id.imv_giohang);
+        imvgiohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShopChoCho1.this, GioHangActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -70,8 +81,15 @@ public class ShopChoCho1 extends AppCompatActivity {
         c.close();
         adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
         binding.gvOptionchocho.setAdapter(adapter);
-
+        binding.gvOptionchocho.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ShopChoCho1.this, TrangSanPhamActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
     private void loadChuongLong() {
         sanPhamArrayList=new ArrayList<>();
         Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+

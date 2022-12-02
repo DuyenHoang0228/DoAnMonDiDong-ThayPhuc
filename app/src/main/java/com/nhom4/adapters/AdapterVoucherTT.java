@@ -38,7 +38,7 @@ public class AdapterVoucherTT extends RecyclerView.Adapter<AdapterVoucherTT.MyVi
             txtvouchertoida = itemView.findViewById(R.id.txt_vouchertoida);
             txthansd = itemView.findViewById(R.id.txt_hsdvoucher);
             rbtnvoucher = itemView.findViewById(R.id.rbtn_voucher);
-            voucherview = itemView.findViewById(R.id.voucherview); //Khai báo đến từng item voucher trong recyclerview
+            voucherview = itemView.findViewById(R.id.voucherview); //Ánh xạ đến từng item voucher trong recyclerview
             
             rbtnvoucher.setOnClickListener(new View.OnClickListener() {
                 @Override

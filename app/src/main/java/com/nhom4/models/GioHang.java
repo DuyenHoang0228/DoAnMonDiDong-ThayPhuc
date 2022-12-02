@@ -1,18 +1,44 @@
 package com.nhom4.models;
 
 public class GioHang {
-    int hinhsanpham, soluongsp;
-    String brandsanpham, tensanpham, phanloaishop;
-    Double giasanphamdagiam, giasanphamchuagiam;
+    int idSanPham;
+    String tenSanPham;
+    double giaMoiSanPham;
+    double giaCuSanPham;
+    int idAnhSanPham;
+    String loaiSanPham1;
+    String thuongHieuSanPham;
+    int soluongsp;
+    double tongtiensp;
+    boolean isSelected;
 
-    public GioHang(int hinhsanpham, int soluongsp, String brandsanpham, String tensanpham, String phanloaishop, Double giasanphamdagiam, Double giasanphamchuagiam) {
-        this.hinhsanpham = hinhsanpham;
+    public GioHang(int idSanPham, String tenSanPham, double giaMoiSanPham, double giaCuSanPham, int idAnhSanPham, String loaiSanPham1, String thuongHieuSanPham, int soluongsp, double tongtiensp, boolean isSelected) {
+        this.idSanPham = idSanPham;
+        this.tenSanPham = tenSanPham;
+        this.giaMoiSanPham = giaMoiSanPham;
+        this.giaCuSanPham = giaCuSanPham;
+        this.idAnhSanPham = idAnhSanPham;
+        this.loaiSanPham1 = loaiSanPham1;
+        this.thuongHieuSanPham = thuongHieuSanPham;
         this.soluongsp = soluongsp;
-        this.brandsanpham = brandsanpham;
-        this.tensanpham = tensanpham;
-        this.phanloaishop = phanloaishop;
-        this.giasanphamdagiam = giasanphamdagiam;
-        this.giasanphamchuagiam = giasanphamchuagiam;
+        this.tongtiensp = tongtiensp;
+        this.isSelected = isSelected;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
+
+    public double getTongtiensp() {
+        return tongtiensp;
+    }
+
+    public void setTongtiensp(double tongtiensp) {
+        this.tongtiensp = tongtiensp;
     }
 
     public int getSoluongsp() {
@@ -23,51 +49,60 @@ public class GioHang {
         this.soluongsp = soluongsp;
     }
 
-    public int getHinhsanpham() {
-        return hinhsanpham;
+    public int getIdSanPham() {
+        return idSanPham;
     }
 
-    public void setHinhsanpham(int hinhsanpham) {
-        this.hinhsanpham = hinhsanpham;
+    public void setIdSanPham(int idSanPham) {
+        this.idSanPham = idSanPham;
     }
 
-    public String getBrandsanpham() {
-        return brandsanpham;
+    public String getTenSanPham() {
+        return tenSanPham;
     }
 
-    public void setBrandsanpham(String brandsanpham) {
-        this.brandsanpham = brandsanpham;
+    public void setTenSanPham(String tenSanPham) {
+        this.tenSanPham = tenSanPham;
     }
 
-    public String getTensanpham() {
-        return tensanpham;
+    public double getGiaMoiSanPham() {
+        return giaMoiSanPham;
     }
 
-    public void setTensanpham(String tensanpham) {
-        this.tensanpham = tensanpham;
+    public void setGiaMoiSanPham(double giaMoiSanPham) {
+        this.giaMoiSanPham = giaMoiSanPham;
     }
 
-    public String getPhanloaishop() {
-        return phanloaishop;
+    public double getGiaCuSanPham() {
+        return giaCuSanPham;
     }
 
-    public void setPhanloaishop(String phanloaishop) {
-        this.phanloaishop = phanloaishop;
+    public void setGiaCuSanPham(double giaCuSanPham) {
+        this.giaCuSanPham = giaCuSanPham;
     }
 
-    public Double getGiasanphamdagiam() {
-        return giasanphamdagiam;
+
+    public int getIdAnhSanPham() {
+        return idAnhSanPham;
     }
 
-    public void setGiasanphamdagiam(Double giasanphamdagiam) {
-        this.giasanphamdagiam = giasanphamdagiam;
+    public void setIdAnhSanPham(int idAnhSanPham) {
+        this.idAnhSanPham = idAnhSanPham;
     }
 
-    public Double getGiasanphamchuagiam() {
-        return giasanphamchuagiam;
+    public String getLoaiSanPham1() {
+        return loaiSanPham1;
     }
 
-    public void setGiasanphamchuagiam(Double giasanphamchuagiam) {
-        this.giasanphamchuagiam = giasanphamchuagiam;
+    public void setLoaiSanPham1(String loaiSanPham1) {
+        this.loaiSanPham1 = loaiSanPham1;
+    }
+
+    public String getThuongHieuSanPham() {
+        return thuongHieuSanPham;
+    }
+
+    public void setThuongHieuSanPham(String thuongHieuSanPham) {
+        this.thuongHieuSanPham = thuongHieuSanPham;
     }
 }
