@@ -20,8 +20,7 @@ public class ThuongHieuActivity extends AppCompatActivity {
     ActivityThuongHieuBinding binding;
     ThuonghieuAdapter adapter;
     ArrayList<ThuongHieu> thuongHieuArrayList;
-    ImageView imvTimKiem;
-    EditText edtTimKiem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +31,7 @@ public class ThuongHieuActivity extends AppCompatActivity {
 
         binding=ActivityThuongHieuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        imvTimKiem=findViewById(R.id.imv_timkiem);
-        edtTimKiem=findViewById(R.id.edt_timkiem);
+
 
         loadData();
         addEvents();

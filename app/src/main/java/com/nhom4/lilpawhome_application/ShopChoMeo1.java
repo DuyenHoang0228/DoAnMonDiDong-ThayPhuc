@@ -48,11 +48,6 @@ public class ShopChoMeo1 extends AppCompatActivity {
 
         createDb();
         loadData();
-        loadThucAn();
-        loadDoDung();
-        loadDoChoi();
-        loadPhuKien();
-        loadChuongLong();
         addEvents();
 
     }
@@ -182,6 +177,338 @@ public class ShopChoMeo1 extends AppCompatActivity {
     private void loadData() {
         sanPhamArrayList=new ArrayList<>();
         Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME);
+        binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+
+    private void loadHat() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'hatchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+
+    private void loadPate() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'hatchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadSua() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'hatchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadDinhDuong() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'dinhduongchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadSnack() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'snackchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadKhay() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'khaychomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadChenAn() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'chenanchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadLongMong() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'longmongchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadTaiMat() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'taimatchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+
+    private void loadSuaTam() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'suatamchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadXuong() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'xuongchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadGoi() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'goibongnchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadBanhBong() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'banhbongchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadCaoMong() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'caomongchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadVongCo() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'vongcochomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+
+
+
+
+
+
+
+    private void loadQuanAo() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'quanaochomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+
+    private void loadNem() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'nemchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadBaloVanChuyen() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'balochomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadLongVanChuyen() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'longvanchuyenchomeo'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoMeo1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchomeo.setAdapter(adapter);
+
+    }
+    private void loadCoMeo() {
+
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE2+" = "+"'comeo'");
         while(c.moveToNext())
         {
             sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
@@ -232,6 +559,111 @@ public class ShopChoMeo1 extends AppCompatActivity {
             binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeochuong);
             loadChuongLong();
         }
+
+        if (item.getItemId()==R.id.mn_hatchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+            loadHat();
+        }
+        if (item.getItemId()==R.id.mn_patechocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+            loadPate();
+        }
+        if (item.getItemId()==R.id.mn_suachocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+            loadSua();
+        }
+        if (item.getItemId()==R.id.mn_dinhduongchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+            loadDinhDuong();
+        }
+        if (item.getItemId()==R.id.mn_snackchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+            loadSnack();
+        }
+        if (item.getItemId()==R.id.mn_khayvesinhchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeododung);
+            loadKhay();
+        }
+        if (item.getItemId()==R.id.mn_chenanchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeododung);
+            loadChenAn();
+        }
+        if (item.getItemId()==R.id.mn_longmongchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeododung);
+            loadLongMong();
+        }
+        if (item.getItemId()==R.id.mn_taimatmiengchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeododung);
+            loadTaiMat();
+        }
+        if (item.getItemId()==R.id.mn_suatamchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeododung);
+            loadSuaTam();
+        }
+        if (item.getItemId()==R.id.mn_xuongchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeodochoi);
+            loadXuong();
+        }
+        if (item.getItemId()==R.id.mn_caomongchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeodochoi);
+            loadCaoMong();
+        }
+        if (item.getItemId()==R.id.mn_goichocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeodochoi);
+            loadGoi();
+        }
+        if (item.getItemId()==R.id.mn_banhbongchocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeodochoi);
+            loadBanhBong();
+        }
+        if (item.getItemId()==R.id.mn_vongcochomeo)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeophukien);
+            loadVongCo();
+        }
+
+        if (item.getItemId()==R.id.mn_quanaochocho)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeophukien);
+            loadQuanAo();
+        }
+        if (item.getItemId()==R.id.mn_comeo)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeododung);
+            loadCoMeo();
+        }
+
+        if (item.getItemId()==R.id.mn_nemochomeo)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeochuong);
+            loadNem();
+        }
+        if (item.getItemId()==R.id.mn_longvanchuyenchomeo)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeochuong);
+            loadLongVanChuyen();
+        }
+        if (item.getItemId()==R.id.mn_balovanchuyenchomeo)
+        {
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeochuong);
+            loadBaloVanChuyen();
+        }
+
+
         return super.onOptionsItemSelected(item);
     }
 }

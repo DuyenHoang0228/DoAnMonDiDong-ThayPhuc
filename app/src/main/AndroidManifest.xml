@@ -102,7 +102,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ShopChoMeo1"
+            android:name=".TrangSanPhamActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -342,7 +342,7 @@
         <activity
             android:name=".manhinhkhoidong"
             android:exported="true"
-            android:theme="@style/Theme.offactionbar">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -361,9 +361,9 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".TrangSanPhamActivity"
+            android:name=".ShopChoMeo1"
             android:exported="true"
-            android:theme="@style/Theme.offactionbar">
+            >
 
 
             <meta-data
