@@ -10,9 +10,10 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.nhom4.adapters.ThuonghieuAdapter;
+
 import com.nhom4.lilpawhome_application.databinding.ActivityThuongHieuBinding;
 import com.nhom4.models.ThuongHieu;
+import com.nhom4.view.adapters.ThuonghieuAdapter;
 
 import java.util.ArrayList;
 
