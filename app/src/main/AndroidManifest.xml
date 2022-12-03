@@ -15,22 +15,6 @@
         android:theme="@style/Theme.LilpawHome_Application"
         tools:targetApi="31">
         <activity
-            android:name=".cacdieukhoansudung"
-            android:exported="false"
-            android:label="Các điều khoản sử dụng">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Doitentaikhoan"
-            android:exported="false"
-            android:label="Đổi tên tài khoản">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".DungNgayVoucher"
             android:exported="false"
             android:theme="@style/Theme.offactionbar">
@@ -132,6 +116,16 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".UserActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NoActionBar"
+            >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
             android:name=".SanPhamTheoThuongHieuActivity"
             android:exported="false">
             <meta-data
@@ -175,8 +169,8 @@
         </activity>
         <activity
             android:name=".thongbao"
-            android:exported="false"
             android:label="Thông báo">
+            android:exported="false"
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -366,8 +360,13 @@
         </activity>
         <activity
             android:name=".manhinhkhoidong"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.offactionbar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -507,6 +506,7 @@
             android:name=".SpaActivity1"
             android:exported="false"
             android:theme="@style/Theme.NoActionBar">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -522,6 +522,7 @@
             android:name=".gioithieuapp2"
             android:exported="false"
             android:theme="@style/Theme.offactionbar">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

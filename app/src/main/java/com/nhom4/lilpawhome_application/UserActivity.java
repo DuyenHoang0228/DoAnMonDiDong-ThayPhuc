@@ -4,24 +4,117 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.nhom4.fragment.ChoxacnhanFragment;
+import com.nhom4.lilpawhome_application.databinding.ActivityDanhmucBinding;
+import com.nhom4.lilpawhome_application.databinding.ActivityUserBinding;
 
 public class UserActivity extends AppCompatActivity {
-
+    ActivityUserBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        //setContentView(R.layout.activity_danhmuc);
+        binding = ActivityUserBinding.inflate(getLayoutInflater());
+        // setContentView(binding.getRoot());
+        View view = binding.getRoot();
+        setContentView(view);
 
         showActionBar();
         addEvent();
     }
 
     private void addEvent() {
+        binding.lnDonmua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,DsDonmuaActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
+        binding.lnChoxacnhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                //Fragment fragmentChoXacnhan = new ChoxacnhanFragment();
+                //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                //fragmentTransaction.replace(R.id.sc_user,fragmentChoXacnhan).commit();
+            }
+        });
+        binding.imvLichhenspa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,DSLichhenActivity.class);
+
+                startActivity(intent);
+            }
+        });
+        binding.imvHosothucung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,ChonHosoActivity.class);
+
+                startActivity(intent);
+            }
+        });
+        binding.lnKhovoucher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,KhoVoucher.class);
+
+                startActivity(intent);
+            }
+        });
+        binding.lnSanphamyeuthich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,SanPhamYeuThich.class);
+                startActivity(intent);
+            }
+        });
+        binding.lnDanhgiacuatoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,DanhGiaCuaToi.class);
+
+                startActivity(intent);
+            }
+        });
+        binding.lnTrogiup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,HelpActivity.class);
+
+                startActivity(intent);
+            }
+        });
+        binding.lnTrochuEn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,ChatActivity.class);
+
+                startActivity(intent);
+            }
+        });
+        binding.lnThietlaptaikhoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,thietlaptaikhoan.class);
+
+                startActivity(intent);
+            }
+        });
+
 
     }
 

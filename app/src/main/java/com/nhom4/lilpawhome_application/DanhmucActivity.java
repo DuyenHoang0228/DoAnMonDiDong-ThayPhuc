@@ -12,13 +12,18 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
+import android.widget.TabHost;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.nhom4.view.adapters.ExpandableDMAdapter;
+import com.nhom4.adapters.Danhmuc1Adapter;
+import com.nhom4.adapters.ExpandableDMAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityDanhmucBinding;
+import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.GroupDanhmuc;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -113,19 +118,28 @@ public class DanhmucActivity extends AppCompatActivity {
                 return true;
             }
         });
+        ImageView chat = findViewById(R.id.imv_chat);
+        ImageView giohang = findViewById(R.id.imv_giohang);
+
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DanhmucActivity.this,ChatActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
+        giohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DanhmucActivity.this,GioHangActivity.class);
+
+                startActivity(intent);
+            }
+        });
 
 
-    }
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()== R.id.imv_chat)
-        {
-                    Intent intent = new Intent(DanhmucActivity.this,ChatActivity.class);
-
-                    startActivity(intent);
-        }
-
-
-        return super.onOptionsItemSelected(item);
     }
 
     private Map<GroupDanhmuc, ArrayList<GroupDanhmuc>> getListitemscho(){
