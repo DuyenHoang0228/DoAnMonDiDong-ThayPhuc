@@ -8,20 +8,20 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.nhom4.adapters.SanPhamAdapterLilPawHome;
-import com.nhom4.adapters.SanphamAdapter;
+
 import com.nhom4.databases.DBHelperSanPham;
 
 import com.nhom4.lilpawhome_application.databinding.ActivitySanPhamTheoThuongHieuBinding;
 import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
+import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
 
 import java.util.ArrayList;
 
 public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
     ActivitySanPhamTheoThuongHieuBinding binding;
 
-    SanPhamAdapterLilPawHome adapterLilPawHome;
+    SanPhamAdapterLilPawHome sanPhamAdapterLilPawHome;
     ArrayList<SanPhamLilPawHome> sanPhamLilPawHomes;
     DBHelperSanPham dbHelperSanPham;
     TextView txtTenThuongHieu;
@@ -59,8 +59,8 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
                     c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
         }
         c.close();
-        adapterLilPawHome=new SanPhamAdapterLilPawHome(SanPhamTheoThuongHieuActivity.this,R.layout.list_sanpham_id,sanPhamLilPawHomes);
-        binding.gvSanphamtheothuonghieu.setAdapter(adapterLilPawHome);
+        sanPhamAdapterLilPawHome=new SanPhamAdapterLilPawHome(SanPhamTheoThuongHieuActivity.this,R.layout.list_sanpham_id,sanPhamLilPawHomes);
+        binding.gvSanphamtheothuonghieu.setAdapter(sanPhamAdapterLilPawHome);
 
     }
 
