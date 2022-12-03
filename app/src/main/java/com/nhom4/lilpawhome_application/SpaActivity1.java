@@ -5,13 +5,19 @@ import static com.nhom4.lilpawhome_application.Utils_Spa.DB_PATH_SUFFIX;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
-import android.text.style.UnderlineSpan;
+
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -20,7 +26,7 @@ import android.widget.Toast;
 
 import com.nhom4.lilpawhome_application.databinding.ActivitySpa1Binding;
 import com.nhom4.models.ThuCung;
-
+import android.text.style.UnderlineSpan;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -58,10 +64,42 @@ public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnIte
         UnderlineSpan underlineSpan = new UnderlineSpan();
         s.setSpan(underlineSpan, 0,18, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         banggia.setText(s);
-
         copyDB();
 
         //Intent button
+
+        //Dialog bảng giá
+        banggia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                openDialog(Gravity.BOTTOM);
+            }
+        });
+    }
+
+    //Dalog xuất hiện phía dưới, gắn sự kiến bấm ra ngoài mh là mất dialog
+    private void openDialog(int gravity){
+        final Dialog dialog = new Dialog(SpaActivity1.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_banggia);
+        dialog.show();
+
+        Window window = dialog.getWindow();
+        if(window==null){
+            return;
+        }
+
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        WindowManager.LayoutParams windowAttributes = window.getAttributes();
+        windowAttributes.gravity=gravity;
+        window.setAttributes(windowAttributes);
+
+        if (Gravity.BOTTOM==gravity){
+            dialog.setCancelable(true);
+        }
     }
 
     private void loadData() {

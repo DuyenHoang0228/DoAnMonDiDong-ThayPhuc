@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.nhom4.adapters.ChatAdapter;
+import com.nhom4.view.adapters.ChatAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityChatBinding;
 import com.nhom4.models.message;
 
@@ -51,19 +51,12 @@ public class ChatActivity extends AppCompatActivity {
     }
 
 
-
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
+   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {case android.R.id.home: onBackPressed();
+            return true;
 
             default:break;
         }
-
-
         return super.onOptionsItemSelected(item);
     }
-
 }

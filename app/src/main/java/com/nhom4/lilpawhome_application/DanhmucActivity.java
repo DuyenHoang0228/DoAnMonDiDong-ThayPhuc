@@ -8,7 +8,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,6 +39,7 @@ public class DanhmucActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_danhmuc);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding = ActivityDanhmucBinding.inflate(getLayoutInflater());
         // setContentView(binding.getRoot());
         View view = binding.getRoot();

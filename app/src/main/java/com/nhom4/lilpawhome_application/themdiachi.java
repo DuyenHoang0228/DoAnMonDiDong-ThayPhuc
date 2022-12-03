@@ -31,15 +31,20 @@ public class themdiachi extends AppCompatActivity {
         addEvents();
     }
 
+
+
     private void addEvents() {
         themdiachi= findViewById(R.id.btn_hoanthanh);
         themdiachi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(themdiachi.this, thietlaptaikhoan.class);
+                startActivity(intent);
+                Toast.makeText(themdiachi.this, "Thêm địa chỉ thành công!", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
+    //Thêm menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu2_item,menu);
@@ -91,6 +96,14 @@ public class themdiachi extends AppCompatActivity {
         Intent intent = new Intent(themdiachi.this, BlogActivity.class);
         startActivity(intent);
     }
-        return true;
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

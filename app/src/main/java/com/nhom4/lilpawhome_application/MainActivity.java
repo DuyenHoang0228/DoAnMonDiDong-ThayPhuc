@@ -320,13 +320,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // truyen du lieu
+        adapter2= new HorSanPhamAdapter(sanPhams);
         Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(Horizontallayout);
         recyclerView.setAdapter(adapter2);
 
     }
     private void loadSPbanchay(){
-      /*  recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
+        recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
         //add sp

@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.nhom4.adapters.AdapterViewPagerDSDonmua;
+import com.nhom4.view.adapters.AdapterViewPagerDSDonmua;
 
 public class DsDonmuaActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class DsDonmuaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ds_donmua);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //Ánh xạ TabLayout và Viewpager
         mTabLayout = findViewById(R.id.tablayout_dsdonmua);
         mViewPager = findViewById(R.id.viewpager_dsdonmua);
@@ -46,5 +47,14 @@ public class DsDonmuaActivity extends AppCompatActivity {
                     break;
             }
         }).attach();//bắt đầu tham chiếu từ fragment đến activity để chuẩn bị khởi tạo fragment
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {case android.R.id.home: onBackPressed();
+            return true;
+
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

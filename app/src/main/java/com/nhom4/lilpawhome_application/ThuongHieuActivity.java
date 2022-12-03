@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.nhom4.adapters.ThuonghieuAdapter;
+import com.nhom4.view.adapters.ThuonghieuAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityThuongHieuBinding;
 import com.nhom4.models.ThuongHieu;
 
@@ -26,7 +26,6 @@ public class ThuongHieuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_thuong_hieu);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_thuonghieu);
 
@@ -53,7 +52,6 @@ public class ThuongHieuActivity extends AppCompatActivity {
     private void loadData() {
     thuongHieuArrayList=new ArrayList<>();
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.eight_in1_brand,"8 in 1"));
-
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.furminator,"furminator"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.ferplast,"ferplast"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.mon_ami,"mon_ami"));
@@ -69,6 +67,5 @@ public class ThuongHieuActivity extends AppCompatActivity {
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.genki_brand,"Genky Brand"));
     adapter=new ThuonghieuAdapter(ThuongHieuActivity.this,R.layout.thuonghieu_list,thuongHieuArrayList);
     binding.gvThuonghieu.setAdapter(adapter);
-
     }
 }

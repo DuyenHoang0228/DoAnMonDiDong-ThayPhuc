@@ -18,7 +18,7 @@
         android:text="Tài khoản của tôi"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="15sp"></TextView>
     <Button
         android:id="@+id/btn_taikhoanvabaomat"
@@ -30,7 +30,7 @@
         android:text="Tài khoản và Bảo mật"
         android:textColor="@color/black"
         android:textAllCaps="false"
-        android:fontFamily="@font/montserratregular"
+        android:fontFamily="@font/montserrat_light"
         android:textSize="15sp"
         android:gravity="center_vertical"></Button>
     <Button
@@ -43,7 +43,7 @@
         android:text="Địa chỉ"
         android:textColor="@color/black"
         android:textAllCaps="false"
-        android:fontFamily="@font/montserratregular"
+        android:fontFamily="@font/montserrat_light"
         android:textSize="15sp"
         android:gravity="center_vertical"></Button>
     <Button
@@ -56,7 +56,7 @@
         android:text="Tài khoản/Thẻ ngân hàng"
         android:textColor="@color/black"
         android:textAllCaps="false"
-        android:fontFamily="@font/montserratregular"
+        android:fontFamily="@font/montserrat_light"
         android:textSize="15sp"
         android:gravity="center_vertical"></Button>
     <TextView
@@ -66,7 +66,7 @@
         android:text="Cài đặt"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="15sp"></TextView>
     <Button
         android:id="@+id/btn_caidatthongbao"
@@ -75,23 +75,10 @@
         android:background="@drawable/customshapeborderwhite"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Địa chỉ"
+        android:text="Cài đặt thông báo"
         android:textColor="@color/black"
         android:textAllCaps="false"
-        android:fontFamily="@font/montserratregular"
-        android:textSize="15sp"
-        android:gravity="center_vertical"></Button>
-    <Button
-        android:id="@+id/btn_btn_caidathethong"
-        android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
-        android:background="@drawable/customshapeborderwhite"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Tài khoản/Thẻ ngân hàng"
-        android:textColor="@color/black"
-        android:textAllCaps="false"
-        android:fontFamily="@font/montserratregular"
+        android:fontFamily="@font/montserrat_light"
         android:textSize="15sp"
         android:gravity="center_vertical"></Button>
     <TextView
@@ -101,7 +88,7 @@
         android:text="Hỗ trợ"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="15sp"></TextView>
     <Button
         android:id="@+id/btn_trungtamhotro"
@@ -113,7 +100,7 @@
         android:text="Trung tâm hỗ trợ"
         android:textColor="@color/black"
         android:textAllCaps="false"
-        android:fontFamily="@font/montserratregular"
+        android:fontFamily="@font/montserrat_light"
         android:textSize="15sp"
         android:gravity="center_vertical"></Button>
     <Button
@@ -126,7 +113,7 @@
         android:text="Yêu cầu hủy tài khoản"
         android:textColor="@color/black"
         android:textAllCaps="false"
-        android:fontFamily="@font/montserratregular"
+        android:fontFamily="@font/montserrat_light"
         android:textSize="15sp"
         android:gravity="center_vertical"></Button>
     <Button
@@ -138,7 +125,7 @@
         android:text="Đăng xuất"
         android:textColor="@color/white"
         android:textAllCaps="false"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="15sp"></Button>
     </LinearLayout>
 </ScrollView>
