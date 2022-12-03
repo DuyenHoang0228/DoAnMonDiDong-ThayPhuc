@@ -89,14 +89,10 @@ public class NoticeActivity extends AppCompatActivity {
                         break;
 
                     case 3:
-                        intent =new Intent(NoticeActivity.this,ThuongHieuActivity.class);
-                        break;
-
-                    case 4:
                         intent =new Intent(NoticeActivity.this,UuDaiMain.class);
                         break;
 
-                    case 5:
+                    case 4:
                         intent =new Intent(NoticeActivity.this,GioHangActivity.class);
                         break;
 
