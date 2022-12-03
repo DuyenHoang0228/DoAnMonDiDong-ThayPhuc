@@ -26,7 +26,8 @@ public class dangky extends AppCompatActivity {
         binding.imvQuaylai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(dangky.this,dangnhap2.class);
+                startActivity(intent);
             }
         });
         binding.btnDangky.setOnClickListener(new View.OnClickListener() {

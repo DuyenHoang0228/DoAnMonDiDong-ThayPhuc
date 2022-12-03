@@ -16,8 +16,7 @@
         tools:targetApi="31">
         <activity
             android:name=".DungNgayVoucher"
-            android:exported="false"
-            android:theme="@style/Theme.offactionbar">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -32,7 +31,7 @@
         </activity>
         <activity
             android:name=".KhoVoucher"
-            android:exported="false"
+            android:exported="true"
             android:label="Kho Voucher">
             <meta-data
                 android:name="android.app.lib_name"
@@ -40,15 +39,15 @@
         </activity>
         <activity
             android:name=".khachhangthanthiet"
-            android:exported="false"
-            android:label="Khách Hàng thân thiết">
+            android:exported="true"
+            android:label="Khách hàng thân thiết">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".HinhAnhDanhGiaSanPham"
-            android:exported="false"
+            android:exported="true"
             android:label="Ảnh từ người mua">
             <meta-data
                 android:name="android.app.lib_name"
@@ -72,7 +71,7 @@
         </activity>
         <activity
             android:name=".DanhGiaCuaToi"
-            android:exported="false"
+            android:exported="true"
             android:label="Đánh giá của tôi">
             <meta-data
                 android:name="android.app.lib_name"
@@ -80,7 +79,7 @@
         </activity>
         <activity
             android:name=".DanhGiaSanPham"
-            android:exported="false"
+            android:exported="true"
             android:label="Đánh giá sản phẩm">
             <meta-data
                 android:name="android.app.lib_name"
@@ -110,7 +109,7 @@
         </activity>
         <activity
             android:name=".ShopChoCho1"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -118,13 +117,11 @@
         <activity
             android:name=".UserActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar"
-            >
+            android:theme="@style/Theme.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".SanPhamTheoThuongHieuActivity"
             android:exported="false">
@@ -342,7 +339,7 @@
         <activity
             android:name=".manhinhkhoidong"
             android:exported="true"
-            >
+            android:theme="@style/Theme.offactionbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -362,10 +359,7 @@
         </activity>
         <activity
             android:name=".ShopChoMeo1"
-            android:exported="true"
-            >
-
-
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -489,7 +483,6 @@
             android:name=".SpaActivity1"
             android:exported="true"
             android:theme="@style/Theme.NoActionBar">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -512,13 +505,12 @@
         </activity>
         <activity
             android:name=".gioithieuapp1"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
