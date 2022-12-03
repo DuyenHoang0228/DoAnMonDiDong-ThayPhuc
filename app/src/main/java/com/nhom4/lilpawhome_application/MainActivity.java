@@ -333,7 +333,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter2);
     }
     private void loadSPbanchay(){
-      /*  recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
+//        recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
 //        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
 //        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
 //        //add sp
@@ -380,6 +380,5 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter2);
 
     }
-
 
 }

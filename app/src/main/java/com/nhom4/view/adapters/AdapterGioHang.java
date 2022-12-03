@@ -53,6 +53,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.MyView> 
                 @Override
                 public void onClick(View v) {
                     Dialog dialog = new Dialog(btngiamsoluong.getContext());
+                    dialog.setCanceledOnTouchOutside(true);
                     dialog.setContentView(R.layout.dialog_xoasanpham);
 
                     //Ok

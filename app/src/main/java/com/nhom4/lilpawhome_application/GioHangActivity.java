@@ -84,6 +84,29 @@ public class GioHangActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Set sự kiện cho nút Mua hàng - chuyển qua màn hình thanh toán
+        binding.btnMuahang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (MainActivity.manggiohang.size() > 0){//Nếu trong giỏ hàng có sản phẩm
+                    Intent intent = new Intent(GioHangActivity.this, ThanhtoanActivity.class);
+                    startActivity(intent);
+                }else{
+                    Dialog dialog = new Dialog(GioHangActivity.this);
+                    dialog.setCanceledOnTouchOutside(true);
+                    dialog.setContentView(R.layout.dialog_canhbaogiohang);
+                    //Xác nhận đã nhận cảnh báo
+                    TextView xacnhan = dialog.findViewById(R.id.txt_xacnhancanhbao);
+                    xacnhan.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+                }
+            }
+        });
     }
 
     private void displaybackground() {

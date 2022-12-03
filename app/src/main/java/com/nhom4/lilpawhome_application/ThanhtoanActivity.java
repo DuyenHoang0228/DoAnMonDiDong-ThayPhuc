@@ -29,7 +29,6 @@ public class ThanhtoanActivity extends AppCompatActivity {
     ActivityThanhtoanBinding binding;
     AdapterSanPhamTT adapterSP;
     HorAdapterPhuongThucTT adapterPT;
-    ArrayList<GioHang> gioHangs;
     ArrayList<PhuongThucTT> phuongThucTTS;
     LinearLayoutManager VerticalLayout, HorizontalLayout;
     RecyclerView.LayoutManager RecyclerViewLayoutManagerSP, RecyclerViewLayoutManagerPT;
@@ -41,13 +40,11 @@ public class ThanhtoanActivity extends AppCompatActivity {
         binding = ActivityThanhtoanBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        
-        loadDSSanpham();
 
         RecyclerViewLayoutManagerSP = new LinearLayoutManager(getApplicationContext());
         binding.rvDssanpham.setLayoutManager(RecyclerViewLayoutManagerSP);
 
-        adapterSP = new AdapterSanPhamTT(gioHangs);
+        adapterSP = new AdapterSanPhamTT(MainActivity.manggiohang);
 
         // Thiết lập phương hướng của RecyclerView (ngang hay dọc)
         VerticalLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -82,9 +79,6 @@ public class ThanhtoanActivity extends AppCompatActivity {
         phuongThucTTS.add(new PhuongThucTT(R.drawable.icon_vnpay, "Thanh toán bằng ví VNPAY", "Liên kết ví VNPAY", false));
     }
 
-    private void loadDSSanpham() {
-        gioHangs = new ArrayList<>();
-    }
     //Thêm menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
