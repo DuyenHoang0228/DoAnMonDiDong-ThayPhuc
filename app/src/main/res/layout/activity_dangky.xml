@@ -76,6 +76,7 @@
                     android:layout_height="wrap_content"
                     android:background="#FFC6DF"
                     android:hint="Mật khẩu mới"
+                    android:textSize="16sp"
                     android:fontFamily="@font/montserrat"
                     android:inputType="textPassword" android:layout_marginRight="10dp"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -111,6 +112,7 @@
                     android:layout_height="wrap_content"
                     android:background="#FFC6DF"
                     android:hint="Nhập lại mật khẩu"
+                    android:textSize="16sp"
                     android:fontFamily="@font/montserrat"
                     android:inputType="textPassword" android:layout_marginRight="10dp"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -138,6 +140,7 @@
         android:backgroundTint="#FA579F"
         android:layout_gravity="center"
         android:text="Đăng ký"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:padding="5dp"/>
