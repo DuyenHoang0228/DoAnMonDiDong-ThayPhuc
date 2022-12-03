@@ -13,7 +13,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nhom4.view.adapters.AdapterGioHang;
@@ -29,21 +32,20 @@ public class GioHangActivity extends AppCompatActivity {
     ArrayList<GioHang> gioHangs;
     LinearLayoutManager VerticalLayout;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
+    public static TextView txttongthanhtoan;
+    public static CheckBox cboxtatca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_gio_hang);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding = ActivityGioHangBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        loadData();
 
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
         binding.rvGiohang.setLayoutManager(RecyclerViewLayoutManager);
 
-        adapter = new AdapterGioHang(gioHangs);
+        adapter = new AdapterGioHang(MainActivity.manggiohang);
 
         // Thiết lập phương hướng của RecyclerView (ngang hay dọc)
         VerticalLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -57,22 +59,60 @@ public class GioHangActivity extends AppCompatActivity {
                 R.drawable.line_divider));
 
         binding.rvGiohang.setAdapter(adapter);
+
+        displaybackground();//Hiện giỏ hàng trống
+
+        txttongthanhtoan = findViewById(R.id.txt_tongthanhtoan);
+
+        cboxtatca = findViewById(R.id.cbox_tatca);
+        binding.txtTongthanhtoan.setText("0đ");
+
+        //Set sự kiện cho checkbox tất cả
+        binding.cboxTatca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {//Khi ô chekcbox thay đổi trạng thái
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){//nếu nút checkbox true - đã tick
+                    for (int i = 0; i <= MainActivity.manggiohang.size()-1; i++){
+                        MainActivity.manggiohang.get(i).setSelected(true);
+                        adapter.notifyDataSetChanged();
+                    }
+                }else{//nếu nút checkbox false - chưa tick
+                    for (int i = 0; i <= MainActivity.manggiohang.size()-1; i++){
+                        MainActivity.manggiohang.get(i).setSelected(false);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
+
+        //Set sự kiện cho nút Mua hàng - chuyển qua màn hình thanh toán
+        binding.btnMuahang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (MainActivity.manggiohang.size() > 0){//Nếu trong giỏ hàng có sản phẩm
+                    Intent intent = new Intent(GioHangActivity.this, ThanhtoanActivity.class);
+                    startActivity(intent);
+                }else{
+                    Dialog dialog = new Dialog(GioHangActivity.this);
+                    dialog.setCanceledOnTouchOutside(true);
+                    dialog.setContentView(R.layout.dialog_canhbaogiohang);
+                    //Xác nhận đã nhận cảnh báo
+                    TextView xacnhan = dialog.findViewById(R.id.txt_xacnhancanhbao);
+                    xacnhan.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+                }
+            }
+        });
     }
 
-    private void loadData() {
-        gioHangs = new ArrayList<>();
-        gioHangs.add(new GioHang(R.drawable.giohang_sp1, 1, getString(R.string.brand_sp, "Virbac"),
-                "Gel Dinh Dưỡng Cho Chó Mèo Còi Cọc Virbac Nutri Plus 120g – Pháp", "SHOP CHO CHÓ", 190000.0, 249000.0));
-        gioHangs.add(new GioHang(R.drawable.giohang_sp2, 1, getString(R.string.brand_sp, "Smartheart"),
-                "[COMBO 5 GÓI] Thức Ăn Cho Chó Trưởng Thành Smartheart 400g", "SHOP CHO CHÓ", 100000.0, 190000.0));
-        gioHangs.add(new GioHang(R.drawable.giohang_sp3, 1, getString(R.string.brand_sp, "Me-o"),
-                "[CAO CẤP] Hạt Cho Mèo Me-O Gold Indoor 1.2kg – Giảm Mùi Chất Thải", "SHOP CHO MÈO", 133000.0, 169000.0));
-        gioHangs.add(new GioHang(R.drawable.giohang_sp4, 1, getString(R.string.brand_sp, "Bioline"),
-                "Bộ Trồng Cỏ Mèo Tươi Bioline 12g – Bổ Sung Chất Xơ, Giảm Stress", "SHOP CHO MÈO", 50000.0, 109000.0));
-        gioHangs.add(new GioHang(R.drawable.giohang_sp5, 1, getString(R.string.brand_sp, "Beaphar"),
-                "Vòng Cổ Cho Mèo Giảm Căng Thẳng Beaphar Collar", "SHOP CHO MÈO", 221000.0, 269000.0));
-        gioHangs.add(new GioHang(R.drawable.giohang_sp6, 1, getString(R.string.brand_sp, "All for Paws"),
-                "Đồ Chơi Siêu Âm Hình Sóc AFP Ultrasonic", "SHOP CHO CHÓ", 450000.0, 539000.0));
+    private void displaybackground() {
+        binding.txtEmptycart.setVisibility(MainActivity.manggiohang.size() <= 0 ? View.VISIBLE : View.GONE);
+        binding.imvEmptycart.setVisibility(MainActivity.manggiohang.size() <= 0 ? View.VISIBLE : View.GONE);
+        binding.rvGiohang.setVisibility(MainActivity.manggiohang.size() > 0 ? View.VISIBLE : View.GONE);
     }
 
     //Thêm menu
@@ -136,5 +176,13 @@ public class GioHangActivity extends AppCompatActivity {
             default:break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        binding.txtEmptycart.setVisibility(MainActivity.manggiohang.size() <= 0 ? View.VISIBLE : View.GONE);
+        binding.imvEmptycart.setVisibility(MainActivity.manggiohang.size() <= 0 ? View.VISIBLE : View.GONE);
+        binding.rvGiohang.setVisibility(MainActivity.manggiohang.size() > 0 ? View.VISIBLE : View.GONE);
+        super.onResume();
     }
 }

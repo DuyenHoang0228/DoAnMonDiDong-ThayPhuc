@@ -21,15 +21,19 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.nhom4.adapters.HorAdapterSanphamLilPawHome;
-import com.nhom4.databases.DBHelperSanPham;
+import com.nhom4.view.adapters.Danhmuc1Adapter;
+import com.nhom4.view.adapters.HorSanPhamAdapter;
+import com.nhom4.view.adapters.SanphamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.DanhMuc1;
+import com.nhom4.models.GioHang;
 import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
 import com.nhom4.view.ExpandableHeightGridView;
 import com.nhom4.view.adapters.Danhmuc1Adapter;
 import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
+import com.nhom4.adapters.HorAdapterSanphamLilPawHome;
+import com.nhom4.databases.DBHelperSanPham;
 
 import java.util.ArrayList;
 
@@ -45,14 +49,14 @@ public class MainActivity extends AppCompatActivity {
     LinearLayoutManager Horizontallayout;
     SanPhamAdapterLilPawHome adapter3;
     DBHelperSanPham dbHelperSanPham;
-
+    public static ArrayList<GioHang> manggiohang; //Khai báo mảng giỏ hàng public để làm mảng toàn cục, luôn xuất hiện ở màn hình khác
 
 
     private ImageSlider imageSlider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.activity_main);
+       // setContentView(R.layout.activity_main);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         // setContentView(binding.getRoot());
         View view = binding.getRoot();
@@ -65,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.nav_action_home:
-                        return true;
+                       return true;
                     case  R.id.nav_action_danhmuc:
                         Intent intent1 =new Intent(getApplicationContext(),DanhmucActivity.class);
                         intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -97,7 +101,13 @@ public class MainActivity extends AppCompatActivity {
 
         loadData();
         addEvent();
+        createCart();//Tạo function thực hiện tạo giỏ hàng nếu không có mảng giỏ hàng nào tồn tại
+    }
 
+    private void createCart() {
+        if (manggiohang == null) {
+            manggiohang = new ArrayList<>();
+        }
     }
 
     private void addEvent() {
@@ -321,25 +331,24 @@ public class MainActivity extends AppCompatActivity {
         Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(Horizontallayout);
         recyclerView.setAdapter(adapter2);
-
     }
     private void loadSPbanchay(){
-      /*  recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
-        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
-        //add sp
-        sanPhamsBanchay = new ArrayList<>();
-        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//        recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
+//        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+//        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+//        //add sp
+//        sanPhamsBanchay = new ArrayList<>();
+//        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//        sanPhamsBanchay.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
 
         // truyen du lieu
-        adapter2= new HorSanPhamAdapter(sanPhamsBanchay);
-        Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
-        recyclerView.setLayoutManager(Horizontallayout);
-        recyclerView.setAdapter(adapter2);*/
+//        adapter2= new HorSanPhamAdapter(sanPhamsBanchay);
+//        Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
+//        recyclerView.setLayoutManager(Horizontallayout);
+//        recyclerView.setAdapter(adapter2);*/
         recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(RecyclerViewLayoutManager);
@@ -371,6 +380,5 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter2);
 
     }
-
 
 }

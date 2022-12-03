@@ -484,22 +484,6 @@ public class DBHelperSanPham extends SQLiteOpenHelper {
 //                    "- Sử dụng vật liệu thoải mái cho chó\n" +
 //                    "- 7 size',5,802,80)");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 
