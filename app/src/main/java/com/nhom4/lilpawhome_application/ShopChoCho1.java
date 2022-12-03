@@ -113,7 +113,7 @@ public class ShopChoCho1 extends AppCompatActivity {
         c.close();
         adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
         binding.gvOptionchocho.setAdapter(adapter);
-        binding.imvBannerthucanchocho.setImageResource(R.drawable.shopchochothucan);
+        binding.imvBannerthucanchocho.setImageResource(R.drawable.bannershopchochoedited);
 
     }
     private void loadChuongLong() {

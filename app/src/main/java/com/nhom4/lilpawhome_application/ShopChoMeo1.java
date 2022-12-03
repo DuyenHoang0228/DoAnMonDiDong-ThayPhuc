@@ -172,7 +172,7 @@ public class ShopChoMeo1 extends AppCompatActivity {
     private void loadData() {
         sanPhamArrayList=new ArrayList<>();
         Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME);
-        binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+        binding.imvBannerthucanchomeo.setImageResource(R.drawable.bannershopchomeoedited);
         while(c.moveToNext())
         {
             sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
