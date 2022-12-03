@@ -3,19 +3,27 @@ package com.nhom4.lilpawhome_application;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.TextView;
 
+import com.nhom4.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.adapters.SanphamAdapter;
+import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivitySanPhamTheoThuongHieuBinding;
 import com.nhom4.models.SanPham;
+import com.nhom4.models.SanPhamLilPawHome;
 
 import java.util.ArrayList;
 
 public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
     ActivitySanPhamTheoThuongHieuBinding binding;
-    SanphamAdapter adapter;
-    ArrayList<SanPham> sanPhamArrayList;
 
+    SanPhamAdapterLilPawHome adapterLilPawHome;
+    ArrayList<SanPhamLilPawHome> sanPhamLilPawHomes;
+    DBHelperSanPham dbHelperSanPham;
+    TextView txtTenThuongHieu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,31 +31,35 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_sanphamtheothuonghieu);
+        txtTenThuongHieu=findViewById(R.id.txt_tenthuonghieu);
         binding=ActivitySanPhamTheoThuongHieuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        createDb();
         loadData();
+    }
+    private void createDb() {
+        dbHelperSanPham=new DBHelperSanPham(SanPhamTheoThuongHieuActivity.this);
+        dbHelperSanPham.createSampleData();
     }
 
     private void loadData() {
-        sanPhamArrayList=new ArrayList<>();
-        sanPhamArrayList.add(new SanPham(R.drawable.sphatcho,"Hạt cho chó",120000,200000,
-                "Thương hiệu 1","thucanchocho","hatchocho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.sppatecho,"Pate cho chó",350000,400000,
-                "Thương hiệu 1","thucanchocho","patechocho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spsuacho,"Sữa tắm chó",250000,300000,
-                "Thương hiệu 2","thucanchocho","suacho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spsuatamcho,"Sữa tắm chó",120000,320000,
-                "Thương hiệu 2","dodungcho","suatamcho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spxuongcho,"Xương chó đồ chơi",20000,50000,
-                "Thương hiệu 3","dochoicho","xuongcho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.spdinhduongcho,"Sữa dinh dưỡng cho chó",360000,500000,
-                "Thương hiệu 3","thucanchocho","dinhduongchocho"));
-        sanPhamArrayList.add(new SanPham(R.drawable.sptaimatmiengcho,"Cây chà răng chó",25000,40000,
-                "Thương hiệu 4","dodungcho","taimatcho"));
+        sanPhamLilPawHomes=new ArrayList<>();
+        //chỗ này mng intent cái tên thương hiệu xong gán nó vào chuỗi s ở dưới nha
+        Intent intent=getIntent();
 
-        adapter=new SanphamAdapter(SanPhamTheoThuongHieuActivity.this,R.layout.sanpham_list,sanPhamArrayList);
-        binding.gvSanphamtheothuonghieu.setAdapter(adapter);
+        String s=intent.getStringExtra("tenthuonghieu");
+        txtTenThuongHieu.setText(s.toUpperCase());
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_BRAND+" = "+"'"+s+"'");
+        while(c.moveToNext())
+        {
+            sanPhamLilPawHomes.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapterLilPawHome=new SanPhamAdapterLilPawHome(SanPhamTheoThuongHieuActivity.this,R.layout.list_sanpham_id,sanPhamLilPawHomes);
+        binding.gvSanphamtheothuonghieu.setAdapter(adapterLilPawHome);
 
     }
 }

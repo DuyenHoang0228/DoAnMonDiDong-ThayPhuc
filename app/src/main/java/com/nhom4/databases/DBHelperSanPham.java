@@ -453,36 +453,36 @@ public class DBHelperSanPham extends SQLiteOpenHelper {
 
 
 
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Balo phi hành gia cho thú cưng freeship balo vận chuyển',175000,20000,0.13,'balochocho1','chuonglongchocho','balochocho','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
-                    "Chất liệu: Nhựa cao cấp PVC \n" +
-                    "Kích thước: 32*26*44cm\n" +
-                   "Thích hợp với thú cưng dưới 7kg',5,802,80)");
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Thức Ăn Cho Mèo Chứa 95% Đạm Natural Core 1kg – 100 Organic',340000,400000,0.15,'dinhduongchomeo1','thucanchomeo','dinhduongchomeo','hiem','thuonghieukhac','- Khi nuôi mèo, một trong những khó khăn lớn nhất chính là làm sao có thể cung cấp đủ dinh dưỡng cho mèo mà không làm cho mèo bị béo phì.\n" +
-                    "- Nguyên nhân béo phì thường nằm ở việc người nuôi cho bé ăn các loại thức ăn có chứa nhiều tinh bột, và việc ít vận động khiến mèo dễ tăng cân hơn.\n" +
-                    "- Đây là lý do vì sao hạt Natural Core 95% đạm ra đời. Nhiều đạm sẽ giúp tăng cơ và khoẻ xương khớp, trong khi đó hạn chế việc tích tụ của mỡ.\n" +
-                    "- Hầu hết các loại hạt hiện nay thường có thành phần là bột (bột bắp, lúa mì). Riêng hạt Natural Core lại chứa đạm nhiều hơn, chứng minh hạt có chất lượng tốt hơn hẳn.\n" +
-                    "- Ngoài đạm thì 5% còn lại là các axit amin và các axit béo có chức năng tăng sức đề kháng và cải thiện vẻ đẹp của lông da.\n" +
-                    "- Đạm có trong hạt sử dụng công nghệ thuỷ phân hiện tại giúp phân tách protein thành các phân tử nhỏ, từ đó dễ hấp thu vào cơ thể của mèo hơn.\n" +
-                    "- Sản phẩm phù hợp cho mèo ở mọi lứa tuổi và mọi giống mèo.\n" +
-                    "- Sản phẩm đạt được chứng nhận USDA của Hoa Kỳ và ECOCERT của Châu Âu về chất lượng và vệ sinh an toàn thực phẩm.',5,802,80)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Thức Ăn Cho Chó Chứa 95% Đạm Natural Core 1kg – 100 Organic',340000,400000,0.15,'dinhduongchocho1','thucanchocho','dinhduongchocho','hiem','thuonghieukhac','- Khi nuôi chó, một trong những khó khăn lớn nhất chính là làm sao có thể cung cấp đủ dinh dưỡng cho chó mà không làm cho chó bị béo phì.\n" +
-                    "- Nguyên nhân béo phì thường nằm ở việc người nuôi cho bé ăn các loại thức ăn có chứa nhiều tinh bột, và việc ít vận động khiến chó dễ tăng cân hơn.\n" +
-                    "- Đây là lý do vì sao hạt Natural Core 95% đạm ra đời. Nhiều đạm sẽ giúp tăng cơ và khoẻ xương khớp, trong khi đó hạn chế việc tích tụ của mỡ.\n" +
-                    "- Hầu hết các loại hạt hiện nay thường có thành phần là bột (bột bắp, lúa mì). Riêng hạt Natural Core lại chứa đạm nhiều hơn, chứng minh hạt có chất lượng tốt hơn hẳn.\n" +
-                    "- Ngoài đạm thì 5% còn lại là các axit amin và các axit béo có chức năng tăng sức đề kháng và cải thiện vẻ đẹp của lông da.\n" +
-                    "- Đạm có trong hạt sử dụng công nghệ thuỷ phân hiện tại giúp phân tách protein thành các phân tử nhỏ, từ đó dễ hấp thu vào cơ thể của chó hơn.\n" +
-                    "- Sản phẩm phù hợp cho chó ở mọi lứa tuổi và mọi giống chó.\n" +
-                    "- Sản phẩm đạt được chứng nhận USDA của Hoa Kỳ và ECOCERT của Châu Âu về chất lượng và vệ sinh an toàn thực phẩm.',5,802,80)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Rọ Mõm Nylon Mon Ami Collar (XXS)',28000,35000,0.2,'romomchocho1','phukienchocho','romomchocho','hiem','mon_ami','- Sản xuất tại Việt Nam\n" +
-                    "- Dễ sử dụng, có độ bền cao\n" +
-                    "- Sử dụng vật liệu thoải mái cho chó\n" +
-                    "- 7 size',5,802,80)");
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Rọ Mõm Nylon Mon Ami Collar (S)',35000,40000,0.13,'romomchocho1','phukienchocho','romomchocho','hiem','mon_ami','- Sản xuất tại Việt Nam\n" +
-                    "- Dễ sử dụng, có độ bền cao\n" +
-                    "- Sử dụng vật liệu thoải mái cho chó\n" +
-                    "- 7 size',5,802,80)");
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Balo phi hành gia cho thú cưng freeship balo vận chuyển',175000,20000,0.13,'balochocho1','chuonglongchocho','balochocho','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
+//                    "Chất liệu: Nhựa cao cấp PVC \n" +
+//                    "Kích thước: 32*26*44cm\n" +
+//                   "Thích hợp với thú cưng dưới 7kg',5,802,80)");
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Thức Ăn Cho Mèo Chứa 95% Đạm Natural Core 1kg – 100 Organic',340000,400000,0.15,'dinhduongchomeo1','thucanchomeo','dinhduongchomeo','hiem','thuonghieukhac','- Khi nuôi mèo, một trong những khó khăn lớn nhất chính là làm sao có thể cung cấp đủ dinh dưỡng cho mèo mà không làm cho mèo bị béo phì.\n" +
+//                    "- Nguyên nhân béo phì thường nằm ở việc người nuôi cho bé ăn các loại thức ăn có chứa nhiều tinh bột, và việc ít vận động khiến mèo dễ tăng cân hơn.\n" +
+//                    "- Đây là lý do vì sao hạt Natural Core 95% đạm ra đời. Nhiều đạm sẽ giúp tăng cơ và khoẻ xương khớp, trong khi đó hạn chế việc tích tụ của mỡ.\n" +
+//                    "- Hầu hết các loại hạt hiện nay thường có thành phần là bột (bột bắp, lúa mì). Riêng hạt Natural Core lại chứa đạm nhiều hơn, chứng minh hạt có chất lượng tốt hơn hẳn.\n" +
+//                    "- Ngoài đạm thì 5% còn lại là các axit amin và các axit béo có chức năng tăng sức đề kháng và cải thiện vẻ đẹp của lông da.\n" +
+//                    "- Đạm có trong hạt sử dụng công nghệ thuỷ phân hiện tại giúp phân tách protein thành các phân tử nhỏ, từ đó dễ hấp thu vào cơ thể của mèo hơn.\n" +
+//                    "- Sản phẩm phù hợp cho mèo ở mọi lứa tuổi và mọi giống mèo.\n" +
+//                    "- Sản phẩm đạt được chứng nhận USDA của Hoa Kỳ và ECOCERT của Châu Âu về chất lượng và vệ sinh an toàn thực phẩm.',5,802,80)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Thức Ăn Cho Chó Chứa 95% Đạm Natural Core 1kg – 100 Organic',340000,400000,0.15,'dinhduongchocho1','thucanchocho','dinhduongchocho','hiem','thuonghieukhac','- Khi nuôi chó, một trong những khó khăn lớn nhất chính là làm sao có thể cung cấp đủ dinh dưỡng cho chó mà không làm cho chó bị béo phì.\n" +
+//                    "- Nguyên nhân béo phì thường nằm ở việc người nuôi cho bé ăn các loại thức ăn có chứa nhiều tinh bột, và việc ít vận động khiến chó dễ tăng cân hơn.\n" +
+//                    "- Đây là lý do vì sao hạt Natural Core 95% đạm ra đời. Nhiều đạm sẽ giúp tăng cơ và khoẻ xương khớp, trong khi đó hạn chế việc tích tụ của mỡ.\n" +
+//                    "- Hầu hết các loại hạt hiện nay thường có thành phần là bột (bột bắp, lúa mì). Riêng hạt Natural Core lại chứa đạm nhiều hơn, chứng minh hạt có chất lượng tốt hơn hẳn.\n" +
+//                    "- Ngoài đạm thì 5% còn lại là các axit amin và các axit béo có chức năng tăng sức đề kháng và cải thiện vẻ đẹp của lông da.\n" +
+//                    "- Đạm có trong hạt sử dụng công nghệ thuỷ phân hiện tại giúp phân tách protein thành các phân tử nhỏ, từ đó dễ hấp thu vào cơ thể của chó hơn.\n" +
+//                    "- Sản phẩm phù hợp cho chó ở mọi lứa tuổi và mọi giống chó.\n" +
+//                    "- Sản phẩm đạt được chứng nhận USDA của Hoa Kỳ và ECOCERT của Châu Âu về chất lượng và vệ sinh an toàn thực phẩm.',5,802,80)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Rọ Mõm Nylon Mon Ami Collar (XXS)',28000,35000,0.2,'romomchocho1','phukienchocho','romomchocho','hiem','mon_ami','- Sản xuất tại Việt Nam\n" +
+//                    "- Dễ sử dụng, có độ bền cao\n" +
+//                    "- Sử dụng vật liệu thoải mái cho chó\n" +
+//                    "- 7 size',5,802,80)");
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Rọ Mõm Nylon Mon Ami Collar (S)',35000,40000,0.13,'romomchocho1','phukienchocho','romomchocho','hiem','mon_ami','- Sản xuất tại Việt Nam\n" +
+//                    "- Dễ sử dụng, có độ bền cao\n" +
+//                    "- Sử dụng vật liệu thoải mái cho chó\n" +
+//                    "- 7 size',5,802,80)");
 
 
 

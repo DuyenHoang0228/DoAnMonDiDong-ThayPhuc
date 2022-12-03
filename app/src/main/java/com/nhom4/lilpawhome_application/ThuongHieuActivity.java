@@ -41,7 +41,12 @@ public class ThuongHieuActivity extends AppCompatActivity {
         binding.gvThuonghieu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent=new Intent();
+                ThuongHieu th= (ThuongHieu) adapter.getItem(i);
+                Intent intent=new Intent(ThuongHieuActivity.this,SanPhamTheoThuongHieuActivity.class);
+                intent.putExtra("tenthuonghieu",th.getTenThuongHieu().toString());
+                startActivity(intent);
+
+
                 //đẩy dữ liệu qua bên sản phẩm theo thương hiệu, string thuonghieu, qua bên kia lấy string đó rồi thiết lập điều kiện
             }
         });
@@ -50,21 +55,21 @@ public class ThuongHieuActivity extends AppCompatActivity {
 
     private void loadData() {
     thuongHieuArrayList=new ArrayList<>();
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.eight_in1_brand,"8 in 1"));
-
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.eight_in1_brand,"eightin1"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.furminator,"furminator"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.ferplast,"ferplast"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.mon_ami,"mon_ami"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.monge,"monge"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.thuonghieukhac,"thuonghieukhac"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.catsrang,"catstrang"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.catsrang,"Catstrang"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.kong,"kong"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.catbest,"catsbest"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.ciao,"ciao"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.catbest,"catbest"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.ciao,"Ciao"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.nekko,"nekko"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.ag_science_brand,"AG SCIENCE BRAND"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.ag_science_brand,"agscience"));
     thuongHieuArrayList.add(new ThuongHieu(R.drawable.pawise,"pawise"));
-    thuongHieuArrayList.add(new ThuongHieu(R.drawable.genki_brand,"Genky Brand"));
+    thuongHieuArrayList.add(new ThuongHieu(R.drawable.genki_brand,"genki"));
+
     adapter=new ThuonghieuAdapter(ThuongHieuActivity.this,R.layout.thuonghieu_list,thuongHieuArrayList);
     binding.gvThuonghieu.setAdapter(adapter);
 
