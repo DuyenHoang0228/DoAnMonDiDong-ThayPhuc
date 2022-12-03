@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.nhom4.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.adapters.SanphamAdapter;
 import com.nhom4.databases.DBHelperSanPham;
+
 import com.nhom4.lilpawhome_application.databinding.ActivitySanPhamTheoThuongHieuBinding;
 import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
@@ -62,4 +63,5 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
         binding.gvSanphamtheothuonghieu.setAdapter(adapterLilPawHome);
 
     }
+
 }

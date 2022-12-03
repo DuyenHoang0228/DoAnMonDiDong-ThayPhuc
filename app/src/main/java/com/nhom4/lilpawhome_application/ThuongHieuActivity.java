@@ -72,6 +72,5 @@ public class ThuongHieuActivity extends AppCompatActivity {
 
     adapter=new ThuonghieuAdapter(ThuongHieuActivity.this,R.layout.thuonghieu_list,thuongHieuArrayList);
     binding.gvThuonghieu.setAdapter(adapter);
-
     }
 }

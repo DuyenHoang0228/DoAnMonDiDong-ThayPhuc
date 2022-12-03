@@ -52,13 +52,11 @@ public class quenmatkhau1 extends AppCompatActivity {
                         OTPVetification_Dialog_Qmk otpVetification_dialog_qmk= new OTPVetification_Dialog_Qmk(quenmatkhau1.this,binding.edtNhapemailhoacsdt.getText().toString());
                         otpVetification_dialog_qmk.setCancelable(false);
                         otpVetification_dialog_qmk.show();
-                        Intent intent = new Intent(quenmatkhau1.this, quenmatkhau2.class);
-                        startActivity(intent);
+                       // Intent intent = new Intent(quenmatkhau1.this, quenmatkhau2.class);
+                       // startActivity(intent);
                     }
                 }
             }
         });
-
-
     }
 }

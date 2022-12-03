@@ -10,15 +10,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
-import android.text.style.UnderlineSpan;
 
-import com.nhom4.adapters.AdapterLichHenHT;
-import com.nhom4.adapters.AdapterLichHenST;
-import com.nhom4.adapters.AdapterVoucherTT;
+import com.nhom4.view.adapters.AdapterVoucherTT;
 import com.nhom4.lilpawhome_application.databinding.ActivityVoucherTtBinding;
-import com.nhom4.models.LichHen;
 import com.nhom4.models.VoucherTT;
 
 import java.util.ArrayList;

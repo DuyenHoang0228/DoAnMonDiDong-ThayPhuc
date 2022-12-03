@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.nhom4.adapters.ThongbaoAdapter;
+import com.nhom4.view.adapters.ThongbaoAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityNoticeBinding;
 import com.nhom4.models.ThongBao;
 
@@ -26,7 +26,7 @@ public class NoticeActivity extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding = ActivityNoticeBinding.inflate(getLayoutInflater());
 
         View view = binding.getRoot();
@@ -89,14 +89,10 @@ public class NoticeActivity extends AppCompatActivity {
                         break;
 
                     case 3:
-                        intent =new Intent(NoticeActivity.this,ThuongHieuActivity.class);
-                        break;
-
-                    case 4:
                         intent =new Intent(NoticeActivity.this,UuDaiMain.class);
                         break;
 
-                    case 5:
+                    case 4:
                         intent =new Intent(NoticeActivity.this,GioHangActivity.class);
                         break;
 
@@ -117,5 +113,14 @@ public class NoticeActivity extends AppCompatActivity {
 
         adapter = new ThongbaoAdapter(NoticeActivity.this, R.layout.thongbao_list,thongbao);
         binding.lvThongbao.setAdapter(adapter);
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {case android.R.id.home: onBackPressed();
+            return true;
+
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

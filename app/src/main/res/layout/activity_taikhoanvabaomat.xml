@@ -21,18 +21,20 @@
             android:layout_height="wrap_content"
             android:text="Tên người dùng"
             android:textColor="@color/black"
-            android:fontFamily="@font/montserratregular"
+            android:fontFamily="@font/montserrat_light"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:textSize="15sp"
             android:layout_gravity="center_vertical"></TextView>
 
             <TextView
+                android:id="@+id/txt_nameofaccount"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/montserratbold"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_bold"
                 android:text="littlemermaid@user"
                 android:textColor="@color/black"
                 android:textSize="15sp"></TextView>
@@ -47,7 +49,7 @@
             android:text="Số điện thoại"
             android:textColor="@color/black"
             android:textAllCaps="false"
-            android:fontFamily="@font/montserratregular"
+            android:fontFamily="@font/montserrat_light"
             android:textSize="15sp"
             android:gravity="center_vertical"></Button>
         <Button
@@ -60,7 +62,7 @@
             android:text="Email nhận hóa đơn"
             android:textColor="@color/black"
             android:textAllCaps="false"
-            android:fontFamily="@font/montserratregular"
+            android:fontFamily="@font/montserrat_light"
             android:textSize="15sp"
             android:gravity="center_vertical"></Button>
         <Button
@@ -73,7 +75,7 @@
             android:text="Đổi mật khẩu"
             android:textColor="@color/black"
             android:textAllCaps="false"
-            android:fontFamily="@font/montserratregular"
+            android:fontFamily="@font/montserrat_light"
             android:textSize="15sp"
             android:gravity="center_vertical"></Button>
     </LinearLayout>
