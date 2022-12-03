@@ -97,6 +97,16 @@ public class ShopChoCho1 extends AppCompatActivity {
 
             }
         });
+        binding.gvOptionchocho.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(ShopChoCho1.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = sanPhamArrayList.get(i);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+
+                startActivity(intent);
+            }
+        });
     }
     public static void hideKeyboard(Activity activity) {
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);

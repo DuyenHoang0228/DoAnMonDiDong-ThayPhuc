@@ -118,13 +118,11 @@
         <activity
             android:name=".UserActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar"
-            >
+            android:theme="@style/Theme.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".SanPhamTheoThuongHieuActivity"
             android:exported="false">
@@ -227,7 +225,6 @@
         <activity
             android:name=".nhapemailmoi"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -256,7 +253,6 @@
         <activity
             android:name=".taikhoanvabaomat"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -342,12 +338,13 @@
         <activity
             android:name=".manhinhkhoidong"
             android:exported="true"
-            >
+            android:theme="@style/Theme.offactionbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -362,10 +359,7 @@
         </activity>
         <activity
             android:name=".ShopChoMeo1"
-            android:exported="true"
-            >
-
-
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -444,8 +438,8 @@
             android:name=".ChonHosoActivity"
             android:exported="false">
             <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
+                android:name="android.app.lib_name"
+                android:value="" />
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -489,7 +483,6 @@
             android:name=".SpaActivity1"
             android:exported="true"
             android:theme="@style/Theme.NoActionBar">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -505,7 +498,6 @@
             android:name=".gioithieuapp2"
             android:exported="false"
             android:theme="@style/Theme.offactionbar">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -522,6 +514,14 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <activity
+            android:name=".xemtatcaSPActivity"
+            android:exported="false"
+            android:label="Danh sách sản phẩm">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>
