@@ -80,7 +80,7 @@ public class DBHelperSanPham extends SQLiteOpenHelper {
     {
         if(numOfRows()==0)
         {
-//            chỗ này tui để bằng không để không cho nó insert lại bị trùng dữ liệu
+//            chỗ này tui để bằng 20 để không cho nó insert lại bị trùng dữ liệu
 //            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Thức Ăn Organic Cho Mèo Con ANF 6 Free Indoor 6kg – Hàn Quốc',45000,60000,0.3,'hatchomeo1','thucanchomeo','hatchomeo','hiem','ANF','- Là một trong số những sản phẩm cho mèo hiếm hoi trên thị trường được làm từ các nguyên liệu Organic, 100% tự nhiên\n" +
 //                    "- Cam kết 6 KHÔNG về sản phẩm: Không có chất đột biến gen, không thuốc kháng sinh, không thuốc trừ sâu, không chất bảo quản, không màu tổng hợp, không thuốc tăng trưởng.\n" +
 //                    "- Công thức đặc biệt giúp mèo con cải thiện cân nặng và duy trì hệ miễn dịch tốt.\n" +
@@ -336,119 +336,153 @@ public class DBHelperSanPham extends SQLiteOpenHelper {
 
 
 
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Cát Gỗ Hữu Cơ Cho Mèo Cats Best Original 30L (13kg) – Đức',150000,200000,0.25,'catchomeo2','dodungchomeo','catmeo','hiem','catbest','- Trên thị trường hiện nay, có 3 dòng cát vệ sinh chính cho mèo bao gồm: Cát đất sét, cát thuỷ tinh và cát hữu cơ. Trong đó cát hữu cơ được xem là dòng cát mới nhất với nhiều tính năng rất tốt cho người nuôi mèo.\n" +
-                    "- Cát hữu cơ là cát được làm hoàn toàn 100% từ các vật liệu tự nhiên như bột đậu nành, bột bắp hay vụn gỗ.\n" +
-                    "- Ưu điểm hàng đầu của cát hữu cơ là rất an toàn với mèo, kể cả khi mèo vô tình ngửi hoặc ăn cát.\n" +
-                    "- Hơn nữa, cát hữu cơ lại dễ dọn dẹp và chùi rửa. Bạn có thể đổ cát vào trong bồn cầu và giật nước hay đem đổ ra đất là phân bón đều rất tốt.\n" +
-                    "- Cats Best Original là dòng sản phẩm cát hữu cơ của Đức đi đầu trong việc cải thiện chất lượng nuôi mèo và chất lượng sống của người nuôi.',5,502,200)");
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Cát Gỗ Hữu Cơ Cho Mèo Cats Best Original 30L (13kg) – Đức',150000,200000,0.25,'catchomeo2','dodungchomeo','catmeo','hiem','catbest','- Trên thị trường hiện nay, có 3 dòng cát vệ sinh chính cho mèo bao gồm: Cát đất sét, cát thuỷ tinh và cát hữu cơ. Trong đó cát hữu cơ được xem là dòng cát mới nhất với nhiều tính năng rất tốt cho người nuôi mèo.\n" +
+//                    "- Cát hữu cơ là cát được làm hoàn toàn 100% từ các vật liệu tự nhiên như bột đậu nành, bột bắp hay vụn gỗ.\n" +
+//                    "- Ưu điểm hàng đầu của cát hữu cơ là rất an toàn với mèo, kể cả khi mèo vô tình ngửi hoặc ăn cát.\n" +
+//                    "- Hơn nữa, cát hữu cơ lại dễ dọn dẹp và chùi rửa. Bạn có thể đổ cát vào trong bồn cầu và giật nước hay đem đổ ra đất là phân bón đều rất tốt.\n" +
+//                    "- Cats Best Original là dòng sản phẩm cát hữu cơ của Đức đi đầu trong việc cải thiện chất lượng nuôi mèo và chất lượng sống của người nuôi.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Kẹo Sữa Hình Xương Pow Milk Tablet 20g – Thái Lan – Hàng Hiếm',25000,30000,0.17,'snackchomeo1','thucanchomeo','snackchomeo','banchay','thuonghieukhac','- Kẹo sữa là sản phẩm giúp bạn vừa chơi với thú cưng mà cũng giúp tăng cảm giác thèm ăn và bổ sung dinh dưỡng cho chó mèo ở giai đoạn sơ sinh và nhỏ.\n" +
+//                    "- Là sản phẩm của Thái với hương vị thơm ngon và thu hút được sự chú ý của các bé cún mèo, kẹo sẽ giúp cho bé thấy ăn uống ngon hơn.\n" +
+//                    "- Sản phẩm có 3 vị là sữa truyền thống, gan bò và cá hồi. Giúp bạn có thể thoải mái đổi vị mà không lo thú cưng thấy ngán.\n" +
+//                    "- Mỗi ngày bạn có thể cho bé ăn từ 2 - 3 viên kẹo, chia đều trong hoặc sau các bữa ăn chính.\n" +
+//                    "- Sản phẩm được sản xuất tại Thái Lan, nơi có ngành thú cưng cực kì phát triển, nên chất lượng sản phẩm đã được kiểm định và đảm bảo vệ sinh an toàn thực phẩm.\n" +
+//                    "- Khi không dùng đến, bạn có thể bỏ kẹo ở nơi khô ráo hoặc cho vào hộp có nắp đậy để giữ cho kẹo có hương vị thơm ngon trong một thời gian dài.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Xúc Xích Phô Mai Bowwow 240g – Không Hương Liệu – Hàn Quốc',25000,30000,0.17,'snackchocho1','thucanchocho','snackchocho','hiem','thuonghieukhac','- Xúc xích giúp tăng khẩu vị cho chó mèo, đặc biệt là những bé thú cưng kén ăn.\n" +
+//                    "- Bạn có thể cho thú cưng ăn kèm với cơm hoặc làm thức ăn phụ cho mỗi bữa sáng của chó mèo.\n" +
+//                    "- Sản phẩm được làm 100% từ thịt tươi với công thức không chất bảo quản và không hương liệu.\n" +
+//                    "- Ngoài thịt chứa nhiều Protein thì phô mai còn giúp cải thiện tiêu hoá, bổ sung men vi sinh giúp bụng chó mèo hấp thụ dinh dưỡng tốt hơn.\n" +
+//                    "- Công nghệ chế biến an toàn với lượng muối thấp, nên sẽ gây hại tới thận và tim của thú cưng.\n" +
+//                    "- Nguyên vật liệu được chế biến với công nghệ dây chuyền khép kín, giúp giữ nguyên được dinh dưỡng và chất lượng của thịt tới khi chó mèo cưng ăn.\n" +
+//                    "- Sản phẩm có mùi vị phô mai béo ngậy, kích thích vị giác của thú cưng, ngay cả những bé “boss\" kén ăn nhất.\n" +
+//                    "- Xúc xích Bowwow được sử dụng cho cả chó và mèo.\n" +
+//                    "- Phù hợp thú cưng ở mọi giai đoạn và lứa tuổi khác nhau.\n" +
+//                    "- Sản phẩm được sản xuất 100% tại Hàn Quốc nên bạn sẽ yên tâm khi cho thú cưng ăn mỗi ngày.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Snack Thưởng Mềm Juicy Bites 11g – 2 Vị Trong 1 Gói – Thái Lan',55000,60000,0.15,'snackchocho2','thucanchocho','snackchocho','hiem','thuonghieukhac','- Khi nuôi chó, ngoài thức ăn hạt và các loại pate kem thưởng ra, chắc hẳn đôi khi bạn sẽ băn khoăn không biết nên cho chó ăn gì để bạn có thể vừa chơi với chúng mà lại có thể dễ dàng huấn luyện chó theo ý mình.\n" +
+//                    "- Đây là lúc bạn cần phải mua ngay snack bánh thưởng Juicy Bites.\n" +
+//                    "- Sản phẩm có thành phần không những giúp chó ăn vặt mà còn bổ sung một số chất dinh dưỡng cho hoạt động sống hằng ngày.\n" +
+//                    "- Juicy Bites là dòng sản phẩm đến từ Thái Lan, với thiết kế viên snack đặt biệt vừa mềm lại vừa thơm, giúp kích thích khứu giác và vị giác của những chú chó.\n" +
+//                    "- Không những thế, một gói bánh thưởng Juicy Bites sẽ bao gồm 2 vị riêng biệt giúp cho chó của bạn không cảm thấy ngán mà bạn cũng có thêm nhiều sự lựa chọn hơn.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Snack Ăn Sạch Răng Cho Chó Feline Greenies 595g – Cực Hiếm – USA',700000,800000,0.13,'snackchocho3','thucanchocho','snackchocho','hiem','thuonghieukhac','- Khi nuôi chó, ngoài thức ăn hạt và các loại pate kem thưởng ra, chắc hẳn đôi khi bạn sẽ băn khoăn không biết nên cho chó ăn gì để bạn có thể vừa chơi với chúng mà lại có thể dễ dàng huấn luyện chó theo ý mình.\n" +
+//                    "- Đây là lúc bạn cần phải mua ngay snack bánh thưởng Juicy Bites.\n" +
+//                    "- Sản phẩm có thành phần không những giúp chó ăn vặt mà còn bổ sung một số chất dinh dưỡng cho hoạt động sống hằng ngày.\n" +
+//                    "- Juicy Bites là dòng sản phẩm đến từ Thái Lan, với thiết kế viên snack đặt biệt vừa mềm lại vừa thơm, giúp kích thích khứu giác và vị giác của những chú chó.\n" +
+//                    "- Không những thế, một gói bánh thưởng Juicy Bites sẽ bao gồm 2 vị riêng biệt giúp cho chó của bạn không cảm thấy ngán mà bạn cũng có thêm nhiều sự lựa chọn hơn.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Snack Bánh Thưởng Me-O 50g – Đủ Vị Cho Mèo – Thái Lan',25000,30000,0.17,'snackchomeo2','thucanchomeo','snackchomeo','banchay','thuonghieukhac','- Khi nuôi mèo, ngoài hạt khô và pate ra thì snack thưởng cũng là một loại thực phẩm mà bạn nên trang bị khi mua sắm.\n" +
+//                    "- Snack thưởng giúp kích thích vị giác của mèo nhiều hơn. Bạn cũng có thể dùng bánh thưởng để khen mèo khi bắt đầu các bài huấn luyện thay đổi hành vi cho chúng.\n" +
+//                    "- Snack thưởng cho mèo Me-o là dòng sản phẩm mới ra trên thị trường hiện nay.\n" +
+//                    "- Sản phẩm có nhiều mùi vị thơm ngon giúp mèo ăn nhiều hơn.\n" +
+//                    "- Snack Me-o đảm bảo sẽ giúp cho mèo của bạn thích thú hơn trong việc ăn uống.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Súp Kem Thưởng Wanpy Happy 100 14gx5',55000,60000,0.15,'snackchomeo3','thucanchomeo','snackchomeo','banchay','thuonghieukhac','- Nếu bạn đang bắt đầu nuôi mèo hoặc đã nuôi mèo lâu thì kem thưởng là sản phẩm không thể nào thiếu khi mua đồ cho mèo.\n" +
+//                    "- Kem thưởng kích thích sức ăn của mèo, giúp cho mèo bớt kén ăn hơn và bổ sung thêm nhiều dinh dưỡng khác ngoài hạt.\n" +
+//                    "- Kem thưởng cũng cung cấp thêm nước cho cơ thể của mèo, rất tốt trong việc phòng tránh các bệnh liên quan đến thận của mèo.\n" +
+//                    "- Sản phẩm Happy Wanpy 100 là một trong những thương hiệu đã rất nổi tiếng trên thị trường nội địa Trung. Nay, bạn có thể mua sản phẩm này cho mèo nhà thưởng thức.\n" +
+//                    "- Kem thưởng có 5 vị để bạn có thể thay phiên cho mèo ăn để giúp mèo thấy ngon miệng hơn.\n" +
+//                    "- Bạn có thể cho mèo liếm kem trực tiếp trên tay hoặc trộn chung với các loại thức ăn khác để tăng thêm khẩu vị cho mèo.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Sữa Cho Mèo Con Beaphar Lactol Kitten Milk (500g)',450000,502000,0.1,'suachomeo2','thucanchomeo','suachomeo','banchay','beaphar','- Sở hữu công thức đặc biệt giúp mèo hấp thu chất dinh dưỡng trong sữa nhanh hơn.\n" +
+//                    "- Bổ sung các dưỡng chất và vitamin cần thiết, giúp mèo nhanh chóng phát triển.\n" +
+//                    "- Hoàn toàn an toàn với mèo.\n" +
+//                    "- Phù hợp với mèo sơ sinh và mèo con dưới 12 tháng tuổi.\n" +
+//                    "- Được sản xuất 100% tại Hà Lan, theo tiêu chuẩn an toàn của Châu Âu.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Sữa Biomilk Cho Chó Mèo Còi Cọc, Chậm Lớn 100g – Việt Nam',450000,502000,0.1,'suachocho2','thucanchocho','suachocho','moinhat','thuonghieukhac','- Đối với chó mèo 3 tháng tuổi trở xuống, sữa là một nguồn dinh dưỡng cực kì quan trọng. Đặc biệt là nếu bạn cho thú cưng tách mẹ quá sớm, thì bạn cần bổ sung sữa công thức để giúp cải thiện sức khoẻ của chó mèo.\n" +
+//                    "- Sữa Biomilk là một trong những dòng sản phẩm sữa phổ biến và nổi tiếng nhất ở Việt Nam.\n" +
+//                    "- Sản phẩm được điều chế dựa với công thức giống nhất với sữa của chó mèo mẹ. Từ đó đảm bảo thú cưng của bạn sẽ có được nguồn dinh dưỡng dồi dào và phù hợp với thể trạng trong giai đoạn này.\n" +
+//                    "- Sữa Biomilk được sản xuất 100% tại Việt Nam, tuân thủ theo các tiêu chuẩn sản xuất nghiêm ngặt, do đó hoàn toàn an toàn với thú cưng của bạn.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Cỏ Mèo Khô Dạng Ống Bioline 5g – Giúp Mèo Giảm Stress',75000,80000,0.06,'comeo1','dochoichomeo','comeo','hiem','thuonghieukhac','- Mèo là một trong những loài động vật rất dễ căng thẳng và hoảng sợ vì chúng luôn luôn đề phòng môi trường xung quanh.\n" +
+//                    "- Vì vậy khi nuôi mèo bạn cần biết rõ một số phương pháp để giúp giảm căng thẳng và làm cho mèo cảm thấy thoải mái hơn.\n" +
+//                    "- Cỏ mèo là một trong những sản phẩm mà bạn nên mua bởi vì chúng không những tốt cho sức khỏe mà còn làm cho mèo cảm thấy dễ chịu hơn.\n" +
+//                    "- Cỏ mèo là một loài thực vật có trong tự nhiên, có ảnh hưởng tới hệ thần kinh của mèo.\n" +
+//                    "- Cỏ mèo không những giúp cho chúng cảm thấy thư giãn hơn mà còn giúp giãn cơ thể. Từ đó, mèo sẽ có nhiều thời gian cho cơ thể nghỉ ngơi hơn.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Bàn Chải Tắm Massage Cho Chó Mèo 12 8.5cm',75000,80000,0.06,'longmongchomeo2','dodungchomeo','longmongchomeo','hiem','thuonghieukhac','- Sản phẩm giúp việc tắm rửa cho chó mèo trở nên đơn giản và dễ dàng hơn.\n" +
+//                    "- Bàn chải được làm từ cao su vì vậy rất mềm mại và không gây đau cho chó mèo.\n" +
+//                    "- Khi sử dụng sản phẩm, bạn sẽ dễ dàng massage cho thú cưng cũng như vừa tắm vừa chải lông cho chúng.\n" +
+//                    "- Sản phẩm dễ lau chùi và không bám bẩn.\n" +
+//                    "- Bàn chải kết hợp tốt nhất với các loại sữa tắm tạo bọt vì sẽ giúp cho chó mèo thấy thoải mái hơn khi tắm.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Kem Đánh Răng Cho Mèo Bioline 50g – Vị Phô Mai – Full Bàn Chải',75000,80000,0.06,'taimatchomeo1','dodungchomeo','taimatchomeo','hiem','thuonghieukhac','- Đánh răng cho mèo là việc vô cùng quan trọng vì nếu không giữ vệ sinh răng cho mèo kỹ lưỡng thì khi về già, răng mèo yếu thì mèo sẽ bỏ ăn nhiều hơn và ảnh hưởng nhiều đến sức khỏe tổng thể của mèo.\n" +
+//                    "- Việc đánh răng cho mèo sẽ hơi khó khăn vì mèo thường không để yên cho bạn đụng vào miệng và răng của chúng.\n" +
+//                    "- Chính vị vậy, kem đánh răng Bioline có hương vị phô mai giúp cho mèo cảm thấy như kem đánh răng như một loại \"Thức ăn\" có mùi vị ngon và sẽ dễ dàng giúp bạn đánh răng cho bé hơn.\n" +
+//                    "- Sản phẩm còn đi kèm với 2 loại bàn chải khác nhau giúp cho việc chải răng cho mèo trở nên đơn giản hơn.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Gel Loại Bỏ Cao Răng Bioline 100g – Hỗ Trợ Răng Nướu',90000,100000,0.1,'taimatchomeo2','dodungchomeo','taimatchomeo','hiem','thuonghieukhac','- Thương hiệu thuộc thành viên của hiệp hội sản xuất đồ dùng cho thú nuôi cảnh Mỹ APPMA (American Pet Products Manufacturers Association).\n" +
+//                    "- Được chứng nhận đạt chuẩn NQA (tổ chức chứng nhận hàng đầu thế giới chứng nhận các tiêu chuẩn quốc tế) và FDA (cơ quan quản lý thực phẩm và dược phẩm của Hoa Kỳ), đảm bảo an toàn tuyệt đối.\n" +
+//                    "- Sản phẩm sản xuất theo dây chuyền công nghệ tiên tiến của Đức với công thức nước kết hợp cùng Carbopol 940 (CBP940) nhằm tăng độ nhớt, tạo gel, giúp sản phẩm thẩm thấu vào da, khô nhanh và không tạo lớp màng, không gây kích ứng lên nướu của thú cưng.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Dung Dịch Rửa Tai Trị Viêm Trixie 50ml – Khử Mùi Hôi Tai – Đức',90000,95000,0.05,'taimatchocho2','dodungchocho','taimatchocho','banchay','thuonghieukhac','- Thương hiệu có hơn 45 năm kinh nghiệm và là công ty dẫn đầu thị trường châu Âu về đồ dùng cho thú cưng, TRIXIE cung cấp khoảng 6.500 sản phẩm cho thú nuôi cảnh và đạt chuẩn chứng nhận FDA (cơ quan quản lý thực phẩm và dược phẩm Hoa Kỳ) với thị trường tiêu thụ chính tại Bắc Mỹ (40.00%) và Tây Âu (35.00%). Được tin dùng trên toàn cầu, đảm bảo chất lượng an toàn cho thú cưng.\n" +
+//                    "- Dung dịch được sản xuất dưới công nghệ nước khử khuẩn ion (Deionized Water) phương pháp chưng cất, trao đổi ion, đây là nước siêu thuần không chứa các tạp chất. Không gây ngộ độc cho thú cưng khi sử dụng.',5,502,200)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Nệm Chữ Nhật Cho Chó Mèo 75 90cm – Dưới 40kg – Hàng Xuất Khẩu',175000,20000,0.13,'nemchocho1','chuonglongchocho','nemchocho','hiem','thuonghieukhac','- Màu sắc đa dạng đẹp mắt.\n" +
+//                    "- Chất liệu: Lông nhung kết hợp gòn bi 3D cao cấp nên nệm rất êm mịn, êm ái cho thú cưng giấc ngủ thật ngon.\n" +
+//                    "- Sản phẩm được may tỉ mỉ nên đảm bảo rất chắc chắn.\n" +
+//                    "- Dễ dàng giặt máy hoặc giặt tay. Rất mau khô.',5,802,80)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Nệm Chữ Nhật Cho Chó Mèo 75 90cm – Dưới 40kg – Hàng Xuất Khẩu',175000,20000,0.13,'nemchocho1','chuonglongchocho','nemchocho','hiem','thuonghieukhac','- Màu sắc đa dạng đẹp mắt.\n" +
+//                    "- Chất liệu: Lông nhung kết hợp gòn bi 3D cao cấp nên nệm rất êm mịn, êm ái cho thú cưng giấc ngủ thật ngon.\n" +
+//                    "- Sản phẩm được may tỉ mỉ nên đảm bảo rất chắc chắn.\n" +
+//                    "- Dễ dàng giặt máy hoặc giặt tay. Rất mau khô.',5,802,80)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Nệm Chữ Nhật Cho Chó Mèo 75 90cm – Dưới 40kg – Hàng Xuất Khẩu',175000,20000,0.13,'nemchocho1','chuonglongchomeo','nemchomeo','hiem','thuonghieukhac','- Màu sắc đa dạng đẹp mắt.\n" +
+//                    "- Chất liệu: Lông nhung kết hợp gòn bi 3D cao cấp nên nệm rất êm mịn, êm ái cho thú cưng giấc ngủ thật ngon.\n" +
+//                    "- Sản phẩm được may tỉ mỉ nên đảm bảo rất chắc chắn.\n" +
+//                    "- Dễ dàng giặt máy hoặc giặt tay. Rất mau khô.',5,802,80)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Balo phi hành gia cho thú cưng freeship balo vận chuyển',175000,20000,0.13,'balochocho1','chuonglongchocho','nemchocho','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
+//                    "Chất liệu: Nhựa cao cấp PVC \n" +
+//                    "Kích thước: 32*26*44cm\n" +
+//                    "Thích hợp với thú cưng dưới 7kg',5,802,80)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Lồng hàng không - LỒNG VẬN CHUYỂN CHÓ MÈO HÀNG ĐẸP -4 Size (Màu Ngẫu Nhiên)',175000,20000,0.13,'longvanchuyencho1','chuonglongchocho','longvanchuyenchocho','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
+//                    "Chất liệu: Nhựa cao cấp PVC \n" +
+//                    "Kích thước: 32*26*44cm\n" +
+//                    "Thích hợp với thú cưng dưới 7kg',5,802,80)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Lồng hàng không - LỒNG VẬN CHUYỂN CHÓ MÈO HÀNG ĐẸP -4 Size (Màu Ngẫu Nhiên)',175000,20000,0.13,'longvanchuyencho1','chuonglongchomeo','longvanchuyenchomeo','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
+//                    "Chất liệu: Nhựa cao cấp PVC \n" +
+//                    "Kích thước: 32*26*44cm\n" +
+//                    "Thích hợp với thú cưng dưới 7kg',5,802,80)");
 
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Kẹo Sữa Hình Xương Pow Milk Tablet 20g – Thái Lan – Hàng Hiếm',25000,30000,0.17,'snackchomeo1','thucanchomeo','snackchomeo','banchay','thuonghieukhac','- Kẹo sữa là sản phẩm giúp bạn vừa chơi với thú cưng mà cũng giúp tăng cảm giác thèm ăn và bổ sung dinh dưỡng cho chó mèo ở giai đoạn sơ sinh và nhỏ.\n" +
-                    "- Là sản phẩm của Thái với hương vị thơm ngon và thu hút được sự chú ý của các bé cún mèo, kẹo sẽ giúp cho bé thấy ăn uống ngon hơn.\n" +
-                    "- Sản phẩm có 3 vị là sữa truyền thống, gan bò và cá hồi. Giúp bạn có thể thoải mái đổi vị mà không lo thú cưng thấy ngán.\n" +
-                    "- Mỗi ngày bạn có thể cho bé ăn từ 2 - 3 viên kẹo, chia đều trong hoặc sau các bữa ăn chính.\n" +
-                    "- Sản phẩm được sản xuất tại Thái Lan, nơi có ngành thú cưng cực kì phát triển, nên chất lượng sản phẩm đã được kiểm định và đảm bảo vệ sinh an toàn thực phẩm.\n" +
-                    "- Khi không dùng đến, bạn có thể bỏ kẹo ở nơi khô ráo hoặc cho vào hộp có nắp đậy để giữ cho kẹo có hương vị thơm ngon trong một thời gian dài.',5,502,200)");
 
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Xúc Xích Phô Mai Bowwow 240g – Không Hương Liệu – Hàn Quốc',25000,30000,0.17,'snackchocho1','thucanchocho','snackchocho','hiem','thuonghieukhac','- Xúc xích giúp tăng khẩu vị cho chó mèo, đặc biệt là những bé thú cưng kén ăn.\n" +
-                    "- Bạn có thể cho thú cưng ăn kèm với cơm hoặc làm thức ăn phụ cho mỗi bữa sáng của chó mèo.\n" +
-                    "- Sản phẩm được làm 100% từ thịt tươi với công thức không chất bảo quản và không hương liệu.\n" +
-                    "- Ngoài thịt chứa nhiều Protein thì phô mai còn giúp cải thiện tiêu hoá, bổ sung men vi sinh giúp bụng chó mèo hấp thụ dinh dưỡng tốt hơn.\n" +
-                    "- Công nghệ chế biến an toàn với lượng muối thấp, nên sẽ gây hại tới thận và tim của thú cưng.\n" +
-                    "- Nguyên vật liệu được chế biến với công nghệ dây chuyền khép kín, giúp giữ nguyên được dinh dưỡng và chất lượng của thịt tới khi chó mèo cưng ăn.\n" +
-                    "- Sản phẩm có mùi vị phô mai béo ngậy, kích thích vị giác của thú cưng, ngay cả những bé “boss\" kén ăn nhất.\n" +
-                    "- Xúc xích Bowwow được sử dụng cho cả chó và mèo.\n" +
-                    "- Phù hợp thú cưng ở mọi giai đoạn và lứa tuổi khác nhau.\n" +
-                    "- Sản phẩm được sản xuất 100% tại Hàn Quốc nên bạn sẽ yên tâm khi cho thú cưng ăn mỗi ngày.',5,502,200)");
 
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Snack Thưởng Mềm Juicy Bites 11g – 2 Vị Trong 1 Gói – Thái Lan',55000,60000,0.15,'snackchocho2','thucanchocho','snackchocho','hiem','thuonghieukhac','- Khi nuôi chó, ngoài thức ăn hạt và các loại pate kem thưởng ra, chắc hẳn đôi khi bạn sẽ băn khoăn không biết nên cho chó ăn gì để bạn có thể vừa chơi với chúng mà lại có thể dễ dàng huấn luyện chó theo ý mình.\n" +
-                    "- Đây là lúc bạn cần phải mua ngay snack bánh thưởng Juicy Bites.\n" +
-                    "- Sản phẩm có thành phần không những giúp chó ăn vặt mà còn bổ sung một số chất dinh dưỡng cho hoạt động sống hằng ngày.\n" +
-                    "- Juicy Bites là dòng sản phẩm đến từ Thái Lan, với thiết kế viên snack đặt biệt vừa mềm lại vừa thơm, giúp kích thích khứu giác và vị giác của những chú chó.\n" +
-                    "- Không những thế, một gói bánh thưởng Juicy Bites sẽ bao gồm 2 vị riêng biệt giúp cho chó của bạn không cảm thấy ngán mà bạn cũng có thêm nhiều sự lựa chọn hơn.',5,502,200)");
 
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Snack Ăn Sạch Răng Cho Chó Feline Greenies 595g – Cực Hiếm – USA',700000,800000,0.13,'snackchocho3','thucanchocho','snackchocho','hiem','thuonghieukhac','- Khi nuôi chó, ngoài thức ăn hạt và các loại pate kem thưởng ra, chắc hẳn đôi khi bạn sẽ băn khoăn không biết nên cho chó ăn gì để bạn có thể vừa chơi với chúng mà lại có thể dễ dàng huấn luyện chó theo ý mình.\n" +
-                    "- Đây là lúc bạn cần phải mua ngay snack bánh thưởng Juicy Bites.\n" +
-                    "- Sản phẩm có thành phần không những giúp chó ăn vặt mà còn bổ sung một số chất dinh dưỡng cho hoạt động sống hằng ngày.\n" +
-                    "- Juicy Bites là dòng sản phẩm đến từ Thái Lan, với thiết kế viên snack đặt biệt vừa mềm lại vừa thơm, giúp kích thích khứu giác và vị giác của những chú chó.\n" +
-                    "- Không những thế, một gói bánh thưởng Juicy Bites sẽ bao gồm 2 vị riêng biệt giúp cho chó của bạn không cảm thấy ngán mà bạn cũng có thêm nhiều sự lựa chọn hơn.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Snack Bánh Thưởng Me-O 50g – Đủ Vị Cho Mèo – Thái Lan',25000,30000,0.17,'snackchomeo2','thucanchomeo','snackchomeo','banchay','thuonghieukhac','- Khi nuôi mèo, ngoài hạt khô và pate ra thì snack thưởng cũng là một loại thực phẩm mà bạn nên trang bị khi mua sắm.\n" +
-                    "- Snack thưởng giúp kích thích vị giác của mèo nhiều hơn. Bạn cũng có thể dùng bánh thưởng để khen mèo khi bắt đầu các bài huấn luyện thay đổi hành vi cho chúng.\n" +
-                    "- Snack thưởng cho mèo Me-o là dòng sản phẩm mới ra trên thị trường hiện nay.\n" +
-                    "- Sản phẩm có nhiều mùi vị thơm ngon giúp mèo ăn nhiều hơn.\n" +
-                    "- Snack Me-o đảm bảo sẽ giúp cho mèo của bạn thích thú hơn trong việc ăn uống.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Súp Kem Thưởng Wanpy Happy 100 14gx5',55000,60000,0.15,'snackchomeo3','thucanchomeo','snackchomeo','banchay','thuonghieukhac','- Nếu bạn đang bắt đầu nuôi mèo hoặc đã nuôi mèo lâu thì kem thưởng là sản phẩm không thể nào thiếu khi mua đồ cho mèo.\n" +
-                    "- Kem thưởng kích thích sức ăn của mèo, giúp cho mèo bớt kén ăn hơn và bổ sung thêm nhiều dinh dưỡng khác ngoài hạt.\n" +
-                    "- Kem thưởng cũng cung cấp thêm nước cho cơ thể của mèo, rất tốt trong việc phòng tránh các bệnh liên quan đến thận của mèo.\n" +
-                    "- Sản phẩm Happy Wanpy 100 là một trong những thương hiệu đã rất nổi tiếng trên thị trường nội địa Trung. Nay, bạn có thể mua sản phẩm này cho mèo nhà thưởng thức.\n" +
-                    "- Kem thưởng có 5 vị để bạn có thể thay phiên cho mèo ăn để giúp mèo thấy ngon miệng hơn.\n" +
-                    "- Bạn có thể cho mèo liếm kem trực tiếp trên tay hoặc trộn chung với các loại thức ăn khác để tăng thêm khẩu vị cho mèo.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Sữa Cho Mèo Con Beaphar Lactol Kitten Milk (500g)',450000,502000,0.1,'suachomeo2','thucanchomeo','suachomeo','banchay','beaphar','- Sở hữu công thức đặc biệt giúp mèo hấp thu chất dinh dưỡng trong sữa nhanh hơn.\n" +
-                    "- Bổ sung các dưỡng chất và vitamin cần thiết, giúp mèo nhanh chóng phát triển.\n" +
-                    "- Hoàn toàn an toàn với mèo.\n" +
-                    "- Phù hợp với mèo sơ sinh và mèo con dưới 12 tháng tuổi.\n" +
-                    "- Được sản xuất 100% tại Hà Lan, theo tiêu chuẩn an toàn của Châu Âu.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Sữa Biomilk Cho Chó Mèo Còi Cọc, Chậm Lớn 100g – Việt Nam',450000,502000,0.1,'suachocho2','thucanchocho','suachocho','moinhat','thuonghieukhac','- Đối với chó mèo 3 tháng tuổi trở xuống, sữa là một nguồn dinh dưỡng cực kì quan trọng. Đặc biệt là nếu bạn cho thú cưng tách mẹ quá sớm, thì bạn cần bổ sung sữa công thức để giúp cải thiện sức khoẻ của chó mèo.\n" +
-                    "- Sữa Biomilk là một trong những dòng sản phẩm sữa phổ biến và nổi tiếng nhất ở Việt Nam.\n" +
-                    "- Sản phẩm được điều chế dựa với công thức giống nhất với sữa của chó mèo mẹ. Từ đó đảm bảo thú cưng của bạn sẽ có được nguồn dinh dưỡng dồi dào và phù hợp với thể trạng trong giai đoạn này.\n" +
-                    "- Sữa Biomilk được sản xuất 100% tại Việt Nam, tuân thủ theo các tiêu chuẩn sản xuất nghiêm ngặt, do đó hoàn toàn an toàn với thú cưng của bạn.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Cỏ Mèo Khô Dạng Ống Bioline 5g – Giúp Mèo Giảm Stress',75000,80000,0.06,'comeo1','dochoichomeo','comeo','hiem','thuonghieukhac','- Mèo là một trong những loài động vật rất dễ căng thẳng và hoảng sợ vì chúng luôn luôn đề phòng môi trường xung quanh.\n" +
-                    "- Vì vậy khi nuôi mèo bạn cần biết rõ một số phương pháp để giúp giảm căng thẳng và làm cho mèo cảm thấy thoải mái hơn.\n" +
-                    "- Cỏ mèo là một trong những sản phẩm mà bạn nên mua bởi vì chúng không những tốt cho sức khỏe mà còn làm cho mèo cảm thấy dễ chịu hơn.\n" +
-                    "- Cỏ mèo là một loài thực vật có trong tự nhiên, có ảnh hưởng tới hệ thần kinh của mèo.\n" +
-                    "- Cỏ mèo không những giúp cho chúng cảm thấy thư giãn hơn mà còn giúp giãn cơ thể. Từ đó, mèo sẽ có nhiều thời gian cho cơ thể nghỉ ngơi hơn.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Bàn Chải Tắm Massage Cho Chó Mèo 12 8.5cm',75000,80000,0.06,'longmongchomeo2','dodungchomeo','longmongchomeo','hiem','thuonghieukhac','- Sản phẩm giúp việc tắm rửa cho chó mèo trở nên đơn giản và dễ dàng hơn.\n" +
-                    "- Bàn chải được làm từ cao su vì vậy rất mềm mại và không gây đau cho chó mèo.\n" +
-                    "- Khi sử dụng sản phẩm, bạn sẽ dễ dàng massage cho thú cưng cũng như vừa tắm vừa chải lông cho chúng.\n" +
-                    "- Sản phẩm dễ lau chùi và không bám bẩn.\n" +
-                    "- Bàn chải kết hợp tốt nhất với các loại sữa tắm tạo bọt vì sẽ giúp cho chó mèo thấy thoải mái hơn khi tắm.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Kem Đánh Răng Cho Mèo Bioline 50g – Vị Phô Mai – Full Bàn Chải',75000,80000,0.06,'taimatchomeo1','dodungchomeo','taimatchomeo','hiem','thuonghieukhac','- Đánh răng cho mèo là việc vô cùng quan trọng vì nếu không giữ vệ sinh răng cho mèo kỹ lưỡng thì khi về già, răng mèo yếu thì mèo sẽ bỏ ăn nhiều hơn và ảnh hưởng nhiều đến sức khỏe tổng thể của mèo.\n" +
-                    "- Việc đánh răng cho mèo sẽ hơi khó khăn vì mèo thường không để yên cho bạn đụng vào miệng và răng của chúng.\n" +
-                    "- Chính vị vậy, kem đánh răng Bioline có hương vị phô mai giúp cho mèo cảm thấy như kem đánh răng như một loại \"Thức ăn\" có mùi vị ngon và sẽ dễ dàng giúp bạn đánh răng cho bé hơn.\n" +
-                    "- Sản phẩm còn đi kèm với 2 loại bàn chải khác nhau giúp cho việc chải răng cho mèo trở nên đơn giản hơn.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Gel Loại Bỏ Cao Răng Bioline 100g – Hỗ Trợ Răng Nướu',90000,100000,0.1,'taimatchomeo2','dodungchomeo','taimatchomeo','hiem','thuonghieukhac','- Thương hiệu thuộc thành viên của hiệp hội sản xuất đồ dùng cho thú nuôi cảnh Mỹ APPMA (American Pet Products Manufacturers Association).\n" +
-                    "- Được chứng nhận đạt chuẩn NQA (tổ chức chứng nhận hàng đầu thế giới chứng nhận các tiêu chuẩn quốc tế) và FDA (cơ quan quản lý thực phẩm và dược phẩm của Hoa Kỳ), đảm bảo an toàn tuyệt đối.\n" +
-                    "- Sản phẩm sản xuất theo dây chuyền công nghệ tiên tiến của Đức với công thức nước kết hợp cùng Carbopol 940 (CBP940) nhằm tăng độ nhớt, tạo gel, giúp sản phẩm thẩm thấu vào da, khô nhanh và không tạo lớp màng, không gây kích ứng lên nướu của thú cưng.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Dung Dịch Rửa Tai Trị Viêm Trixie 50ml – Khử Mùi Hôi Tai – Đức',90000,95000,0.05,'taimatchocho2','dodungchocho','taimatchocho','banchay','thuonghieukhac','- Thương hiệu có hơn 45 năm kinh nghiệm và là công ty dẫn đầu thị trường châu Âu về đồ dùng cho thú cưng, TRIXIE cung cấp khoảng 6.500 sản phẩm cho thú nuôi cảnh và đạt chuẩn chứng nhận FDA (cơ quan quản lý thực phẩm và dược phẩm Hoa Kỳ) với thị trường tiêu thụ chính tại Bắc Mỹ (40.00%) và Tây Âu (35.00%). Được tin dùng trên toàn cầu, đảm bảo chất lượng an toàn cho thú cưng.\n" +
-                    "- Dung dịch được sản xuất dưới công nghệ nước khử khuẩn ion (Deionized Water) phương pháp chưng cất, trao đổi ion, đây là nước siêu thuần không chứa các tạp chất. Không gây ngộ độc cho thú cưng khi sử dụng.',5,502,200)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Nệm Chữ Nhật Cho Chó Mèo 75 90cm – Dưới 40kg – Hàng Xuất Khẩu',175000,20000,0.13,'nemchocho1','chuonglongchocho','nemchocho','hiem','thuonghieukhac','- Màu sắc đa dạng đẹp mắt.\n" +
-                    "- Chất liệu: Lông nhung kết hợp gòn bi 3D cao cấp nên nệm rất êm mịn, êm ái cho thú cưng giấc ngủ thật ngon.\n" +
-                    "- Sản phẩm được may tỉ mỉ nên đảm bảo rất chắc chắn.\n" +
-                    "- Dễ dàng giặt máy hoặc giặt tay. Rất mau khô.',5,802,80)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Nệm Chữ Nhật Cho Chó Mèo 75 90cm – Dưới 40kg – Hàng Xuất Khẩu',175000,20000,0.13,'nemchocho1','chuonglongchocho','nemchocho','hiem','thuonghieukhac','- Màu sắc đa dạng đẹp mắt.\n" +
-                    "- Chất liệu: Lông nhung kết hợp gòn bi 3D cao cấp nên nệm rất êm mịn, êm ái cho thú cưng giấc ngủ thật ngon.\n" +
-                    "- Sản phẩm được may tỉ mỉ nên đảm bảo rất chắc chắn.\n" +
-                    "- Dễ dàng giặt máy hoặc giặt tay. Rất mau khô.',5,802,80)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Nệm Chữ Nhật Cho Chó Mèo 75 90cm – Dưới 40kg – Hàng Xuất Khẩu',175000,20000,0.13,'nemchocho1','chuonglongchomeo','nemchomeo','hiem','thuonghieukhac','- Màu sắc đa dạng đẹp mắt.\n" +
-                    "- Chất liệu: Lông nhung kết hợp gòn bi 3D cao cấp nên nệm rất êm mịn, êm ái cho thú cưng giấc ngủ thật ngon.\n" +
-                    "- Sản phẩm được may tỉ mỉ nên đảm bảo rất chắc chắn.\n" +
-                    "- Dễ dàng giặt máy hoặc giặt tay. Rất mau khô.',5,802,80)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Balo phi hành gia cho thú cưng freeship balo vận chuyển',175000,20000,0.13,'balochocho1','chuonglongchocho','nemchocho','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
-                    "Chất liệu: Nhựa cao cấp PVC \n" +
-                    "Kích thước: 32*26*44cm\n" +
-                    "Thích hợp với thú cưng dưới 7kg',5,802,80)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Lồng hàng không - LỒNG VẬN CHUYỂN CHÓ MÈO HÀNG ĐẸP -4 Size (Màu Ngẫu Nhiên)',175000,20000,0.13,'longvanchuyencho1','chuonglongchocho','longvanchuyenchocho','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
-                    "Chất liệu: Nhựa cao cấp PVC \n" +
-                    "Kích thước: 32*26*44cm\n" +
-                    "Thích hợp với thú cưng dưới 7kg',5,802,80)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Lồng hàng không - LỒNG VẬN CHUYỂN CHÓ MÈO HÀNG ĐẸP -4 Size (Màu Ngẫu Nhiên)',175000,20000,0.13,'longvanchuyencho1','chuonglongchomeo','longvanchuyenchomeo','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
-                    "Chất liệu: Nhựa cao cấp PVC \n" +
-                    "Kích thước: 32*26*44cm\n" +
-                    "Thích hợp với thú cưng dưới 7kg',5,802,80)");
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Balo phi hành gia cho thú cưng freeship balo vận chuyển',175000,20000,0.13,'balochocho1','chuonglongchocho','balochocho','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
+//                    "Chất liệu: Nhựa cao cấp PVC \n" +
+//                    "Kích thước: 32*26*44cm\n" +
+//                   "Thích hợp với thú cưng dưới 7kg',5,802,80)");
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Thức Ăn Cho Mèo Chứa 95% Đạm Natural Core 1kg – 100 Organic',340000,400000,0.15,'dinhduongchomeo1','thucanchomeo','dinhduongchomeo','hiem','thuonghieukhac','- Khi nuôi mèo, một trong những khó khăn lớn nhất chính là làm sao có thể cung cấp đủ dinh dưỡng cho mèo mà không làm cho mèo bị béo phì.\n" +
+//                    "- Nguyên nhân béo phì thường nằm ở việc người nuôi cho bé ăn các loại thức ăn có chứa nhiều tinh bột, và việc ít vận động khiến mèo dễ tăng cân hơn.\n" +
+//                    "- Đây là lý do vì sao hạt Natural Core 95% đạm ra đời. Nhiều đạm sẽ giúp tăng cơ và khoẻ xương khớp, trong khi đó hạn chế việc tích tụ của mỡ.\n" +
+//                    "- Hầu hết các loại hạt hiện nay thường có thành phần là bột (bột bắp, lúa mì). Riêng hạt Natural Core lại chứa đạm nhiều hơn, chứng minh hạt có chất lượng tốt hơn hẳn.\n" +
+//                    "- Ngoài đạm thì 5% còn lại là các axit amin và các axit béo có chức năng tăng sức đề kháng và cải thiện vẻ đẹp của lông da.\n" +
+//                    "- Đạm có trong hạt sử dụng công nghệ thuỷ phân hiện tại giúp phân tách protein thành các phân tử nhỏ, từ đó dễ hấp thu vào cơ thể của mèo hơn.\n" +
+//                    "- Sản phẩm phù hợp cho mèo ở mọi lứa tuổi và mọi giống mèo.\n" +
+//                    "- Sản phẩm đạt được chứng nhận USDA của Hoa Kỳ và ECOCERT của Châu Âu về chất lượng và vệ sinh an toàn thực phẩm.',5,802,80)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Thức Ăn Cho Chó Chứa 95% Đạm Natural Core 1kg – 100 Organic',340000,400000,0.15,'dinhduongchocho1','thucanchocho','dinhduongchocho','hiem','thuonghieukhac','- Khi nuôi chó, một trong những khó khăn lớn nhất chính là làm sao có thể cung cấp đủ dinh dưỡng cho chó mà không làm cho chó bị béo phì.\n" +
+//                    "- Nguyên nhân béo phì thường nằm ở việc người nuôi cho bé ăn các loại thức ăn có chứa nhiều tinh bột, và việc ít vận động khiến chó dễ tăng cân hơn.\n" +
+//                    "- Đây là lý do vì sao hạt Natural Core 95% đạm ra đời. Nhiều đạm sẽ giúp tăng cơ và khoẻ xương khớp, trong khi đó hạn chế việc tích tụ của mỡ.\n" +
+//                    "- Hầu hết các loại hạt hiện nay thường có thành phần là bột (bột bắp, lúa mì). Riêng hạt Natural Core lại chứa đạm nhiều hơn, chứng minh hạt có chất lượng tốt hơn hẳn.\n" +
+//                    "- Ngoài đạm thì 5% còn lại là các axit amin và các axit béo có chức năng tăng sức đề kháng và cải thiện vẻ đẹp của lông da.\n" +
+//                    "- Đạm có trong hạt sử dụng công nghệ thuỷ phân hiện tại giúp phân tách protein thành các phân tử nhỏ, từ đó dễ hấp thu vào cơ thể của chó hơn.\n" +
+//                    "- Sản phẩm phù hợp cho chó ở mọi lứa tuổi và mọi giống chó.\n" +
+//                    "- Sản phẩm đạt được chứng nhận USDA của Hoa Kỳ và ECOCERT của Châu Âu về chất lượng và vệ sinh an toàn thực phẩm.',5,802,80)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Rọ Mõm Nylon Mon Ami Collar (XXS)',28000,35000,0.2,'romomchocho1','phukienchocho','romomchocho','hiem','mon_ami','- Sản xuất tại Việt Nam\n" +
+//                    "- Dễ sử dụng, có độ bền cao\n" +
+//                    "- Sử dụng vật liệu thoải mái cho chó\n" +
+//                    "- 7 size',5,802,80)");
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Rọ Mõm Nylon Mon Ami Collar (S)',35000,40000,0.13,'romomchocho1','phukienchocho','romomchocho','hiem','mon_ami','- Sản xuất tại Việt Nam\n" +
+//                    "- Dễ sử dụng, có độ bền cao\n" +
+//                    "- Sử dụng vật liệu thoải mái cho chó\n" +
+//                    "- 7 size',5,802,80)");
 
         }
     }

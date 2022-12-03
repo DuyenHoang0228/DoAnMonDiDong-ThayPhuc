@@ -9,8 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.nhom4.adapters.HelpAdapter;
-import com.nhom4.adapters.ThongbaoAdapter;
+import com.nhom4.view.adapters.HelpAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityHelpBinding;
 import com.nhom4.models.TroGIup;
 
@@ -18,7 +17,7 @@ import java.util.ArrayList;
 
 public class HelpActivity extends AppCompatActivity {
 
-     ActivityHelpBinding binding;
+    ActivityHelpBinding binding;
     HelpAdapter adapter;
     ArrayList<TroGIup> trogiup;
 
@@ -77,8 +76,6 @@ public class HelpActivity extends AppCompatActivity {
 
             default:break;
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 

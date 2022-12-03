@@ -1,12 +1,14 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
-import com.nhom4.adapters.AdapterPhuongThucTT;
+import com.nhom4.view.adapters.AdapterPhuongThucTT;
 import com.nhom4.lilpawhome_application.databinding.ActivityPhuongthucttBinding;
 import com.nhom4.models.PhuongThucTTChild;
 import com.nhom4.models.PhuongThucTTMother;
@@ -26,7 +28,7 @@ public class PhuongthucTTActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_phuongthuctt);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding = ActivityPhuongthucttBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -45,5 +47,13 @@ public class PhuongthucTTActivity extends AppCompatActivity {
         adapter = new AdapterPhuongThucTT(mList);
         binding.rvThanhtoan.setAdapter(adapter);
         binding.rvThanhtoan.setNestedScrollingEnabled(true);
+    }
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {case android.R.id.home: onBackPressed();
+            return true;
+
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.nhom4.adapters.ChatAdapter;
+import com.nhom4.view.adapters.ChatAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityChatBinding;
 import com.nhom4.models.message;
 
@@ -29,48 +29,34 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(view);
         initAdapter();
         addEvent();
-
-
     }
 
     private void initAdapter() {
-        Listmessage = new ArrayList<>();
         addEvent();
-
+        Listmessage = new ArrayList<>();
+        adapter = new ChatAdapter(ChatActivity.this,R.layout.chat_list,Listmessage);
 
     }
-
 
     private void addEvent() {
         binding.btnSendmessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 message ms = new message(binding.edtChat.getText().toString());
-
                 Listmessage.add(ms);
-
                 binding.edtChat.setText("");
-                adapter = new ChatAdapter(ChatActivity.this,R.layout.chat_list,Listmessage);
-
                 binding.lvMessage.setAdapter(adapter);
             }
         });
     }
 
 
-
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
+   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {case android.R.id.home: onBackPressed();
+            return true;
 
             default:break;
         }
-
-
         return super.onOptionsItemSelected(item);
     }
-
 }

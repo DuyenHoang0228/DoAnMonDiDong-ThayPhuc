@@ -30,6 +30,13 @@ public class dangnhap1 extends AppCompatActivity {
     }
 
     private void addEvent() {
+        binding.txtDieukhoansudung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(dangnhap1.this, cacdieukhoansudung.class);
+                startActivity(intent);
+            }
+        });
         binding.btnDangnhapbangfacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

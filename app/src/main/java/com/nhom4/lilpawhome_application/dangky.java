@@ -68,9 +68,13 @@ public class dangky extends AppCompatActivity {
                                     Toast.makeText(dangky.this, "Bạn cần đồng ý với các điều khoản", Toast.LENGTH_SHORT).show();
                                 }else {
                                     //Hiện dialog nhập otp
+                                    //Hiện dialog nhập otp
+                                    OTPVetification_Dialog_Dangky otpVetification_dialog_dangky= new OTPVetification_Dialog_Dangky(dangky.this,binding.edtNhapemailhoacsdt.getText().toString());
+                                    otpVetification_dialog_dangky.setCancelable(false);
+                                    otpVetification_dialog_dangky.show();
                                     Toast.makeText(dangky.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(dangky.this, MainActivity.class);
-                                    startActivity(intent);
+                                   // Intent intent = new Intent(dangky.this, MainActivity.class);
+                                   // startActivity(intent);
                                 }
                             }
                             else if (count > 0) {
@@ -85,6 +89,7 @@ public class dangky extends AppCompatActivity {
                         }
                     }
                 }
+
             }
         });
     }

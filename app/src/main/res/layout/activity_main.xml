@@ -37,7 +37,6 @@
                 android:layout_gravity="center"
                 android:src="@drawable/icon_cart"
                 />
-
             <ImageView
                 android:id="@+id/imv_chat"
                 android:layout_width="20dp"
@@ -46,10 +45,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/icon_chat"
-
-
                 />
-
         </LinearLayout>
 
     </RelativeLayout>
@@ -103,8 +99,8 @@
                     app:iss_auto_cycle="true"
                     app:iss_period="1000"
                     app:iss_delay="5000"
-                    app:iss_corner_radius="50"
-                    />
+                    app:iss_corner_radius="50">
+                </com.denzcoskun.imageslider.ImageSlider>
 
 
            </androidx.cardview.widget.CardView>
@@ -194,10 +190,92 @@
                     android:layout_height="wrap_content"
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/txt_allspchocho"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Sản phẩm cho Chó "
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:paddingHorizontal="5dp"
+                        android:text="Xem tất cả →"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="end"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_spchoCho"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/txt_allspchoMeo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Sản phẩm cho Mèo "
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:paddingHorizontal="5dp"
+                        android:text="Xem tất cả →"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="end"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_spchoMeo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -229,7 +307,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:numColumns="2"
-
                     />
             </LinearLayout>
 

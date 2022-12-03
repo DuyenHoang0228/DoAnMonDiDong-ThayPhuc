@@ -124,6 +124,9 @@
         android:layout_height="wrap_content"
         android:text="Đồng ý với điều khoản sử dụng Lilpaw Home"
         android:checked="true"
+        android:button="@null"
+        android:drawableLeft="@drawable/checkbox_defaultselected"
+        android:drawablePadding="5dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:textColor="#FA579F"/>

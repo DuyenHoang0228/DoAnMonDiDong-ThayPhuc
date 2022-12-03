@@ -9,7 +9,7 @@
             <item android:title="Tìm kiếm bài đăng"
                 android:id="@+id/item_timkiembaidang"
                 app:showAsAction="always"
-                android:icon="@drawable/ic_baseline_search_24"></item>
+                android:icon="@drawable/ic_baseline_search_white_24"></item>
             <item android:title="Bài đăng về chó"
                 android:id="@+id/item_baidangvecho"
                 app:showAsAction="always"

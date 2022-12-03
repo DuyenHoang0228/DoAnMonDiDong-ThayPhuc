@@ -63,6 +63,10 @@
                         android:title="Sữa tắm, dầu gội"
                         android:id="@+id/mn_suatamchomeo"
                         app:showAsAction="withText"/>
+                    <item
+                        android:title="Cỏ mèo"
+                        android:id="@+id/mn_comeo"
+                        app:showAsAction="withText"/>
                 </menu>
             </item>
             <item

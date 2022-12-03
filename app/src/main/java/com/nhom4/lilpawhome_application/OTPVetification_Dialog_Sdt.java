@@ -72,9 +72,9 @@ public class OTPVetification_Dialog_Sdt extends Dialog {
             public void onClick(View view) {
                 final String getOTP = otp1.getText().toString() + otp2.getText().toString() + otp3.getText().toString() + otp4.getText().toString();
                 if (getOTP.length() == 4) {
-                    Toast.makeText(view.getContext(), "Xác nhận mã OTP thành công!",
+                    Toast.makeText(view.getContext(), "Xác nhận mã OTP thành công! Bạn đã cập nhật số điện thoại mới",
                             Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(view.getContext(), themdiachi.class);
+                    Intent intent = new Intent(view.getContext(), taikhoanvabaomat.class);
                     view.getContext().startActivity(intent);
                     }
                 }
@@ -85,7 +85,7 @@ public class OTPVetification_Dialog_Sdt extends Dialog {
         thoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), themdiachi.class);
+                Intent intent = new Intent(view.getContext(), nhapsodienthoaimoi.class);
                 view.getContext().startActivity(intent);
             }
         });
