@@ -24,14 +24,37 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <TextView
-            android:id="@+id/txt_brandsanpham"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thương hiệu: Virbac"
-            android:fontFamily="@font/montserrat_bold"
-            android:textSize="15sp"
-            android:textColor="#FFA0CA"/>
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txt_brandsanpham"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thương hiệu: Virbac"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="13sp"
+                android:textColor="#FFA0CA"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/txt_deletesp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="Xóa"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="13sp"
+                android:textColor="#818181" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/txt_tensanpham"
@@ -39,8 +62,9 @@
             android:layout_height="wrap_content"
             android:text="Gel Dinh Dưỡng Cho Chó Mèo Còi Cọc Virbac Nutri Plus 120g – Pháp"
             android:fontFamily="@font/montserrat"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textColor="@color/black"
+            android:justificationMode="inter_word"
             android:layout_marginBottom="5dp"/>
 
         <TextView
@@ -51,7 +75,7 @@
             android:fontFamily="@font/montserrat_semibold"
             android:textColor="@color/white"
             android:padding="3dp"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:layout_marginBottom="5dp"
             android:background="#FFA0CA"/>
 
@@ -66,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:text="190.000 VNĐ"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/black"/>
 
@@ -76,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:text="250.000 VNĐ"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="5dp"
                 android:foreground="@drawable/line_hr_pink"

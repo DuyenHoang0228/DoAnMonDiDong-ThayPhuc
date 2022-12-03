@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.MyView> 
 
     public class MyView extends RecyclerView.ViewHolder{
         ImageView imvspgiohang;
-        TextView txtbrandsanpham, txttensanpham, txtphanloaishop, txtgiasanphamdagiam, txtgiasanphamchuagiam, txtsoluongsp, txttongtiensp;
+        TextView txtbrandsanpham, txttensanpham, txtphanloaishop, txtgiasanphamdagiam, txtgiasanphamchuagiam, txtsoluongsp, txttongtiensp, txtdeletesp;
         CheckBox cboxchonsp;
         ImageButton btngiamsoluong, btntangsoluong;
         public Double tongthanhtoantemp = 0.0;//Dùng biến này để tính tiền và reset sau mỗi lần bấm chạy hàm onClick check box
@@ -45,6 +46,41 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.MyView> 
             cboxchonsp = itemView.findViewById(R.id.cbox_chonspgiohang);
             btngiamsoluong = itemView.findViewById(R.id.btn_giamsoluong);
             btntangsoluong = itemView.findViewById(R.id.btn_tangsoluong);
+            txtdeletesp = itemView.findViewById(R.id.txt_deletesp);
+
+            //Set sự kiện click cho nút xóa
+            txtdeletesp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Dialog dialog = new Dialog(btngiamsoluong.getContext());
+                    dialog.setContentView(R.layout.dialog_xoasanpham);
+
+                    //Ok
+
+                    TextView dongyxoa = dialog.findViewById(R.id.txt_dongyxoa);
+                    dongyxoa.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            MainActivity.manggiohang.remove(getAdapterPosition());
+                            calculateTotalOrder();
+                            notifyDataSetChanged();
+                            dialog.dismiss();
+                        }
+                    });
+
+                    //Cancel
+                    TextView cancel = dialog.findViewById(R.id.txt_khongxoa);
+                    cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //Cancel activity
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.setCanceledOnTouchOutside(false);
+                    dialog.show();
+                }
+            });
 
             //Set sự kiện click cho nút tăng/ giảm số lượng
             btngiamsoluong.setOnClickListener(new View.OnClickListener() {
@@ -109,16 +145,28 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.MyView> 
             });
 
             //Set sự kiện click cho checkbox
-            cboxchonsp.setOnClickListener(new View.OnClickListener() {
+//            cboxchonsp.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    handleCheckBoxChecks(getAdapterPosition());
+//                }
+//                private void handleCheckBoxChecks(int adapterPosition) {
+//                    if (cboxchonsp.isChecked()) {
+//                        MainActivity.manggiohang.get(adapterPosition).setSelected(true);
+//                    }else{
+//                        MainActivity.manggiohang.get(adapterPosition).setSelected(false);
+//                    }
+//                    calculateTotalOrder();
+//                }
+//            });
+
+            cboxchonsp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
-                public void onClick(View v) {
-                    handleCheckBoxChecks(getAdapterPosition());
-                }
-                private void handleCheckBoxChecks(int adapterPosition) {
-                    if (cboxchonsp.isChecked()) {
-                        MainActivity.manggiohang.get(adapterPosition).setSelected(true);
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked){
+                        MainActivity.manggiohang.get(getAdapterPosition()).setSelected(true);
                     }else{
-                        MainActivity.manggiohang.get(adapterPosition).setSelected(false);
+                        MainActivity.manggiohang.get(getAdapterPosition()).setSelected(false);
                     }
                     calculateTotalOrder();
                 }
@@ -161,6 +209,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.MyView> 
         holder.txtgiasanphamchuagiam.setText(String.format("%.0f VNĐ",g.getGiaCuSanPham()));
         holder.txtsoluongsp.setText(String.format("x%d", g.getSoluongsp()));
         holder.txttongtiensp.setText(String.format("%.0fđ",g.getTongtiensp()));
+        holder.cboxchonsp.setChecked(MainActivity.manggiohang.get(position).isSelected());
         //DecimalFormat decimalformat = new DecimalFormat("###,###,###");
         //holder.txtgiasanphamchuagiam.setText(decimalformat.format(g.getGiaCuSanPham()+"VNĐ"));
     }

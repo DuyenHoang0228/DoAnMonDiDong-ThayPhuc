@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.nhom4.adapters.AdapterGioHang;
@@ -23,6 +25,7 @@ public class GioHangActivity extends AppCompatActivity {
     LinearLayoutManager VerticalLayout;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     public static TextView txttongthanhtoan;
+    public static CheckBox cboxtatca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +53,29 @@ public class GioHangActivity extends AppCompatActivity {
         binding.rvGiohang.setAdapter(adapter);
 
         displaybackground();//Hiện giỏ hàng trống
+
         txttongthanhtoan = findViewById(R.id.txt_tongthanhtoan);
+
+        cboxtatca = findViewById(R.id.cbox_tatca);
         binding.txtTongthanhtoan.setText("0đ");
+
+        //Set sự kiện cho checkbox tất cả
+        binding.cboxTatca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {//Khi ô chekcbox thay đổi trạng thái
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){//nếu nút checkbox true - đã tick
+                    for (int i = 0; i <= MainActivity.manggiohang.size()-1; i++){
+                        MainActivity.manggiohang.get(i).setSelected(true);
+                        adapter.notifyDataSetChanged();
+                    }
+                }else{//nếu nút checkbox false - chưa tick
+                    for (int i = 0; i <= MainActivity.manggiohang.size()-1; i++){
+                        MainActivity.manggiohang.get(i).setSelected(false);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
     }
 
     private void displaybackground() {
