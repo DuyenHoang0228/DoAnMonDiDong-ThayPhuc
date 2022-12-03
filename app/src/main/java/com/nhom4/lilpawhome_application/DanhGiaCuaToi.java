@@ -49,16 +49,6 @@ public class DanhGiaCuaToi extends AppCompatActivity {
         tab2.setContent(R.id.tab_dadanhgia);
         tab2.setIndicator("Đã đánh giá");
         tabHost.addTab(tab2);
-
-
-        binding.thDanhgiacuatoi.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-            @Override
-            public void onTabChanged(String s) {
-
-
-            }
-        });
-
     }
     //Thêm menu
     @Override
