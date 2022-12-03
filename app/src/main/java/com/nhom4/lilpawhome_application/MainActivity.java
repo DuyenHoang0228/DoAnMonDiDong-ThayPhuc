@@ -21,15 +21,15 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.nhom4.adapters.Danhmuc1Adapter;
 import com.nhom4.adapters.HorAdapterSanphamLilPawHome;
-import com.nhom4.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.DanhMuc1;
 import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
 import com.nhom4.view.ExpandableHeightGridView;
+import com.nhom4.view.adapters.Danhmuc1Adapter;
+import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
 
 import java.util.ArrayList;
 
@@ -206,7 +206,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
                 intent.putExtra("IDsanpham",details.getIdSanPham());
 
-
                 startActivity(intent);
             }
         });
@@ -375,4 +374,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-

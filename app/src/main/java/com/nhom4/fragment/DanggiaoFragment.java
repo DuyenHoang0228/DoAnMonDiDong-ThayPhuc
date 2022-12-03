@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.nhom4.adapters.AdapterDSDonmua;
+import com.nhom4.view.adapters.AdapterDSDonmua;
 import com.nhom4.lilpawhome_application.R;
 import com.nhom4.models.DonHang;
 

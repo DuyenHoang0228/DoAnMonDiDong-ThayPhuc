@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,12 +14,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.nhom4.adapters.SanPhamAdapterLilPawHome;
-import com.nhom4.adapters.SanphamAdapter;
+import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.databases.DBHelperSanPham;
-import com.nhom4.lilpawhome_application.databinding.ActivityShopChoCho1Binding;
 import com.nhom4.lilpawhome_application.databinding.ActivityShopChoMeo1Binding;
-import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
 
 import java.util.ArrayList;

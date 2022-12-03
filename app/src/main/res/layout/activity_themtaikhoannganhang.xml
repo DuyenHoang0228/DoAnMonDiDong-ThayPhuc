@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/customshapeborderwhite"
-        android:hint="Số tài khoản"
+        android:hint="Tên chủ khoản"
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"

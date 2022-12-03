@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.nhom4.adapters.SanphamAdapter;
+import com.nhom4.view.adapters.SanphamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivitySanPhamTheoThuongHieuBinding;
 import com.nhom4.models.SanPham;
 
@@ -50,4 +50,5 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
         binding.gvSanphamtheothuonghieu.setAdapter(adapter);
 
     }
+
 }

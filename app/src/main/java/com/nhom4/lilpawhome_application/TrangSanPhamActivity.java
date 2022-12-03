@@ -8,15 +8,16 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 
-import com.nhom4.adapters.AdapterDanhGiaSanPham;
-import com.nhom4.adapters.SanPhamAdapterLilPawHome;
-import com.nhom4.adapters.SanphamAdapter;
+
 import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityTrangSanPhamBinding;
 import com.nhom4.models.DanhGiaSanPhamM;
 import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
 import com.nhom4.view.ExpandableHeightGridView;
+import com.nhom4.view.adapters.AdapterDanhGiaSanPham;
+import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
+import com.nhom4.view.adapters.SanphamAdapter;
 
 import java.util.ArrayList;
 
@@ -101,7 +102,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
 //        while(c.moveToNext())
 //        {
 //            sanPhamLilPawHomes.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
-//                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+//                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(😎,c.getString(9),
 //                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
 //        }
 //        c.close();
@@ -118,7 +119,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
 //            if(c.getString(6)==loaiSP1)
 //            {
 //                sanPhamLilPawHomes.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
-//                        c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+//                        c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(😎,c.getString(9),
 //                        c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
 //            }
 //
@@ -176,7 +177,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
 
 
             /*sanphamchomeo.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
-                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(😎,c.getString(9),
                     c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));*/
         }
         c.close();

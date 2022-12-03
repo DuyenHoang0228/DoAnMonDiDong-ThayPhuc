@@ -118,6 +118,83 @@ Bảo mật tuyệt đối mọi thông tin giao dịch trực tuyến của th�
         Lưu ý:  Lilpaw Home chỉ chuẩn bị và đóng hàng khi nhận được thông báo chuyển tiền từ ngân hàng.
 
     </string>
+    <string name="cacdieukhoan">
+        ĐIỀU 1: ĐỊNH NGHĨA \n
+Người mua: Là người mua sản phẩm trên website bán hàng trực tuyến Sendo.vn được Bên A sử dụng theo những điều kiện được ghi nhận trong bản thỏa thuận này.
+
+Hoàn tất giao dịch: Khi người mua nhận được sản phẩm của bên A và xác nhận hài lòng với sản phẩm/dịch vụ đó.
+
+Dịch vụ thanh toán và giao hàng đảm bảo: Được hiểu là dịch vụ thanh toán và giao hàng đảm bảo của Công ty cổ phần Công nghệ Sen Đỏ. Người mua được giao hàng tại nhà sau khi thực hiện thanh toán trực tuyến qua cổng thanh toán Senpay.vn hoặc thanh toán trực tiếp khi nhận hàng (COD)
+
+Xác nhận hoàn tất giao dịch:Khi người mua gửi thông tin xác nhận đã nhận được sản phẩm đúng chất lượng, số lượng của bên A trên website Sendo.vn.
+
+Khóa tài khoản:Là tài khoản của người mua được đưa vào trạng thái kiểm soát khi các giao dịch thanh toán cho bên A được nghi vấn có dấu hiệu vi phạm pháp luật là giả mạo hoặc có rủi ro.
+
+Senpay: được hiểu rằng là dịch vụ thanh toán trực tuyến do Công ty cổ phần Công nghệ Sen Đỏ và các đối tác cung cấp.
+
+Dịch vụ vận chuyển: được hiểu là dịch vụ chuyển phát các bưu phẩm bưu kiện, do các đối tác vận chuyển của Công ty cổ phần Công nghệ Sen Đỏ cung cấp
+
+Sen Đỏ hay Sendo.vn: được hiểu là sàn giao dịch Thương mại điện tử (TMĐT) trực tuyến thông qua website Sendo.vn do Công ty cổ phần Công nghệ Sen Đỏ cung cấp.
+
+ĐIỀU 2: QUYỀN VÀ TRÁCH NHIỆM CỦA BÊN A
+2.1 Giao dịch hợp pháp và bán hàng trung thực: Bên A cam kết:
+
+a) Chỉ được phép sử dụng Thanh toán và giao hàng của bên B để chấp nhận cho việc bán và vận chuyển sản phẩm, dịch vụ hoặc nhận tiền một cách hợp pháp. Nghiêm cấm các hành vi mà pháp luật hiện hành chưa hoặc không cho phép, bao gồm nhưng không giới hạn rửa tiền, đưa/nhận hối lộ, buôn bán các sản phẩm có nguồn gốc vi phạm pháp luật, lừa đảo người mua. Đồng thời, Bên A phải có trách nhiệm đảm bảo các hàng hóa cung cấp cho người mua được thanh toán qua các công cụ thanh toán trực tuyến của Bên B phải là hàng hóa được phép giao dịch và tuân thủ theo đúng các quy định của pháp luật Việt Nam hiện hành (nếu có).
+
+b) Đảm bảo tính chính xác, trung thực của các thông tin về hàng hóa, dịch vụ của mình chào bán, đặc biệt là tình trạng tồn kho và giá cả. Bên A cam kết bán hàng đúng giá đã niêm yết, giá đã bao gồm các loại thuế theo quy định của pháp luật.
+
+2.2 Cam kết về tài chính: Bên A cam kết
+
+a) Không yêu cầu người mua cung cấp các thông tin tài chính cá nhân như tài khoản ngân hàng, số thẻ tín dụng, mật khẩu đăng nhập tài khoản SenPay…
+
+b) Cung cấp cho người mua những chính sách đổi/trả và bảo hành một cách rõ ràng và hợp lý, cung cấp cho Bên B nội dung các chính sách đó khi được yêu cầu và có trách nhiệm thông báo mỗi khi có thay đổi hoặc cập nhật.
+
+c) Giá niêm yết bán hàng là giá thật. Người mua chỉ thanh toán đúng giá niêm yết và bên A chỉ nhận thanh toán từ bên B đúng giá trị đã niêm yết trừ đi các khoản phụ phí (nếu có) như phí vận chuyển, phí đổi trả hàng và các loại phí khác.
+
+2.3 Theo dõi và kiểm soát giao dịch:
+
+Khi nhận được thông tin thông báo (tin nhắn và/hoặc email) của Sen Đỏ thông báo về giao dịch phát sinh, bên A có trách nhiệm kiểm tra lại một lần nữa bằng cách đăng nhập vào trang “Quản lý đơn hàng" của tài khoản Người bán trên Sen Đỏ:
+
+a) Nếu có hàng, Bên A xác nhận có hàng và chuyển hàng hoá hoặc thực hiện dịch vụ cho người mua theo đúng chất lượng, thời hạn đã cam kết trong mô tả khi đăng bán. Đồng thời lưu lại các chứng từ hợp lệ như hóa đơn bán hàng, phiếu xuất kho, vận đơn của hãng vận chuyển… để đối chiếu trong trường hợp cần thiết.
+
+b) Nếu hết hàng, Bên A chọn lựa giữa việc hoãn đơn hàng đến khi có hàng hoặc xác nhận Hết hàng để đơn hàng tự động hủy.
+
+c) Trong vòng 24h kể từ khi đơn hàng phát sinh mà bên A không vào xác nhận tình trạng còn hàng, bên B giữ mọi quyền hủy đơn hàng mà không cần báo trước.
+
+d) Nếu Bên A vi phạm nhiều lần việc trì hoãn không xác nhận đơn hàng khiến đơn hàng bị hủy hoặc đăng bán sản phẩm mà không có hàng, Bên B có quyền gỡ bỏ sản phẩm đã đăng, gỡ bỏ gian hàng của Bên A trong vòng 7 ngày đến vĩnh viễn tùy mức độ và mật độ vi phạm.
+
+2.4 Thanh toán:
+
+Sau 24h kể từ khi nhận hàng mà người mua không có khiếu nại gì, đơn hàng sẽ tự động hoàn tất. Bên A chỉ nhận được thanh toán khi đơn hàng ở trạng thái hoàn tất, nếu có xảy ra khiếu nại, thời hạn thanh toán sẽ kéo dài cho đến khi khiếu nại được xử lý xong.
+
+
+Tùy vào địa chỉ giao hàng, thời gian người bán nhận được thanh toán sẽ khác nhau:
+
+1. Đối với các đơn hàng đi TP.HCM, Hà Nội và Đà Nẵng: người bán nhận thanh toán sau 3-5 ngày làm việc kể từ khi người mua nhận được hàng
+
+2. Đối với các đơn hàng đi các tỉnh/thành phố khác: người bán nhận thanh toán sau 5-7 ngày làm việc kể từ khi người mua nhận được hàng
+
+Tiền hàng sẽ được chuyển vào tài khoản Senpay của Bên A. Bên A có thể tiến hành gửi lệnh rút tiền trên hệ thống của Senpay bất kể lúc nào. Lệnh rút tiền sẽ được Senpay kiểm duyệt và thanh toán tối đa trong vòng 48h (bốn mươi tám giờ) bằng phương thức chuyển khoản của ngân hàng. Phí chuyển khoản do bên A thanh toán theo quy định của ngân hàng được cụ thể tại Quy định sử dụng dịch vụ của Senpay. Nội dung cụ thể quy định về cơ chế vận hành hệ thống Senpay (thanh toán điện tử), cũng như quyền và nghĩa vụ của các bên tham gia khi sử dụng các dịch vụ trên được quy định đầy đủ tại trang website senpay.vn
+
+2.5 Sở hữu trí tuệ và An toàn bảo mật: Bên A cam kết
+
+a) Tôn trọng quyền sở hữu trí tuệ của Sen Đỏ và các sản phẩm, dịch vụ khác của bên B; không tự ý thay đổi tên gọi, hình ảnh, và các thành phần liên quan đến thương hiệu của các sản phẩm của bên B tại bất kỳ đâu.
+
+b) Hợp tác và cung cấp thông tin theo yêu cầu của bên B trong quá trình điều tra các trường hợp nghi ngờ phạm pháp, lừa đảo hoặc vi phạm các quy định của SenPay và Sen Đỏ
+
+c) Thực hiện đúng các hướng dẫn an toàn của Sen Đỏ, tự bảo mật tài khoản và chịu trách nhiệm nếu để xảy ra mất mát do rò rỉ thông tin từ phía mình.
+
+2.6 Hoàn lại tiền:
+
+a) Bên A bị người mua khiếu nại không nhận được hàng hoặc hàng hoá (Vận chuyển là giữa Sen Đỏ và Đơn vị vận chuyển, nếu KH không nhận được hàng là trách nhiệm của đơn vị vận chuyển chứ không phải Bên A) không đúng như mô tả và yêu cầu trả lại hàng mà bên A không đưa ra được bằng chứng hợp lý chứng minh mình đã chuyển hàng theo đúng mô tả.
+
+b) Bên B chứng minh được rằng nguồn gốc của khoản tiền do người mua thanh toán cho bên A có nguồn gốc phi pháp hoặc liên quan đến một giao dịch lừa đảo; thì bên B có quyền giữ lại khoản tiền liên quan đến giao dịch thanh toán đó để trả lại cho người bị hại theo đúng quy định của pháp luật.
+
+2.7 Chấm dứt hợp tác:
+
+Bên A có thể chấm dứt hợp tác và ngừng chấp nhận thanh toán bằng dịch vụ Thanh toán Senpay và giao hàng đảm bảo của Sen Đỏ bằng việc thông báo qua địa chỉ mail của Trung tâm Dịch vụ khách hàng Sen Đỏ hotronguoiban@sendo.vn hoặc gọi số 1900 6771 trong vòng 7 (bảy) ngày. Khi đó, bên A phải có trách nhiệm đăng nhập tài khoản để theo dõi và giải quyết những tồn đọng về xung đột lợi ích (nếu có) với bên B và người mua phát sinh trong suốt quá trình sử dụng dịch vụ trước đó nhằm đảm bảo Bên B không phải chịu bất kỳ trách nhiệm nào liên quan đến các nghĩa vụ giữa Bên A và người mua.
+
+    </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

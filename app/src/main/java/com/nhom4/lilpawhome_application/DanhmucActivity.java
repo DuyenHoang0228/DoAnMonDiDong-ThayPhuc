@@ -17,10 +17,11 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.nhom4.adapters.ExpandableDMAdapter;
+
 import com.nhom4.lilpawhome_application.databinding.ActivityDanhmucBinding;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.GroupDanhmuc;
+import com.nhom4.view.adapters.ExpandableDMAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +39,7 @@ public class DanhmucActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_danhmuc);
+        // setContentView(R.layout.activity_danhmuc);
         binding = ActivityDanhmucBinding.inflate(getLayoutInflater());
         // setContentView(binding.getRoot());
         View view = binding.getRoot();
@@ -64,7 +65,7 @@ public class DanhmucActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custon_actionbar_danhmuc);
         getSupportActionBar().setBackgroundDrawable(
-         new ColorDrawable(Color.parseColor("#ffffff")));
+                new ColorDrawable(Color.parseColor("#ffffff")));
         setContentView(binding.getRoot());
 
 
@@ -149,13 +150,13 @@ public class DanhmucActivity extends AppCompatActivity {
         GroupDanhmuc groupDochoicho = new GroupDanhmuc(R.drawable.dochoi,3,"Đồ chơi");
         GroupDanhmuc groupPhukiencho = new GroupDanhmuc(R.drawable.phukien,4,"Phụ kiện");
         GroupDanhmuc groupChuonglongcho = new GroupDanhmuc(R.drawable.chuongnha,5,"Chuồng, lồng");
-      //  GroupDanhmuc groupThucanmeo = new GroupDanhmuc(R.drawable.thucanchomeo,6,"Thức ăn");
+        //  GroupDanhmuc groupThucanmeo = new GroupDanhmuc(R.drawable.thucanchomeo,6,"Thức ăn");
         //GroupDanhmuc groupDodungmeo = new GroupDanhmuc(R.drawable.dodungchomeo,7,"Đồ dùng");
-       // GroupDanhmuc groupDochoimeo = new GroupDanhmuc(R.drawable.dochoi,8,"Đồ chơi");
-       // GroupDanhmuc groupPhukienmeo = new GroupDanhmuc(R.drawable.phukien,9,"Phụ kiện");
-      //  GroupDanhmuc groupChuonglongmeo = new GroupDanhmuc(R.drawable.chuongnha,10,"Chuồng, lồng");
-      //  GroupDanhmuc groupdanhmuc2 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
-       // GroupDanhmuc groupdanhmuc3 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
+        // GroupDanhmuc groupDochoimeo = new GroupDanhmuc(R.drawable.dochoi,8,"Đồ chơi");
+        // GroupDanhmuc groupPhukienmeo = new GroupDanhmuc(R.drawable.phukien,9,"Phụ kiện");
+        //  GroupDanhmuc groupChuonglongmeo = new GroupDanhmuc(R.drawable.chuongnha,10,"Chuồng, lồng");
+        //  GroupDanhmuc groupdanhmuc2 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
+        // GroupDanhmuc groupdanhmuc3 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
 
         ArrayList<GroupDanhmuc> listItemgr1 = new ArrayList<>();
         listItemgr1.add((new GroupDanhmuc(R.drawable.sphatcho,1,"Hạt")));
@@ -210,13 +211,13 @@ public class DanhmucActivity extends AppCompatActivity {
     private Map<GroupDanhmuc, ArrayList<GroupDanhmuc>> getListitemsmeo(){
         Map<GroupDanhmuc, ArrayList<GroupDanhmuc>> listMap2 = new LinkedHashMap<>();
 
-          GroupDanhmuc groupThucanmeo = new GroupDanhmuc(R.drawable.thucanchomeo,6,"Thức ăn");
+        GroupDanhmuc groupThucanmeo = new GroupDanhmuc(R.drawable.thucanchomeo,6,"Thức ăn");
         GroupDanhmuc groupDodungmeo = new GroupDanhmuc(R.drawable.dodungchomeo,7,"Đồ dùng");
-         GroupDanhmuc groupDochoimeo = new GroupDanhmuc(R.drawable.dochoi,8,"Đồ chơi");
-         GroupDanhmuc groupPhukienmeo = new GroupDanhmuc(R.drawable.phukien,9,"Phụ kiện");
-          GroupDanhmuc groupChuonglongmeo = new GroupDanhmuc(R.drawable.chuongnha,10,"Chuồng, lồng");
-          GroupDanhmuc groupdanhmuc2 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
-         GroupDanhmuc groupdanhmuc3 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
+        GroupDanhmuc groupDochoimeo = new GroupDanhmuc(R.drawable.dochoi,8,"Đồ chơi");
+        GroupDanhmuc groupPhukienmeo = new GroupDanhmuc(R.drawable.phukien,9,"Phụ kiện");
+        GroupDanhmuc groupChuonglongmeo = new GroupDanhmuc(R.drawable.chuongnha,10,"Chuồng, lồng");
+        GroupDanhmuc groupdanhmuc2 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
+        GroupDanhmuc groupdanhmuc3 = new GroupDanhmuc(R.drawable.icon_blog_home,1,"Thức ăn");
 
         ArrayList<GroupDanhmuc> listItemgr6 = new ArrayList<>();
         listItemgr6.add((new GroupDanhmuc(R.drawable.sphatmeo,1,"Hạt")));

@@ -1,8 +1,10 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +21,14 @@ public class nhapemailmoi extends AppCompatActivity {
         email=findViewById(R.id.edt_nhapemailmoi);
         addEvents();
     }
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {case android.R.id.home: onBackPressed();
+            return true;
 
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     private void addEvents() {
         tieptuc.setOnClickListener(new View.OnClickListener() {
             @Override
