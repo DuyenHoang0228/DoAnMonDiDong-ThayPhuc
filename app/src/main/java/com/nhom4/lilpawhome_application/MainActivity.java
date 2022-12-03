@@ -23,9 +23,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nhom4.adapters.Danhmuc1Adapter;
 import com.nhom4.adapters.HorAdapterSanphamLilPawHome;
-import com.nhom4.adapters.HorSanPhamAdapter;
 import com.nhom4.adapters.SanPhamAdapterLilPawHome;
-import com.nhom4.adapters.SanphamAdapter;
 import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.DanhMuc1;
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_main);
+        // setContentView(R.layout.activity_main);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         // setContentView(binding.getRoot());
         View view = binding.getRoot();
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.nav_action_home:
-                       return true;
+                        return true;
                     case  R.id.nav_action_danhmuc:
                         Intent intent1 =new Intent(getApplicationContext(),DanhmucActivity.class);
                         intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -117,14 +115,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = null;
                 switch (i){
                     case 0:
-                         intent =new Intent(MainActivity.this,ShopChoCho1.class);
+                        intent =new Intent(MainActivity.this,ShopChoCho1.class);
                         break;
 
                     case 1:
                         intent =new Intent(MainActivity.this,ShopChoMeo1.class);
                         break;
                     case 2:
-                       intent =new Intent(MainActivity.this,SpaActivity1.class);
+                        intent =new Intent(MainActivity.this,SpaActivity1.class);
                         break;
 
                     case 3:
@@ -132,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 4:
-                         intent =new Intent(MainActivity.this,UuDaiMain.class);
+                        intent =new Intent(MainActivity.this,UuDaiMain.class);
                         break;
 
                     case 5:
@@ -207,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(SanPhamLilPawHome details) {
                 Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
                 intent.putExtra("IDsanpham",details.getIdSanPham());
+
 
                 startActivity(intent);
             }
@@ -376,3 +375,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+

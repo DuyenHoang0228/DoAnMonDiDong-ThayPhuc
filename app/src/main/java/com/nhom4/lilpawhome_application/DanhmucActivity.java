@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.nhom4.adapters.Danhmuc1Adapter;
 import com.nhom4.adapters.ExpandableDMAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityDanhmucBinding;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
