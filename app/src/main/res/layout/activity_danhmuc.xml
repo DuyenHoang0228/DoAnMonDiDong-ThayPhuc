@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".DanhmucActivity"
     android:orientation="vertical">
     <LinearLayout
@@ -24,7 +24,10 @@
         android:padding="5dp"
         android:gravity="center"/>
 
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +37,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:id="@+id/ln_danhmucchocho">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -56,13 +60,15 @@
                     android:layoutDirection="rtl"
                     android:divider="@null"
                     android:dividerHeight="5dp"
+                    android:nestedScrollingEnabled="true"
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingBottom="60dp">
+                android:paddingBottom="60dp"
+                android:layout_below="@id/ln_danhmucchocho">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -80,14 +86,17 @@
                     android:id="@+id/lv_danhmucchomeo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="10dp"
                     android:layoutDirection="rtl"
                     android:divider="@null"
                     android:dividerHeight="5dp"
+                    android:nestedScrollingEnabled="true"
 
                     />
             </LinearLayout>
             </LinearLayout>
+        </ScrollView>
 
 
 

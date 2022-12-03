@@ -138,6 +138,31 @@ public class DanhmucActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.lvDanhmucchocho.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                ExpandableDMAdapter customExpandAdapter = (ExpandableDMAdapter) expandableListView1.getExpandableListAdapter();
+                if (customExpandAdapter == null) {return;}
+                for (int i = 0; i < customExpandAdapter.getGroupCount(); i++) {
+                    if (i != groupPosition) {
+                        expandableListView1.collapseGroup(i);
+                    }
+                }
+            }
+        });
+
+        binding.lvDanhmucchomeo.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                ExpandableDMAdapter customExpandAdapter = (ExpandableDMAdapter) expandableListView2.getExpandableListAdapter();
+                if (customExpandAdapter == null) {return;}
+                for (int i = 0; i < customExpandAdapter.getGroupCount(); i++) {
+                    if (i != groupPosition) {
+                        expandableListView2.collapseGroup(i);
+                    }
+                }
+            }
+        });
 
 
     }
@@ -270,5 +295,7 @@ public class DanhmucActivity extends AppCompatActivity {
 
         return listMap2;
     }
+
+
 
 }
