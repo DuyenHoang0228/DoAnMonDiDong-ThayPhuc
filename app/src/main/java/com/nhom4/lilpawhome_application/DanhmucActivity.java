@@ -8,22 +8,17 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.TabHost;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.nhom4.adapters.Danhmuc1Adapter;
-import com.nhom4.adapters.ExpandableDMAdapter;
+import com.nhom4.view.adapters.ExpandableDMAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityDanhmucBinding;
-import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.GroupDanhmuc;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -39,6 +34,7 @@ public class DanhmucActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_danhmuc);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding = ActivityDanhmucBinding.inflate(getLayoutInflater());
         // setContentView(binding.getRoot());
         View view = binding.getRoot();

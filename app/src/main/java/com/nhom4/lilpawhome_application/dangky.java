@@ -73,8 +73,8 @@ public class dangky extends AppCompatActivity {
                                     otpVetification_dialog_dangky.setCancelable(false);
                                     otpVetification_dialog_dangky.show();
                                     Toast.makeText(dangky.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(dangky.this, MainActivity.class);
-                                    startActivity(intent);
+                                   // Intent intent = new Intent(dangky.this, MainActivity.class);
+                                   // startActivity(intent);
                                 }
                             }
                             else if (count > 0) {

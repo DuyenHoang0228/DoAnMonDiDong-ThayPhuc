@@ -14,8 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.nhom4.adapters.AdapterVoucher;
-import com.nhom4.adapters.HorSanPhamAdapter;
+import com.nhom4.view.adapters.AdapterVoucher;
+import com.nhom4.view.adapters.HorSanPhamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityKhachhangthanthietBinding;
 import com.nhom4.models.ChiTieuKhachHang;
 import com.nhom4.models.SanPham;

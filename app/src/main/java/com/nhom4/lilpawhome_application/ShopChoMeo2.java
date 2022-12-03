@@ -14,11 +14,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.nhom4.adapters.SanPhamAdapterLilPawHome;
-import com.nhom4.adapters.SanphamAdapter;
+import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityShopChoMeo2Binding;
-import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
 
 import java.util.ArrayList;

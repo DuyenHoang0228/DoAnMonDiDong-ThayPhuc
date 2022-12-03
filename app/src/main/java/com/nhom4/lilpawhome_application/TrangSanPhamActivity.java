@@ -1,17 +1,15 @@
 package com.nhom4.lilpawhome_application;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 
-import com.nhom4.adapters.AdapterDanhGiaSanPham;
-import com.nhom4.adapters.SanphamAdapter;
+import com.nhom4.view.adapters.AdapterDanhGiaSanPham;
+import com.nhom4.view.adapters.SanphamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityTrangSanPhamBinding;
 import com.nhom4.models.DanhGiaSanPhamM;
 import com.nhom4.models.SanPham;
-import com.nhom4.view.ExpandableHeightGridView;
 
 import java.util.ArrayList;
 
