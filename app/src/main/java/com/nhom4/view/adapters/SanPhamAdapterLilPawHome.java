@@ -1,4 +1,4 @@
-package com.nhom4.adapters;
+package com.nhom4.view.adapters;
 
 import android.app.Activity;
 import android.content.Context;

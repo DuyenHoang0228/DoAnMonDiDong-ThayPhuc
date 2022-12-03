@@ -21,9 +21,9 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.nhom4.adapters.Danhmuc1Adapter;
-import com.nhom4.adapters.HorSanPhamAdapter;
-import com.nhom4.adapters.SanphamAdapter;
+import com.nhom4.view.adapters.Danhmuc1Adapter;
+import com.nhom4.view.adapters.HorSanPhamAdapter;
+import com.nhom4.view.adapters.SanphamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.DanhMuc1;
 import com.nhom4.models.GioHang;
@@ -328,11 +328,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // truyen du lieu
-        adapter2= new HorSanPhamAdapter(sanPhams);
         Horizontallayout=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(Horizontallayout);
         recyclerView.setAdapter(adapter2);
-
     }
     private void loadSPbanchay(){
       /*  recyclerView = (RecyclerView) findViewById(R.id.rcv_spBanchay);

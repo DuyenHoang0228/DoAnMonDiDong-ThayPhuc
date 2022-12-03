@@ -8,6 +8,7 @@
         android:id="@+id/cbox_chonspgiohang"
         android:layout_width="35dp"
         android:layout_height="35dp"
+        android:buttonTint="#FFA0CA"
         android:layout_gravity="center" />
     
     <ImageView

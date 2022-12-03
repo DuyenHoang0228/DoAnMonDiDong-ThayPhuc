@@ -21,8 +21,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.nhom4.adapters.SanPhamAdapterLilPawHome;
-import com.nhom4.adapters.SanphamAdapter;
+import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
+import com.nhom4.view.adapters.SanphamAdapter;
 import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityShopChoCho1Binding;
 import com.nhom4.models.SanPham;
@@ -139,7 +139,6 @@ public class ShopChoCho1 extends AppCompatActivity {
         });
     }
 
-    }
     private void loadChuongLong() {
         sanPhamArrayList=new ArrayList<>();
         Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
