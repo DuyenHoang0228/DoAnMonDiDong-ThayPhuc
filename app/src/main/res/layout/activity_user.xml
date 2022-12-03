@@ -7,10 +7,16 @@
     tools:context=".UserActivity"
     android:orientation="vertical"
     android:id="@+id/sc_user">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 
 
     <LinearLayout
@@ -419,6 +425,7 @@
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
+</ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
