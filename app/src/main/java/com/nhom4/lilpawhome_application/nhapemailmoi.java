@@ -3,11 +3,13 @@ package com.nhom4.lilpawhome_application;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class nhapemailmoi extends AppCompatActivity {
     Button tieptuc;
@@ -33,10 +35,21 @@ public class nhapemailmoi extends AppCompatActivity {
         tieptuc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                OTPVetification_Dialog_Email otpVetification_dialog_email= new OTPVetification_Dialog_Email(nhapemailmoi.this,email.getText().toString());
-                otpVetification_dialog_email.setCancelable(false);
-                otpVetification_dialog_email.show();
+                int dodaichuoi1 = email.length();
+                if(dodaichuoi1==0){
+                    Toast.makeText(nhapemailmoi.this, "Hãy điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                }else {
+                    OTPVetification_Dialog_Email otpVetification_dialog_email= new OTPVetification_Dialog_Email(nhapemailmoi.this,email.getText().toString());
+                    otpVetification_dialog_email.setCancelable(false);
+                    otpVetification_dialog_email.show();
+
+                    //CHUYỀN EMAIL MỚI QUA EMAIL
+                    String emailmoi=email.getText().toString();
+                    Intent z =new Intent(nhapemailmoi.this, email.class);
+                    z.putExtra("emailmoi",emailmoi);
+                }
             }
         });
+
     }
 }

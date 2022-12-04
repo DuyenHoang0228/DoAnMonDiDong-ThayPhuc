@@ -75,11 +75,13 @@
                 <TextView
                     android:id="@+id/txt_giamgia"
                     android:backgroundTint="#FF0000"
+
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="Tiết kiệm 30%"
                     android:fontFamily="@font/montserrat_semibold"
                     android:textSize="20dp"
+                    android:layout_gravity="right"
                             android:background="@drawable/custom_background_discount"
                     android:gravity="right"
                     android:textColor="#FFFFFF"

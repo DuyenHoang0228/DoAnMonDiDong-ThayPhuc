@@ -1,14 +1,23 @@
 package com.nhom4.lilpawhome_application;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -29,7 +38,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     ActivityTrangSanPhamBinding binding;
     SanphamAdapter adapter;
     ArrayList<SanPham> sanPhamArrayList;
-    ArrayList<SanPhamLilPawHome> sanPhamLilPawHomes;
+    ArrayList<SanPhamLilPawHome> sanPhamLilPawHomes, spYeuThich;
     SanPhamAdapterLilPawHome adapterLilPawHome;
 
     AdapterDanhGiaSanPham adapterDanhGiaSanPham;
@@ -43,9 +52,13 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_trang_san_pham);
 
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.custom_actionbar_trangsanpham);
+//        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//        getSupportActionBar().setCustomView(R.layout.custom_actionbar_trangsanpham);
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#ffa0ca")));
+
         binding=ActivityTrangSanPhamBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.btnXemthem.setText("Xem thêm");
@@ -89,12 +102,39 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                 {
                     binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich_full);
                     binding.imvTraitim.setTag("full");
+                    Toast.makeText(TrangSanPhamActivity.this, "Đã thêm sản phẩm vào yêu thích", Toast.LENGTH_SHORT).show();
+                    GridView gvSPyeuthich = findViewById(R.id.gv_sanphamyeuthich);
+                    spYeuThich = new ArrayList<>();
+                    int IDsanpham = 0;
+                    Cursor c = dbHelperSanPham.getData(" SELECT * FROM " + DBHelperSanPham.TBL_NAME +
+                            " WHERE " + DBHelperSanPham.COL_ID + " = " + IDsanpham);
+                    while (c.moveToNext()) {
+                        spYeuThich.add(new SanPhamLilPawHome(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3), c.getDouble(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10), c.getDouble(11), c.getDouble(12), c.getDouble(13)));
+                    }
+                    c.close();
+                    //adapter = new SanPhamAdapterLilPawHome(TrangSanPhamActivity.this, R.layout.list_sanpham_id, spYeuThich);
+                    gvSPyeuthich.setAdapter(adapter);
                 }
                 else
                 {
                     binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich);
                     binding.imvTraitim.setTag("empty");
+                    Toast.makeText(TrangSanPhamActivity.this, "Bỏ yêu thích", Toast.LENGTH_SHORT).show();
                 }
+                if(binding.imvTraitim.getTag()=="full"){
+                }
+            }
+        });
+        binding.imvChiase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Link sản phẩm");
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, "Chia sẻ liên kết");
+                startActivity(shareIntent);
             }
         });
         binding.btnThemvaogiohang.setOnClickListener(new View.OnClickListener() {
@@ -200,7 +240,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         dbHelperSanPham.createSampleData();
     }
 
-    public void showData() {
+    private void showData() {
         binding.gvSanphamdexuat.setExpanded(true);
         sanPhamLilPawHomes=new ArrayList<>();
 
@@ -219,7 +259,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
             binding.txtTensanphamTrangsanpham.setText(c.getString(1));
             binding.txtGiamoiTrangsanpham.setText(c.getDouble(2)+"đ");
             binding.txtGiacu.setText(c.getDouble(3)+"đ");
-            String giamgia= "Tiêt kiệm "+ c.getDouble(4)*100 +"%";
+            String giamgia= "Tiết kiệm "+ Math.round(c.getDouble(4)*100)  +"%";
             binding.txtGiamgia.setText(giamgia);
             binding.txtLoaisanpham1.setText(c.getString(6));
             binding.txtIdsanpham.setText(String.valueOf(c.getInt(0)));
@@ -232,6 +272,9 @@ public class TrangSanPhamActivity extends AppCompatActivity {
             binding.txtSosaodanhgiaSoluotdaban.setText(soluotdanhgia);
             binding.txtThuonghieuTrangsanpham.setText(c.getString(9));
             loaiSP1=c.getString(6);
+
+
+
             /*sanphamchomeo.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
                     c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(😎,c.getString(9),
                     c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));*/
@@ -283,6 +326,68 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         //                intent.putExtra("looaiSanPham3",spitem.getLoaiSanPham3());
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
 
+        getMenuInflater().inflate(R.menu.menu_trangsanpham,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int item_id = item.getItemId();
+        if (item_id == R.id.item_timkiem2) {
+            Toast.makeText(this, "Tìm kiếm", Toast.LENGTH_SHORT).show();
+            Dialog dialog = new Dialog(TrangSanPhamActivity.this);
+            dialog.setContentView(R.layout.dialog_thanhtimkiem);
+            dialog.show();
+            ImageButton thoat;
+            thoat = dialog.findViewById(R.id.btn_exittk);
+            thoat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+        } else if (item_id == R.id.item_shopchocho2) {
+            Toast.makeText(this, "Shop cho chó", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(TrangSanPhamActivity.this, ShopChoCho1.class);
+            startActivity(intent);
+        } else if (item_id == R.id.item_shopchomeo2) {
+            Toast.makeText(this, "Shop cho mèo", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(TrangSanPhamActivity.this, ShopChoMeo1.class);
+            startActivity(intent);
+        } else if (item_id == R.id.item_uudai2) {
+            Toast.makeText(this, "Ưu đãi", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(TrangSanPhamActivity.this, UuDaiMain.class);
+            startActivity(intent);
+        } else if (item_id == R.id.item_spa2) {
+            Toast.makeText(this, "Spa", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(TrangSanPhamActivity.this, SpaActivity1.class);
+            startActivity(intent);
+        } else if (item_id == R.id.item_thuonghieu2) {
+            Toast.makeText(this, "Thương hiệu", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(TrangSanPhamActivity.this, ThuongHieuActivity.class);
+            startActivity(intent);
+        } else if (item_id == R.id.item_trangchu2) {
+            Toast.makeText(this, "Trở về trang chủ", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(TrangSanPhamActivity.this, MainActivity.class);
+            startActivity(intent);
+        } else if (item_id == R.id.item_blog2) {
+            Toast.makeText(this, "Blog", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(TrangSanPhamActivity.this, BlogActivity.class);
+            startActivity(intent);
+        }
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:break;
+        }
+        return true;
+    }
 }

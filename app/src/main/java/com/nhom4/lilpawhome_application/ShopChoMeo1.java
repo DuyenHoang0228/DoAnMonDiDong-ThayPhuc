@@ -5,12 +5,16 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -21,12 +25,12 @@ import com.nhom4.models.SanPhamLilPawHome;
 
 import java.util.ArrayList;
 
-public class ShopChoMeo1 extends AppCompatActivity {
+public class    ShopChoMeo1 extends AppCompatActivity {
     ActivityShopChoMeo1Binding binding;
     SanPhamAdapterLilPawHome adapter;
     ArrayList<SanPhamLilPawHome> sanPhamArrayList;
     DBHelperSanPham dbHelperSanPham;
-    ImageView imvTimKiem;
+    ImageView imvTimKiem, imvTroVe;
     EditText edtTimKiem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,10 @@ public class ShopChoMeo1 extends AppCompatActivity {
         binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
         imvTimKiem=findViewById(R.id.imv_timkiem);
         edtTimKiem=findViewById(R.id.edt_timkiem);
+        imvTroVe=findViewById(R.id.imv_trove);
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#ffffff")));
+        setContentView(binding.getRoot());
 
         createDb();
         loadData();
@@ -67,6 +75,22 @@ public class ShopChoMeo1 extends AppCompatActivity {
                 binding.gvOptionchomeo.setAdapter(adapter);
                 hideKeyboard(ShopChoMeo1.this);
 
+            }
+        });
+        binding.gvOptionchomeo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(ShopChoMeo1.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = sanPhamArrayList.get(i);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+
+                startActivity(intent);
+            }
+        });
+        imvTroVe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
 
@@ -536,7 +560,7 @@ public class ShopChoMeo1 extends AppCompatActivity {
         }
         if (item.getItemId()==R.id.mn_dodungchomeo)
         {
-            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeododung);
             loadDoDung();
         }
         if (item.getItemId()==R.id.mn_dochoichomeo)

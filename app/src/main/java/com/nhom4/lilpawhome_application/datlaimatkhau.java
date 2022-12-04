@@ -10,17 +10,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class datlaimatkhau extends AppCompatActivity{
     Button xacnhan;
+    EditText nhapmk,nhaplaimk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_datlaimatkhau);
         xacnhan=findViewById(R.id.btn_xacnhanmk);
+        nhapmk=findViewById(R.id.edt_nhapmkmoi);
+        nhaplaimk=findViewById(R.id.edt_nhaplaimkmoi);
         addEvents();
     }
 
@@ -28,12 +32,43 @@ public class datlaimatkhau extends AppCompatActivity{
         xacnhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(datlaimatkhau.this, taikhoanvabaomat.class);
-                startActivity(intent);
-                Toast.makeText(datlaimatkhau.this, "Đổi mật khẩu thành công!", Toast.LENGTH_SHORT).show();
+                String matkhau = nhapmk.getText().toString();
+                String nhaplaimatkhau = nhaplaimk.getText().toString();
+                int dodaichuoi1 = matkhau.length();
+                int dodaichuoi2 = nhaplaimatkhau.length();
+                if(dodaichuoi1==0 || dodaichuoi2==0){
+                    Toast.makeText(datlaimatkhau.this, "Hãy điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                }else {
+                    if (dodaichuoi1 == dodaichuoi2) {
+                        String[] kituchuoi1 = matkhau.split("");
+                        String[] kituchuoi2 = nhaplaimatkhau.split("");
+                        int count = 0, dif = 0;
+                        for (int i = 0; i < dodaichuoi1; i++) {
+                            if (kituchuoi1[i].equals(" ")) {
+                                count++;
+                            }
+                            if (!kituchuoi1[i].equals(kituchuoi2[i])) {
+                                dif++;
+                            }
+                        }
+                        if (count == 0 && dif == 0) {
+                            Toast.makeText(datlaimatkhau.this, "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(datlaimatkhau.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else if (count > 0) {
+                            Toast.makeText(datlaimatkhau.this, "Mật khẩu không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(datlaimatkhau.this, "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(datlaimatkhau.this, "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
-    }
+
+        }
 
     //Thêm menu
     @Override

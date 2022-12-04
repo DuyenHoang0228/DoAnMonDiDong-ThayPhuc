@@ -3,11 +3,13 @@ package com.nhom4.lilpawhome_application;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class nhapsodienthoaimoi extends AppCompatActivity {
    Button tieptuc;
@@ -39,9 +41,20 @@ public class nhapsodienthoaimoi extends AppCompatActivity {
         tieptuc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                OTPVetification_Dialog_Sdt otpVetification_dialog_sdt= new OTPVetification_Dialog_Sdt(nhapsodienthoaimoi.this,sdt.getText().toString());
-                otpVetification_dialog_sdt.setCancelable(false);
-                otpVetification_dialog_sdt.show();
+                int dodaichuoi1 = sdt.length();
+                if(dodaichuoi1==0){
+                    Toast.makeText(nhapsodienthoaimoi.this, "Hãy điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                }else {
+                    OTPVetification_Dialog_Sdt otpVetification_dialog_sdt= new OTPVetification_Dialog_Sdt(nhapsodienthoaimoi.this,sdt.getText().toString());
+                    otpVetification_dialog_sdt.setCancelable(false);
+                    otpVetification_dialog_sdt.show();
+
+                    //CHUYỀN SDT MỚI QUA SDT
+                    String sodienthoaimoi= sdt.getText().toString();
+                    Intent z =new Intent(nhapsodienthoaimoi.this, sodienthoai.class);
+                    z.putExtra("sodienthoaimoi",sodienthoaimoi);
+                }
+
             }
         });
 

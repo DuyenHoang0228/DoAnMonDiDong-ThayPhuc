@@ -16,8 +16,7 @@
         tools:targetApi="31">
         <activity
             android:name=".DungNgayVoucher"
-            android:exported="false"
-            android:theme="@style/Theme.offactionbar">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -103,7 +102,8 @@
         </activity>
         <activity
             android:name=".TrangSanPhamActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -127,7 +127,8 @@
 
         <activity
             android:name=".SanPhamTheoThuongHieuActivity"
-            android:exported="false">
+            android:exported="false"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -141,14 +142,15 @@
         </activity>
         <activity
             android:name=".ThuongHieuActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="Thương hiệu">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -156,77 +158,88 @@
         </activity>
         <activity
             android:name=".suadiachi"
-            android:exported="false">
+            android:exported="false"
+            android:label="Sửa địa chỉ">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".thongbao"
-            android:exported="false">
+            android:exported="false"
+            android:label="Thông báo">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".thongbaoemail"
-            android:exported="false">
+            android:exported="false"
+            android:label="Thông báo Email">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".caidatthongbao"
-            android:exported="false">
+            android:exported="false"
+            android:label="Cài đặt thông báo">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".themtaikhoannganhang"
-            android:exported="false">
+            android:exported="false"
+            android:label="Thêm tài khoản ngân hàng">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".taikhoannganhang"
-            android:exported="false">
+            android:exported="false"
+            android:label="Tài khoản ngân hàng">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".themdiachi"
-            android:exported="false">
+            android:exported="false"
+            android:label="Thêm địa chỉ">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".diachi"
-            android:exported="false">
+            android:exported="false"
+            android:label="Địa chỉ">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".datlaimatkhau"
-            android:exported="false">
+            android:exported="false"
+            android:label="Đặt lại mật khẩu">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".nhaplaimatkhau"
-            android:exported="false">
+            android:exported="false"
+            android:label="Nhập lại mật khẩu">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".nhapemailmoi"
-            android:exported="false">
+            android:exported="false"
+            android:label="Nhập Email mới">
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -234,28 +247,32 @@
         </activity>
         <activity
             android:name=".nhapsodienthoaimoi"
-            android:exported="false">
+            android:exported="false"
+            android:label="Nhập số điện thoại mới">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".email"
-            android:exported="false">
+            android:exported="false"
+            android:label="Email">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".sodienthoai"
-            android:exported="false">
+            android:exported="false"
+            android:label="Số điện thoại">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".taikhoanvabaomat"
-            android:exported="false">
+            android:exported="false"
+            android:label="Tài khoản và bảo mật">
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -263,6 +280,7 @@
         </activity>
         <activity
             android:name=".thietlaptaikhoan"
+            android:label="Thiết lập tài khoản"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -270,7 +288,7 @@
         </activity>
         <activity
             android:name=".DanhmucActivity"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -342,12 +360,13 @@
         <activity
             android:name=".manhinhkhoidong"
             android:exported="true"
-            >
+            android:theme="@style/Theme.offactionbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -362,10 +381,7 @@
         </activity>
         <activity
             android:name=".ShopChoMeo1"
-            android:exported="true"
-            >
-
-
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -428,7 +444,7 @@
         </activity>
         <activity
             android:name=".TaoHosoActivity"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -444,8 +460,8 @@
             android:name=".ChonHosoActivity"
             android:exported="false">
             <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
+                android:name="android.app.lib_name"
+                android:value="" />
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -487,7 +503,7 @@
         </activity>
         <activity
             android:name=".SpaActivity1"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.NoActionBar">
 
             <meta-data
@@ -522,6 +538,14 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <activity
+            android:name=".xemtatcaSPActivity"
+            android:exported="false"
+            android:label="Danh sách sản phẩm">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>

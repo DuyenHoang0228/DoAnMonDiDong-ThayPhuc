@@ -171,6 +171,36 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.txtAllspgiamgia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, xemtatcaSPActivity.class);
+                intent.putExtra("loaisanpham","giamgia");
+                startActivity(intent);
+            }
+        });
+        binding.txtAllspBanchay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, xemtatcaSPActivity.class);
+                intent.putExtra("loaisanpham","banchay");
+                startActivity(intent);
+            }
+        });
+        binding.txtAllspchocho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ShopChoCho1.class);
+                startActivity(intent);
+            }
+        });
+        binding.txtAllspchoMeo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ShopChoMeo1.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

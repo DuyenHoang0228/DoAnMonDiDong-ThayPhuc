@@ -40,7 +40,8 @@ public class ShopChoCho1 extends AppCompatActivity {
 
     ImageView imvTimKiem;
     EditText edtTimKiem;
-    ImageView imvGiohang;
+    ImageView imvGiohang, imvTrove;
+
 
 
 
@@ -58,6 +59,7 @@ public class ShopChoCho1 extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_shopchocho12);
         imvTimKiem=findViewById(R.id.imv_timkiem);
         edtTimKiem=findViewById(R.id.edt_timkiem);
+        imvTrove=findViewById(R.id.imv_trove);
         getSupportActionBar().setBackgroundDrawable(
                 new ColorDrawable(Color.parseColor("#ffffff")));
         setContentView(binding.getRoot());
@@ -81,6 +83,7 @@ public class ShopChoCho1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private void addEvents() {
@@ -103,6 +106,22 @@ public class ShopChoCho1 extends AppCompatActivity {
                 binding.gvOptionchocho.setAdapter(adapter);
                 hideKeyboard(ShopChoCho1.this);
 
+            }
+        });
+        binding.gvOptionchocho.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(ShopChoCho1.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = sanPhamArrayList.get(i);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+
+                startActivity(intent);
+            }
+        });
+        imvTrove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }
