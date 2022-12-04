@@ -52,45 +52,52 @@ public class dangky extends AppCompatActivity {
                     if(sokitutrong > 0){
                         Toast.makeText(dangky.this, "Tên đăng nhập không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
                     }else {
-                        if(dodaichuoi1 == dodaichuoi2){
-                            String[] kituchuoi1 = matkhau.split("");
-                            String[] kituchuoi2 = nhaplaimatkhau.split("");
-                            int count = 0, dif =0;
-                            for (int i = 0; i < dodaichuoi1; i++) {
-                                if (kituchuoi1[i].equals(" ")) {
-                                    count++;
-                                }
-                                if(!kituchuoi1[i].equals(kituchuoi2[i])){
-                                    dif ++;
-                                }
-                            }
-                            if (count ==0 && dif ==0){
-                                if(!binding.cbDongydieukhoan.isChecked()){
-                                    Toast.makeText(dangky.this, "Bạn cần đồng ý với các điều khoản", Toast.LENGTH_SHORT).show();
+                        int count = 0, dif =0;
+                        if(dodaichuoi1 == dodaichuoi2) {
+                            if (dodaichuoi1 == 1) {
+                                if (!matkhau.equals(nhaplaimatkhau)) {
+                                    Toast.makeText(dangky.this, "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
                                 }else {
-                                    //Hiện dialog nhập otp
-                                    //Hiện dialog nhập otp
-                                    OTPVetification_Dialog_Dangky otpVetification_dialog_dangky= new OTPVetification_Dialog_Dangky(dangky.this,binding.edtNhapemailhoacsdt.getText().toString());
+                                    OTPVetification_Dialog_Dangky otpVetification_dialog_dangky = new OTPVetification_Dialog_Dangky(dangky.this, binding.edtNhapemailhoacsdt.getText().toString());
                                     otpVetification_dialog_dangky.setCancelable(false);
                                     otpVetification_dialog_dangky.show();
-                                    Toast.makeText(dangky.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
-                                   // Intent intent = new Intent(dangky.this, MainActivity.class);
-                                   // startActivity(intent);
                                 }
-                            }
-                            else if (count > 0) {
-                                Toast.makeText(dangky.this, "Mật khẩu không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
-                            }
-                            else {
-                                Toast.makeText(dangky.this, "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
+                            } else {
+                                String[] kituchuoi1 = matkhau.split("");
+                                String[] kituchuoi2 = nhaplaimatkhau.split("");
+                                for (int i = 0; i < dodaichuoi1; i++) {
+                                    if (kituchuoi1[i].equals(" ")) {
+                                        count++;
+                                    }
+                                    if (!kituchuoi1[i].equals(kituchuoi2[i])) {
+                                        dif++;
+                                    }
+                                }
+                                if (count == 0 && dif == 0) {
+                                    if (!binding.cbDongydieukhoan.isChecked()) {
+                                        Toast.makeText(dangky.this, "Bạn cần đồng ý với các điều khoản", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        //Hiện dialog nhập otp
+                                        OTPVetification_Dialog_Dangky otpVetification_dialog_dangky = new OTPVetification_Dialog_Dangky(dangky.this, binding.edtNhapemailhoacsdt.getText().toString());
+                                        otpVetification_dialog_dangky.setCancelable(false);
+                                        otpVetification_dialog_dangky.show();
+//                                    Toast.makeText(dangky.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
+//                                    Intent intent = new Intent(dangky.this, MainActivity.class);
+//                                    startActivity(intent);
+                                    }
+                                } else if (count > 0) {
+                                    Toast.makeText(dangky.this, "Mật khẩu không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(dangky.this, "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }
                         else {
                             Toast.makeText(dangky.this, "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
                         }
+
                     }
                 }
-
             }
         });
     }

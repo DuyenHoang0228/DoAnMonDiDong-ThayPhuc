@@ -2,9 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.LilpawHome_Application" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-
         <item name="colorPrimary">#FFA0CA</item>
-
         <item name="colorPrimaryVariant">#FFA0CA</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,13 +10,13 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/FFA0CA</item>
         <!-- Customize your theme here. -->
         <item name="android:itemBackground">@color/FFA0CA</item>
         <item name="android:itemTextAppearance">@style/CustomTextMenu</item>
     </style>
     <style name="Theme.offactionbar" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/FFA0CA</item>
     </style>
     <style name="CustomTextMenu" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
         <item name="android:textColor">@color/white</item>
@@ -27,7 +25,7 @@
 
 
     <style name="Theme.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/FFA0CA</item>
     </style>
 
 
