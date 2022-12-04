@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,11 @@
     tools:context=".DungNgayVoucher"
     android:padding="10dp"
     android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -138,10 +143,10 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Sản phẩm có thể áp dụng voucher này"/>
-    <GridView
+    <com.nhom4.view.ExpandableHeightGridView
         android:id="@+id/gr_sanpham"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:numColumns="2"/>
-
 </LinearLayout>
+</ScrollView>

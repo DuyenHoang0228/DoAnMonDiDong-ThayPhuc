@@ -42,11 +42,10 @@ public class SanPhamYeuThich extends AppCompatActivity {
         db.createSampleData();
     }
     private void loadData() {
-        Intent intent = getIntent();
-        int IDsanpham = intent.getIntExtra("spYeuThich", 0);
+
         spYeuThich = new ArrayList<>();
         Cursor c = db.getData(" SELECT * FROM " + DBHelperSanPham.TBL_NAME +
-                    " WHERE " + DBHelperSanPham.COL_ID + " = " + IDsanpham);
+                    " WHERE " + DBHelperSanPham.COL_OLDPRICE + " > 50000" );
         while (c.moveToNext()) {
             spYeuThich.add(new SanPhamLilPawHome(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3), c.getDouble(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10), c.getDouble(11), c.getDouble(12), c.getDouble(13)));
             }

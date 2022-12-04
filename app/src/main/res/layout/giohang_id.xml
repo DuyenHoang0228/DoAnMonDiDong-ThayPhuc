@@ -2,28 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    
-    <CheckBox
-        android:id="@+id/cbox_chonspgiohang"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:buttonTint="#FFA0CA"
-        android:layout_gravity="center" />
-    
-    <ImageView
-        android:id="@+id/imv_spgiohang"
-        android:layout_width="120dp"
-        android:layout_height="140dp"
-        android:layout_gravity="center"
-        android:src="@drawable/giohang_sp1"
-        android:scaleType="centerCrop" />
-    
+    android:orientation="horizontal"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:layout_gravity="center">
+
+        <CheckBox
+            android:id="@+id/cbox_chonspgiohang"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:buttonTint="#FFA0CA"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imv_spgiohang"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:src="@drawable/giohang_sp1"
+            android:scaleType="centerCrop" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,11 +99,11 @@
                 android:id="@+id/txt_giasanphamdagiam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="190.000 VNĐ"
-                android:fontFamily="@font/montserrat"
-                android:textSize="12sp"
                 android:layout_marginBottom="5dp"
-                android:textColor="@color/black"/>
+                android:fontFamily="@font/montserrat"
+                android:text="190.000 VNĐ"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/txt_giasanphamchuagiam"

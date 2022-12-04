@@ -540,16 +540,16 @@ public class DBHelperSanPham extends SQLiteOpenHelper {
 //                    "Kích thước: 32*26*44cm\n" +
 //                    "Thích hợp với thú cưng dưới 7kg',5,802,80)");
 
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Yếm Ferplast Ergoflex (S)',598000,700000,0.15,'daydatchocho2','phukienchocho','daydatchocho','hiem','ferplast','- Yếm cho chó được nhập khẩu từ Ý\n" +
-                    "- Làm từ cao su tự nhiên giúp chó luôn cảm thấy thoải mái\n" +
-                    "- 2 màu: Xanh Lá, Xám\n" +
-                    "- 2 size (S, M)',4,954,100)");
-
-            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Lược Cào Furminator Fur Cho Chó – Mỹ',346000,400000,0.14,'longmongchocho1','dodungchocho','longmongchocho','hiem','furminator','- Lược cào được làm từ kim loại thép không gỉ, có tuổi thọ cao.\n" +
-                    "- Phần đế được làm từ cao su, không gây trượt tay khi bạn chải lông cho chó.\n" +
-                    "- Lược có phần đầu nhọn giúp vừa mát xa lại vừa làm mượt lông của chó.',4,302,50)");
-
-
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Yếm Ferplast Ergoflex (S)',598000,700000,0.15,'daydatchocho2','phukienchocho','daydatchocho','hiem','ferplast','- Yếm cho chó được nhập khẩu từ Ý\n" +
+//                    "- Làm từ cao su tự nhiên giúp chó luôn cảm thấy thoải mái\n" +
+//                    "- 2 màu: Xanh Lá, Xám\n" +
+//                    "- 2 size (S, M)',4,954,100)");
+//
+//            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Lược Cào Furminator Fur Cho Chó – Mỹ',346000,400000,0.14,'longmongchocho1','dodungchocho','longmongchocho','hiem','furminator','- Lược cào được làm từ kim loại thép không gỉ, có tuổi thọ cao.\n" +
+//                    "- Phần đế được làm từ cao su, không gây trượt tay khi bạn chải lông cho chó.\n" +
+//                    "- Lược có phần đầu nhọn giúp vừa mát xa lại vừa làm mượt lông của chó.',4,302,50)");
+//
+//
 //            execSql(" INSERT INTO "+TBL_NAME+" VALUES(null, 'Balo phi hành gia cho thú cưng freeship balo vận chuyển',175000,20000,0.13,'balochocho1','chuonglongchocho','balochocho','hiem','thuonghieukhac','Màu: Sản phẩm có đủ các màu và kiểu dáng khác nhau, khách vui lòng inbox trước để chọn màu. Nếu không có màu khách chọn hoặc khách không lựa màu cửa hàng xin phép giao màu ngẫu nhiên\n" +
 //                    "Chất liệu: Nhựa cao cấp PVC \n" +
 //                    "Kích thước: 32*26*44cm\n" +
