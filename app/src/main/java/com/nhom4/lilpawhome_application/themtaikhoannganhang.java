@@ -12,13 +12,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class themtaikhoannganhang extends AppCompatActivity {
 String chonnganhang;
 Button themtaikhoan;
+TextView checkthongtin;
 EditText tennganhang, tenchinhanh, sotaikhoan, tenchukhoan;
 Spinner nganhangspinner;
+
+
 ArrayAdapter<CharSequence> nganhangAdapter;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -30,13 +34,20 @@ ArrayAdapter<CharSequence> nganhangAdapter;
         tenchinhanh=findViewById(R.id.edt_tenchinhanh);
         sotaikhoan=findViewById(R.id.edt_sotaikhoan);
         tenchukhoan=findViewById(R.id.edt_tenchutaikhoan);
+        checkthongtin=findViewById(R.id.txt_checkthongtin);
         //tennganhang=findViewById(R.id.edt_tennganhang);
         nganhangspinner=findViewById(R.id.spn_chonnganhang);
         nganhangAdapter= ArrayAdapter.createFromResource(this,R.array.array_nganhang, R.layout.spinnerlayout);
+
         addEvents();
+        loadDB();
         //Spinner
        nganhangAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
       nganhangspinner.setAdapter(nganhangAdapter);
+
+    }
+
+    private void loadDB() {
 
     }
 
@@ -44,18 +55,28 @@ ArrayAdapter<CharSequence> nganhangAdapter;
         themtaikhoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String stk=sotaikhoan.getText().toString();
-                String tenck=tenchukhoan.getText().toString();
-                String chinhanh= tenchinhanh.getText().toString();
-            //    String nganhang=tennganhang.getText().toString();
-              String chonnh= nganhangspinner.getSelectedItem().toString();
-                Intent z =new Intent(getApplicationContext(), thongtintaikhoannganhang.class);
-                z.putExtra("tenck",tenck);
-                z.putExtra("chinhanh",chinhanh);
-                z.putExtra("stk",stk);
-                z.putExtra("nganhang",chonnh);
-                startActivity(z);
-                Toast.makeText(themtaikhoannganhang.this, "Thêm tài khoản ngân hàng thành công!", Toast.LENGTH_SHORT).show();
+                    int dodaichuoi1 = sotaikhoan.length();
+                    int dodaichuoi2 = tenchukhoan.length();
+                    int dodaichuoi3 = tenchinhanh.length();
+                    if(dodaichuoi1==0 || dodaichuoi2==0 || dodaichuoi3==0){
+                        Toast.makeText(themtaikhoannganhang.this, "Hãy điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                    }else {
+                        String stk=sotaikhoan.getText().toString();
+                        String tenck=tenchukhoan.getText().toString();
+                        String chinhanh= tenchinhanh.getText().toString();
+                        //    String nganhang=tennganhang.getText().toString();
+                        String chonnh= nganhangspinner.getSelectedItem().toString();
+
+                        //Chuyển dữ liệu qua thông tin nh
+                        Intent z =new Intent(themtaikhoannganhang.this, thongtintaikhoannganhang.class);
+                        z.putExtra("tenck",tenck);
+                        z.putExtra("chinhanh",chinhanh);
+                        z.putExtra("stk",stk);
+                        z.putExtra("nganhang",chonnh);
+                        startActivity(z);
+                        Toast.makeText(themtaikhoannganhang.this, "Thêm tài khoản ngân hàng thành công!", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
             }
         });
 

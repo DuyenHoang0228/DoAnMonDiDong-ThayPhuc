@@ -18,15 +18,20 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.nhom4.view.adapters.diachiAdapter;
+
 //import com.nhom4.lilpawhome_application.databinding.ActivityThemdiachiBinding;
 
 public class themdiachi extends AppCompatActivity {
 //ActivityThemdiachiBinding binding;
     String chonquanhuyen, chontinh;
     Button themdiachi;
+    diachiAdapter adapter;
+
     EditText sdt;
     Spinner tinhspinner,quanhuyenspinner;
     ArrayAdapter<CharSequence> tinhAdapter,quanhuyenAdapter;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +56,7 @@ public class themdiachi extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(themdiachi.this, thietlaptaikhoan.class);
                 startActivity(intent);
+                finish();
                 Toast.makeText(themdiachi.this, "Thêm địa chỉ thành công!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -88,10 +94,10 @@ public class themdiachi extends AppCompatActivity {
                     }
                     quanhuyenAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
                     quanhuyenspinner.setAdapter(quanhuyenAdapter);
-                    tinhspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    quanhuyenspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                            chonquanhuyen= quanhuyenspinner.getSelectedItem().toString();
+                            chonquanhuyen=quanhuyenspinner.getSelectedItem().toString();
                         }
 
                         @Override

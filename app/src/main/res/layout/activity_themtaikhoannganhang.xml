@@ -12,12 +12,15 @@
         android:orientation="vertical"
         android:padding="10dp">
     <TextView
+        android:id="@+id/txt_checkthongtin"
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Điền thông tin tài khoản ngân hàng "
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:textSize="15sp"></TextView>
         <Spinner
             android:layout_marginTop="15dp"
@@ -25,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:spinnerMode="dropdown"
+
             android:background="@drawable/customshapeborderwhite"
             ></Spinner>
 

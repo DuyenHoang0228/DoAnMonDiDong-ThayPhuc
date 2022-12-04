@@ -18,6 +18,7 @@
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"></TextView>
     <ListView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/lv_tknh"

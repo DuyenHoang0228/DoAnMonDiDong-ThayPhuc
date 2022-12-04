@@ -65,6 +65,7 @@ public class DiachiTTActivity extends AppCompatActivity {
         diaChi_tts.add(new DiaChi_tt("Thảo Duyên", "(+84) 12345678", "Số 106, khu phố 3, Linh Xuân, Thủ Đức, TP.HCM "));
         diaChi_tts.add(new DiaChi_tt("Thảo Duyên", "(+84) 12345678", "Số 106, khu phố 3, Linh Xuân, Thủ Đức, TP.HCM "));
         diaChi_tts.add(new DiaChi_tt("Thảo Duyên", "(+84) 12345678", "Số 106, khu phố 3, Linh Xuân, Thủ Đức, TP.HCM "));
+
     }
 
     //Thêm menu

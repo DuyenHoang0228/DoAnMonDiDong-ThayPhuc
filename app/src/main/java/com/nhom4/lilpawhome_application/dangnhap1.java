@@ -80,15 +80,24 @@ public class dangnhap1 extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         //Chuyền dữ liệu
-                        EditText taikhoangg;
-                        taikhoangg=findViewById(R.id.edt_nhapdcgg);
-                        String tkgg= taikhoangg.getText().toString();
-                        Intent z =new Intent(getApplicationContext(), email.class);
-                        z.putExtra("email",tkgg);
+                   //     EditText taikhoangg;
+                     //   taikhoangg=findViewById(R.id.edt_nhapdcgg);
+                       // String tkgg= taikhoangg.getText().toString();
+                       // Intent z =new Intent(getApplicationContext(), email.class);
+                       // z.putExtra("email",tkgg);
                         //Toast
-                        Toast.makeText(dangnhap1.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(dangnhap1.this, MainActivity.class);
-                        startActivity(intent);
+                        EditText nhapdcgg,nhapmk;
+                        nhapdcgg=dialog.findViewById(R.id.edt_nhapdcgg);
+                        nhapmk= dialog.findViewById(R.id.edt_nhapmatkhau);
+                        int dodaichuoi1 = nhapmk.length();
+                        int dodaichuoi2 = nhapdcgg.length();
+                        if(dodaichuoi1==0 || dodaichuoi2==0){
+                            Toast.makeText(dangnhap1.this, "Hãy điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(dangnhap1.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(dangnhap1.this, MainActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 });
 
