@@ -7,9 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".ShopChoMeo1"
     android:orientation="vertical"
-    android:padding="5dp">
+    >
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:scaleX="1.5"
         android:layout_height="150dp"
         android:id="@+id/imv_bannerthucanchomeo"/>
     <GridLayout
