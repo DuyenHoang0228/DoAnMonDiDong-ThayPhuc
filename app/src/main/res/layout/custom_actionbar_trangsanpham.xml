@@ -21,5 +21,13 @@
 
         android:textColor="#FFA0Ca"
         android:fontFamily="@font/montserrat_bold"/>
+    <ImageView
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_cart"
+        android:id="@+id/imv_giohang"
+        android:layout_margin="5dp"
+        />
 
 </LinearLayout>

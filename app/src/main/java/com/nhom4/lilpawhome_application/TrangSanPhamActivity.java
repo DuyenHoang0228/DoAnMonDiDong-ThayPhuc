@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -44,6 +45,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     AdapterDanhGiaSanPham adapterDanhGiaSanPham;
     ArrayList<DanhGiaSanPhamM> dsDanhGiaSanPham;
     DBHelperSanPham dbHelperSanPham;
+    ImageView imvGioHang, imvTroVe;
 
     int idhinhsanpham;
 
@@ -54,11 +56,12 @@ public class TrangSanPhamActivity extends AppCompatActivity {
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//        getSupportActionBar().setCustomView(R.layout.custom_actionbar_trangsanpham);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.custom_actionbar_trangsanpham);
         getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#ffa0ca")));
-
+                new ColorDrawable(Color.parseColor("#ffffff")));
+        imvGioHang=findViewById(R.id.imv_giohang);
+        imvTroVe=findViewById(R.id.imv_trove);
         binding=ActivityTrangSanPhamBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.btnXemthem.setText("Xem thêm");
@@ -138,6 +141,20 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                 addToCart();
                 Intent intent = new Intent(TrangSanPhamActivity.this, GioHangActivity.class);
                 startActivity(intent);
+            }
+        });
+        imvGioHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangSanPhamActivity.this,GioHangActivity.class);
+
+                startActivity(intent);
+            }
+        });
+        imvTroVe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }
@@ -368,14 +385,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
             Intent intent = new Intent(TrangSanPhamActivity.this, BlogActivity.class);
             startActivity(intent);
         }
-        switch (item.getItemId())
-        {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
 
-            default:break;
-        }
         return true;
     }
 }
