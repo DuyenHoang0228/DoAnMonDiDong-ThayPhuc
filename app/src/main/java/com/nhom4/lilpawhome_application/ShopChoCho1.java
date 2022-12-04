@@ -730,10 +730,178 @@ public class ShopChoCho1 extends AppCompatActivity {
             binding.imvBannerthucanchocho.setImageResource(R.drawable.shopchochochuong);
             loadBaloVanChuyen();
         }
+        if (item.getItemId()==R.id.mn_sanphambanchaychocho)
+        {
+
+            loadBanChay();
+        }
+        if (item.getItemId()==R.id.mn_sanphamhiemchocho)
+        {
+
+            loadHiem();
+        }
+        if (item.getItemId()==R.id.mn_sanphammoinhatchocho)
+        {
+
+            loadMoiNhat();
+        }
+        if (item.getItemId()==R.id.mn_giatangdan)
+        {
+
+            loadGiaTangDan();
+        }
+        if (item.getItemId()==R.id.mn_giagiamdan)
+        {
+
+            loadGiaGiamDan();
+        }
+        if (item.getItemId()==R.id.mn_luotmuatangdan)
+        {
+
+            loadLuotMuaTangDan();
+        }
+        if (item.getItemId()==R.id.mn_luotmuagiamdan)
+        {
+
+            loadLuotMuaGiamDan();
+        }
+        if (item.getItemId()==R.id.mn_danhgiacao)
+        {
+
+            loadDanhGiaCao();
+        }
 
 
         return super.onOptionsItemSelected(item);
     }
+
+    private void loadDanhGiaCao() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" LIKE "+"'%chocho'" +" AND "+DBHelperSanPham.COL_RATE+" > "+4);
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchocho.setAdapter(adapter);
+    }
+
+    private void loadLuotMuaGiamDan() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" LIKE "+"'%chocho'" +" ORDER BY "+DBHelperSanPham.COL_NUMORDER+" DESC ");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchocho.setAdapter(adapter);
+    }
+
+    private void loadLuotMuaTangDan() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" LIKE "+"'%chocho'" +" ORDER BY "+DBHelperSanPham.COL_NUMORDER+" ASC ");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchocho.setAdapter(adapter);
+
+    }
+
+    private void loadGiaGiamDan() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" LIKE "+"'%chocho'" +" ORDER BY "+DBHelperSanPham.COL_NEWPRICE+" DESC ");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchocho.setAdapter(adapter);
+
+    }
+
+    private void loadGiaTangDan() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" LIKE "+"'%chocho'" +" ORDER BY "+DBHelperSanPham.COL_NEWPRICE+" ASC ");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchocho.setAdapter(adapter);
+
+    }
+
+    private void loadMoiNhat() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE3+" = "+"'moinhat'"+" AND " +DBHelperSanPham.COL_CATE1+" LIKE "+"'%chocho'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchocho.setAdapter(adapter);
+
+    }
+
+    private void loadHiem() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE3+" = "+"'hiem'"+" AND " +DBHelperSanPham.COL_CATE1+" LIKE "+"'%chocho'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchocho.setAdapter(adapter);
+
+    }
+
+    private void loadBanChay() {
+        sanPhamArrayList=new ArrayList<>();
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+
+                " WHERE "+ DBHelperSanPham.COL_CATE3+" = "+"'banchay'"+" AND " +DBHelperSanPham.COL_CATE1+" LIKE "+"'%chocho'");
+        while(c.moveToNext())
+        {
+            sanPhamArrayList.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
+        binding.gvOptionchocho.setAdapter(adapter);
+
+    }
+
+
 
 
 
