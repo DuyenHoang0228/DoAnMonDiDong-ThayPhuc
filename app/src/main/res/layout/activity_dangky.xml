@@ -37,15 +37,16 @@
             android:src="@drawable/icon_account"
             android:layout_gravity="center"
             android:layout_margin="10dp"/>
-
         <EditText
-            android:id="@+id/edt_nhapemailhoacsdt"
+            android:id="@+id/edt_nhapsdt"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="Email hoặc số điện thoại"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp"/>
-
+            android:fontFamily="@font/montserrat"
+            android:hint="Nhập số điện thoại"
+            android:inputType="phone"
+            android:layout_marginEnd="50dp"
+            android:textSize="16sp">
+        </EditText>
     </LinearLayout>
 
     <LinearLayout

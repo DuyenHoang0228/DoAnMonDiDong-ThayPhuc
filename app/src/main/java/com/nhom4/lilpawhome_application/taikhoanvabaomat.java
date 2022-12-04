@@ -36,6 +36,13 @@ ActivityTaikhoanvabaomatBinding binding;
     }
 
     private void addEvent() {
+        binding.txtNameofaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(taikhoanvabaomat.this, Doitentaikhoan.class);
+                startActivity(intent);
+            }
+        });
         binding.btnSodienthoai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -18,7 +18,7 @@ public class thongtintaikhoannganhang extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setContentView(R.layout.activity_thongtintaikhoannganhang);
+       setContentView(R.layout.activity_thongtintaikhoannganhang);
         xoataikhoan=findViewById(R.id.btn_xoataikhoan);
         tennganhang=findViewById(R.id.txt_thongtinnganhang);
         tenchinhanh=findViewById(R.id.txt_thongtinchinhanh);
@@ -28,6 +28,15 @@ public class thongtintaikhoannganhang extends AppCompatActivity {
     }
 
     private void addEvents() {
+        Intent y=getIntent();
+        String stk=y.getStringExtra("stk");
+        sotaikhoan.setText(stk);
+        String tenck=y.getStringExtra("tenck");
+        tenchukhoan.setText(tenck);
+        String chinhanh=y.getStringExtra("chinhanh");
+        tenchinhanh.setText(chinhanh);
+        String tennh=y.getStringExtra("nganhang");
+        tennganhang.setText(tennh);
         xoataikhoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

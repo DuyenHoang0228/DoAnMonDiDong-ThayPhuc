@@ -52,7 +52,23 @@
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"></TextView>
-    <EditText
+        <Spinner
+            android:layout_marginTop="10dp"
+            android:id="@+id/spn_tinhtdc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/customshapeborderwhite"
+            ></Spinner>
+        <Spinner
+            android:layout_marginTop="10dp"
+            android:id="@+id/spn_quanhuyentdc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/customshapeborderwhite"
+            ></Spinner>
+        <EditText
         android:id="@+id/edt_tinhquanphuong"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"

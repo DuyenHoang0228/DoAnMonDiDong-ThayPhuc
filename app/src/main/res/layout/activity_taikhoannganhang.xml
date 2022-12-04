@@ -8,35 +8,20 @@
     android:orientation="vertical"
     android:background="#FAE5EC"
     android:padding="10dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
     <TextView
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tài khoản ngân hàng("
+        android:text="Tài khoản ngân hàng"
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"></TextView>
-        <TextView
-            android:id="@+id/txt_demtknh"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textColor="@color/black"
-            android:fontFamily="@font/montserratregular"
-            android:textSize="15sp"></TextView>
-        <TextView
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=")"
-            android:textColor="@color/black"
-            android:fontFamily="@font/montserratregular"
-            android:textSize="15sp"></TextView>
-    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_tknh"
+        ></ListView>
     <Button
         android:id="@+id/btn_themtaikhoan"
         android:layout_marginTop="20dp"

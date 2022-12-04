@@ -11,16 +11,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class email extends AppCompatActivity {
     Button thaydoi;
+    TextView email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_email);
         thaydoi=findViewById(R.id.btn_thaydoiemail);
+        email=findViewById(R.id.txt_emailhientai);
         addEvents();
     }
 
@@ -32,8 +35,17 @@ public class email extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(email.this, nhapemailmoi.class);
                 startActivity(intent);
+                //Lấy dữ liệu từ đổi email
+                Intent y=getIntent();
+                String emmoi=y.getStringExtra("emailmoi");
+                email.setText(emmoi);
             }
         });
+        //Lấy dữ liệu từ đn
+        Intent i=getIntent();
+        String emailmoi=i.getStringExtra("email");
+        email.setText(emailmoi);
+
     }
     //Thêm menu
     @Override
