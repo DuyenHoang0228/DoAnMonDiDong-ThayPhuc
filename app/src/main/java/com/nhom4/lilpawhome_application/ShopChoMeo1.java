@@ -30,7 +30,7 @@ public class    ShopChoMeo1 extends AppCompatActivity {
     SanPhamAdapterLilPawHome adapter;
     ArrayList<SanPhamLilPawHome> sanPhamArrayList;
     DBHelperSanPham dbHelperSanPham;
-    ImageView imvTimKiem;
+    ImageView imvTimKiem, imvTroVe;
     EditText edtTimKiem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class    ShopChoMeo1 extends AppCompatActivity {
         binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
         imvTimKiem=findViewById(R.id.imv_timkiem);
         edtTimKiem=findViewById(R.id.edt_timkiem);
+        imvTroVe=findViewById(R.id.imv_trove);
         getSupportActionBar().setBackgroundDrawable(
                 new ColorDrawable(Color.parseColor("#ffffff")));
         setContentView(binding.getRoot());
@@ -84,6 +85,12 @@ public class    ShopChoMeo1 extends AppCompatActivity {
                 intent.putExtra("IDsanpham",spitem.getIdSanPham());
 
                 startActivity(intent);
+            }
+        });
+        imvTroVe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
 
