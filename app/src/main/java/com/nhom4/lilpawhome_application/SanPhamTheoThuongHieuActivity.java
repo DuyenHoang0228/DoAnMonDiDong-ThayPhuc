@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -62,6 +63,16 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
             public void onClick(View view) {
                // onBackPressed();
                 Intent intent = new Intent(SanPhamTheoThuongHieuActivity.this, ThuongHieuActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.gvSanphamtheothuonghieu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(SanPhamTheoThuongHieuActivity.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = sanPhamLilPawHomes.get(i);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+
                 startActivity(intent);
             }
         });
