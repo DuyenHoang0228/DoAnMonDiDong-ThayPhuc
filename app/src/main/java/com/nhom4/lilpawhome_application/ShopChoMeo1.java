@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,6 +42,9 @@ public class ShopChoMeo1 extends AppCompatActivity {
         binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
         imvTimKiem=findViewById(R.id.imv_timkiem);
         edtTimKiem=findViewById(R.id.edt_timkiem);
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#ffffff")));
+        setContentView(binding.getRoot());
 
         createDb();
         loadData();

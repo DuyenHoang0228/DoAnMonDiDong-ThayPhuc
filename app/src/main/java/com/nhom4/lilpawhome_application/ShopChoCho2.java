@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,6 +37,9 @@ public class ShopChoCho2 extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_shopchocho12);
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#ffffff")));
+        setContentView(binding.getRoot());
         binding=ActivityShopChoCho2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         imvTimKiem=findViewById(R.id.imv_timkiem);

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 
@@ -41,6 +43,9 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_trangsanpham);
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#ffffff")));
+
         binding=ActivityTrangSanPhamBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.btnXemthem.setText("Xem thêm");
