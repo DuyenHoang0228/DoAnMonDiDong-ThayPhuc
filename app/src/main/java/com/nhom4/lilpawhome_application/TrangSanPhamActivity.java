@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -155,6 +156,16 @@ public class TrangSanPhamActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+        binding.gvSanphamdexuat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(TrangSanPhamActivity.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = sanPhamLilPawHomes.get(i);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+
+                startActivity(intent);
             }
         });
     }

@@ -203,7 +203,7 @@
                     android:layout_marginTop="20dp">
 
                     <TextView
-                        android:id="@+id/txt_allspchocho"
+
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="7"
@@ -213,6 +213,7 @@
                         android:fontFamily="@font/montserrat_bold"
                         android:textColor="@color/black"/>
                     <TextView
+                        android:id="@+id/txt_allspchocho"
                         android:layout_weight="3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -242,7 +243,7 @@
                     android:layout_marginTop="20dp">
 
                     <TextView
-                        android:id="@+id/txt_allspchoMeo"
+
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="7"
@@ -252,6 +253,7 @@
                         android:fontFamily="@font/montserrat_bold"
                         android:textColor="@color/black"/>
                     <TextView
+                        android:id="@+id/txt_allspchoMeo"
                         android:layout_weight="3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
