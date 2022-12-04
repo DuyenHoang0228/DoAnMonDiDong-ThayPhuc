@@ -8,6 +8,8 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -41,7 +43,30 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         createDb();
         loadData();
+        addEvents();
     }
+
+    private void addEvents() {
+        //Intent qua màn hình giỏ hàng
+        ImageView imvgiohang = findViewById(R.id.imv_giohang);
+        imvgiohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SanPhamTheoThuongHieuActivity.this, GioHangActivity.class);
+                startActivity(intent);
+            }
+        });
+        ImageView imvTroVe = findViewById(R.id.imv_trove);
+        imvTroVe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // onBackPressed();
+                Intent intent = new Intent(SanPhamTheoThuongHieuActivity.this, ThuongHieuActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void createDb() {
         dbHelperSanPham=new DBHelperSanPham(SanPhamTheoThuongHieuActivity.this);
         dbHelperSanPham.createSampleData();

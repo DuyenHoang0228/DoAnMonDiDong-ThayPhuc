@@ -120,9 +120,9 @@ public class ThuongHieuActivity extends AppCompatActivity {
             Intent intent = new Intent(ThuongHieuActivity.this, SpaActivity1.class);
             startActivity(intent);
         } else if (item_id == R.id.item_thuonghieu2) {
-            Toast.makeText(this, "Thương hiệu", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(ThuongHieuActivity.this, ThuongHieuActivity.class);
-            startActivity(intent);
+           Toast.makeText(this, "Bạn đang ở trang Thương hiệu", Toast.LENGTH_SHORT).show();
+          //    Intent intent = new Intent(ThuongHieuActivity.this, ThuongHieuActivity.class);
+          //  startActivity(intent);
         } else if (item_id == R.id.item_trangchu2) {
             Toast.makeText(this, "Trở về trang chủ", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(ThuongHieuActivity.this, MainActivity.class);
