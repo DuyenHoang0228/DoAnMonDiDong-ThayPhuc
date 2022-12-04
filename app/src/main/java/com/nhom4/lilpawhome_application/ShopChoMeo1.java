@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -13,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -23,7 +25,7 @@ import com.nhom4.models.SanPhamLilPawHome;
 
 import java.util.ArrayList;
 
-public class ShopChoMeo1 extends AppCompatActivity {
+public class    ShopChoMeo1 extends AppCompatActivity {
     ActivityShopChoMeo1Binding binding;
     SanPhamAdapterLilPawHome adapter;
     ArrayList<SanPhamLilPawHome> sanPhamArrayList;
@@ -72,6 +74,16 @@ public class ShopChoMeo1 extends AppCompatActivity {
                 binding.gvOptionchomeo.setAdapter(adapter);
                 hideKeyboard(ShopChoMeo1.this);
 
+            }
+        });
+        binding.gvOptionchomeo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(ShopChoMeo1.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = sanPhamArrayList.get(i);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+
+                startActivity(intent);
             }
         });
 

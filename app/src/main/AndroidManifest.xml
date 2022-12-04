@@ -224,7 +224,6 @@
         <activity
             android:name=".nhapemailmoi"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -253,7 +252,6 @@
         <activity
             android:name=".taikhoanvabaomat"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -345,6 +343,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -438,8 +437,8 @@
             android:name=".ChonHosoActivity"
             android:exported="false">
             <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
+                android:name="android.app.lib_name"
+                android:value="" />
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -498,7 +497,6 @@
             android:name=".gioithieuapp2"
             android:exported="false"
             android:theme="@style/Theme.offactionbar">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -514,6 +512,14 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <activity
+            android:name=".xemtatcaSPActivity"
+            android:exported="false"
+            android:label="Danh sách sản phẩm">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>
