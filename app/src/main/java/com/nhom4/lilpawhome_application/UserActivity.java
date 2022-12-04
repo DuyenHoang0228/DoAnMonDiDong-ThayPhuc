@@ -114,8 +114,42 @@ public class UserActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.lnKhachhangthanthiet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,khachhangthanthiet.class);
+                startActivity(intent);
+            }
+        });
+        binding.lnCholayhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,DsDonmuaActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.lnChoxacnhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,DsDonmuaActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.lnDanggiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,DsDonmuaActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.lnDanhgia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this,DanhGiaCuaToi.class);
 
-
+                startActivity(intent);
+            }
+        });
     }
 
     private void showActionBar() {

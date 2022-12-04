@@ -3,10 +3,15 @@ package com.nhom4.lilpawhome_application;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.GridView;
+import android.widget.Toast;
 
 
 import com.nhom4.databases.DBHelperSanPham;
@@ -25,7 +30,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     ActivityTrangSanPhamBinding binding;
     SanphamAdapter adapter;
     ArrayList<SanPham> sanPhamArrayList;
-    ArrayList<SanPhamLilPawHome> sanPhamLilPawHomes;
+    ArrayList<SanPhamLilPawHome> sanPhamLilPawHomes, spYeuThich;
     SanPhamAdapterLilPawHome adapterLilPawHome;
 
     AdapterDanhGiaSanPham adapterDanhGiaSanPham;
@@ -38,9 +43,12 @@ public class TrangSanPhamActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_trang_san_pham);
 
 
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//        getSupportActionBar().setCustomView(R.layout.custom_actionbar_trangsanpham);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.custom_actionbar_trangsanpham);
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#ffffff")));
+
         binding=ActivityTrangSanPhamBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.btnXemthem.setText("Xem thêm");
@@ -81,12 +89,39 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                 {
                     binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich_full);
                     binding.imvTraitim.setTag("full");
+                    Toast.makeText(TrangSanPhamActivity.this, "Đã thêm sản phẩm vào yêu thích", Toast.LENGTH_SHORT).show();
+                    GridView gvSPyeuthich = findViewById(R.id.gv_sanphamyeuthich);
+                    spYeuThich = new ArrayList<>();
+                    int IDsanpham = 0;
+                    Cursor c = dbHelperSanPham.getData(" SELECT * FROM " + DBHelperSanPham.TBL_NAME +
+                            " WHERE " + DBHelperSanPham.COL_ID + " = " + IDsanpham);
+                    while (c.moveToNext()) {
+                        spYeuThich.add(new SanPhamLilPawHome(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3), c.getDouble(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10), c.getDouble(11), c.getDouble(12), c.getDouble(13)));
+                    }
+                    c.close();
+                    //adapter = new SanPhamAdapterLilPawHome(TrangSanPhamActivity.this, R.layout.list_sanpham_id, spYeuThich);
+                    gvSPyeuthich.setAdapter(adapter);
                 }
                 else
                 {
                     binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich);
                     binding.imvTraitim.setTag("empty");
+                    Toast.makeText(TrangSanPhamActivity.this, "Bỏ yêu thích", Toast.LENGTH_SHORT).show();
                 }
+                if(binding.imvTraitim.getTag()=="full"){
+                }
+            }
+        });
+        binding.imvChiase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Link sản phẩm");
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, "Chia sẻ liên kết");
+                startActivity(shareIntent);
             }
         });
     }

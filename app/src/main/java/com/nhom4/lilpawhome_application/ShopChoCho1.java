@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.app.Activity;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -12,16 +13,23 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
+import com.nhom4.view.adapters.SanphamAdapter;
 import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityShopChoCho1Binding;
+import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ShopChoCho1 extends AppCompatActivity {
     ActivityShopChoCho1Binding binding;
@@ -31,8 +39,7 @@ public class ShopChoCho1 extends AppCompatActivity {
 
     ImageView imvTimKiem;
     EditText edtTimKiem;
-
-
+    ImageView imvGiohang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +64,15 @@ public class ShopChoCho1 extends AppCompatActivity {
         loadData();
         addEvents();
 
-
-
+        //Intent qua màn hình giỏ hàng
+        ImageView imvgiohang = findViewById(R.id.imv_giohang);
+        imvgiohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShopChoCho1.this, GioHangActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void addEvents() {
@@ -81,6 +95,16 @@ public class ShopChoCho1 extends AppCompatActivity {
                 binding.gvOptionchocho.setAdapter(adapter);
                 hideKeyboard(ShopChoCho1.this);
 
+            }
+        });
+        binding.gvOptionchocho.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(ShopChoCho1.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = sanPhamArrayList.get(i);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+
+                startActivity(intent);
             }
         });
     }
@@ -113,9 +137,18 @@ public class ShopChoCho1 extends AppCompatActivity {
         c.close();
         adapter=new SanPhamAdapterLilPawHome(ShopChoCho1.this,R.layout.list_sanpham_id,sanPhamArrayList);
         binding.gvOptionchocho.setAdapter(adapter);
-        binding.imvBannerthucanchocho.setImageResource(R.drawable.shopchochothucan);
+        binding.imvBannerthucanchocho.setImageResource(R.drawable.bannershopchochoedited);
 
+        //Set sự kiện click vào ô sản phẩm thì chuyển đến trang sản phẩm chi tiết
+        binding.gvOptionchocho.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ShopChoCho1.this, TrangSanPhamActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
     private void loadChuongLong() {
         sanPhamArrayList=new ArrayList<>();
         Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME+

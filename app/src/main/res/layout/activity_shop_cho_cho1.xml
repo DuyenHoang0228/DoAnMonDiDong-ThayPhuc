@@ -7,7 +7,8 @@
     tools:context=".ShopChoCho1"
     android:orientation="vertical">
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:scaleX="1.5"
         android:layout_height="150dp"
         android:id="@+id/imv_bannerthucanchocho"/>
         <GridLayout
@@ -22,8 +23,5 @@
                 android:numColumns="2"
                 android:layout_margin="10dp" />
         </GridLayout>
-
-
-
 
 </LinearLayout>

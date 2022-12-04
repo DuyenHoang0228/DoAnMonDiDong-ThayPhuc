@@ -29,7 +29,6 @@ public class ThanhtoanActivity extends AppCompatActivity {
     ActivityThanhtoanBinding binding;
     AdapterSanPhamTT adapterSP;
     HorAdapterPhuongThucTT adapterPT;
-    ArrayList<GioHang> gioHangs;
     ArrayList<PhuongThucTT> phuongThucTTS;
     LinearLayoutManager VerticalLayout, HorizontalLayout;
     RecyclerView.LayoutManager RecyclerViewLayoutManagerSP, RecyclerViewLayoutManagerPT;
@@ -41,13 +40,11 @@ public class ThanhtoanActivity extends AppCompatActivity {
         binding = ActivityThanhtoanBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        
-        loadDSSanpham();
 
         RecyclerViewLayoutManagerSP = new LinearLayoutManager(getApplicationContext());
         binding.rvDssanpham.setLayoutManager(RecyclerViewLayoutManagerSP);
 
-        adapterSP = new AdapterSanPhamTT(gioHangs);
+        adapterSP = new AdapterSanPhamTT(MainActivity.manggiohang);
 
         // Thiết lập phương hướng của RecyclerView (ngang hay dọc)
         VerticalLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -82,15 +79,6 @@ public class ThanhtoanActivity extends AppCompatActivity {
         phuongThucTTS.add(new PhuongThucTT(R.drawable.icon_vnpay, "Thanh toán bằng ví VNPAY", "Liên kết ví VNPAY", false));
     }
 
-    private void loadDSSanpham() {
-        gioHangs = new ArrayList<>();
-        gioHangs.add(new GioHang(R.drawable.giohang_sp2, 1, getString(R.string.brand_sp, "Smartheart"),
-                "[COMBO 5 GÓI] Thức Ăn Cho Chó Trưởng Thành Smartheart 400g", "SHOP CHO CHÓ", 100000.0, 190000.0));
-        gioHangs.add(new GioHang(R.drawable.giohang_sp3, 1, getString(R.string.brand_sp, "Me-o"),
-                "[CAO CẤP] Hạt Cho Mèo Me-O Gold Indoor 1.2kg – Giảm Mùi Chất Thải", "SHOP CHO MÈO", 133000.0, 169000.0));
-        gioHangs.add(new GioHang(R.drawable.giohang_sp4, 1, getString(R.string.brand_sp, "Bioline"),
-                "Bộ Trồng Cỏ Mèo Tươi Bioline 12g – Bổ Sung Chất Xơ, Giảm Stress", "SHOP CHO MÈO", 50000.0, 109000.0));
-    }
     //Thêm menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
