@@ -9,16 +9,35 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.Toast;
 
 import com.nhom4.lilpawhome_application.databinding.ActivityDanhGiaCuaToiBinding;
+import com.nhom4.models.DanhGiaSanPhamM;
+import com.nhom4.models.DonHang;
+import com.nhom4.view.ExpandableHeightGridView;
+import com.nhom4.view.adapters.AdapterDSDonmua;
+import com.nhom4.view.adapters.AdapterDanhGiaSanPham;
+import com.nhom4.view.adapters.AdapterSanPhamDaDanhGia;
+import com.nhom4.view.adapters.ChuaDanhGiaAdapter;
+import com.nhom4.view.adapters.ChuaDanhGiaAdapter2;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DanhGiaCuaToi extends AppCompatActivity {
 
     ActivityDanhGiaCuaToiBinding binding;
     TabHost tabHost;
+    ArrayList<DanhGiaSanPhamM> dsDanhGiaSanPham;
+    AdapterSanPhamDaDanhGia adapter;
+    ArrayList<DonHang> donHangs;
+    ChuaDanhGiaAdapter adapter2;
+    ChuaDanhGiaAdapter2 adapter3;
+    String[] madonhang = {"DH00001", "DH00002", "DH00003"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +46,40 @@ public class DanhGiaCuaToi extends AppCompatActivity {
         binding = ActivityDanhGiaCuaToiBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        
+
         creatTabHost();
+        loadData();
         addEvent();
+    }
+
+    private void loadData() {
+        //đã đánh giá
+        dsDanhGiaSanPham = new ArrayList<>();
+        dsDanhGiaSanPham.add(new DanhGiaSanPhamM(R.drawable.avatar_concho,"littlemermaid@user", 5, "Đóng gói sản phẩm cẩn thận, sản phẩm đẹp lắm, bé chó nhà mình thích mê", R.drawable.splongmong, R.drawable.spkhaymeo, R.drawable.spkhay, "28/11/2022"));
+        dsDanhGiaSanPham.add(new DanhGiaSanPhamM(R.drawable.avatar_concho,"littlemermaid@user", 4, "Mua lần đầu có hơi lo lắng, tới lúc nhận được sản phẩm bất ngờ quá chừng, tại nó cũng bình thường chứ không xuất sắc như mình đã nghĩ", R.drawable.splongmong, R.drawable.spkhaymeo, R.drawable.spkhay, "20/11/2022"));
+        dsDanhGiaSanPham.add(new DanhGiaSanPhamM(R.drawable.avatar_concho,"littlemermaid@user", 4, "Tại dư tiền thích mua sắm vậy thôi, chứ chó thì mình chưa nuôi", R.drawable.splongmong, R.drawable.spkhaymeo, R.drawable.spkhay, "02/01/2022"));
+        dsDanhGiaSanPham.add(new DanhGiaSanPhamM(R.drawable.avatar_concho,"littlemermaid@user", 5 ,"Đừng mua, mua về xài rồi không bỏ được đâu", R.drawable.splongmong, R.drawable.spkhaymeo, R.drawable.spkhay, "28/07/2022"));
+        dsDanhGiaSanPham.add(new DanhGiaSanPhamM(R.drawable.avatar_concho,"littlemermaid@user", 3, "Con chó nhà mình nó khen là hàng đẹp quá, kêu mình lần sau có khuyến mãi thì nhớ mua nhiều nhiều để dành nó xài từ từ", R.drawable.splongmong, R.drawable.spkhaymeo, R.drawable.spkhay, "09/09/2022"));
+
+        adapter = new AdapterSanPhamDaDanhGia(DanhGiaCuaToi.this, R.layout.dadanhgia_layout, dsDanhGiaSanPham);
+        ExpandableHeightGridView grDadanhgia = findViewById(R.id.gv_dadanhgia);
+        grDadanhgia.setExpanded(true);
+        grDadanhgia.setAdapter(adapter);
+
+        //sản phẩm trong đơn
+        donHangs = new ArrayList<>();
+        donHangs.add(new DonHang(R.drawable.giohang_sp1, "Thương hiệu: Virbac", "Gel Dinh Dưỡng Cho Chó Mèo Còi Cọc Virbac Nutri Plus 120g – Pháp", "3", "190000"));
+        donHangs.add(new DonHang(R.drawable.giohang_sp1, "Thương hiệu: Virbac", "Gel Dinh Dưỡng Cho Chó Mèo Còi Cọc Virbac Nutri Plus 120g – Pháp", "3", "190000"));
+        donHangs.add(new DonHang(R.drawable.giohang_sp1, "Thương hiệu: Virbac", "Gel Dinh Dưỡng Cho Chó Mèo Còi Cọc Virbac Nutri Plus 120g – Pháp", "3", "190000"));
+        //adapter2 = new ChuaDanhGiaAdapter(DanhGiaCuaToi.this, R.layout.sanphamtrongdondamua_layout, donHangs);
+        //ExpandableHeightGridView grSanPhamTrongDonHang = findViewById(R.id.gr_sanphamtrongdondamua);
+        //grSanPhamTrongDonHang.setAdapter(adapter2);
+        //chưa đánh giá
+        adapter3 = new ChuaDanhGiaAdapter2(DanhGiaCuaToi.this, R.layout.chuadanhgia_layout, madonhang, donHangs);
+        ExpandableHeightGridView grChuaDanhGia = findViewById(R.id.gv_chuadanhgia);
+        grChuaDanhGia.setExpanded(true);
+        grChuaDanhGia.setAdapter(adapter3);
+
     }
 
     private void addEvent() {
@@ -44,6 +94,7 @@ public class DanhGiaCuaToi extends AppCompatActivity {
         tab1.setContent(R.id.tab_chuadanhgia);
         tab1.setIndicator("Chưa đánh giá");
         tabHost.addTab(tab1);
+
         //Tạo tab 2
         TabHost.TabSpec tab2 = tabHost.newTabSpec("tab2");
         tab2.setContent(R.id.tab_dadanhgia);

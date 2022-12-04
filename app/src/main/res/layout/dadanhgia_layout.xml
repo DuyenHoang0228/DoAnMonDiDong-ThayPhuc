@@ -7,13 +7,14 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
         <androidx.cardview.widget.CardView
             android:layout_width="40dp"
             android:layout_height="40dp"
             app:cardCornerRadius="20dp">
             <ImageView
-                android:id="@+id/imv_avatar"
+                android:id="@+id/imv_avatar_danhgiacuatoi"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/icon_avatar">
@@ -25,7 +26,7 @@
             android:orientation="vertical"
             android:layout_marginStart="20dp">
             <TextView
-                android:id="@+id/txt_tenkhachhang"
+                android:id="@+id/txt_tenkhachhang_danhgiacuatoi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Username"
@@ -33,7 +34,7 @@
                 android:textSize="15sp"
                 android:layout_marginTop="10dp"/>
             <RatingBar
-                android:id="@+id/rb_ratingdanhgia"
+                android:id="@+id/rb_ratingdanhgiacuatoi"
                 android:isIndicator="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,7 +43,7 @@
                 android:stepSize="1"
                 style="@style/CustomRatingBarStyle"/>
             <TextView
-                android:id="@+id/txt_noidungdanhgiasanpham"
+                android:id="@+id/txt_noidungdanhgiasanpham_dgct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -55,13 +56,13 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="3">
                 <ImageView
-                    android:id="@+id/imv_anhdanhgia1"
+                    android:id="@+id/imv_anhdanhgia1_dgct"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:src="@drawable/spbong"/>
                 <ImageView
-                    android:id="@+id/imv_anhdanhgia2"
+                    android:id="@+id/imv_anhdanhgia2_dgct"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -69,7 +70,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"/>
                 <ImageView
-                    android:id="@+id/imv_anhdanhgia3"
+                    android:id="@+id/imv_anhdanhgia3_dgct"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -81,11 +82,13 @@
                 android:foreground="@drawable/bordersanpham"
                 android:layout_marginTop="20dp">
                 <ImageView
+                    android:id="@+id/imv_anhsp_dgct"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/spbong"
                     android:foreground="@drawable/bordersanpham"/>
                 <TextView
+                    android:id="@+id/txt_tensp_dgct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tên sản phẩm mà khách hàng đã mua"

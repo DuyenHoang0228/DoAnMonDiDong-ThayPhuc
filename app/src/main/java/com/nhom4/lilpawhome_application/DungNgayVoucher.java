@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -11,11 +12,19 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
+import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityDungNgayVoucherBinding;
+import com.nhom4.models.SanPhamLilPawHome;
+import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
+
+import java.util.ArrayList;
 
 public class DungNgayVoucher extends AppCompatActivity {
 
     ActivityDungNgayVoucherBinding binding;
+    ArrayList<SanPhamLilPawHome> spDungVoucher;
+    SanPhamAdapterLilPawHome adapter;
+    DBHelperSanPham db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +38,15 @@ public class DungNgayVoucher extends AppCompatActivity {
         editTimKiem.setHint("Voucher");
         getSupportActionBar().setBackgroundDrawable(
                 new ColorDrawable(Color.parseColor("#ffffff")));
+        createDB();
         loadData();
     }
+
+    private void createDB() {
+        db=new DBHelperSanPham(DungNgayVoucher.this);
+        db.createSampleData();
+    }
+
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.shopchocho1_option_menu,menu);
@@ -53,5 +69,15 @@ public class DungNgayVoucher extends AppCompatActivity {
         }else{
             binding.txtSoluongcohan.setVisibility(View.INVISIBLE);
         }
+        binding.grSanpham.setExpanded(true);
+        spDungVoucher = new ArrayList<>();
+        Cursor c = db.getData(" SELECT * FROM " + DBHelperSanPham.TBL_NAME +
+                " WHERE " + DBHelperSanPham.COL_OLDPRICE + " > 50000" );
+        while (c.moveToNext()) {
+            spDungVoucher.add(new SanPhamLilPawHome(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3), c.getDouble(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10), c.getDouble(11), c.getDouble(12), c.getDouble(13)));
+        }
+        c.close();
+        adapter = new SanPhamAdapterLilPawHome(DungNgayVoucher.this, R.layout.list_sanpham_id, spDungVoucher);
+        binding.grSanpham.setAdapter(adapter);
     }
 }
