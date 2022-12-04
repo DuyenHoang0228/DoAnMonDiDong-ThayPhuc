@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -32,12 +36,37 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_sanphamtheothuonghieu);
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#ffffff")));
         txtTenThuongHieu=findViewById(R.id.txt_tenthuonghieu);
         binding=ActivitySanPhamTheoThuongHieuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         createDb();
         loadData();
+        addEvents();
     }
+
+    private void addEvents() {
+        //Intent qua màn hình giỏ hàng
+        ImageView imvgiohang = findViewById(R.id.imv_giohang);
+        imvgiohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SanPhamTheoThuongHieuActivity.this, GioHangActivity.class);
+                startActivity(intent);
+            }
+        });
+        ImageView imvTroVe = findViewById(R.id.imv_trove);
+        imvTroVe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // onBackPressed();
+                Intent intent = new Intent(SanPhamTheoThuongHieuActivity.this, ThuongHieuActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void createDb() {
         dbHelperSanPham=new DBHelperSanPham(SanPhamTheoThuongHieuActivity.this);
         dbHelperSanPham.createSampleData();

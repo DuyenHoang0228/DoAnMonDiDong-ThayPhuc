@@ -30,7 +30,7 @@ public class    ShopChoMeo1 extends AppCompatActivity {
     SanPhamAdapterLilPawHome adapter;
     ArrayList<SanPhamLilPawHome> sanPhamArrayList;
     DBHelperSanPham dbHelperSanPham;
-    ImageView imvTimKiem, imvTroVe;
+    ImageView imvTimKiem, imvTroVe, imv;
     EditText edtTimKiem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,6 @@ public class    ShopChoMeo1 extends AppCompatActivity {
         createDb();
         loadData();
         addEvents();
-
     }
 
     private void addEvents() {
@@ -83,7 +82,6 @@ public class    ShopChoMeo1 extends AppCompatActivity {
                 Intent intent = new Intent(ShopChoMeo1.this, TrangSanPhamActivity.class);
                 SanPhamLilPawHome spitem = sanPhamArrayList.get(i);
                 intent.putExtra("IDsanpham",spitem.getIdSanPham());
-
                 startActivity(intent);
             }
         });
@@ -91,6 +89,15 @@ public class    ShopChoMeo1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+        //Intent qua màn hình giỏ hàng
+        ImageView imvgiohang = findViewById(R.id.imv_giohang);
+        imvgiohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShopChoMeo1.this, GioHangActivity.class);
+                startActivity(intent);
             }
         });
 
