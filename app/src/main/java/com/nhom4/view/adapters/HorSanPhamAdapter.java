@@ -4,10 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nhom4.lilpawhome_application.MainActivity;
 import com.nhom4.lilpawhome_application.R;
 import com.nhom4.models.SanPham;
 
@@ -22,7 +24,7 @@ public class HorSanPhamAdapter extends RecyclerView.Adapter<HorSanPhamAdapter.My
 
         ImageView imvhinhsanpham;
         TextView txttensanpham, txtbrandsanpham, txtgiasanphamchuagiam, txtgiasanphamdagiam;
-
+        RelativeLayout itemsanpham;
         // parameterised constructor for View Holder class
         // which takes the view as a parameter
         public MyView(View view)
@@ -30,6 +32,7 @@ public class HorSanPhamAdapter extends RecyclerView.Adapter<HorSanPhamAdapter.My
             super(view);
 
             // Tìm các thuộc tính có trong file layout list sản phẩm
+            itemsanpham = view.findViewById(R.id.item_sanpham);
             txttensanpham = (TextView)view.findViewById(R.id.txt_tensanpham);
             txtbrandsanpham = (TextView)view.findViewById(R.id.txt_brandsanpham);
             txtgiasanphamchuagiam = (TextView)view.findViewById(R.id.txt_giasanphamchuagiam);
@@ -61,9 +64,10 @@ public class HorSanPhamAdapter extends RecyclerView.Adapter<HorSanPhamAdapter.My
         SanPham p = sanPhams.get(position);
         holder.txttensanpham.setText(p.getTenSanPham());
         holder.txtbrandsanpham.setText(p.getThuongHieu());
-        holder.txtgiasanphamchuagiam.setText(String.valueOf(p.getGiaCuSanPham()));
-        holder.txtgiasanphamdagiam.setText(String.valueOf(p.getGiaMoiSanPham()));
+        holder.txtgiasanphamchuagiam.setText(String.format("%.0fđ",p.getGiaCuSanPham()));
+        holder.txtgiasanphamdagiam.setText(String.format("%.0fđ",p.getGiaMoiSanPham()));
         holder.imvhinhsanpham.setImageResource(p.getAnhSanPham());
+
     }
 
     // Override getItemCount which Returns

@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +22,7 @@ public class AdapterSanPhamTT extends RecyclerView.Adapter<AdapterSanPhamTT.MyVi
 
         ImageView imvhinhsanpham;
         TextView txttensanpham, txtgiasanphamdagiam, txtgiasanphamchuagiam, txtsoluongsp;
+        LinearLayout itemspthanhtoan;
 
         // parameterised constructor for View Holder class
         // which takes the view as a parameter
@@ -34,6 +36,7 @@ public class AdapterSanPhamTT extends RecyclerView.Adapter<AdapterSanPhamTT.MyVi
             txtgiasanphamdagiam = (TextView)view.findViewById(R.id.txt_giasanphamdagiam);
             imvhinhsanpham = (ImageView) view.findViewById(R.id.imv_hinhsanpham);
             txtsoluongsp = (TextView) view.findViewById(R.id.txt_soluongsp);
+            itemspthanhtoan = view.findViewById(R.id.item_spthanhtoan);
         }
     }
 
@@ -58,12 +61,20 @@ public class AdapterSanPhamTT extends RecyclerView.Adapter<AdapterSanPhamTT.MyVi
                                  final int position)
     {
         GioHang g = gioHangList.get(position);
-        holder.txttensanpham.setText(g.getTenSanPham());
-        holder.txtgiasanphamchuagiam.setText(String.format("%.0f VNĐ",g.getGiaCuSanPham()));
-        holder.txtgiasanphamdagiam.setText(String.format("%.0f VNĐ",g.getGiaMoiSanPham()));
-        holder.imvhinhsanpham.setImageResource(g.getIdAnhSanPham());
-        holder.txtsoluongsp.setText(String.valueOf("x"+g.getSoluongsp()));
+        if (g.isSelected()){
+            holder.itemspthanhtoan.setVisibility(View.VISIBLE);
+            holder.itemspthanhtoan.setLayoutParams(new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            holder.txttensanpham.setText(g.getTenSanPham());
+            holder.txtgiasanphamchuagiam.setText(String.format("%.0f VNĐ",g.getGiaCuSanPham()));
+            holder.txtgiasanphamdagiam.setText(String.format("%.0f VNĐ",g.getGiaMoiSanPham()));
+            holder.imvhinhsanpham.setImageResource(g.getIdAnhSanPham());
+            holder.txtsoluongsp.setText(String.format("x%d",g.getSoluongsp()));
+        }else {
+            holder.itemspthanhtoan.setVisibility(View.GONE);
+            holder.itemspthanhtoan.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+        }
     }
+
 
     // Override getItemCount which Returns
     // the length of the RecyclerView.

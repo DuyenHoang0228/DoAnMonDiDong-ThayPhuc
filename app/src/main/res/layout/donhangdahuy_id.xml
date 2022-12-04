@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="170dp"
+    android:layout_height="190dp"
     android:orientation="horizontal"
     android:padding="10dp"
+    android:weightSum="3"
     android:background="@drawable/backgroundstrokedonhang">
 
     <ImageView
         android:id="@+id/imv_hinhsanpham"
-        android:layout_width="wrap_content"
-        android:layout_height="160dp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
         android:scaleType="centerCrop"
+        android:layout_weight="2"
         android:src="@drawable/giohang_sp1"/>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp">
 
@@ -25,7 +28,7 @@
             android:text="Thương hiệu: Virbac"
             android:fontFamily="@font/montserrat_semibold"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/txt_tensanpham"
@@ -34,7 +37,7 @@
             android:text="Gel Dinh Dưỡng Cho Chó Mèo Còi Cọc Virbac Nutri Plus 120g – Pháp"
             android:fontFamily="@font/montserrat"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:layout_below="@+id/txt_brandsanpham"/>
 
 
@@ -44,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="Số lượng sản phẩm: 3"
             android:fontFamily="@font/montserrat"
-            android:textColor="#A8A8A8"
+            android:textColor="#000000"
             android:textSize="12sp"
             android:layout_above="@+id/txt_thanhtien"/>
 
@@ -55,7 +58,7 @@
             android:text="Thành tiền: đ268.000"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:layout_above="@+id/section_btn"/>
 
 
