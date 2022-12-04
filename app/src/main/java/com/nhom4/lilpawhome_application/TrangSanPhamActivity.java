@@ -166,7 +166,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
             binding.txtTensanphamTrangsanpham.setText(c.getString(1));
             binding.txtGiamoiTrangsanpham.setText(c.getDouble(2)+"đ");
             binding.txtGiacu.setText(c.getDouble(3)+"đ");
-            String giamgia= "Tiêt kiệm "+ c.getDouble(4)*100 +"%";
+            String giamgia= "Tiết kiệm "+ Math.round(c.getDouble(4)*100)  +"%";
             binding.txtGiamgia.setText(giamgia);
 
             binding.imvAnhsanpham.setImageResource(resourceId);
