@@ -42,13 +42,31 @@ public class ThanhtoanActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         loadListSP();
-
+        addEvent();
         //============Adapter Phương thức thanh toán====================
         loadPTThanhtoan();
         loadListPTTT();
 
         binding.txtTongsotien.setText(String.format("%.0fđ",MainActivity.tongthanhtoan));
         binding.txtTongthanhtoan.setText(String.format("%.0fđ",MainActivity.tongthanhtoan));
+    }
+
+    private void addEvent() {
+        binding.llDiadiemnhanhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ThanhtoanActivity.this, DiachiTTActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.llPhuongthucvanchuyen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
     }
 
     private void loadListPTTT() {

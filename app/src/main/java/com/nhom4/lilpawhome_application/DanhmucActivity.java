@@ -163,7 +163,12 @@ public class DanhmucActivity extends AppCompatActivity {
                 }
             }
         });
-
+        binding.lvDanhmucchocho.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                return false;
+            }
+        });
 
     }
 
@@ -295,5 +300,6 @@ public class DanhmucActivity extends AppCompatActivity {
 
         return listMap2;
     }
+
 
 }

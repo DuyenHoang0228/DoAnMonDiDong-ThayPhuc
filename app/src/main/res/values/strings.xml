@@ -34,60 +34,102 @@ Phường Linh Xuân, quận Thủ Đức, TP. HCM </string>
     </string-array>
     <string-array name="array_tinh">
         <item>Chọn tỉnh</item>
-        <item>An Giang</item><item>Bình Định</item><item>Bình Dương</item><item>Bình Thuận</item>
-        <item>Hà Nội</item><item>Quảng Bình</item><item>Quảng Nam</item>
-        <item>Quảng Ngãi</item><item>TP Hồ Chí Minh</item>
+        <item>An Giang</item>
+        <item>Bình Định</item>
+        <item>Bình Dương</item>
+        <item>Bình Thuận</item>
+        <item>Hà Nội</item>
+        <item>Quảng Bình</item>
+        <item>Quảng Nam</item>
+        <item>Quảng Ngãi</item>
+        <item>TP Hồ Chí Minh</item>
     </string-array>
     <string-array name="array_quangngai">
         <item>Chọn Quận/Huyện</item>
-        <item>Thành phố Quảng Ngãi</item><item>Huyện Bình Sơn</item>
-        <item>Huyện Trà Bồng</item><item>Huyện Sơn Tịnh</item><item>Huyện Tư Nghĩa</item>
+        <item>Thành phố Quảng Ngãi</item>
+        <item>Huyện Bình Sơn</item>
+        <item>Huyện Trà Bồng</item>
+        <item>Huyện Sơn Tịnh</item>
+        <item>Huyện Tư Nghĩa</item>
     </string-array>
     <string-array name="array_quangnam">
         <item>Chọn Quận/Huyện</item>
-        <item>Thành phố Tam Kỳ</item><item>Thành phố Hội An</item>
-        <item>Huyện Tây Giang</item><item>Huyện Đông Giang</item>
+        <item>Thành phố Tam Kỳ</item>
+        <item>Thành phố Hội An</item>
+        <item>Huyện Tây Giang</item>
+        <item>Huyện Đông Giang</item>
     </string-array>
     <string-array name="array_binhthuan">
         <item>Chọn Quận/Huyện</item>
-        <item>Thành phố Phan Thiết</item><item>Thị xã La Gi</item>
-        <item>Huyện Tuy Phong</item><item>Huyện Bắc Bình</item>
+        <item>Thành phố Phan Thiết</item>
+        <item>Thị xã La Gi</item>
+        <item>Huyện Tuy Phong</item>
+        <item>Huyện Bắc Bình</item>
     </string-array>
     <string-array name="array_angiang">
         <item>Chọn Quận/Huyện</item>
-        <item>Thành phố Long Xuyên</item><item>Thành phố Châu Đốc</item>
-        <item>Huyện Tri Tôn</item><item>Huyện Chợ Mới</item>
+        <item>Thành phố Long Xuyên</item>
+        <item>Thành phố Châu Đốc</item>
+        <item>Huyện Tri Tôn</item>
+        <item>Huyện Chợ Mới</item>
     </string-array>
     <string-array name="array_binhduong">
         <item>Chọn Quận/Huyện</item>
-        <item>Thành phố Thủ Dầu Một</item><item>Thành phố Dĩ An</item>
-        <item>Thành phố Thuận An</item><item>Huyện Bàu Bàng</item>
+        <item>Thành phố Thủ Dầu Một</item>
+        <item>Thành phố Dĩ An</item>
+        <item>Thành phố Thuận An</item>
+        <item>Huyện Bàu Bàng</item>
     </string-array>
     <string-array name="array_hanoi">
         <item>Chọn Quận/Huyện</item>
-        <item>Quận Ba Đình</item><item>Quận Hoàn Kiếm</item>
-        <item>Quận Tây Hồ</item><item>Quận Đống Đa</item><item>Quận Hai Bà Trưng</item>
-        <item>Quận Thanh Xuân</item><item>Quận Hoàng Mai</item><item>Quận Nam Từ Liêm</item>
-        <item>Huyện Sóc Sơn</item><item>Huyện Thanh Trì</item><item>Quận Hà Đông</item>
+        <item>Quận Ba Đình</item>
+        <item>Quận Hoàn Kiếm</item>
+        <item>Quận Tây Hồ</item>
+        <item>Quận Đống Đa</item>
+        <item>Quận Hai Bà Trưng</item>
+        <item>Quận Thanh Xuân</item>
+        <item>Quận Hoàng Mai</item>
+        <item>Quận Nam Từ Liêm</item>
+        <item>Huyện Sóc Sơn</item>
+        <item>Huyện Thanh Trì</item>
+        <item>Quận Hà Đông</item>
     </string-array>
     <string-array name="array_binhdinh">
         <item>Chọn Quận/Huyện</item>
-        <item>Thành phố Quy Nhơn</item><item>Huyện Tuy Phước</item>
-        <item>Thị xã An Nhơn</item><item>Huyện Vân Canh</item>
+        <item>Thành phố Quy Nhơn</item>
+        <item>Huyện Tuy Phước</item>
+        <item>Thị xã An Nhơn</item>
+        <item>Huyện Vân Canh</item>
     </string-array>
     <string-array name="array_quangbinh">
         <item>Chọn Quận/Huyện</item>
-        <item>Thành phố Đồng Hới</item><item>Huyện Quảng Ninh</item>
-        <item>Huyện Tuyên Hóa</item><item>Huyện Quảng Trạch</item><item>Thị xã Ba Đồn</item>
-        <item>Huyện Bố Trạch</item><item>Huyện Lệ Thủy</item>
+        <item>Thành phố Đồng Hới</item>
+        <item>Huyện Quảng Ninh</item>
+        <item>Huyện Tuyên Hóa</item>
+        <item>Huyện Quảng Trạch</item>
+        <item>Thị xã Ba Đồn</item>
+        <item>Huyện Bố Trạch</item>
+        <item>Huyện Lệ Thủy</item>
     </string-array>
     <string-array name="array_hcm">
-    <item>Chọn Quận/Huyện</item>
-    <item>Quận 1</item>
-    <item>Quận 3</item><item>Quận 4</item><item>Quận 5</item>
-    <item>Quận 6</item><item>Quận 7</item><item>Quận 8</item><item>Thành phố Thủ Đức</item><item>Quận 10</item><item>Quận 11</item><item>Quận 12</item>
-    <item>Huyện Củ Chi</item><item>Quận Bình Tân</item><item>Quận Tân Bình</item><item>Quận Phú Nhuận</item><item>Quận Gò Vấp</item>
-</string-array>
+        <item>Chọn Quận/Huyện</item>
+        <item>Quận 1</item>
+        <item>Quận 3</item>
+        <item>Quận 4</item>
+        <item>Quận 5</item>
+        <item>Quận 6</item>
+        <item>Quận 7</item>
+        <item>Quận 8</item>
+        <item>Thành phố Thủ Đức</item>
+        <item>Quận 10</item>
+        <item>Quận 11</item>
+        <item>Quận 12</item>
+        <item>Huyện Củ Chi</item>
+        <item>Quận Bình Tân</item>
+        <item>Quận Tân Bình</item>
+        <item>Quận Phú Nhuận</item>
+        <item>Quận Gò Vấp</item>
+    </string-array>
     <string-array name="helpContent">
         <item> Khách hàng đặt hàng qua Lilpaw Home tại giỏ hàng trên app và chọn phương thức thanh toán và vận chuyển phù hợp.
         </item>

@@ -18,6 +18,7 @@ import com.nhom4.models.GioHang;
 import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HorAdapterSanphamLilPawHome extends RecyclerView.Adapter<HorAdapterSanphamLilPawHome.MyView>{
@@ -31,6 +32,7 @@ public class HorAdapterSanphamLilPawHome extends RecyclerView.Adapter<HorAdapter
         this.sanPhamLilPawHomes = sanPhamLilPawHomes;
         this.mItemListener = mItemListener;
     }
+
 
     public class MyView extends RecyclerView.ViewHolder {
 
