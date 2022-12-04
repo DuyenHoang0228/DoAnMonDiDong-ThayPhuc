@@ -19,22 +19,15 @@
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"></TextView>
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/customshapeborderwhite"
-        ></Spinner>
-    <EditText
-        android:id="@+id/edt_tennganhang"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/customshapeborderwhite"
-        android:hint="Tên ngân hàng"
-        android:textColor="@color/black"
-        android:fontFamily="@font/montserratregular"
-        android:textSize="15sp"
-        android:gravity="center_vertical"></EditText>
+        <Spinner
+            android:layout_marginTop="15dp"
+            android:id="@+id/spn_chonnganhang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/customshapeborderwhite"
+            ></Spinner>
+
     <EditText
         android:id="@+id/edt_tenchinhanh"
         android:layout_marginTop="10dp"
@@ -54,6 +47,8 @@
         android:background="@drawable/customshapeborderwhite"
         android:hint="Số tài khoản"
         android:textColor="@color/black"
+        android:inputType="number"
+        android:maxLength="20"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"
         android:gravity="center_vertical"></EditText>

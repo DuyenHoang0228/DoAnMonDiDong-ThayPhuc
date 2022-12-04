@@ -3,23 +3,31 @@ package com.nhom4.lilpawhome_application;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 //import com.nhom4.lilpawhome_application.databinding.ActivityThemdiachiBinding;
 
 public class themdiachi extends AppCompatActivity {
 //ActivityThemdiachiBinding binding;
+    String chonquanhuyen, chontinh;
     Button themdiachi;
     EditText sdt;
+    Spinner tinhspinner,quanhuyenspinner;
+    ArrayAdapter<CharSequence> tinhAdapter,quanhuyenAdapter;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +35,10 @@ public class themdiachi extends AppCompatActivity {
         setContentView(R.layout.activity_themdiachi);
       //  binding = ActivityThemdiachiBinding.inflate(getLayoutInflater());
       //  setContentView(binding.getRoot());
+        tinhspinner=findViewById(R.id.spn_tinhtdc);
+        quanhuyenspinner=findViewById(R.id.spn_quanhuyentdc);
         sdt = findViewById(R.id.edt_sodienthoai);
+        tinhAdapter= ArrayAdapter.createFromResource(this,R.array.array_tinh, R.layout.spinnerlayout);
         addEvents();
     }
 
@@ -43,59 +54,62 @@ public class themdiachi extends AppCompatActivity {
                 Toast.makeText(themdiachi.this, "Thêm địa chỉ thành công!", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-    //Thêm menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu2_item,menu);
-        return true;
-    }
+        tinhAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        tinhspinner.setAdapter(tinhAdapter);
 
+        tinhspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                chontinh= tinhspinner.getSelectedItem().toString();
+                int parentId = adapterView.getId();
+                if(parentId==R.id.spn_tinhtdc){
+                    switch (chontinh){
+                        case "Chọn tỉnh": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_default_quanhuyen, R.layout.spinnerlayout);
+                        break;
+                        case "Hà Nội": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_hanoi, R.layout.spinnerlayout);
+                        break;
+                        case "TP Hồ Chí Minh": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_hcm, R.layout.spinnerlayout);
+                            break;
+                        case "An Giang": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_angiang, R.layout.spinnerlayout);
+                            break;
+                        case "Bình Định": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_binhdinh, R.layout.spinnerlayout);
+                            break;
+                        case "Bình Dương": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_binhduong, R.layout.spinnerlayout);
+                            break;
+                        case "Quảng Bình": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_quangbinh, R.layout.spinnerlayout);
+                            break;
+                        case "Quảng Nam": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_quangnam, R.layout.spinnerlayout);
+                            break;
+                        case "Quảng Ngãi": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_quangngai, R.layout.spinnerlayout);
+                            break;
+                        case "Bình Thuận": quanhuyenAdapter=ArrayAdapter.createFromResource(adapterView.getContext(),R.array.array_binhthuan, R.layout.spinnerlayout);
+                            break;
+                        default:break;
+                    }
+                    quanhuyenAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+                    quanhuyenspinner.setAdapter(quanhuyenAdapter);
+                    tinhspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            chonquanhuyen= quanhuyenspinner.getSelectedItem().toString();
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int item_id = item.getItemId();
-        if (item_id == R.id.item_timkiem2) {
-            Toast.makeText(this, "Tìm kiếm", Toast.LENGTH_SHORT).show();
-            Dialog dialog = new Dialog(themdiachi.this);
-            dialog.setContentView(R.layout.dialog_thanhtimkiem);
-            dialog.show();
-            ImageButton thoat;
-            thoat = dialog.findViewById(R.id.btn_exittk);
-            thoat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-        } else if (item_id == R.id.item_shopchocho2) {
-            Toast.makeText(this, "Shop cho chó", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(themdiachi.this, ShopChoCho1.class);
-            startActivity(intent);
-        } else if (item_id == R.id.item_shopchomeo2) {
-            Toast.makeText(this, "Shop cho mèo", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(themdiachi.this, ShopChoCho1.class);
-            startActivity(intent);
-        } else if (item_id == R.id.item_uudai2) {
-            Toast.makeText(this, "Shop cho mèo", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(themdiachi.this, UuDaiMain.class);
-            startActivity(intent);
-        } else if (item_id == R.id.item_spa2) {
-            Toast.makeText(this, "Spa", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(themdiachi.this, SpaActivity1.class);
-            startActivity(intent);
-        } else if (item_id == R.id.item_thuonghieu2) {
-            Toast.makeText(this, "Thương hiệu", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(themdiachi.this, ThuongHieuActivity.class);
-            startActivity(intent);
-        } else if (item_id == R.id.item_trangchu2) {
-            Toast.makeText(this, "Trở về trang chủ", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(themdiachi.this, MainActivity.class);
-            startActivity(intent);
-        } else if (item_id == R.id.item_blog2) {
-        Toast.makeText(this, "Blog", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(themdiachi.this, BlogActivity.class);
-        startActivity(intent);
-    }
         switch (item.getItemId())
         {
             case android.R.id.home:

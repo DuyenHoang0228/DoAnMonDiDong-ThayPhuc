@@ -3,6 +3,7 @@ package com.nhom4.lilpawhome_application;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,7 +37,13 @@ public class nhapemailmoi extends AppCompatActivity {
                 OTPVetification_Dialog_Email otpVetification_dialog_email= new OTPVetification_Dialog_Email(nhapemailmoi.this,email.getText().toString());
                 otpVetification_dialog_email.setCancelable(false);
                 otpVetification_dialog_email.show();
+
+                //CHUYỀN EMAIL MỚI QUA EMAIL
+                String emailmoi=email.getText().toString();
+                Intent z =new Intent(nhapemailmoi.this, email.class);
+                z.putExtra("emailmoi",emailmoi);
             }
         });
+
     }
 }

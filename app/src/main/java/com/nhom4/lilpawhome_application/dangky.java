@@ -34,7 +34,12 @@ public class dangky extends AppCompatActivity {
             public void onClick(View view) {
                 String matkhau = binding.edtNhapmatkhau.getText().toString();
                 String nhaplaimatkhau = binding.edtNhaplaimatkhau.getText().toString();
-                String tendangnhap = binding.edtNhapemailhoacsdt.getText().toString();
+                String tendangnhap = binding.edtNhapsdt.getText().toString();
+                //CHUYỀN SDT QUA TÊN, SDT
+                Intent z =new Intent(dangky.this, sodienthoai.class);
+                z.putExtra("sodienthoai",tendangnhap);
+
+                //
                 int dodaichuoi1 = matkhau.length();
                 int dodaichuoi2 = nhaplaimatkhau.length();
                 int dodaichuoi3 = tendangnhap.length();
@@ -49,7 +54,7 @@ public class dangky extends AppCompatActivity {
                         }
                     }
                     if(sokitutrong > 0){
-                        Toast.makeText(dangky.this, "Tên đăng nhập không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(dangky.this, "Số điện thoại không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
                     }else {
                         if(dodaichuoi1 == dodaichuoi2){
                             String[] kituchuoi1 = matkhau.split("");
@@ -69,10 +74,11 @@ public class dangky extends AppCompatActivity {
                                 }else {
                                     //Hiện dialog nhập otp
                                     //Hiện dialog nhập otp
-                                    OTPVetification_Dialog_Dangky otpVetification_dialog_dangky= new OTPVetification_Dialog_Dangky(dangky.this,binding.edtNhapemailhoacsdt.getText().toString());
+                                    OTPVetification_Dialog_Dangky otpVetification_dialog_dangky= new OTPVetification_Dialog_Dangky(dangky.this,binding.edtNhapsdt.getText().toString());
                                     otpVetification_dialog_dangky.setCancelable(false);
                                     otpVetification_dialog_dangky.show();
                                     Toast.makeText(dangky.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
+
                                    // Intent intent = new Intent(dangky.this, MainActivity.class);
                                    // startActivity(intent);
                                 }
