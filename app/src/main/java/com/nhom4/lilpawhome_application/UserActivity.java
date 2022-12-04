@@ -40,17 +40,6 @@ public class UserActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        binding.lnChoxacnhan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                //Fragment fragmentChoXacnhan = new ChoxacnhanFragment();
-                //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                //fragmentTransaction.replace(R.id.sc_user,fragmentChoXacnhan).commit();
-            }
-        });
         binding.imvLichhenspa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
