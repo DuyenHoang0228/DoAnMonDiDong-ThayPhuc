@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -50,9 +51,9 @@ public class nhapsodienthoaimoi extends AppCompatActivity {
                     otpVetification_dialog_sdt.show();
 
                     //CHUYỀN SDT MỚI QUA SDT
-                    String sodienthoaimoi= sdt.getText().toString();
-                    Intent z =new Intent(nhapsodienthoaimoi.this, sodienthoai.class);
-                    z.putExtra("sodienthoaimoi",sodienthoaimoi);
+//                    String sodienthoaimoi= sdt.getText().toString();
+//                    Intent z =new Intent(nhapsodienthoaimoi.this, sodienthoai.class);
+//                    z.putExtra("sodienthoaimoi",sodienthoaimoi);
                 }
 
             }

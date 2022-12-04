@@ -151,9 +151,9 @@ public class UuDaiMain extends AppCompatActivity {
             Intent intent = new Intent(UuDaiMain.this, ShopChoMeo1.class);
             startActivity(intent);
         } else if (item_id == R.id.item_uudai2) {
-            Toast.makeText(this, "Ưu đãi", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(UuDaiMain.this, UuDaiMain.class);
-            startActivity(intent);
+            Toast.makeText(this, "Bạn đang ở trang Ưu đãi", Toast.LENGTH_SHORT).show();
+           // Intent intent = new Intent(UuDaiMain.this, UuDaiMain.class);
+           // startActivity(intent);
         } else if (item_id == R.id.item_spa2) {
             Toast.makeText(this, "Spa", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(UuDaiMain.this, SpaActivity1.class);

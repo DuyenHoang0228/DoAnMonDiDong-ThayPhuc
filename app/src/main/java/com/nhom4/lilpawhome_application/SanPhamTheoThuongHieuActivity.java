@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -60,8 +61,16 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
         imvTroVe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // onBackPressed();
-                Intent intent = new Intent(SanPhamTheoThuongHieuActivity.this, ThuongHieuActivity.class);
+               onBackPressed();
+            }
+        });
+        //Set sự kiện click vào ô sản phẩm thì chuyển đến trang sản phẩm chi tiết
+        binding.gvSanphamtheothuonghieu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(SanPhamTheoThuongHieuActivity.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = sanPhamLilPawHomes.get(position);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
                 startActivity(intent);
             }
         });

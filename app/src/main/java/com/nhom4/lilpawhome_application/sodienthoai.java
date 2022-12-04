@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -44,11 +45,16 @@ TextView sodienthoai;
             public void onClick(View view) {
                 Intent intent = new Intent(sodienthoai.this, nhapsodienthoaimoi.class);
                 startActivity(intent);
+                LayoutInflater inflater= getLayoutInflater();
+                View sdt = inflater.inflate(R.layout.activity_nhapsodienthoaimoi,null);
+                sodienthoai= sdt.findViewById(R.id.edt_nhapsodienthoaimoi);
+                String dtmoi=sodienthoai.getText().toString();
+                sodienthoai.setText(dtmoi);
 
-                //Lấy dữ liệu từ chỗ đổi sdt
-                Intent y=getIntent();
-                String sdtmoi=y.getStringExtra("sodienthoaimoi");
-                sodienthoai.setText(sdtmoi);
+//               //Lấy dữ liệu từ chỗ đổi sdt
+//                Intent y=getIntent();
+//                String sdtmoi=y.getStringExtra("sodienthoaimoi");
+//                sodienthoai.setText(sdtmoi);
             }
         });
         //Lấy dữ liệu từ chỗ đăng ký

@@ -55,7 +55,7 @@ public class datlaimatkhau extends AppCompatActivity{
                             Toast.makeText(datlaimatkhau.this, "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(datlaimatkhau.this, MainActivity.class);
                             startActivity(intent);
-                            finish();
+                           // onBackPressed();
                         } else if (count > 0) {
                             Toast.makeText(datlaimatkhau.this, "Mật khẩu không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
                         } else {

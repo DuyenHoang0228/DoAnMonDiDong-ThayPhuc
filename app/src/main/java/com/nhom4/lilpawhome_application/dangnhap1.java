@@ -79,6 +79,7 @@ public class dangnhap1 extends AppCompatActivity {
                 xacnhan.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
                         //Chuyền dữ liệu
                    //     EditText taikhoangg;
                      //   taikhoangg=findViewById(R.id.edt_nhapdcgg);
