@@ -78,7 +78,6 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.MyView> 
                             dialog.dismiss();
                         }
                     });
-                    dialog.setCanceledOnTouchOutside(false);
                     dialog.show();
                 }
             });
@@ -98,8 +97,8 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.MyView> 
                     }else{
                         //Show custom dialog
                         Dialog dialog = new Dialog(btngiamsoluong.getContext());
+                        dialog.setCanceledOnTouchOutside(true);
                         dialog.setContentView(R.layout.dialog_xoasanpham);
-
                         //Ok
                         TextView dongyxoa = dialog.findViewById(R.id.txt_dongyxoa);
                         dongyxoa.setOnClickListener(new View.OnClickListener() {
@@ -127,7 +126,6 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.MyView> 
                                 dialog.dismiss();
                             }
                         });
-                        dialog.setCanceledOnTouchOutside(false);
                         dialog.show();
                     }
                 }
@@ -181,6 +179,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.MyView> 
                 }
             }
             GioHangActivity.txttongthanhtoan.setText(String.format("%.0fđ", tongthanhtoantemp));
+            MainActivity.tongthanhtoan = tongthanhtoantemp;
             tongthanhtoantemp = 0.0;
         }
     }

@@ -41,6 +41,29 @@ public class ThanhtoanActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        loadListSP();
+
+        //============Adapter Phương thức thanh toán====================
+        loadPTThanhtoan();
+        loadListPTTT();
+
+        binding.txtTongsotien.setText(String.format("%.0fđ",MainActivity.tongthanhtoan));
+        binding.txtTongthanhtoan.setText(String.format("%.0fđ",MainActivity.tongthanhtoan));
+    }
+
+    private void loadListPTTT() {
+        RecyclerViewLayoutManagerPT = new LinearLayoutManager(getApplicationContext());
+        binding.rvPhuongthucthanhtoan.setLayoutManager(RecyclerViewLayoutManagerPT);
+
+        adapterPT = new HorAdapterPhuongThucTT(phuongThucTTS);
+
+        // Thiết lập phương hướng của RecyclerView (ngang)
+        HorizontalLayout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        binding.rvPhuongthucthanhtoan.setLayoutManager(HorizontalLayout);
+        binding.rvPhuongthucthanhtoan.setAdapter(adapterPT);
+    }
+
+    private void loadListSP() {
         RecyclerViewLayoutManagerSP = new LinearLayoutManager(getApplicationContext());
         binding.rvDssanpham.setLayoutManager(RecyclerViewLayoutManagerSP);
 
@@ -57,18 +80,6 @@ public class ThanhtoanActivity extends AppCompatActivity {
                 R.drawable.line_divider_gray));
 
         binding.rvDssanpham.setAdapter(adapterSP);
-
-        //============Adapter Phương thức thanh toán====================
-        loadPTThanhtoan();
-        RecyclerViewLayoutManagerPT = new LinearLayoutManager(getApplicationContext());
-        binding.rvPhuongthucthanhtoan.setLayoutManager(RecyclerViewLayoutManagerPT);
-
-        adapterPT = new HorAdapterPhuongThucTT(phuongThucTTS);
-
-        // Thiết lập phương hướng của RecyclerView (ngang)
-        HorizontalLayout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        binding.rvPhuongthucthanhtoan.setLayoutManager(HorizontalLayout);
-        binding.rvPhuongthucthanhtoan.setAdapter(adapterPT);
     }
 
     private void loadPTThanhtoan() {

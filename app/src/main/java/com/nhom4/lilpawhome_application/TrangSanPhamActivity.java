@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -22,6 +24,7 @@ import android.widget.Toast;
 import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityTrangSanPhamBinding;
 import com.nhom4.models.DanhGiaSanPhamM;
+import com.nhom4.models.GioHang;
 import com.nhom4.models.SanPham;
 import com.nhom4.models.SanPhamLilPawHome;
 import com.nhom4.view.ExpandableHeightGridView;
@@ -42,6 +45,8 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     ArrayList<DanhGiaSanPhamM> dsDanhGiaSanPham;
     DBHelperSanPham dbHelperSanPham;
 
+    int idhinhsanpham;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,10 +66,13 @@ public class TrangSanPhamActivity extends AppCompatActivity {
 
         createDb();
 
-        addEvents();
+
         showData();
         loadData();
+        addEvents();
         sanPhamDeXuat();
+
+
     }
 
     private void sanPhamDeXuat() {
@@ -129,6 +137,53 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                 startActivity(shareIntent);
             }
         });
+        binding.btnThemvaogiohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), String.format("Đã thêm sản phẩm %s vào giỏ hàng.", binding.txtTensanphamTrangsanpham.getText()), Toast.LENGTH_LONG).show();
+                addToCart();
+            }
+        });
+        binding.btnMuangay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addToCart();
+                Intent intent = new Intent(TrangSanPhamActivity.this, GioHangActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void addToCart() {
+        int soluong = 1;
+        double Giamoi = Double.parseDouble(binding.txtGiamoiTrangsanpham.getText().toString().replaceAll("đ",""));
+        double Giacu = Double.parseDouble(binding.txtGiacu.getText().toString().replaceAll("đ",""));
+        String Tensanpham = binding.txtTensanphamTrangsanpham.getText().toString();
+        int Idsanpham = Integer.parseInt(binding.txtIdsanpham.getText().toString());
+        String Loaisanpham1 = binding.txtLoaisanpham1.getText().toString();
+        String Tenthuonghieu = binding.txtThuonghieuTrangsanpham.getText().toString();
+        String stringhinhsp = binding.txtStringhinhsp.getText().toString();
+
+        if (MainActivity.manggiohang.size()>0) {
+            boolean exists = false;
+            for (int i = 0; i < MainActivity.manggiohang.size();i++){
+                //Iterate trong mảng giỏ hàng xem có id sản phẩm trùng không. Nếu có thì set số lượng sp trong mảng giỏ hàng +1
+                if (MainActivity.manggiohang.get(i).getIdSanPham() == Idsanpham) {
+                    MainActivity.manggiohang.get(i).setSoluongsp(MainActivity.manggiohang.get(i).getSoluongsp() + 1);
+                    MainActivity.manggiohang.get(i).setTongtiensp(MainActivity.manggiohang.get(i).getSoluongsp() * MainActivity.manggiohang.get(i).getGiaMoiSanPham());
+                    MainActivity.manggiohang.get(i).setSelected(false);
+                    exists = true;
+                }
+            }
+            //Nếu sau khi chạy vòng lặp mà vẫn không tìm thấy sản phẩm trùng trong giỏ hàng thì tạo mới sản phẩm trong giỏ hàng
+            if (!exists) {
+                MainActivity.manggiohang.add(new GioHang(Idsanpham, Tensanpham, Giamoi, Giacu,
+                        idhinhsanpham, Loaisanpham1, Tenthuonghieu, soluong, Giamoi, false));
+            }
+        }else{
+            MainActivity.manggiohang.add(new GioHang(Idsanpham, Tensanpham, Giamoi, Giacu,
+                    idhinhsanpham, Loaisanpham1, Tenthuonghieu, soluong, Giamoi, false));
+        }
     }
 
     private void loadData() {
@@ -188,22 +243,26 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     private void showData() {
         binding.gvSanphamdexuat.setExpanded(true);
         sanPhamLilPawHomes=new ArrayList<>();
+
         Intent intent = getIntent();
         int IDsanpham = intent.getIntExtra("IDsanpham",0);
 
         Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
                 " WHERE "+ DBHelperSanPham.COL_ID+" = "+ IDsanpham);
+
         String loaiSP1="";
 
         while(c.moveToNext())
         {
             int resourceId = getResources().getIdentifier(c.getString(5), "drawable", getPackageName());
+            idhinhsanpham = resourceId;
             binding.txtTensanphamTrangsanpham.setText(c.getString(1));
             binding.txtGiamoiTrangsanpham.setText(c.getDouble(2)+"đ");
             binding.txtGiacu.setText(c.getDouble(3)+"đ");
             String giamgia= "Tiết kiệm "+ Math.round(c.getDouble(4)*100)  +"%";
             binding.txtGiamgia.setText(giamgia);
-
+            binding.txtLoaisanpham1.setText(c.getString(6));
+            binding.txtIdsanpham.setText(String.valueOf(c.getInt(0)));
             binding.imvAnhsanpham.setImageResource(resourceId);
             binding.txtThongtinsanpham.setText(c.getString(10));
             binding.txtSosaodanhgia.setText(c.getDouble(11)+"");

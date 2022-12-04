@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -54,7 +55,6 @@ public class SanPhamAdapterLilPawHome extends BaseAdapter {
             holder= new ViewHolder();
             LayoutInflater layoutInflater= (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view=layoutInflater.inflate(item_layout,null);
-
             holder.imvAnhSanPham=view.findViewById(R.id.imv_hinhsanpham);
             holder.txtTenSanPham=view.findViewById(R.id.txt_tensanpham);
             holder.txtTenThuongHieu=view.findViewById(R.id.txt_brandsanpham);
@@ -75,8 +75,8 @@ public class SanPhamAdapterLilPawHome extends BaseAdapter {
 
         holder.txtTenSanPham.setText(sp.getTenSanPham());
         holder.txtTenThuongHieu.setText(sp.getThuongHieuSanPham());
-        holder.txtGiaMoi.setText(String.valueOf(sp.getGiaMoiSanPham()));
-        holder.txtGiaCu.setText(String.valueOf(sp.getGiaCuSanPham()));
+        holder.txtGiaMoi.setText(String.format("%.0fđ",sp.getGiaMoiSanPham()));
+        holder.txtGiaCu.setText(String.format("%.0fđ",sp.getGiaCuSanPham()));
         holder.txtloaiSanPham1.setText(sp.getLoaiSanPham1());
         holder.txtidsanpham.setText(String.valueOf(sp.getIdSanPham()));
         holder.txtstringhinhsp.setText(sp.getIdAnhSanPham());
@@ -97,8 +97,8 @@ public class SanPhamAdapterLilPawHome extends BaseAdapter {
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), String.format("Đã thêm sản phẩm %s vào giỏ hàng.", holder.txtTenSanPham.getText()), Toast.LENGTH_LONG).show();
                 int soluong = 1;
-                double Giamoi = Double.parseDouble(holder.txtGiaMoi.getText().toString());
-                double Giacu = Double.parseDouble(holder.txtGiaCu.getText().toString());
+                double Giamoi = Double.parseDouble(holder.txtGiaMoi.getText().toString().replaceAll("đ",""));
+                double Giacu = Double.parseDouble(holder.txtGiaCu.getText().toString().replaceAll("đ",""));
                 String Tensanpham = holder.txtTenSanPham.getText().toString();
                 int Idsanpham = Integer.parseInt(holder.txtidsanpham.getText().toString());
                 String stringhinhsp = holder.txtstringhinhsp.getText().toString();

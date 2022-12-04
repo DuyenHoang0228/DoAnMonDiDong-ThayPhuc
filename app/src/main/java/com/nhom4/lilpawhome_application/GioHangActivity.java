@@ -58,6 +58,8 @@ public class GioHangActivity extends AppCompatActivity {
         dividerItemDecoration1.setDrawable(ContextCompat.getDrawable(getBaseContext(),
                 R.drawable.line_divider));
 
+        resetCheckbox();
+
         binding.rvGiohang.setAdapter(adapter);
 
         displaybackground();//Hiện giỏ hàng trống
@@ -104,9 +106,17 @@ public class GioHangActivity extends AppCompatActivity {
                             dialog.dismiss();
                         }
                     });
+                    dialog.show();
                 }
             }
         });
+    }
+
+    private void resetCheckbox() {
+        for (int i = 0; i <= MainActivity.manggiohang.size()-1; i++){
+            MainActivity.manggiohang.get(i).setSelected(false);
+            adapter.notifyDataSetChanged();
+        }
     }
 
     private void displaybackground() {
@@ -183,6 +193,8 @@ public class GioHangActivity extends AppCompatActivity {
         binding.txtEmptycart.setVisibility(MainActivity.manggiohang.size() <= 0 ? View.VISIBLE : View.GONE);
         binding.imvEmptycart.setVisibility(MainActivity.manggiohang.size() <= 0 ? View.VISIBLE : View.GONE);
         binding.rvGiohang.setVisibility(MainActivity.manggiohang.size() > 0 ? View.VISIBLE : View.GONE);
+        resetCheckbox();
         super.onResume();
     }
+
 }

@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,6 +43,8 @@ public class ShopChoCho1 extends AppCompatActivity {
     ImageView imvGiohang, imvTrove;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,9 +65,14 @@ public class ShopChoCho1 extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
+
+
+
         createDb();
         loadData();
         addEvents();
+
+        //Cố định scroll của gridview
 
         //Intent qua màn hình giỏ hàng
         ImageView imvgiohang = findViewById(R.id.imv_giohang);

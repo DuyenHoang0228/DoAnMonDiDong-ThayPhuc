@@ -9,6 +9,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,7 +33,7 @@ import com.nhom4.models.SanPhamLilPawHome;
 import com.nhom4.view.ExpandableHeightGridView;
 import com.nhom4.view.adapters.Danhmuc1Adapter;
 import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
-import com.nhom4.adapters.HorAdapterSanphamLilPawHome;
+import com.nhom4.view.adapters.HorAdapterSanphamLilPawHome;
 import com.nhom4.databases.DBHelperSanPham;
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     SanPhamAdapterLilPawHome adapter3;
     DBHelperSanPham dbHelperSanPham;
     public static ArrayList<GioHang> manggiohang; //Khai báo mảng giỏ hàng public để làm mảng toàn cục, luôn xuất hiện ở màn hình khác
-
+    public static double tongthanhtoan;
 
     private ImageSlider imageSlider;
     @Override
@@ -400,7 +401,6 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(SanPhamLilPawHome details) {
                 Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
                 intent.putExtra("IDsanpham",details.getIdSanPham());
-
                 startActivity(intent);
             }
         });
