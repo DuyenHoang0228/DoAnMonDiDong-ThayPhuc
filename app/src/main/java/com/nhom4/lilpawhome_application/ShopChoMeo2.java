@@ -28,7 +28,7 @@ public class ShopChoMeo2 extends AppCompatActivity {
     SanPhamAdapterLilPawHome adapter;
     ArrayList<SanPhamLilPawHome> sanPhamArrayList;
     DBHelperSanPham dbHelperSanPham;
-    ImageView imvTimKiem;
+    ImageView imvTimKiem, imvTroVe;
     EditText edtTimKiem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class ShopChoMeo2 extends AppCompatActivity {
         setContentView(binding.getRoot());
         imvTimKiem=findViewById(R.id.imv_timkiem);
         edtTimKiem=findViewById(R.id.edt_timkiem);
+        imvTroVe=findViewById(R.id.imv_trove);
         createDb();
         loadData();
         addEvents();
@@ -70,6 +71,12 @@ public class ShopChoMeo2 extends AppCompatActivity {
                 binding.gvShopchomeo2.setAdapter(adapter);
                 hideKeyboard(ShopChoMeo2.this);
 
+            }
+        });
+        imvTroVe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }

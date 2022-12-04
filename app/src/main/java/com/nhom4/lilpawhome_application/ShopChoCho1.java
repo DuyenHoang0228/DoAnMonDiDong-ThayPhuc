@@ -39,7 +39,8 @@ public class ShopChoCho1 extends AppCompatActivity {
 
     ImageView imvTimKiem;
     EditText edtTimKiem;
-    ImageView imvGiohang;
+    ImageView imvGiohang, imvTrove;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,7 @@ public class ShopChoCho1 extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_shopchocho12);
         imvTimKiem=findViewById(R.id.imv_timkiem);
         edtTimKiem=findViewById(R.id.edt_timkiem);
+        imvTrove=findViewById(R.id.imv_trove);
         getSupportActionBar().setBackgroundDrawable(
                 new ColorDrawable(Color.parseColor("#ffffff")));
         setContentView(binding.getRoot());
@@ -73,6 +75,7 @@ public class ShopChoCho1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private void addEvents() {
@@ -105,6 +108,12 @@ public class ShopChoCho1 extends AppCompatActivity {
                 intent.putExtra("IDsanpham",spitem.getIdSanPham());
 
                 startActivity(intent);
+            }
+        });
+        imvTrove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }
