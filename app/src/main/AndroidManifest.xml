@@ -15,6 +15,13 @@
         android:theme="@style/Theme.LilpawHome_Application"
         tools:targetApi="31">
         <activity
+            android:name=".PTVanchuyenActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DungNgayVoucher"
             android:exported="false">
             <meta-data
@@ -118,17 +125,14 @@
         <activity
             android:name=".UserActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar"
-            >
+            android:theme="@style/Theme.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".SanPhamTheoThuongHieuActivity"
-            android:exported="false"
-            >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -240,7 +244,6 @@
             android:name=".nhapemailmoi"
             android:exported="false"
             android:label="Nhập Email mới">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -273,15 +276,14 @@
             android:name=".taikhoanvabaomat"
             android:exported="false"
             android:label="Tài khoản và bảo mật">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".thietlaptaikhoan"
-            android:label="Thiết lập tài khoản"
-            android:exported="false">
+            android:exported="false"
+            android:label="Thiết lập tài khoản">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -505,7 +507,6 @@
             android:name=".SpaActivity1"
             android:exported="false"
             android:theme="@style/Theme.NoActionBar">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -521,7 +522,6 @@
             android:name=".gioithieuapp2"
             android:exported="false"
             android:theme="@style/Theme.offactionbar">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -538,6 +538,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
         <activity
             android:name=".xemtatcaSPActivity"
             android:exported="false"

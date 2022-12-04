@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom4.lilpawhome_application.MainActivity;
@@ -24,7 +25,7 @@ public class HorSanPhamAdapter extends RecyclerView.Adapter<HorSanPhamAdapter.My
 
         ImageView imvhinhsanpham;
         TextView txttensanpham, txtbrandsanpham, txtgiasanphamchuagiam, txtgiasanphamdagiam;
-        RelativeLayout itemsanpham;
+        ConstraintLayout itemsanpham;
         // parameterised constructor for View Holder class
         // which takes the view as a parameter
         public MyView(View view)

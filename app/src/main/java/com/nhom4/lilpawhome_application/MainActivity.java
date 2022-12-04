@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     DBHelperSanPham dbHelperSanPham;
     public static ArrayList<GioHang> manggiohang; //Khai báo mảng giỏ hàng public để làm mảng toàn cục, luôn xuất hiện ở màn hình khác
     public static double tongthanhtoan;
+    Cursor c;
 
     private ImageSlider imageSlider;
     @Override
@@ -340,8 +341,8 @@ public class MainActivity extends AppCompatActivity {
         sanPhamgiamgia = new ArrayList<>();
 
         //truy vấn
-        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
-                " WHERE "+ DBHelperSanPham.COL_DISCOUNT+" > 0.25 ");
+        c = dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
+                " WHERE "+ DBHelperSanPham.COL_DISCOUNT+" > 0.1 ");
         while(c.moveToNext())
         {
             sanPhamgiamgia.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
