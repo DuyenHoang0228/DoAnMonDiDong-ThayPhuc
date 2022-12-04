@@ -553,7 +553,7 @@ public class    ShopChoMeo1 extends AppCompatActivity {
         }
         if (item.getItemId()==R.id.mn_dodungchomeo)
         {
-            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeothucan);
+            binding.imvBannerthucanchomeo.setImageResource(R.drawable.shopchomeododung);
             loadDoDung();
         }
         if (item.getItemId()==R.id.mn_dochoichomeo)
