@@ -229,6 +229,7 @@
                         android:visibility="gone"/>
                 </LinearLayout>
                 <TextView
+                    android:id="@+id/txt_xemtatca_trangsp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Xem tất cả → "
