@@ -5,13 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.appcompat.app.WindowDecorActionBar;
 
 import com.nhom4.lilpawhome_application.R;
 import com.nhom4.lilpawhome_application.taikhoannganhang;
+
 import com.nhom4.models.TaikhoanNH;
 
 import java.util.List;
@@ -20,6 +18,7 @@ public class TKNH_Adapter extends BaseAdapter {
     taikhoannganhang activity;
     int item_layout;
     List<TaikhoanNH> tknhs;
+
     public TKNH_Adapter(taikhoannganhang activity, int item_layout, List<TaikhoanNH> tknhs) {
         this.activity = activity;
         this.item_layout = item_layout;
@@ -57,6 +56,7 @@ public class TKNH_Adapter extends BaseAdapter {
         }
         return view;
     }
+
     public static class ViewHolder{
         TextView txtTknhInfo;
     }

@@ -11,18 +11,38 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.ZoomButtonsController;
+
+import com.nhom4.models.DiaChi;
+import com.nhom4.models.TaikhoanNH;
+import com.nhom4.view.adapters.TKNH_Adapter;
+import com.nhom4.view.adapters.diachiAdapter;
+
+import java.util.ArrayList;
 
 public class diachi extends AppCompatActivity {
     Button themdiachi;
+    ListView diachi_list;
+    diachiAdapter adapter;
+    ArrayList<DiaChi> diachis;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_diachi);
         themdiachi=findViewById(R.id.btn_themdiachimoi);
+        diachi_list= findViewById(R.id.lv_diachi);
+
         addEvents();
+        loadData();
+    }
+
+    private void loadData() {
+        diachis=new ArrayList<>();
+        diachis.add(new DiaChi("Thảo Duyên", "012345678","Số 106, khu phố 3, Linh Xuân, Thủ Đức, TP.HCM"));
+        adapter = new diachiAdapter(diachi.this,R.layout.diachi_list,diachis);
+        diachi_list.setAdapter(adapter);
     }
 
     private void addEvents() {
