@@ -82,7 +82,7 @@ public class SpaActivity2 extends AppCompatActivity implements AdapterView.OnIte
                         int month = dpChonNgayDatLich.getMonth();
                         int day = dpChonNgayDatLich.getDayOfMonth();
                         Toast.makeText(SpaActivity2.this, "Bạn đã chọn ngày: " + day+"-"+ (month + 1) +"-"+ year, Toast.LENGTH_LONG).show();
-                        binding.txtNgaydatlich.setText(day+"-"+ (month + 1) +"-"+ year);
+                        binding.txtNgaydatlich.setText("Ngày: " + day+"-"+ (month + 1) +"-"+ year);
                         dialog.dismiss();
                     }
                 });
