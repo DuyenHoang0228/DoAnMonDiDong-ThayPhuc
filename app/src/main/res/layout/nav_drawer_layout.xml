@@ -23,13 +23,7 @@
             android:textSize="22sp"
             android:textColor="#FFA0CA"
             android:fontFamily="@font/montserratbold"></TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="duyenhnt20411@st.uel.edu.vn"
-            android:textSize="15sp"
-            android:textColor="#FFA0CA"
-            android:fontFamily="@font/montserratregular"></TextView>
+
     </LinearLayout>
     <LinearLayout
         android:padding="10dp"
@@ -132,6 +126,7 @@
             android:text="Khu phố 3, phường Linh Xuân, TP.Thủ Đức, TP.HCM"
             android:textSize="15sp"
             android:fontFamily="@font/montserratregular"
+            android:gravity="left"
             ></TextView>
         <TextView
             android:layout_marginTop="5dp"
@@ -140,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đông Hòa, Dĩ An, Bình Dương"
-            android:gravity="center"
+            android:gravity="left"
             android:textSize="15sp"
             android:fontFamily="@font/montserratregular"
             ></TextView>
@@ -151,7 +146,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nguyên Đình Chiểu, Đa Kao, Quận 1, TP.HCM"
-            android:gravity="center"
+            android:gravity="left"
             android:textSize="15sp"
             android:fontFamily="@font/montserratregular"
             ></TextView>

@@ -3,6 +3,8 @@ package com.nhom4.lilpawhome_application;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,14 +13,17 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
@@ -58,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     Cursor c;
     public static ArrayList<SanPhamLilPawHome> spYeuThich;
     private ImageSlider imageSlider;
+    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,13 +71,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         // setContentView(binding.getRoot());
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.custom_actionbar_home);
-        getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#ffffff")));
         View view = binding.getRoot();
         setContentView(view);
+        drawerLayout = findViewById(R.id.src_home);
 
         BottomNavigationView navigationView = findViewById(R.id.bottom_nav);
         navigationView.setSelectedItemId(R.id.nav_action_home);
@@ -137,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
         ImageView chat = findViewById(R.id.imv_chat);
         ImageView giohang = findViewById(R.id.imv_giohang);
+        ;
 
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -235,6 +238,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ShopChoMeo1.class);
                 startActivity(intent);
+            }
+        });
+        binding.imvDrawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
 
