@@ -14,15 +14,15 @@
         android:layout_height="wrap_content"
         android:text="Tên hiện tại của bạn"
         android:textColor="@color/black"
-        android:fontFamily="@font/montserrat_light"
+        android:fontFamily="@font/montserrat"
         android:textSize="15sp"></TextView>
     <EditText
-        android:id="@+id/txt_tenhientai"
+        android:id="@+id/edt_tenhientai"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/customshapeborderwhite"
-        android:text="(+84)12345678"
+        android:text="littlemermaid@user"
         android:textColor="@color/black"
         android:fontFamily="@font/montserrat_semibold"
         android:textSize="15sp"

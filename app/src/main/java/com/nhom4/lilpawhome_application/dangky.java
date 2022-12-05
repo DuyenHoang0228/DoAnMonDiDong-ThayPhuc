@@ -12,13 +12,13 @@ import com.nhom4.lilpawhome_application.databinding.ActivityDangkyBinding;
 public class dangky extends AppCompatActivity {
 
     ActivityDangkyBinding binding;
+    public static String sdtdk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityDangkyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         addEvent();
     }
 
@@ -36,6 +36,7 @@ public class dangky extends AppCompatActivity {
                 String matkhau = binding.edtNhapmatkhau.getText().toString();
                 String nhaplaimatkhau = binding.edtNhaplaimatkhau.getText().toString();
                 String tendangnhap = binding.edtNhapsdt.getText().toString();
+                sdtdk=tendangnhap;
                 //CHUYỀN SDT QUA TÊN, SDT
               //  Intent z =new Intent(dangky.this, sodienthoai.class);
              //   z.putExtra("sodienthoai",tendangnhap);
