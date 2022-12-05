@@ -149,17 +149,16 @@
                 android:textColor="#000000"
 
                 android:textSize="13sp"/>
-
             <TextView
-                android:id="@+id/txt_thongtinsanpham"
+                android:layout_marginTop="13dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:fontFamily="@font/montserrat"
                 android:text="- Thương hiệu đến từ công ty uy tín Synergy Labs của Mỹ được đánh giá là 1 trong những công ty danh tiếng nhất toàn cầu về các sản phẩm chuyên dụng chăm sóc sức khỏe cho thú cưng. - Thương hiệu đến từ công ty uy tín Synergy Labs của Mỹ được đánh giá là 1 trong những công ty danh tiếng nhất toàn cầu về các sản phẩm chuyên dụng chăm sóc sức khỏe cho thú cưng. - Thương hiệu đến từ công ty uy tín Synergy Labs của Mỹ được đánh giá là 1 trong những công ty danh tiếng nhất toàn cầu về các sản phẩm chuyên dụng chăm sóc sức khỏe cho thú cưng."
+                android:id="@+id/txt_thongtinsanpham"
+                android:textColor="#000000"
 
-                android:textColor="#000000" />
-
+                android:fontFamily="@font/montserrat"
+                />
             <Button
                 android:padding="10dp"
                 android:layout_width="match_parent"
@@ -229,17 +228,16 @@
                         android:layout_height="0dp"
                         android:visibility="gone"/>
                 </LinearLayout>
-
                 <TextView
                     android:id="@+id/txt_xemtatcadanhgia"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_gravity="right"
-                    android:layout_marginLeft="20dp"
+                    android:textColor="#FF0000"
                     android:fontFamily="@font/montserrat_semibold"
                     android:text="Xem tất cả → "
 
-                    android:textColor="#FF0000" />
+                    android:layout_marginLeft="20dp"/>
                 />
 
             </LinearLayout>

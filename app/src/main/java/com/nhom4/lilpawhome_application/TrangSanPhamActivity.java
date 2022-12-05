@@ -49,7 +49,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     ImageView imvGioHang, imvTroVe;
 
     int idhinhsanpham;
-
+    int IDsanpham;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +68,8 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         binding.btnXemthem.setText("Xem thêm");
         binding.txtThongtinsanpham.setMaxLines(3);
 
+        Intent intent = getIntent();
+        IDsanpham = intent.getIntExtra("IDsanpham", 0);
         createDb();
 
 
@@ -75,6 +77,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         loadData();
         addEvents();
         sanPhamDeXuat();
+        ktYeuThich();
 
 
     }
@@ -83,7 +86,10 @@ public class TrangSanPhamActivity extends AppCompatActivity {
 
     }
 
-
+    public void intentt(){
+        Intent intent = new Intent(TrangSanPhamActivity.this, HinhAnhDanhGiaSanPham.class);
+        startActivity(intent);
+    }
     private void addEvents() {
         binding.btnXemthem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,20 +105,54 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                 }
             }
         });
+        binding.imvAnhdanhgia1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentt();
+            }
+        });
+        binding.imvAnhdanhgia2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentt();
+            }
+        });
+        binding.imvAnhdanhgia3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentt();
+            }
+        });
+        binding.imvAnhdanhgia4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentt();
+            }
+        });
+        binding.txtXemtatcaTrangsp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangSanPhamActivity.this, DanhGiaSanPham.class);
+                startActivity(intent);
+            }
+        });
         binding.imvTraitim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(binding.imvTraitim.getTag()==null || binding.imvTraitim.getTag()=="empty")
+                if(binding.imvTraitim.getTag()=="empty")
                 {
                     binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich_full);
                     binding.imvTraitim.setTag("full");
-                    Toast.makeText(TrangSanPhamActivity.this, "Đã thêm sản phẩm vào yêu thích", Toast.LENGTH_SHORT).show();
+                    addFavorite();
+                    Toast.makeText(TrangSanPhamActivity.this, "Thêm sản phẩm vào yêu thích", Toast.LENGTH_SHORT).show();
+
 
                 }
                 else
                 {
                     binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich);
                     binding.imvTraitim.setTag("empty");
+                    removeFavorite();
                     Toast.makeText(TrangSanPhamActivity.this, "Bỏ yêu thích", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -183,7 +223,41 @@ public class TrangSanPhamActivity extends AppCompatActivity {
             }
         });
     }
+    private  void ktYeuThich(){
+        boolean exists = false;
+        if (MainActivity.spYeuThich.size() > 0) {
+            for (int i = 0; i < MainActivity.spYeuThich.size(); i++) {
+                if (MainActivity.spYeuThich.get(i).getIdSanPham() == IDsanpham) {
+                    exists = true;
+                }
+            }
+        }
+        if(exists==false){
+            binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich);
+            binding.imvTraitim.setTag("empty");
+        }else {
+            binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich_full);
+            binding.imvTraitim.setTag("full");
+        }
+    }
+    private void addFavorite(){
+            Cursor c = dbHelperSanPham.getData(" SELECT * FROM " + DBHelperSanPham.TBL_NAME +
+                    " WHERE " + DBHelperSanPham.COL_ID + " = " + IDsanpham);
+            while (c.moveToNext()) {
+                MainActivity.spYeuThich.add(new SanPhamLilPawHome(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3),
+                        c.getDouble(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9),
+                        c.getString(10), c.getDouble(11), c.getDouble(12), c.getDouble(13)));
+            }
+            c.close();
 
+    }
+    private  void removeFavorite() {
+        for(int i =0; i< MainActivity.spYeuThich.size(); i++){
+            if(MainActivity.spYeuThich.get(i).getIdSanPham()==IDsanpham){
+                MainActivity.spYeuThich.remove(MainActivity.spYeuThich.get(i));
+            }
+        }
+    }
     private void addToCart() {
         int soluong = 1;
         double Giamoi = Double.parseDouble(binding.txtGiamoiTrangsanpham.getText().toString().replaceAll("đ",""));
@@ -274,8 +348,8 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         binding.gvSanphamdexuat.setExpanded(true);
         sanPhamLilPawHomes=new ArrayList<>();
 
-        Intent intent = getIntent();
-        int IDsanpham = intent.getIntExtra("IDsanpham",0);
+//        Intent intent = getIntent();
+//        int IDsanpham = intent.getIntExtra("IDsanpham",0);
 
         Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
                 " WHERE "+ DBHelperSanPham.COL_ID+" = "+ IDsanpham);

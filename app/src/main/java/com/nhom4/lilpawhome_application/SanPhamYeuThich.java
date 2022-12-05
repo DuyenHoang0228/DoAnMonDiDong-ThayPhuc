@@ -25,7 +25,7 @@ public class SanPhamYeuThich extends AppCompatActivity {
 
     ActivitySanPhamYeuThichBinding binding;
     DBHelperSanPham db;
-    ArrayList<SanPhamLilPawHome> spYeuThich;
+    //ArrayList<SanPhamLilPawHome> spYeuThich;
     SanPhamAdapterLilPawHome adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,18 @@ public class SanPhamYeuThich extends AppCompatActivity {
         addEvents();
         createDb();
         loadData();
+        addEvent();
+    }
+
+    private void addEvent() {
+        binding.gvSanphamyeuthich.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(SanPhamYeuThich.this, TrangSanPhamActivity.class);
+                intent.putExtra("IDsanpham", MainActivity.spYeuThich.get(i).getIdSanPham());
+                startActivity(intent);
+            }
+        });
     }
 
     private void addEvents() {
@@ -59,14 +71,14 @@ public class SanPhamYeuThich extends AppCompatActivity {
     }
     private void loadData() {
 
-        spYeuThich = new ArrayList<>();
-        Cursor c = db.getData(" SELECT * FROM " + DBHelperSanPham.TBL_NAME +
-                    " WHERE " + DBHelperSanPham.COL_OLDPRICE + " > 50000" );
-        while (c.moveToNext()) {
-            spYeuThich.add(new SanPhamLilPawHome(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3), c.getDouble(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10), c.getDouble(11), c.getDouble(12), c.getDouble(13)));
-            }
-        c.close();
-        adapter = new SanPhamAdapterLilPawHome(SanPhamYeuThich.this, R.layout.list_sanpham_id, spYeuThich);
+//        spYeuThich = new ArrayList<>();
+//        Cursor c = db.getData(" SELECT * FROM " + DBHelperSanPham.TBL_NAME +
+//                    " WHERE " + DBHelperSanPham.COL_OLDPRICE + " > 50000" );
+//        while (c.moveToNext()) {
+//            spYeuThich.add(new SanPhamLilPawHome(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3), c.getDouble(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10), c.getDouble(11), c.getDouble(12), c.getDouble(13)));
+//            }
+//        c.close();
+        adapter = new SanPhamAdapterLilPawHome(SanPhamYeuThich.this, R.layout.list_sanpham_id, MainActivity.spYeuThich);
         binding.gvSanphamyeuthich.setAdapter(adapter);
 
     }
