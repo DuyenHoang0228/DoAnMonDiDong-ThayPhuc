@@ -1,6 +1,7 @@
 package com.nhom4.lilpawhome_application;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
@@ -61,6 +64,12 @@ public class MainActivity extends AppCompatActivity {
        // setContentView(R.layout.activity_main);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         // setContentView(binding.getRoot());
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.custom_actionbar_home);
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#ffffff")));
         View view = binding.getRoot();
         setContentView(view);
 
@@ -118,7 +127,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void addEvent() {
-        binding.imvChat.setOnClickListener(new View.OnClickListener() {
+//        binding.imvChat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this,ChatActivity.class);
+//
+//                startActivity(intent);
+//            }
+//        });
+        ImageView chat = findViewById(R.id.imv_chat);
+        ImageView giohang = findViewById(R.id.imv_giohang);
+
+        chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ChatActivity.class);
@@ -126,6 +146,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        giohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,GioHangActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
         binding.gvDanhmuchome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -159,14 +189,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        binding.imvGiohang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,GioHangActivity.class);
-
-                startActivity(intent);
-            }
-        });
+//        binding.imvGiohang.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this,GioHangActivity.class);
+//
+//                startActivity(intent);
+//            }
+//        });
         binding.gvSpdexuat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

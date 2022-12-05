@@ -10,72 +10,72 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="0dp"
-            android:src="@drawable/lilpawhome" />
+<!--        <ImageView-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:src="@drawable/lilpawhome" />-->
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:layout_marginEnd="20dp"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:orientation="horizontal">-->
 
-            <ImageView
-                android:id="@+id/imv_giohang"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:src="@drawable/icon_cart"
-                />
-            <ImageView
-                android:id="@+id/imv_chat"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/icon_chat"
-                />
-        </LinearLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/imv_giohang"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:src="@drawable/icon_cart"-->
+<!--                />-->
+<!--            <ImageView-->
+<!--                android:id="@+id/imv_chat"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:src="@drawable/icon_chat"-->
+<!--                />-->
+<!--        </LinearLayout>-->
 
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="5dp">
-    <ImageView
-        android:id="@+id/imv_menu"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/icon_menu"/>
-    <EditText
-        android:id="@+id/edt_timkiem"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:background="@drawable/customshapeborder"
-        android:backgroundTint="#FFCFE4"
-        android:hint="Tìm thứ tốt nhất cho Boss nhà bạn"
-        android:textSize="13dp"
-        android:padding="5dp"
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingBottom="5dp">-->
+<!--    <ImageView-->
+<!--        android:id="@+id/imv_menu"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:src="@drawable/icon_menu"/>-->
+<!--    <EditText-->
+<!--        android:id="@+id/edt_timkiem"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginHorizontal="10dp"-->
+<!--        android:background="@drawable/customshapeborder"-->
+<!--        android:backgroundTint="#FFCFE4"-->
+<!--        android:hint="Tìm thứ tốt nhất cho Boss nhà bạn"-->
+<!--        android:textSize="13dp"-->
+<!--        android:padding="5dp"-->
 
 
-        android:drawableEnd="@drawable/icon_find_grey"
+<!--        android:drawableEnd="@drawable/icon_find_grey"-->
 
-        />
-    </LinearLayout>
+<!--        />-->
+<!--    </LinearLayout>-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
