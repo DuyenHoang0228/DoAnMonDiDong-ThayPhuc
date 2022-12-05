@@ -1,10 +1,13 @@
 package com.nhom4.lilpawhome_application;
 
+import static com.nhom4.lilpawhome_application.dangky.tentk;
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +29,8 @@ public class UserActivity extends AppCompatActivity {
         // setContentView(binding.getRoot());
         View view = binding.getRoot();
         setContentView(view);
-
+        TextView tentaik=findViewById(R.id.txt_tentaikhoan);
+        tentaik.setText(tentk);
         showActionBar();
         addEvent();
     }

@@ -26,9 +26,9 @@ public class dangnhap2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         openHelper = new DBHelperTaiKhoan(this);
+        db = openHelper.getReadableDatabase();
         binding = ActivityDangnhap2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         underline();
         addEvent();
     }
@@ -43,8 +43,8 @@ public class dangnhap2 extends AppCompatActivity {
         binding.btnDangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tendangnhap = binding.edtNhapemailhoacsdt.getText().toString();
-                String matkhau = binding.edtPassword.getText().toString();
+                String tendangnhap = binding.edtNhapemailhoacsdt.getText().toString().trim();
+                String matkhau = binding.edtPassword.getText().toString().trim();
                 int dodaichuoi1 = tendangnhap.length();
                 int dodaichuoi2 = matkhau.length();
                 if(dodaichuoi1==0 || dodaichuoi2==0){
@@ -67,7 +67,9 @@ public class dangnhap2 extends AppCompatActivity {
                         Toast.makeText(dangnhap2.this, "Tên đăng nhập và mật khẩu không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        cursor = db.rawQuery("SELECT *FROM " + DBHelperTaiKhoan.TBL_NAME+ " WHERE( " + DBHelperTaiKhoan.COL_EMAIL + "=? OR " + DBHelperTaiKhoan.COL_PHONENUMBER + "=?) AND " + DBHelperTaiKhoan.COL_PASSWORD + "=?", new String[]{tendangnhap, matkhau});
+                        cursor = db.rawQuery("SELECT * FROM " + DBHelperTaiKhoan.TBL_NAME+ " WHERE (" + DBHelperTaiKhoan.COL_EMAIL + " = ? OR " + DBHelperTaiKhoan.COL_PHONENUMBER + " = ?) AND " + DBHelperTaiKhoan.COL_PASSWORD + " = ?", new String[]{tendangnhap, matkhau});
+                     //      cursor = db.rawQuery("SELECT * FROM " + DBHelperTaiKhoan.TBL_NAME+ " WHERE (" + DBHelperTaiKhoan.COL_EMAIL + " = " + tendangnhap + " OR " + DBHelperTaiKhoan.COL_PHONENUMBER + " = "+ tendangnhap+") AND " + DBHelperTaiKhoan.COL_PASSWORD + " = "+matkhau+";", null);
+                    //    cursor=db.rawQuery("SELECT * FROM " + DBHelperTaiKhoan.TBL_NAME+ " WHERE "+DBHelperTaiKhoan.COL_PASSWORD+ " = "+"'"+matkhau+"'"+" AND (" +DBHelperTaiKhoan.COL_EMAIL+ " ="+ " '"+tendangnhap+"' " + "OR " +DBHelperTaiKhoan.COL_PHONENUMBER+ " ="+" '"+tendangnhap+"'"+")",null);
                         if (cursor != null) {
                             if (cursor.getCount() > 0) {
                                 Toast.makeText(dangnhap2.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();

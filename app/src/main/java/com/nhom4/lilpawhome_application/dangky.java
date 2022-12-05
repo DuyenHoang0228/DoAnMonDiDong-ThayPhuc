@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -20,12 +21,15 @@ public class dangky extends AppCompatActivity {
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityDangkyBinding.inflate(getLayoutInflater());
+
         openHelper = new DBHelperTaiKhoan(this);
+        db = openHelper.getWritableDatabase();
         setContentView(binding.getRoot());
         addEvent();
     }
@@ -117,7 +121,6 @@ public class dangky extends AppCompatActivity {
 
                     }
                 }
-
             }
         });
     }
@@ -127,7 +130,6 @@ public class dangky extends AppCompatActivity {
         contentValues.put(DBHelperTaiKhoan.COL_NAME,tendangnhap);
         contentValues.put(DBHelperTaiKhoan.COL_PHONENUMBER,sodt);
         contentValues.put(DBHelperTaiKhoan.COL_PASSWORD,matkhau);
-
         long id = db.insert(DBHelperTaiKhoan.TBL_NAME,null,contentValues);
     }
 }
