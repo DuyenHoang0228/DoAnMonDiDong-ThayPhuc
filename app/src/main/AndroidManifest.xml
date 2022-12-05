@@ -560,6 +560,22 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".Doitentaikhoan"
+            android:exported="false"
+            android:label="Đổi tên tài khoản">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".cacdieukhoansudung"
+            android:exported="false"
+            android:label="Các điều khoản sử dụng">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>
