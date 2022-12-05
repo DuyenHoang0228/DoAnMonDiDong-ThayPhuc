@@ -119,40 +119,40 @@ public class thietlaptaikhoan extends AppCompatActivity {
                         finish();
                     }
                 });
-                binding.btnDangxuat.setOnClickListener(new View.OnClickListener() {
+            }
+        });
+        binding.btnDangxuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog = new Dialog(thietlaptaikhoan.this);
+                dialog.setContentView(R.layout.dialog_dangxuat);
+                dialog.show();
+
+                //Xóa bg dialog
+                Window window = dialog.getWindow();
+                if(window==null){
+                    return;
+                }
+                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT);
+                window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                ImageButton thoatdx;
+                thoatdx = dialog.findViewById(R.id.btn_exitdx);
+                thoatdx.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Dialog dialog = new Dialog(thietlaptaikhoan.this);
-                        dialog.setContentView(R.layout.dialog_dangxuat);
-                        dialog.show();
-
-                        //Xóa bg dialog
-                        Window window = dialog.getWindow();
-                        if(window==null){
-                            return;
-                        }
-                        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT);
-                        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-                        ImageButton thoatdx;
-                        thoatdx = dialog.findViewById(R.id.btn_exitdx);
-                        thoatdx.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                dialog.dismiss();
-                            }
-                        });
-                        Button dangxuat;
-                        dangxuat=dialog.findViewById(R.id.btn_dangx);
-                        dangxuat.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Toast.makeText(thietlaptaikhoan.this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(thietlaptaikhoan.this, dangnhap1.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                        });
+                        dialog.dismiss();
+                    }
+                });
+                Button dangxuat;
+                dangxuat=dialog.findViewById(R.id.btn_dangx);
+                dangxuat.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(thietlaptaikhoan.this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(thietlaptaikhoan.this, dangnhap1.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }

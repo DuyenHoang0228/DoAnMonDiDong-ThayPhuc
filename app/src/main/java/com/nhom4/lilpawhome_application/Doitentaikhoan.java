@@ -43,7 +43,6 @@ ActivityDoitentaikhoanBinding binding;
                 Toast.makeText(Doitentaikhoan.this, "Tên tài khoản đã thay đổi!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Doitentaikhoan.this, taikhoanvabaomat.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

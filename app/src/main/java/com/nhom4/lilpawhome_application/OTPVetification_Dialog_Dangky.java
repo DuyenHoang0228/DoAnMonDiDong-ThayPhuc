@@ -78,7 +78,7 @@ public class OTPVetification_Dialog_Dangky extends Dialog {
                             Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), thongbaodangkythanhcong.class);
                     view.getContext().startActivity(intent);
-                  //  onBackPressed();
+                     cancel();
                     }
                 }
         });

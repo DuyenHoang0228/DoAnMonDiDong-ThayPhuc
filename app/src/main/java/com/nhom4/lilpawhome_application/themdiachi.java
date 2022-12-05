@@ -54,8 +54,8 @@ public class themdiachi extends AppCompatActivity {
         themdiachi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(themdiachi.this, thietlaptaikhoan.class);
-                startActivity(intent);
+                //Intent intent = new Intent(themdiachi.this, thietlaptaikhoan.class);
+               // startActivity(intent);
                 finish();
                 Toast.makeText(themdiachi.this, "Thêm địa chỉ thành công!", Toast.LENGTH_SHORT).show();
             }

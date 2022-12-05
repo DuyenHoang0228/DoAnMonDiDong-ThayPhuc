@@ -50,6 +50,7 @@ public class nhapsodienthoaimoi extends AppCompatActivity {
                     otpVetification_dialog_sdt.setCancelable(false);
                     otpVetification_dialog_sdt.show();
 
+
                     //CHUYỀN SDT MỚI QUA SDT
 //                    String sodienthoaimoi= sdt.getText().toString();
 //                    Intent z =new Intent(nhapsodienthoaimoi.this, sodienthoai.class);

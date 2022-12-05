@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/customshapeborderwhite"
-        android:text="(+84)12345678"
+        android:text="012345678"
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"

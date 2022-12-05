@@ -76,6 +76,7 @@ public class OTPVetification_Dialog_Sdt extends Dialog {
                             Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), taikhoanvabaomat.class);
                     view.getContext().startActivity(intent);
+                    cancel();
                     }
                 }
         });

@@ -286,15 +286,15 @@
                 android:layout_height="20dp"
                 android:src="@drawable/icon_voucher"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kho Voucher"
                 android:textColor="#FFA0CA"
-                android:textStyle="bold"
+
                 android:layout_marginHorizontal="10dp"
                 android:textSize="15sp"
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:gravity="left"
+                android:fontFamily="@font/montserrat_medium"/>
 
 
         </LinearLayout>
@@ -311,15 +311,15 @@
                 android:layout_height="20dp"
                 android:src="@drawable/icon_sp_yeu_thich"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sản phẩm yêu thích"
                 android:textColor="#FFA0CA"
-                android:textStyle="bold"
+
                 android:layout_marginHorizontal="10dp"
                 android:textSize="15sp"
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:gravity="left"
+                android:fontFamily="@font/montserrat_medium"/>
 
 
         </LinearLayout>
@@ -336,15 +336,15 @@
                 android:layout_height="20dp"
                 android:src="@drawable/thietlaptaikhoan"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thiết lập tài khoản"
                 android:textColor="#FFA0CA"
-                android:textStyle="bold"
+
                 android:layout_marginHorizontal="10dp"
                 android:textSize="15sp"
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:gravity="left"
+                android:fontFamily="@font/montserrat_medium"/>
 
 
         </LinearLayout>
@@ -361,15 +361,15 @@
                 android:layout_height="20dp"
                 android:src="@drawable/icon_danh_gia_cua_toi"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Đánh giá của tôi"
                 android:textColor="#FFA0CA"
-                android:textStyle="bold"
+
                 android:layout_marginHorizontal="10dp"
                 android:textSize="15sp"
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:gravity="left"
+                android:fontFamily="@font/montserrat_medium"/>
 
 
         </LinearLayout>
@@ -386,15 +386,15 @@
                 android:layout_height="20dp"
                 android:src="@drawable/icon_support"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Trợ giúp"
                 android:textColor="#FFA0CA"
-                android:textStyle="bold"
+
                 android:layout_marginHorizontal="10dp"
                 android:textSize="15sp"
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:gravity="left"
+                android:fontFamily="@font/montserrat_medium" />
 
 
         </LinearLayout>
@@ -415,11 +415,11 @@
                 android:layout_height="wrap_content"
                 android:text="Trò chuyện cùng Lilpaw Home"
                 android:textColor="#FFA0CA"
-                android:textStyle="bold"
+
                 android:layout_marginHorizontal="10dp"
                 android:textSize="15sp"
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_bold"/>
+                android:gravity="left"
+                android:fontFamily="@font/montserrat_medium"/>
 
 
         </LinearLayout>

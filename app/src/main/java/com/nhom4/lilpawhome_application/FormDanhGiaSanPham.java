@@ -1,12 +1,14 @@
 package com.nhom4.lilpawhome_application;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
@@ -21,6 +23,8 @@ import com.nhom4.lilpawhome_application.databinding.ActivityFormDanhGiaSanPhamBi
 public class FormDanhGiaSanPham extends AppCompatActivity {
 
     ActivityFormDanhGiaSanPhamBinding binding;
+    private static final int pic_id = 123;
+    int i=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +33,38 @@ public class FormDanhGiaSanPham extends AppCompatActivity {
         binding = ActivityFormDanhGiaSanPhamBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         addEvent();
-        loadData();
     }
 
-    private void loadData() {
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (i%3==1) {
+            if (requestCode == pic_id) {
+                // BitMap is data structure of image file which store the image in memory
+                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                // Set the image in imageview for display
+                binding.imvAnh2.setImageBitmap(photo);
+                i++;
+            }
+        }
+        else if(i%3==2){
+            if (requestCode == pic_id) {
+                // BitMap is data structure of image file which store the image in memory
+                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                // Set the image in imageview for display
+                binding.imvAnh3.setImageBitmap(photo);
+                i++;
+            }
+        }
+        else {
+            if (requestCode == pic_id) {
+                // BitMap is data structure of image file which store the image in memory
+                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                // Set the image in imageview for display
+                binding.imvAnh1.setImageBitmap(photo);
+                i++;
+            }
+        }
     }
 
     private void addEvent() {
@@ -74,28 +105,33 @@ public class FormDanhGiaSanPham extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-                //Show default dialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(FormDanhGiaSanPham.this);
-                builder.setTitle("Thông báo");
-                builder.setIcon(android.R.drawable.ic_dialog_info);
-                builder.setMessage("Cho phép ứng dụng truy cập camera của bạn?");
+                if(i==0){
+                    //Show default dialog
+                    AlertDialog.Builder builder = new AlertDialog.Builder(FormDanhGiaSanPham.this);
+                    builder.setTitle("Thông báo");
+                    builder.setIcon(android.R.drawable.ic_dialog_info);
+                    builder.setMessage("Cho phép ứng dụng truy cập camera của bạn?");
 
-                builder.setPositiveButton("Cho phép", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        //close activity
-                        startActivity(intent);
-                    }
-                });
-                builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-                Dialog dialog = builder.create();
-                dialog.setCanceledOnTouchOutside(false);
-                dialog.show();
+                    builder.setPositiveButton("Cho phép", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            //open camera
+                            startActivityForResult(intent,pic_id);
+                        }
+                    });
+                    builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
+                    Dialog dialog = builder.create();
+                    dialog.setCanceledOnTouchOutside(false);
+                    dialog.show();
+                }else {
+                    startActivityForResult(intent,pic_id);
+                }
+
             }
         });
         binding.btnDangDanhGia.setOnClickListener(new View.OnClickListener() {

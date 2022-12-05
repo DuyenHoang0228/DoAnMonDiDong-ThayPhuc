@@ -74,6 +74,16 @@ public class SanPhamTheoThuongHieuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.gvSanphamtheothuonghieu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(SanPhamTheoThuongHieuActivity.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = sanPhamLilPawHomes.get(i);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+
+                startActivity(intent);
+            }
+        });
     }
 
     private void createDb() {

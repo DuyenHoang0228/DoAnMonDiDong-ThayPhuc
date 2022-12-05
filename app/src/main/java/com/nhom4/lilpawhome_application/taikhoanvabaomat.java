@@ -5,14 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.nhom4.lilpawhome_application.databinding.ActivityTaikhoanvabaomatBinding;
 import com.nhom4.lilpawhome_application.databinding.ActivityThietlaptaikhoanBinding;
 
 public class taikhoanvabaomat extends AppCompatActivity {
 ActivityTaikhoanvabaomatBinding binding;
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId())
@@ -36,13 +39,14 @@ ActivityTaikhoanvabaomatBinding binding;
     }
 
     private void addEvent() {
-        binding.txtNameofaccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(taikhoanvabaomat.this, Doitentaikhoan.class);
-                startActivity(intent);
-            }
-        });
+
+       binding.txtNameofaccount.setOnClickListener(new View.OnClickListener() {
+           @Override
+          public void onClick(View view) {
+              Intent intent = new Intent(taikhoanvabaomat.this, Doitentaikhoan.class);
+              startActivity(intent);
+          }
+       });
         binding.btnSodienthoai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

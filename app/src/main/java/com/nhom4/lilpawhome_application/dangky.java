@@ -37,8 +37,8 @@ public class dangky extends AppCompatActivity {
                 String nhaplaimatkhau = binding.edtNhaplaimatkhau.getText().toString();
                 String tendangnhap = binding.edtNhapsdt.getText().toString();
                 //CHUYỀN SDT QUA TÊN, SDT
-                Intent z =new Intent(dangky.this, sodienthoai.class);
-                z.putExtra("sodienthoai",tendangnhap);
+              //  Intent z =new Intent(dangky.this, sodienthoai.class);
+             //   z.putExtra("sodienthoai",tendangnhap);
 
                 //
                 int dodaichuoi1 = matkhau.length();
