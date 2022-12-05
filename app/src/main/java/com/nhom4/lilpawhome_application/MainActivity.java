@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<GioHang> manggiohang; //Khai báo mảng giỏ hàng public để làm mảng toàn cục, luôn xuất hiện ở màn hình khác
     public static double tongthanhtoan;
     Cursor c;
-
+    public static ArrayList<SanPhamLilPawHome> spYeuThich;
     private ImageSlider imageSlider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
         loadData();
         addEvent();
         createCart();//Tạo function thực hiện tạo giỏ hàng nếu không có mảng giỏ hàng nào tồn tại
+        createDanhSachYeuThich();
     }
 
     private void createCart() {
@@ -111,7 +112,11 @@ public class MainActivity extends AppCompatActivity {
             manggiohang = new ArrayList<>();
         }
     }
-
+    private void createDanhSachYeuThich(){
+        if(spYeuThich==null){
+            spYeuThich = new ArrayList<>();
+        }
+    }
     private void addEvent() {
         binding.imvChat.setOnClickListener(new View.OnClickListener() {
             @Override

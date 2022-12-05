@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -15,16 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.nhom4.databases.DBHelperSanPham;
-import com.nhom4.models.SanPhamLilPawHome;
 import com.nhom4.view.adapters.AdapterVoucher;
-import com.nhom4.view.adapters.HorAdapterSanphamLilPawHome;
 import com.nhom4.view.adapters.HorSanPhamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityKhachhangthanthietBinding;
 import com.nhom4.models.ChiTieuKhachHang;
 import com.nhom4.models.SanPham;
 import com.nhom4.models.Voucher;
-import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
 
 import java.util.ArrayList;
 
@@ -33,31 +28,25 @@ public class khachhangthanthiet extends AppCompatActivity {
     ActivityKhachhangthanthietBinding binding;
     AdapterVoucher adapter;
     ArrayList<Voucher> vouchers;
-    ArrayList<SanPhamLilPawHome> dsXemThemSanPham;
-    HorAdapterSanphamLilPawHome adapter2;
+    ArrayList<SanPham> dsXemThemSanPham;
+    HorSanPhamAdapter adapter2;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager Horizontallayout;
     ChiTieuKhachHang chitieu;
-    DBHelperSanPham dbHelperSanPham;
-    Cursor c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivityKhachhangthanthietBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        createDB();
+
         loadData();
         addEvent();
         level();
         makeColor();
-    }
-
-    private void createDB() {
-            dbHelperSanPham=new DBHelperSanPham(khachhangthanthiet.this);
-            dbHelperSanPham.createSampleData();
     }
 
     private void level() {
@@ -113,35 +102,25 @@ public class khachhangthanthiet extends AppCompatActivity {
     }
 
     private void loadData() {
+
         //data recyclerview xem them san pham
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
         binding.rcvXemthemsanpham.setLayoutManager(RecyclerViewLayoutManager);
-
         //add sp
         dsXemThemSanPham = new ArrayList<>();
-        c = dbHelperSanPham.getData("SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
-                " WHERE "+ DBHelperSanPham.COL_NEWPRICE+" < 150000");
-        while(c.moveToNext())
-        {
-            dsXemThemSanPham.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
-                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
-                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
-        }
-        c.close();
+        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
 
         // truyen du lieu
-        adapter2=new HorAdapterSanphamLilPawHome(khachhangthanthiet.this, dsXemThemSanPham, new HorAdapterSanphamLilPawHome.ItemClickListener() {
-            @Override
-            public void onItemClick(SanPhamLilPawHome details) {
-                Intent intent = new Intent(khachhangthanthiet.this, TrangSanPhamActivity.class);
-                intent.putExtra("IDsanpham",details.getIdSanPham());
-
-                startActivity(intent);
-            }
-        });
+        adapter2= new HorSanPhamAdapter(dsXemThemSanPham);
         Horizontallayout=new LinearLayoutManager(khachhangthanthiet.this,LinearLayoutManager.HORIZONTAL,false);
         binding.rcvXemthemsanpham.setLayoutManager(Horizontallayout);
         binding.rcvXemthemsanpham.setAdapter(adapter2);
+
+
 
     }
 
