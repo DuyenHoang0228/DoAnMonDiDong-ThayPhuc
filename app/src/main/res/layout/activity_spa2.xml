@@ -10,12 +10,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <ImageView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="222dp"
-            android:src="@drawable/bannerspa"/>
-
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:src="@drawable/bannerspa"/>
+            <ImageView
+                android:id="@+id/imv_quaylaispa2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_return_pink"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"/>
+        </RelativeLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,6 +98,7 @@
             android:textColor="@color/black"
             android:layout_marginTop="15dp"/>
 
+
         <RadioGroup
             android:id="@+id/rg_chondichvu"
             android:layout_width="wrap_content"
@@ -151,34 +161,54 @@
             </TableLayout>
 
         </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chọn thời gian"
-            android:layout_marginLeft="25dp"
-            android:fontFamily="@font/montserrat"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn thời gian"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/montserrat"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/txt_ngaydatlich"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn ngày"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/montserrat"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:background="#4DFFA0CA"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"/>
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="50dp">
+            android:layout_marginLeft="20dp">
 
             <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:src="@drawable/icon_dat_lich" />
 
             <GridView
                 android:id="@+id/gv_datlich"
                 android:layout_width="wrap_content"
-                android:layout_height="190dp"
-                android:numColumns="2" />
+                android:layout_height="220dp"
+                android:numColumns="2"
+                android:layout_marginLeft="10dp"/>
 
 
         </LinearLayout>
@@ -193,6 +223,7 @@
             android:layout_marginTop="40dp">
 
             <Button
+                android:id="@+id/btn_xacnhandatlich"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Xác nhận"
@@ -201,7 +232,8 @@
                 android:backgroundTint="#FFA0CA"
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"/>
+                android:layout_marginRight="30dp"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 

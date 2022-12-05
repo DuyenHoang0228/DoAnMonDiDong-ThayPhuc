@@ -6,6 +6,7 @@ import static com.nhom4.lilpawhome_application.Utils_Spa.DB_PATH_SUFFIX;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -65,7 +66,7 @@ public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnIte
         s.setSpan(underlineSpan, 0,18, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         banggia.setText(s);
         copyDB();
-
+        addEvent();
         //Intent button
 
         //Dialog bảng giá
@@ -74,6 +75,22 @@ public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnIte
             public void onClick(View view) {
 
                 openDialog(Gravity.BOTTOM);
+            }
+        });
+    }
+
+    private void addEvent() {
+        binding.imvQuaylaispa1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        binding.btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SpaActivity1.this, SpaActivity2.class);
+                startActivity(intent);
             }
         });
     }
