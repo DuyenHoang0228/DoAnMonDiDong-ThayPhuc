@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -30,7 +28,7 @@
         </activity>
         <activity
             android:name=".SanPhamYeuThich"
-            android:exported="false"
+            android:exported="true"
             android:label="Sản phẩm yêu thích">
             <meta-data
                 android:name="android.app.lib_name"
@@ -46,11 +44,12 @@
         </activity>
         <activity
             android:name=".khachhangthanthiet"
-            android:exported="false"
+            android:exported="true"
             android:label="Khách Hàng thân thiết">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
         </activity>
         <activity
             android:name=".HinhAnhDanhGiaSanPham"
@@ -154,11 +153,13 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
+
         </activity>
         <activity
             android:name=".suadiachi"
@@ -290,7 +291,8 @@
         </activity>
         <activity
             android:name=".DanhmucActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="Lịch hẹn">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -363,15 +365,13 @@
             android:name=".manhinhkhoidong"
             android:exported="true"
             android:theme="@style/Theme.offactionbar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ChatActivity"
@@ -438,7 +438,8 @@
         </activity>
         <activity
             android:name=".GioHangActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="Giỏ hàng">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -510,7 +511,8 @@
         </activity>
         <activity
             android:name=".SpaActivity2"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
