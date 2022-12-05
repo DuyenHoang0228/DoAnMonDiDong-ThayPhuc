@@ -49,7 +49,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
     ImageView imvGioHang, imvTroVe;
 
     int idhinhsanpham;
-
+    int IDsanpham;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +68,8 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         binding.btnXemthem.setText("Xem thêm");
         binding.txtThongtinsanpham.setMaxLines(3);
 
+        Intent intent = getIntent();
+        IDsanpham = intent.getIntExtra("IDsanpham", 0);
         createDb();
 
 
@@ -75,6 +77,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         loadData();
         addEvents();
         sanPhamDeXuat();
+        ktYeuThich();
 
 
     }
@@ -136,12 +139,12 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         binding.imvTraitim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(binding.imvTraitim.getTag()==null || binding.imvTraitim.getTag()=="empty")
+                if(binding.imvTraitim.getTag()=="empty")
                 {
                     binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich_full);
                     binding.imvTraitim.setTag("full");
                     addFavorite();
-                    Toast.makeText(TrangSanPhamActivity.this, "Đã thêm sản phẩm vào yêu thích", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TrangSanPhamActivity.this, "Thêm sản phẩm vào yêu thích", Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -206,48 +209,38 @@ public class TrangSanPhamActivity extends AppCompatActivity {
             }
         });
     }
-    private void addFavorite(){
-        Intent intent = getIntent();
-        int IDsanpham = intent.getIntExtra("IDsanpham",0);
-        if(MainActivity.spYeuThich.size()>0){
-            boolean exists = false;
-            for(int i=0; i< MainActivity.spYeuThich.size(); i++){
-                if(MainActivity.spYeuThich.get(i).getIdSanPham()==IDsanpham){
-                    exists = true;
-                }
-            }
-            if(exists == false){
-                Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
-                        " WHERE "+ DBHelperSanPham.COL_ID+" = " + IDsanpham);
-                while(c.moveToNext())
-                {
-                    MainActivity.spYeuThich.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
-                            c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
-                            c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
-                }
-                c.close();
-            }
-        }
-    }
-    private  void removeFavorite() {
-        Intent intent = getIntent();
-        int IDsanpham = intent.getIntExtra("IDsanpham", 0);
+    private  void ktYeuThich(){
+        boolean exists = false;
         if (MainActivity.spYeuThich.size() > 0) {
-            boolean exists = false;
             for (int i = 0; i < MainActivity.spYeuThich.size(); i++) {
                 if (MainActivity.spYeuThich.get(i).getIdSanPham() == IDsanpham) {
                     exists = true;
                 }
             }
-            if (exists == false) {
-                Cursor c = dbHelperSanPham.getData(" SELECT * FROM " + DBHelperSanPham.TBL_NAME +
-                        " WHERE " + DBHelperSanPham.COL_ID + " = " + IDsanpham);
-                while (c.moveToNext()) {
-                    MainActivity.spYeuThich.remove(new SanPhamLilPawHome(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3),
-                            c.getDouble(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9),
-                            c.getString(10), c.getDouble(11), c.getDouble(12), c.getDouble(13)));
-                }
-                c.close();
+        }
+        if(exists==false){
+            binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich);
+            binding.imvTraitim.setTag("empty");
+        }else {
+            binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich_full);
+            binding.imvTraitim.setTag("full");
+        }
+    }
+    private void addFavorite(){
+            Cursor c = dbHelperSanPham.getData(" SELECT * FROM " + DBHelperSanPham.TBL_NAME +
+                    " WHERE " + DBHelperSanPham.COL_ID + " = " + IDsanpham);
+            while (c.moveToNext()) {
+                MainActivity.spYeuThich.add(new SanPhamLilPawHome(c.getInt(0), c.getString(1), c.getDouble(2), c.getDouble(3),
+                        c.getDouble(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9),
+                        c.getString(10), c.getDouble(11), c.getDouble(12), c.getDouble(13)));
+            }
+            c.close();
+
+    }
+    private  void removeFavorite() {
+        for(int i =0; i< MainActivity.spYeuThich.size(); i++){
+            if(MainActivity.spYeuThich.get(i).getIdSanPham()==IDsanpham){
+                MainActivity.spYeuThich.remove(MainActivity.spYeuThich.get(i));
             }
         }
     }
@@ -341,8 +334,8 @@ public class TrangSanPhamActivity extends AppCompatActivity {
         binding.gvSanphamdexuat.setExpanded(true);
         sanPhamLilPawHomes=new ArrayList<>();
 
-        Intent intent = getIntent();
-        int IDsanpham = intent.getIntExtra("IDsanpham",0);
+//        Intent intent = getIntent();
+//        int IDsanpham = intent.getIntExtra("IDsanpham",0);
 
         Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
                 " WHERE "+ DBHelperSanPham.COL_ID+" = "+ IDsanpham);

@@ -10,6 +10,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivitySanPhamYeuThichBinding;
@@ -35,6 +37,18 @@ public class SanPhamYeuThich extends AppCompatActivity {
 
         createDb();
         loadData();
+        addEvent();
+    }
+
+    private void addEvent() {
+        binding.gvSanphamyeuthich.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(SanPhamYeuThich.this, TrangSanPhamActivity.class);
+                intent.putExtra("IDsanpham", MainActivity.spYeuThich.get(i).getIdSanPham());
+                startActivity(intent);
+            }
+        });
     }
 
     private void createDb() {
