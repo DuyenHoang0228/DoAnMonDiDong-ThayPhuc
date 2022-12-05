@@ -1,11 +1,24 @@
 package com.nhom4.lilpawhome_application;
 
+import static com.nhom4.lilpawhome_application.Utils_Diachi.COL_DUONG;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.COL_MacDinh;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.COL_PHONE;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.COL_PHUONG;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.COL_QUAN;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.COL_TINH;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.COL_TYPE;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.DB_NAME;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.TBL_NAME;
+import static java.security.AccessController.getContext;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,8 +26,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -27,10 +42,13 @@ public class themdiachi extends AppCompatActivity {
     String chonquanhuyen, chontinh;
     Button themdiachi;
     diachiAdapter adapter;
-
-    EditText sdt;
+    public static SQLiteDatabase db;
+    EditText hovaten, sdt, phuong, duong;
     Spinner tinhspinner,quanhuyenspinner;
+    RadioButton office, home;
+    CheckBox macdinh;
     ArrayAdapter<CharSequence> tinhAdapter,quanhuyenAdapter;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,26 +58,60 @@ public class themdiachi extends AppCompatActivity {
         setContentView(R.layout.activity_themdiachi);
       //  binding = ActivityThemdiachiBinding.inflate(getLayoutInflater());
       //  setContentView(binding.getRoot());
+        //Ánh xạ
         tinhspinner=findViewById(R.id.spn_tinhtdc);
         quanhuyenspinner=findViewById(R.id.spn_quanhuyentdc);
         sdt = findViewById(R.id.edt_sodienthoai);
+        hovaten = findViewById(R.id.edt_hovaten);
+        phuong = findViewById(R.id.edt_tinhquanphuong);
+        duong = findViewById(R.id.edt_duongnha);
+        office = findViewById(R.id.rad_office);
+        home = findViewById(R.id.rad_home);
+        macdinh = findViewById(R.id.chk_defaultaddress);
+
         tinhAdapter= ArrayAdapter.createFromResource(this,R.array.array_tinh, R.layout.spinnerlayout);
         addEvents();
+        addToDB();
     }
 
-
-
-    private void addEvents() {
+    private void addToDB() {
         themdiachi= findViewById(R.id.btn_hoanthanh);
         themdiachi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(themdiachi.this, thietlaptaikhoan.class);
-                startActivity(intent);
+                insertDB();
                 finish();
                 Toast.makeText(themdiachi.this, "Thêm địa chỉ thành công!", Toast.LENGTH_SHORT).show();
             }
+
+            private void insertDB() {
+                db = openOrCreateDatabase(DB_NAME, MODE_PRIVATE,null);
+                ContentValues values = new ContentValues();
+                values.put(Utils_Diachi.COL_NAME, hovaten.getText().toString());
+                values.put(COL_PHONE, sdt.getText().toString());
+                values.put(COL_TINH, tinhspinner.getSelectedItem().toString());
+                values.put(COL_QUAN, quanhuyenspinner.getSelectedItem().toString());
+                values.put(COL_PHUONG, phuong.getText().toString());
+                values.put(COL_DUONG, duong.getText().toString());
+                int type = 1;
+                int MacDinh = 0;
+
+                if (office.isChecked()) {
+                    type = 0;
+                }
+                if (macdinh.isChecked()){
+                    MacDinh = 1;
+                }
+
+                values.put(COL_TYPE, type);
+                values.put(COL_MacDinh, MacDinh);
+                long newRow = db.insert(TBL_NAME, null, values);
+            }
         });
+    }
+
+
+    private void addEvents() {
         tinhAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         tinhspinner.setAdapter(tinhAdapter);
 

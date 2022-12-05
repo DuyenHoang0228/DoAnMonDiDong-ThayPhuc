@@ -1,59 +1,154 @@
 package com.nhom4.lilpawhome_application;
 
+import static com.nhom4.lilpawhome_application.Utils_Diachi.DB_NAME;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.DB_PATH_SUFFIX;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.nhom4.models.DiaChi;
+import com.nhom4.models.DiaChi_tt;
 import com.nhom4.models.TaikhoanNH;
+import com.nhom4.models.ThuCung;
+import com.nhom4.view.adapters.AdapterDiaChiTT;
 import com.nhom4.view.adapters.TKNH_Adapter;
 import com.nhom4.view.adapters.diachiAdapter;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 public class diachi extends AppCompatActivity {
     Button themdiachi;
-    ListView diachi_list;
+    RecyclerView rcvdiachi;
+    LinearLayoutManager VerticalLayout;
+    RecyclerView.LayoutManager RecyclerViewLayoutManager;
+    ArrayList<DiaChi> diaChis;
     diachiAdapter adapter;
-    ArrayList<DiaChi> diachis;
+    public SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_diachi);
         themdiachi=findViewById(R.id.btn_themdiachimoi);
-        diachi_list= findViewById(R.id.lv_diachi);
+        rcvdiachi= findViewById(R.id.rcv_diachi);
 
-        addEvents();
+        copyDB();
         loadData();
+        addEvents();
+    }
+
+    @Override
+    protected void onResume() {
+        loadData();
+        super.onResume();
+    }
+
+    private void copyDB() {
+        File dbPath = getDatabasePath(DB_NAME);
+        if(!dbPath.exists()) {
+            if(copyDBFromAssets()){
+                Toast.makeText(diachi.this,
+                        "Copy database successful!", Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(diachi.this, "Copy database fail!", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    private boolean copyDBFromAssets() {
+        String dbPath = getApplicationInfo().dataDir + DB_PATH_SUFFIX + DB_NAME;
+
+        //Directory database in folder assets
+
+        try {
+            InputStream inputStream = getAssets().open(DB_NAME);
+            File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
+            if (!f.exists()){
+                f.mkdir();
+            }
+            OutputStream outputStream = new FileOutputStream(dbPath);
+            byte[] buffer = new byte[1024]; int length;
+            while ((length=inputStream.read(buffer))>0){
+                outputStream.write(buffer,0,length);
+            }
+            outputStream.flush(); outputStream.close(); inputStream.close();
+            return true;
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
     }
 
     private void loadData() {
-        diachis=new ArrayList<>();
-        diachis.add(new DiaChi("Thảo Duyên", "012345678","Số 106, khu phố 3, Linh Xuân, Thủ Đức, TP.HCM"));
-        adapter = new diachiAdapter(diachi.this,R.layout.diachi_list,diachis);
-        diachi_list.setAdapter(adapter);
+        diaChis = new ArrayList<>();
+        db = openOrCreateDatabase(Utils_Diachi.DB_NAME, MODE_PRIVATE,null);
+        Cursor c = db.query(Utils_Diachi.TBL_NAME, null,null,
+                null,null,null,null);
+        while (c.moveToNext()){
+            String tinh = c.getString(3);
+            String quan = c.getString(4);
+            String phuong = c.getString(5);
+            String duong = c.getString(6);
+            String diachi = duong + ", " + phuong + ", " + quan + ", " + tinh;
+            diaChis.add(new DiaChi(c.getString(1), c.getString(2), diachi));
+        }
+        c.close();
+        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+        rcvdiachi.setLayoutManager(RecyclerViewLayoutManager);
+
+        adapter = new diachiAdapter(diaChis);
+
+        // Thiết lập phương hướng của RecyclerView (ngang hay dọc)
+        VerticalLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        rcvdiachi.setLayoutManager(VerticalLayout);
+
+        //Tạo khoảng cách giữa các item trong RecyclerView
+        DividerItemDecoration dividerItemDecoration1 = new DividerItemDecoration(rcvdiachi.getContext(),
+                VerticalLayout.getOrientation());
+        rcvdiachi.addItemDecoration(dividerItemDecoration1);
+        dividerItemDecoration1.setDrawable(ContextCompat.getDrawable(getBaseContext(),
+                R.drawable.line_divider_pink));
+
+        rcvdiachi.setAdapter(adapter);
+        rcvdiachi.setNestedScrollingEnabled(false);
     }
 
     private void addEvents() {
         themdiachi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(diachi.this, themdiachi.class);
+                Intent intent = new Intent(diachi.this, com.nhom4.lilpawhome_application.themdiachi.class);
                 startActivity(intent);
             }
         });
     }
+
 
     //Thêm menu
     @Override

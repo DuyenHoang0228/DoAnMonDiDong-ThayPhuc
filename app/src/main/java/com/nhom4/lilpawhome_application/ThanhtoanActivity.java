@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.view.adapters.AdapterSanPhamTT;
 import com.nhom4.view.adapters.HorAdapterPhuongThucTT;
 import com.nhom4.lilpawhome_application.databinding.ActivityThanhtoanBinding;
@@ -49,6 +51,12 @@ public class ThanhtoanActivity extends AppCompatActivity {
 
         binding.txtTongsotien.setText(String.format("%.0fđ",MainActivity.tongthanhtoan));
         binding.txtTongthanhtoan.setText(String.format("%.0fđ",MainActivity.tongthanhtoan));
+    }
+
+    @Override
+    protected void onResume() {
+
+        super.onResume();
     }
 
     private void addEvent() {

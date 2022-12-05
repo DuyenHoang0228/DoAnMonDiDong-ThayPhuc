@@ -19,7 +19,7 @@
         android:layout_gravity="start"
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
-        android:textSize="15sp"></TextView>
+        android:textSize="15sp"/>
     <EditText
         android:id="@+id/edt_hovaten"
         android:layout_marginTop="10dp"
@@ -30,7 +30,7 @@
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"
-        android:gravity="center_vertical"></EditText>
+        android:gravity="center_vertical"/>
     <EditText
         android:id="@+id/edt_sodienthoai"
         android:layout_marginTop="10dp"
@@ -42,7 +42,7 @@
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"
-        android:gravity="center_vertical"></EditText>
+        android:gravity="center_vertical"/>
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
         android:layout_gravity="start"
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
-        android:textSize="15sp"></TextView>
+        android:textSize="15sp"/>
         <Spinner
             android:layout_marginTop="10dp"
             android:id="@+id/spn_tinhtdc"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:spinnerMode="dropdown"
             android:background="@drawable/customshapeborderwhite"
-            ></Spinner>
+            />
         <Spinner
             android:layout_marginTop="10dp"
             android:id="@+id/spn_quanhuyentdc"
@@ -67,18 +67,18 @@
             android:layout_height="wrap_content"
             android:spinnerMode="dropdown"
             android:background="@drawable/customshapeborderwhite"
-            ></Spinner>
+            />
         <EditText
         android:id="@+id/edt_tinhquanphuong"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/customshapeborderwhite"
-        android:hint="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã "
+        android:hint="Phường/Xã"
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"
-        android:gravity="center_vertical"></EditText>
+        android:gravity="center_vertical"/>
     <EditText
         android:id="@+id/edt_duongnha"
         android:layout_marginTop="10dp"
@@ -89,7 +89,7 @@
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
         android:textSize="15sp"
-        android:gravity="center_vertical"></EditText>
+        android:gravity="center_vertical"/>
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -98,7 +98,7 @@
         android:layout_gravity="start"
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"
-        android:textSize="15sp"></TextView>
+        android:textSize="15sp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                     android:textColor="@color/black"
                     android:fontFamily="@font/montserratregular"
                     android:textSize="15sp"
-                    android:layout_weight="6"></TextView>
+                    android:layout_weight="6"/>
                 <RadioGroup
                     android:gravity="end"
                     android:layout_width="wrap_content"
@@ -129,7 +129,7 @@
                         android:text="Văn phòng"
                         android:button="@android:color/transparent"
                         android:fontFamily="@font/montserratregular"
-                        android:textColor="@drawable/radio_text_addressselected"></RadioButton>
+                        android:textColor="@drawable/radio_text_addressselected"/>
                     <RadioButton
                         android:id="@+id/rad_home"
                         android:layout_marginLeft="5dp"
@@ -139,7 +139,7 @@
                         android:fontFamily="@font/montserratregular"
                         android:background="@drawable/radio_addressselected"
                         android:text="Nhà riêng"
-                        android:textColor="@drawable/radio_text_addressselected"></RadioButton>
+                        android:textColor="@drawable/radio_text_addressselected"/>
                 </RadioGroup>
         </LinearLayout>
     <RelativeLayout
@@ -156,7 +156,7 @@
             android:textColor="@color/black"
             android:fontFamily="@font/montserratregular"
             android:textSize="15sp"
-            android:layout_weight="6"></TextView>
+            android:layout_weight="6"/>
         <CheckBox
             android:id="@+id/chk_defaultaddress"
             android:layout_width="wrap_content"
@@ -164,7 +164,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
             android:button="@null"
-            android:drawableRight="@drawable/checkbox_defaultselected"></CheckBox>
+            android:drawableRight="@drawable/checkbox_defaultselected"/>
     </RelativeLayout>
         <Button
             android:id="@+id/btn_hoanthanh"
@@ -176,6 +176,6 @@
             android:textColor="@color/white"
             android:textAllCaps="false"
             android:fontFamily="@font/montserratbold"
-            android:textSize="15sp"></Button>
+            android:textSize="15sp"/>
     </LinearLayout>
 </ScrollView>

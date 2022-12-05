@@ -247,7 +247,6 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(SanPhamLilPawHome details) {
                 Intent intent = new Intent(MainActivity.this, TrangSanPhamActivity.class);
                 intent.putExtra("IDsanpham",details.getIdSanPham());
-
                 startActivity(intent);
             }
         });
