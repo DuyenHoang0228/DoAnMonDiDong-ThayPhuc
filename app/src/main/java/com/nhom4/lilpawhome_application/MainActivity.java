@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -247,6 +248,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
 
@@ -454,5 +456,43 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter2);
 
     }
+    public void clickShopchocho(View view){
+        Intent intent = new Intent(MainActivity.this,ShopChoCho1.class);
+        startActivity(intent);
+
+    }
+    public void clickShopchomeo(View view){
+        Intent intent = new Intent(MainActivity.this,ShopChoMeo1.class);
+        startActivity(intent);
+
+    }
+    public void clickSpa(View view){
+        Intent intent = new Intent(MainActivity.this,SpaActivity1.class);
+        startActivity(intent);
+
+    }
+    public void clickThuonghieu(View view){
+        Intent intent = new Intent(MainActivity.this,ThuongHieuActivity.class);
+        startActivity(intent);
+
+    }
+    public void clickBlog(View view){
+        Intent intent = new Intent(MainActivity.this,BlogActivity.class);
+        startActivity(intent);
+
+    }
+    public void clickTimkiem(View view){
+        Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.dialog_thanhtimkiem);
+        dialog.show();
+        ImageButton thoat;
+        thoat = dialog.findViewById(R.id.btn_exittk);
+        thoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }});}
+
+
 
 }
