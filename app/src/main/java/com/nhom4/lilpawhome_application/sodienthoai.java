@@ -1,11 +1,13 @@
 package com.nhom4.lilpawhome_application;
 
-//import static com.nhom4.lilpawhome_application.dangky.sdtdk;
+
+
+import static com.nhom4.lilpawhome_application.dangky.sdt;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,12 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.nhom4.lilpawhome_application.databinding.ActivityNhapsodienthoaimoiBinding;
+
 
 public class sodienthoai extends AppCompatActivity {
 Button thaydoi;
 TextView sodienthoai;
-String sdt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +33,8 @@ String sdt;
         LayoutInflater inflater= getLayoutInflater();
         View view = inflater.inflate(R.layout.activity_nhapsodienthoaimoi,null);
         EditText sdtmoi= view.findViewById(R.id.edt_nhapsodienthoaimoi);
-        sdt =sdtmoi.getText().toString();
         addEvents();
-      //  sodienthoai.setText(sdtdk);
+      sodienthoai.setText(sdt);
 
     }
     @Override

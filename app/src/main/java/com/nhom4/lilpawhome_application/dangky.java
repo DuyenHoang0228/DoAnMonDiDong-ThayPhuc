@@ -18,6 +18,7 @@ public class dangky extends AppCompatActivity {
 
     ActivityDangkyBinding binding;
     public static String tentk;
+    public static String sdt;
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
 
@@ -32,6 +33,10 @@ public class dangky extends AppCompatActivity {
         db = openHelper.getWritableDatabase();
         setContentView(binding.getRoot());
         addEvent();
+        createDB();
+    }
+
+    private void createDB() {
     }
 
     private void addEvent() {
@@ -50,6 +55,7 @@ public class dangky extends AppCompatActivity {
                 String sodt = binding.edtNhapsdt.getText().toString();
                 String tendangnhap = binding.edtNhaptentk.getText().toString();
                 tentk=tendangnhap;
+                sdt=sodt;
                 //CHUYỀN SDT QUA TÊN, SDT
               //  Intent z =new Intent(dangky.this, sodienthoai.class);
              //   z.putExtra("sodienthoai",tendangnhap);
