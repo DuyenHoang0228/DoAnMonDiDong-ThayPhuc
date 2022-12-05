@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="|"
             android:textColor="@color/black"
-            android:fontFamily="@font/montserratregular"
+            android:fontFamily="@font/montserrat"
             android:textSize="15sp"></TextView>
         <TextView
             android:id="@+id/txt_sdtnguoimua"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="(+84)12345678"
             android:textColor="@color/black"
-            android:fontFamily="@font/montserratregular"
+            android:fontFamily="@font/montserrat"
             android:textSize="15sp"></TextView>
     </LinearLayout>
     <TextView
@@ -46,6 +46,6 @@
         android:layout_height="wrap_content"
         android:text="Số 106, khu phố 3, Linh Xuân, Thủ Đức, TP.HCM"
         android:textColor="@color/black"
-        android:fontFamily="@font/montserratregular"
+        android:fontFamily="@font/montserrat"
         android:textSize="15sp"></TextView>
 </LinearLayout>

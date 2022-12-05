@@ -10,12 +10,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="222dp"
             android:src="@drawable/bannerspa"/>
-
+            <ImageView
+                android:id="@+id/imv_quaylaispa1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_return_pink"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"/>
+    </RelativeLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -232,6 +241,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tiếp tục"
+                android:textColor="@color/white"
                 android:fontFamily="@font/montserrat_bold"
                 android:textSize="18sp"
                 android:backgroundTint="#FFA0CA"

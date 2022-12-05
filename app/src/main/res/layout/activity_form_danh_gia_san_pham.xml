@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,10 @@
     tools:context=".FormDanhGiaSanPham"
     android:padding="10dp"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -112,12 +116,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="10">
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"
+            android:layout_height="300dp"
             android:layout_margin="10dp">
             <EditText
                 android:padding="10dp"
@@ -130,12 +132,6 @@
                 android:background="@drawable/customshape"
                 android:backgroundTint="#FFF3F8"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="4">
-
             <LinearLayout
                 android:id="@+id/open_camera"
                 android:layout_width="wrap_content"
@@ -150,7 +146,8 @@
                     android:layout_height="20dp"
                     android:src="@drawable/camera"
                     android:layout_gravity="center"
-                    android:layout_marginTop="2dp"/>
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -158,13 +155,12 @@
                     android:textColor="@color/white"
                     android:fontFamily="@font/montserrat"
                     android:textSize="14sp"/>
-
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginEnd="20dp"
                 android:weightSum="3">
                 <ImageView
@@ -172,7 +168,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:foreground="@drawable/bordersanpham"/>
+                    android:foreground="@drawable/bordersanpham"
+                    android:background="#FFF3F8"/>
                 <ImageView
                     android:id="@+id/imv_anh2"
                     android:layout_width="0dp"
@@ -180,13 +177,15 @@
                     android:layout_weight="1"
                     android:foreground="@drawable/bordersanpham"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="10dp"
+                    android:background="#FFF3F8"/>
                 <ImageView
                     android:id="@+id/imv_anh3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:foreground="@drawable/bordersanpham"/>
+                    android:foreground="@drawable/bordersanpham"
+                    android:background="#FFF3F8"/>
 
             </LinearLayout>
             <LinearLayout
@@ -207,4 +206,6 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+
+</ScrollView>

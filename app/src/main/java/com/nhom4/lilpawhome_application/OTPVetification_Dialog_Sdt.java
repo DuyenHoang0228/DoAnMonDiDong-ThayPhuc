@@ -12,6 +12,7 @@ import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -74,8 +75,10 @@ public class OTPVetification_Dialog_Sdt extends Dialog {
                 if (getOTP.length() == 4) {
                     Toast.makeText(view.getContext(), "Xác nhận mã OTP thành công! Bạn đã cập nhật số điện thoại mới",
                             Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(view.getContext(), taikhoanvabaomat.class);
+                    Intent intent = new Intent(view.getContext(), sodienthoai.class);
                     view.getContext().startActivity(intent);
+                    cancel();
+
                     }
                 }
         });

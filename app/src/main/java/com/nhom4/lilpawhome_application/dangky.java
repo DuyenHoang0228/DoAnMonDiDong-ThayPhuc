@@ -12,13 +12,13 @@ import com.nhom4.lilpawhome_application.databinding.ActivityDangkyBinding;
 public class dangky extends AppCompatActivity {
 
     ActivityDangkyBinding binding;
+    public static String sdtdk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityDangkyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         addEvent();
     }
 
@@ -36,9 +36,10 @@ public class dangky extends AppCompatActivity {
                 String matkhau = binding.edtNhapmatkhau.getText().toString();
                 String nhaplaimatkhau = binding.edtNhaplaimatkhau.getText().toString();
                 String tendangnhap = binding.edtNhapsdt.getText().toString();
+                sdtdk=tendangnhap;
                 //CHUYỀN SDT QUA TÊN, SDT
-                Intent z =new Intent(dangky.this, sodienthoai.class);
-                z.putExtra("sodienthoai",tendangnhap);
+              //  Intent z =new Intent(dangky.this, sodienthoai.class);
+             //   z.putExtra("sodienthoai",tendangnhap);
 
                 //
                 int dodaichuoi1 = matkhau.length();
@@ -86,7 +87,8 @@ public class dangky extends AppCompatActivity {
                                         OTPVetification_Dialog_Dangky otpVetification_dialog_dangky = new OTPVetification_Dialog_Dangky(dangky.this, binding.edtNhapsdt.getText().toString());
                                         otpVetification_dialog_dangky.setCancelable(false);
                                         otpVetification_dialog_dangky.show();
-//                                    Toast.makeText(dangky.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(dangky.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
+
 //                                    Intent intent = new Intent(dangky.this, MainActivity.class);
 //                                    startActivity(intent);
                                     }

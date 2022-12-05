@@ -79,6 +79,7 @@ public class dangnhap1 extends AppCompatActivity {
                 xacnhan.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
                         //Chuyền dữ liệu
                    //     EditText taikhoangg;
                      //   taikhoangg=findViewById(R.id.edt_nhapdcgg);
@@ -97,6 +98,7 @@ public class dangnhap1 extends AppCompatActivity {
                             Toast.makeText(dangnhap1.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(dangnhap1.this, MainActivity.class);
                             startActivity(intent);
+                            dialog.cancel();
                         }
                     }
                 });

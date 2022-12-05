@@ -40,10 +40,15 @@ ActivityDoitentaikhoanBinding binding;
         binding.btnThaydoiten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Doitentaikhoan.this, "Tên tài khoản đã thay đổi!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Doitentaikhoan.this, taikhoanvabaomat.class);
-                startActivity(intent);
+                String tenhientai= binding.edtTenhientai.getText().toString();
+                Intent z =new Intent(Doitentaikhoan.this, taikhoanvabaomat.class);
+                z.putExtra("doiten",tenhientai);
+                startActivity(z);
+
                 finish();
+                Toast.makeText(Doitentaikhoan.this, "Tên tài khoản đã thay đổi!", Toast.LENGTH_SHORT).show();
+               // Intent intent = new Intent(Doitentaikhoan.this, taikhoanvabaomat.class);
+               // startActivity(intent);
             }
         });
     }

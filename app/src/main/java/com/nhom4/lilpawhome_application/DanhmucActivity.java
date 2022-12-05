@@ -21,6 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nhom4.lilpawhome_application.databinding.ActivityDanhmucBinding;
 import com.nhom4.lilpawhome_application.databinding.ActivityMainBinding;
 import com.nhom4.models.GroupDanhmuc;
+import com.nhom4.models.SanPhamLilPawHome;
 import com.nhom4.view.adapters.ExpandableDMAdapter;
 
 import java.util.ArrayList;
@@ -77,6 +78,7 @@ public class DanhmucActivity extends AppCompatActivity {
     }
 
     private void LoadData() {
+
 
     }
 
@@ -163,7 +165,32 @@ public class DanhmucActivity extends AppCompatActivity {
                 }
             }
         });
+        binding.lvDanhmucchocho.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
 
+                Intent intent = new Intent(DanhmucActivity.this, ShopChoCho1.class);
+                intent.putExtra("group",i);
+                intent.putExtra("child",i1);
+
+                intent = new Intent(DanhmucActivity.this, ShopChoCho1.class);
+                startActivity(intent);
+
+                return false;
+            }
+        });
+        binding.lvDanhmucchomeo.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                Intent intent = new Intent(DanhmucActivity.this, ShopChoMeo1.class);
+                intent.putExtra("group",i);
+                intent.putExtra("child",i1);
+
+                intent = new Intent(DanhmucActivity.this, ShopChoCho1.class);
+                startActivity(intent);
+                return false;
+            }
+        });
 
     }
 
@@ -295,5 +322,6 @@ public class DanhmucActivity extends AppCompatActivity {
 
         return listMap2;
     }
+
 
 }
