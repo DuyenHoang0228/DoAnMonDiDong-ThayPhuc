@@ -4,21 +4,30 @@ import static com.nhom4.lilpawhome_application.Utils_Diachi.DB_NAME;
 import static com.nhom4.lilpawhome_application.Utils_Diachi.DB_PATH_SUFFIX;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
@@ -63,14 +72,17 @@ public class MainActivity extends AppCompatActivity {
     Cursor c;
     public static ArrayList<SanPhamLilPawHome> spYeuThich;
     private ImageSlider imageSlider;
+    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_main);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         // setContentView(binding.getRoot());
+
         View view = binding.getRoot();
         setContentView(view);
+        drawerLayout = findViewById(R.id.src_home);
 
         BottomNavigationView navigationView = findViewById(R.id.bottom_nav);
         navigationView.setSelectedItemId(R.id.nav_action_home);
@@ -164,7 +176,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void addEvent() {
-        binding.imvChat.setOnClickListener(new View.OnClickListener() {
+//        binding.imvChat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this,ChatActivity.class);
+//
+//                startActivity(intent);
+//            }
+//        });
+        ImageView chat = findViewById(R.id.imv_chat);
+        ImageView giohang = findViewById(R.id.imv_giohang);
+        ;
+
+        chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ChatActivity.class);
@@ -172,6 +196,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        giohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,GioHangActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
         binding.gvDanhmuchome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -205,14 +239,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        binding.imvGiohang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,GioHangActivity.class);
-
-                startActivity(intent);
-            }
-        });
+//        binding.imvGiohang.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this,GioHangActivity.class);
+//
+//                startActivity(intent);
+//            }
+//        });
         binding.gvSpdexuat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -253,6 +287,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.imvDrawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
 
     }
 
@@ -460,5 +501,43 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter2);
 
     }
+    public void clickShopchocho(View view){
+        Intent intent = new Intent(MainActivity.this,ShopChoCho1.class);
+        startActivity(intent);
+
+    }
+    public void clickShopchomeo(View view){
+        Intent intent = new Intent(MainActivity.this,ShopChoMeo1.class);
+        startActivity(intent);
+
+    }
+    public void clickSpa(View view){
+        Intent intent = new Intent(MainActivity.this,SpaActivity1.class);
+        startActivity(intent);
+
+    }
+    public void clickThuonghieu(View view){
+        Intent intent = new Intent(MainActivity.this,ThuongHieuActivity.class);
+        startActivity(intent);
+
+    }
+    public void clickBlog(View view){
+        Intent intent = new Intent(MainActivity.this,BlogActivity.class);
+        startActivity(intent);
+
+    }
+    public void clickTimkiem(View view){
+        Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.dialog_thanhtimkiem);
+        dialog.show();
+        ImageButton thoat;
+        thoat = dialog.findViewById(R.id.btn_exittk);
+        thoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }});}
+
+
 
 }
