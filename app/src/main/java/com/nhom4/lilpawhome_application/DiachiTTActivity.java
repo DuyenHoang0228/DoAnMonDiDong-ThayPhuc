@@ -4,12 +4,14 @@ import static com.nhom4.lilpawhome_application.Utils_Diachi.DB_NAME;
 import static com.nhom4.lilpawhome_application.Utils_Diachi.DB_PATH_SUFFIX;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
@@ -41,6 +43,7 @@ public class DiachiTTActivity extends AppCompatActivity {
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     ArrayList<DiaChi_tt> diaChi_tts;
     public SQLiteDatabase db;
+    int IDdiachi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +55,6 @@ public class DiachiTTActivity extends AppCompatActivity {
 
 
         addEvents();
-        copyDB();
-        loadData();
-
     }
 
     private void addEvents() {
@@ -68,16 +68,19 @@ public class DiachiTTActivity extends AppCompatActivity {
         binding.btnXacnhandiachi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DiachiTTActivity.this, ThanhtoanActivity.class);
+                Intent intent = new Intent();
                 int iddiachi = 0;
                 for (int i = 0; i <= diaChi_tts.size()-1; i++){
                     if (diaChi_tts.get(i).isSelected()){
-                        iddiachi = i;
+                        iddiachi = diaChi_tts.get(i).getIddiachi();
                     }
                 }
                 intent.putExtra("IDdiachi", iddiachi);
                 intent.setAction("fromDiachi");
-                startActivity(intent);
+                setResult(Activity.RESULT_OK, intent);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);//quay lại màn hình thanh toán đã được tạo (không gọi onCreate bên màn hình thanh toán)
+//                startActivityForResult(intent, 123);
+                finish();
             }
         });
     }
@@ -88,45 +91,10 @@ public class DiachiTTActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    private void copyDB() {
-        File dbPath = getDatabasePath(DB_NAME);
-        if(!dbPath.exists()) {
-            if(copyDBFromAssets()){
-                Toast.makeText(DiachiTTActivity.this,
-                        "Copy database successful!", Toast.LENGTH_LONG).show();
-            }else{
-                Toast.makeText(DiachiTTActivity.this, "Copy database fail!", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    private boolean copyDBFromAssets() {
-        String dbPath = getApplicationInfo().dataDir + DB_PATH_SUFFIX + DB_NAME;
-
-        //Directory database in folder assets
-
-        try {
-            InputStream inputStream = getAssets().open(DB_NAME);
-            File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
-            if (!f.exists()){
-                f.mkdir();
-            }
-            OutputStream outputStream = new FileOutputStream(dbPath);
-            byte[] buffer = new byte[1024]; int length;
-            while ((length=inputStream.read(buffer))>0){
-                outputStream.write(buffer,0,length);
-            }
-            outputStream.flush(); outputStream.close(); inputStream.close();
-            return true;
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-
-    }
-
     private void loadData() {
+        Intent intent = getIntent();
+        IDdiachi = intent.getIntExtra("IDdiachi", 0);
+
         diaChi_tts = new ArrayList<>();
         db = openOrCreateDatabase(Utils_Diachi.DB_NAME, MODE_PRIVATE,null);
         Cursor c = db.query(Utils_Diachi.TBL_NAME, null,null,
@@ -143,12 +111,11 @@ public class DiachiTTActivity extends AppCompatActivity {
             boolean macdinh = false;
             if (c.getInt(8) == 1){
                 macdinh = true;
-                isSelected = true;
             }
-
-            diaChi_tts.add(new DiaChi_tt(c.getString(1), c.getString(2), diachi, isSelected, macdinh));
+            diaChi_tts.add(new DiaChi_tt(c.getInt(0), c.getString(1), c.getString(2), diachi, isSelected, macdinh));
         }
         c.close();
+
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
         binding.rvDiachitt.setLayoutManager(RecyclerViewLayoutManager);
 
@@ -166,6 +133,12 @@ public class DiachiTTActivity extends AppCompatActivity {
                 R.drawable.line_divider_pink));
 
         binding.rvDiachitt.setAdapter(adapter);
+        for (int i = 0; i <= diaChi_tts.size()-1; i++){
+            if (diaChi_tts.get(i).getIddiachi() == IDdiachi){//Lấy địa chỉ từ màn hình thanh toán và set tick cho checkbox địa chỉ này
+                diaChi_tts.get(i).setSelected(true);
+                adapter.notifyDataSetChanged();
+            }
+        }
         binding.rvDiachitt.setNestedScrollingEnabled(false);
     }
 

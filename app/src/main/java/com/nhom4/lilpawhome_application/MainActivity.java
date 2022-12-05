@@ -1,5 +1,8 @@
 package com.nhom4.lilpawhome_application;
 
+import static com.nhom4.lilpawhome_application.Utils_Diachi.DB_NAME;
+import static com.nhom4.lilpawhome_application.Utils_Diachi.DB_PATH_SUFFIX;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,6 +39,11 @@ import com.nhom4.view.adapters.SanPhamAdapterLilPawHome;
 import com.nhom4.view.adapters.HorAdapterSanphamLilPawHome;
 import com.nhom4.databases.DBHelperSanPham;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -99,12 +107,50 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        copyDBdiachi();
         loadBanner();
-
         loadData();
         addEvent();
         createCart();//Tạo function thực hiện tạo giỏ hàng nếu không có mảng giỏ hàng nào tồn tại
         createDanhSachYeuThich();
+    }
+
+    private void copyDBdiachi() {
+        File dbPath = getDatabasePath(DB_NAME);
+        if(!dbPath.exists()) {
+            if(copyDBDiachiFromAssets()){
+                Toast.makeText(MainActivity.this,
+                        "Copy database successful!", Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(MainActivity.this, "Copy database fail!", Toast.LENGTH_LONG).show();
+            }
+        }else{
+
+        }
+    }
+
+    private boolean copyDBDiachiFromAssets() {
+        String dbPath = getApplicationInfo().dataDir + DB_PATH_SUFFIX + DB_NAME;
+
+        try {
+            InputStream inputStream = getAssets().open(DB_NAME);
+            File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
+            if (!f.exists()){
+                f.mkdir();
+            }
+            OutputStream outputStream = new FileOutputStream(dbPath);
+            byte[] buffer = new byte[1024]; int length;
+            while ((length=inputStream.read(buffer))>0){
+                outputStream.write(buffer,0,length);
+            }
+            outputStream.flush(); outputStream.close(); inputStream.close();
+            return true;
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
     }
 
     private void createCart() {
@@ -219,7 +265,6 @@ public class MainActivity extends AppCompatActivity {
         loadSPdexuat();
         loadSPchocho();
         loadSPchomeo();
-
 
     }
 
@@ -346,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
 
         //truy vấn
         c = dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
-                " WHERE "+ DBHelperSanPham.COL_DISCOUNT+" > 0.1 ");
+                " WHERE "+ DBHelperSanPham.COL_DISCOUNT+" > 0.25");
         while(c.moveToNext())
         {
             sanPhamgiamgia.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),

@@ -58,8 +58,8 @@ public class SanPhamAdapterLilPawHome extends BaseAdapter {
             holder.imvAnhSanPham=view.findViewById(R.id.imv_hinhsanpham);
             holder.txtTenSanPham=view.findViewById(R.id.txt_tensanpham);
             holder.txtTenThuongHieu=view.findViewById(R.id.txt_brandsanpham);
-            holder.txtGiaMoi=view.findViewById(R.id.txt_giasanphamchuagiam);
-            holder.txtGiaCu=view.findViewById(R.id.txt_giasanphamdagiam);
+            holder.txtGiaMoi=view.findViewById(R.id.txt_giasanphamdagiam);
+            holder.txtGiaCu=view.findViewById(R.id.txt_giasanphamchuagiam);
             holder.imvAnhGioHang=view.findViewById(R.id.imv_gioHang);
             holder.txtloaiSanPham1 = view.findViewById(R.id.txt_loaisanpham1);
             holder.txtidsanpham = view.findViewById(R.id.txt_idsanpham);

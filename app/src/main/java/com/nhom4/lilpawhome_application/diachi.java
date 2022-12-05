@@ -56,7 +56,6 @@ public class diachi extends AppCompatActivity {
         themdiachi=findViewById(R.id.btn_themdiachimoi);
         rcvdiachi= findViewById(R.id.rcv_diachi);
 
-        copyDB();
         loadData();
         addEvents();
     }
@@ -65,44 +64,6 @@ public class diachi extends AppCompatActivity {
     protected void onResume() {
         loadData();
         super.onResume();
-    }
-
-    private void copyDB() {
-        File dbPath = getDatabasePath(DB_NAME);
-        if(!dbPath.exists()) {
-            if(copyDBFromAssets()){
-                Toast.makeText(diachi.this,
-                        "Copy database successful!", Toast.LENGTH_LONG).show();
-            }else{
-                Toast.makeText(diachi.this, "Copy database fail!", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    private boolean copyDBFromAssets() {
-        String dbPath = getApplicationInfo().dataDir + DB_PATH_SUFFIX + DB_NAME;
-
-        //Directory database in folder assets
-
-        try {
-            InputStream inputStream = getAssets().open(DB_NAME);
-            File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
-            if (!f.exists()){
-                f.mkdir();
-            }
-            OutputStream outputStream = new FileOutputStream(dbPath);
-            byte[] buffer = new byte[1024]; int length;
-            while ((length=inputStream.read(buffer))>0){
-                outputStream.write(buffer,0,length);
-            }
-            outputStream.flush(); outputStream.close(); inputStream.close();
-            return true;
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-
     }
 
     private void loadData() {

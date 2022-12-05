@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.nhom4.models.PhuongThucTT;
 import com.nhom4.view.adapters.AdapterPhuongThucTT;
 import com.nhom4.lilpawhome_application.databinding.ActivityPhuongthucttBinding;
 import com.nhom4.models.PhuongThucTTChild;
@@ -38,10 +39,12 @@ public class PhuongthucTTActivity extends AppCompatActivity {
         cList1 = new ArrayList<>();
         cList2 = new ArrayList<>();
 
+        cList1.add(new PhuongThucTTChild(R.drawable.logo_vcb, "Vietcombank (*9705)"));
+
         //List 2
         cList2.add(new PhuongThucTTChild(R.drawable.icon_visa, "Visa (*2054)"));
         cList2.add(new PhuongThucTTChild(R.drawable.icon_mastercard, "Mastercard (*2055)"));
-        mList.add(new PhuongThucTTMother(null, R.drawable.icon_atm, "Thẻ ATM nội địa", "(Internet Banking)", false));
+        mList.add(new PhuongThucTTMother(cList1, R.drawable.icon_atm, "Thẻ ATM nội địa", "(Internet Banking)", false));
         mList.add(new PhuongThucTTMother(cList2, R.drawable.icon_creditcards, "Thẻ tín dụng / Thẻ ngân hàng", "(Visa, Mastercard)", false));
 
         adapter = new AdapterPhuongThucTT(mList);

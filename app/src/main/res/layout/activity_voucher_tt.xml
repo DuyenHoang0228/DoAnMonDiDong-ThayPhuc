@@ -110,7 +110,7 @@
             android:id="@+id/txt_chuthichvoucher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2 Voucher đã được chọn. Đã áp dụng Ưu đãi vận chuyển và giảm giá/hoàn xu"
+            android:text="0 Voucher đã được chọn."
             android:fontFamily="@font/montserrat"
             android:textSize="15sp"
             android:textColor="@color/black"/>

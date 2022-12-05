@@ -3,15 +3,25 @@ package com.nhom4.models;
 import android.widget.RadioButton;
 
 public class DiaChi_tt {
+    int iddiachi;
     String tennguoinhan, sodienthoai, diachinguoinhan;
     public boolean isSelected, macdinh;
 
-    public DiaChi_tt(String tennguoinhan, String sodienthoai, String diachinguoinhan, boolean isSelected, boolean macdinh) {
+    public DiaChi_tt(int iddiachi, String tennguoinhan, String sodienthoai, String diachinguoinhan, boolean isSelected, boolean macdinh) {
         this.tennguoinhan = tennguoinhan;
         this.sodienthoai = sodienthoai;
         this.diachinguoinhan = diachinguoinhan;
         this.isSelected = isSelected;
         this.macdinh = macdinh;
+        this.iddiachi = iddiachi;
+    }
+
+    public int getIddiachi() {
+        return iddiachi;
+    }
+
+    public void setIddiachi(int iddiachi) {
+        this.iddiachi = iddiachi;
     }
 
     public boolean isMacdinh() {

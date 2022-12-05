@@ -8,11 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class Utils_Diachi extends SQLiteOpenHelper {
+public class Utils_Diachi {
     public static final String DB_NAME = "diachi.db";
     public static final String DB_PATH_SUFFIX = "/databases/";
-    public static final int DB_VERSION = 1;
-
 
     public static final String TBL_NAME = "Diachi";
     public static final String COL_ID = "ID";
@@ -25,17 +23,4 @@ public class Utils_Diachi extends SQLiteOpenHelper {
     public static final String COL_DUONG = "Duong";
     public static final String COL_MacDinh = "MacDinh";
 
-    public Utils_Diachi(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-    }
 }

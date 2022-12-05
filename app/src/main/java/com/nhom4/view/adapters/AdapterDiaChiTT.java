@@ -65,7 +65,7 @@ public class AdapterDiaChiTT extends RecyclerView.Adapter<AdapterDiaChiTT.MyView
 
     private void handleFirstRadiobuttonChecks(int adapterPosition) {
         for (int i = 0; i <= diaChi_ttList.size()-1; i++){
-            if (diaChi_ttList.get(i).isMacdinh() == true){
+            if (diaChi_ttList.get(i).isSelected() == true){
                 lastCheckedPosition = i;
             }
         }
