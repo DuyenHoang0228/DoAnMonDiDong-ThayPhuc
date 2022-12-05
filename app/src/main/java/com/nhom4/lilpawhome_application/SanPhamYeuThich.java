@@ -56,10 +56,13 @@ public class SanPhamYeuThich extends AppCompatActivity {
         //Set sự kiện click vào ô sản phẩm thì chuyển đến trang sản phẩm chi tiết
         binding.gvSanphamyeuthich.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+//                Intent intent = new Intent(SanPhamYeuThich.this, TrangSanPhamActivity.class);
+//                SanPhamLilPawHome spitem = spYeuThich.get(position);
+//                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+//                startActivity(intent);
                 Intent intent = new Intent(SanPhamYeuThich.this, TrangSanPhamActivity.class);
-                SanPhamLilPawHome spitem = spYeuThich.get(position);
-                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+                intent.putExtra("IDsanpham", MainActivity.spYeuThich.get(i).getIdSanPham());
                 startActivity(intent);
             }
         });
