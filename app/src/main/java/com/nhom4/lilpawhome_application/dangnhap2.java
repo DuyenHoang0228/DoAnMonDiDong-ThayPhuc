@@ -3,21 +3,29 @@ package com.nhom4.lilpawhome_application;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nhom4.databases.DBHelperTaiKhoan;
 import com.nhom4.lilpawhome_application.databinding.ActivityDangnhap2Binding;
 
 public class dangnhap2 extends AppCompatActivity {
 
     ActivityDangnhap2Binding binding;
+    private SQLiteDatabase db;
+    private SQLiteOpenHelper openHelper;
+    private Cursor cursor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        openHelper = new DBHelperTaiKhoan(this);
         binding = ActivityDangnhap2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -59,9 +67,16 @@ public class dangnhap2 extends AppCompatActivity {
                         Toast.makeText(dangnhap2.this, "Tên đăng nhập và mật khẩu không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(dangnhap2.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(dangnhap2.this, MainActivity.class);
-                        startActivity(intent);
+                        cursor = db.rawQuery("SELECT *FROM " + DBHelperTaiKhoan.TBL_NAME+ " WHERE( " + DBHelperTaiKhoan.COL_EMAIL + "=? OR " + DBHelperTaiKhoan.COL_PHONENUMBER + "=?) AND " + DBHelperTaiKhoan.COL_PASSWORD + "=?", new String[]{tendangnhap, matkhau});
+                        if (cursor != null) {
+                            if (cursor.getCount() > 0) {
+                                Toast.makeText(dangnhap2.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(dangnhap2.this, MainActivity.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Đăng nhập không thành công!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
                     }
                 }
             }

@@ -1,6 +1,6 @@
 package com.nhom4.lilpawhome_application;
 
-import static com.nhom4.lilpawhome_application.dangky.sdtdk;
+//import static com.nhom4.lilpawhome_application.dangky.sdtdk;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,7 +33,7 @@ String sdt;
         EditText sdtmoi= view.findViewById(R.id.edt_nhapsodienthoaimoi);
         sdt =sdtmoi.getText().toString();
         addEvents();
-        sodienthoai.setText(sdtdk);
+      //  sodienthoai.setText(sdtdk);
 
     }
     @Override
@@ -55,8 +55,8 @@ String sdt;
             @Override
             public void onClick(View view) {
                 if (sdt==""){
-                   sodienthoai.setText(sdtdk);}
-               else {
+                  // sodienthoai.setText(sdtdk);}
+             //  else {
                     sodienthoai.setText(sdt);
                }
 

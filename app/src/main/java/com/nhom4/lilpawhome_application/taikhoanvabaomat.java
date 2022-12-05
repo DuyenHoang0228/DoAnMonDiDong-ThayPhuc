@@ -2,7 +2,7 @@ package com.nhom4.lilpawhome_application;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import static com.nhom4.lilpawhome_application.dangky.tentk;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -36,6 +36,9 @@ ActivityTaikhoanvabaomatBinding binding;
         binding = ActivityTaikhoanvabaomatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         addEvent();
+        TextView tentaik=findViewById(R.id.txt_nameofaccount);
+        tentaik.setText(tentk);
+
     }
 
     private void addEvent() {
@@ -47,9 +50,9 @@ ActivityTaikhoanvabaomatBinding binding;
           public void onClick(View view) {
              Intent intent = new Intent(taikhoanvabaomat.this, Doitentaikhoan.class);
              startActivity(intent);
-             Intent y=getIntent();
-             String tenmoi=y.getStringExtra("doiten");
-             binding.txtNameofaccount.setText(tenmoi);
+           //  Intent y=getIntent();
+          //   String tenmoi=y.getStringExtra("doiten");
+            // binding.txtNameofaccount.setText(tenmoi);
           }
        });
         binding.btnSodienthoai.setOnClickListener(new View.OnClickListener() {
