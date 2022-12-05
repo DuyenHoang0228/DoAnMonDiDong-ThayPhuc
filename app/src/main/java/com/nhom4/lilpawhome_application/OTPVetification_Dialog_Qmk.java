@@ -78,6 +78,7 @@ public class OTPVetification_Dialog_Qmk extends Dialog {
                             Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), quenmatkhau2.class);
                     view.getContext().startActivity(intent);
+                    cancel();
                     }
                 }
         });

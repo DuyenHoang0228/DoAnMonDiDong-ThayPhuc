@@ -208,6 +208,20 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.txtXemtatcadanhgia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrangSanPhamActivity.this, DanhGiaSanPham.class);
+                startActivity(intent);
+            }
+        });
+        binding.imvAnhdanhgia4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangSanPhamActivity.this, HinhAnhDanhGiaSanPham.class);
+                startActivity(intent);
+            }
+        });
     }
     private  void ktYeuThich(){
         boolean exists = false;

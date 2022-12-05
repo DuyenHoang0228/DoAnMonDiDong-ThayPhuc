@@ -2,6 +2,7 @@ package com.nhom4.lilpawhome_application;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -34,7 +35,7 @@ public class SanPhamYeuThich extends AppCompatActivity {
         binding = ActivitySanPhamYeuThichBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        addEvents();
         createDb();
         loadData();
         addEvent();
@@ -46,6 +47,19 @@ public class SanPhamYeuThich extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(SanPhamYeuThich.this, TrangSanPhamActivity.class);
                 intent.putExtra("IDsanpham", MainActivity.spYeuThich.get(i).getIdSanPham());
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void addEvents() {
+        //Set sự kiện click vào ô sản phẩm thì chuyển đến trang sản phẩm chi tiết
+        binding.gvSanphamyeuthich.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(SanPhamYeuThich.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = spYeuThich.get(position);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
                 startActivity(intent);
             }
         });
@@ -68,6 +82,7 @@ public class SanPhamYeuThich extends AppCompatActivity {
         binding.gvSanphamyeuthich.setAdapter(adapter);
 
     }
+
 
     public boolean onCreateOptionsMenu(Menu menu)
     {

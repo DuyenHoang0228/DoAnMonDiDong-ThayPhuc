@@ -229,13 +229,13 @@
                         android:visibility="gone"/>
                 </LinearLayout>
                 <TextView
-                    android:id="@+id/txt_xemtatca_trangsp"
+                    android:id="@+id/txt_xemtatcadanhgia"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Xem tất cả → "
+                    android:layout_height="20dp"
                     android:layout_gravity="right"
                     android:textColor="#FF0000"
                     android:fontFamily="@font/montserrat_semibold"
+                    android:text="Xem tất cả → "
 
                     android:layout_marginLeft="20dp"/>
                 />

@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.nhom4.lilpawhome_application.databinding.ActivityNhapsodienthoaimoiBinding;
@@ -42,19 +44,27 @@ TextView sodienthoai;
         thaydoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                //lấy text từ edittext
+                LayoutInflater inflater= getLayoutInflater();
+                View sdt = inflater.inflate(R.layout.activity_nhapsodienthoaimoi,null);
+                EditText sodienthoaimoi= sdt.findViewById(R.id.edt_nhapsodienthoaimoi);
+                String dtmoi=sodienthoaimoi.getText().toString();
+                sodienthoai.setText(dtmoi);
+
                 Intent intent = new Intent(sodienthoai.this, nhapsodienthoaimoi.class);
                 startActivity(intent);
-
-                //Lấy dữ liệu từ chỗ đổi sdt
-                Intent y=getIntent();
-                String sdtmoi=y.getStringExtra("sodienthoaimoi");
-                sodienthoai.setText(sdtmoi);
+//               //Lấy dữ liệu từ chỗ đổi sdt
+//                Intent y=getIntent();
+//                String sdtmoi=y.getStringExtra("sodienthoaimoi");
+//                sodienthoai.setText(sdtmoi);
             }
         });
-        //Lấy dữ liệu từ chỗ đăng ký
-        Intent i=getIntent();
-        String sdt=i.getStringExtra("sodienthoai");
-        sodienthoai.setText(sdt);
+//        //Lấy dữ liệu từ chỗ đăng ký
+//        Intent i=getIntent();
+//        String sdt=i.getStringExtra("sodienthoai");
+//        sodienthoai.setText(sdt);
 
     }
 }
