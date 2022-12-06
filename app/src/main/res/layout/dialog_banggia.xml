@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="330dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/customshapeborderpinkfillwhite">
+
+    <ImageView
+        android:id="@+id/imv_banggia"
+        android:layout_width="300dp"
+        android:layout_height="370dp"
+        android:layout_gravity="center"
+        android:src="@drawable/banggia"></ImageView>
+</LinearLayout>

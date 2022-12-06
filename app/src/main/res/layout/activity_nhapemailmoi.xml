@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".nhapemailmoi"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#FAE5EC">
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Vui lòng nhập địa chỉ Email mới để nhận được mã OTP"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="14.5sp"></TextView>
+    <EditText
+        android:id="@+id/edt_nhapemailmoi"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textWebEmailAddress"
+        android:background="@drawable/customshapeborderwhite"
+        android:hint="Email"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></EditText>
+    <Button
+        android:id="@+id/btn_tieptucemail"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/customshapeborder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Tiếp tục"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></Button>
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gioithieuapp2"
+    android:orientation="vertical"
+    android:background="#FDE7F1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/introduction2"
+            android:layout_gravity="center"
+            android:layout_marginTop="-20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XIN CHÀO"
+            android:textColor="#FA579F"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gioithieuapp"
+            android:textColor="#FA579F"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:fontFamily="@font/montserrat"/>
+
+            <Button
+                android:id="@+id/btn_tieptheo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFA0CA"
+                android:layout_marginTop="80dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="tiếp theo"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:layout_gravity="bottom"
+                android:shadowColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"/>
+        </LinearLayout>
+
+
+
+</ScrollView>

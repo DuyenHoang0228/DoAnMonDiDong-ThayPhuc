@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SpaActivity1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:src="@drawable/bannerspa"/>
+            <ImageView
+                android:id="@+id/imv_quaylaispa1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_return_pink"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"/>
+    </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ĐĂNG KÝ DỊCH VỤ CHĂM SÓC THÚ CƯNG"
+            android:fontFamily="@font/nunito_black"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/icon_thong_tin_khac"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thông tin thú cưng"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn thú cưng"
+                android:fontFamily="@font/montserrat"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center" />
+
+            <Spinner
+                android:id="@+id/spinner_chonthucung"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/backgroundvoucher"
+                android:backgroundTint="#4DFFA0CA"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loại thú cưng"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp"/>
+
+        <RadioGroup
+            android:id="@+id/rg_loaithucung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp">
+
+            <RadioButton
+                android:id="@+id/rbtn_cho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chó"
+                android:fontFamily="@font/montserrat_light"
+                android:textSize="16sp"
+                android:buttonTint="#FFA0CA"
+                android:layoutDirection="ltr"/>
+
+            <RadioButton
+                android:id="@+id/rbtn_meo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mèo"
+                android:fontFamily="@font/montserrat_light"
+                android:textSize="16sp"
+                android:buttonTint="#FFA0CA"
+                android:layout_marginLeft="100dp"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn giới tính"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"/>
+
+        <RadioGroup
+            android:id="@+id/rg_gioitinh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp">
+
+            <RadioButton
+                android:id="@+id/rbtn_duc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đực"
+                android:fontFamily="@font/montserrat_light"
+                android:textSize="16sp"
+                android:buttonTint="#FFA0CA"
+                android:layoutDirection="ltr"/>
+
+            <RadioButton
+                android:id="@+id/rbtn_cai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cái"
+                android:fontFamily="@font/montserrat_light"
+                android:textSize="16sp"
+                android:buttonTint="#FFA0CA"
+                android:layout_marginLeft="100dp"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giống chó/mèo"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"/>
+
+        <EditText
+            android:id="@+id/edt_giongchomeo"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:hint="Nhập giống"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/backgroundvoucher"
+            android:backgroundTint="#4DFFA0CA"
+            android:layout_marginTop="15dp"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cân nặng"
+            android:fontFamily="@font/montserrat"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/edt_cannang"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:hint="Nhập cân nặng (kg)"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/backgroundvoucher"
+            android:backgroundTint="#4DFFA0CA"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:paddingBottom="25dp"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/txt_banggiathamkhao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bảng giá tham khảo"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="20sp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiếp tục"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="18sp"
+                android:backgroundTint="#FFA0CA"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

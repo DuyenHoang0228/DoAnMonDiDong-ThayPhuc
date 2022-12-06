@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/option_tkbd"
+        android:title=""
+        app:showAsAction="always"
+        android:icon="@drawable/icon_ba_cham_trang">
+        <menu>
+            <item android:title="Tìm kiếm bài đăng"
+                android:id="@+id/item_timkiembaidang"
+                app:showAsAction="always"
+                android:icon="@drawable/ic_baseline_search_white_24"></item>
+            <item android:title="Bài đăng về chó"
+                android:id="@+id/item_baidangvecho"
+                app:showAsAction="always"
+                android:icon="@drawable/dogpaw"></item>
+            <item android:title="Bài đăng về mèo"
+                android:id="@+id/item_baidangvemeo"
+                app:showAsAction="always"
+                android:icon="@drawable/catpaw"></item>
+            <item android:title="Chia sẻ kỹ năng"
+                android:icon="@drawable/selfconfident"
+                app:showAsAction="always"
+                android:id="@+id/item_chiasekynang"></item>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DiachiTTActivity"
+    android:background="#FFF3F8"
+    android:padding="10dp">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ"
+                android:fontFamily="@font/montserrat"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_diachitt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/btn_themdiachimoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/backgroundvoucher"
+                android:backgroundTint="#FFA0CA"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="100dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/addbutton"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/txt_becung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thêm địa chỉ mới"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/btn_xacnhandiachi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFA0CA"
+            android:fontFamily="@font/montserrat_bold"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:text="Xác nhận"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

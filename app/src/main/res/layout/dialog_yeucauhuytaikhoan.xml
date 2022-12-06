@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/customshapeborderpinkfillwhite"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <ImageButton
+        android:id="@+id/btn_exithtk"
+        android:layout_width="wrap_content"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cross"
+        android:layout_gravity="right"
+        android:backgroundTint="@color/white"></ImageButton>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Chúng tôi rất lấy làm tiếc khi bạn muốn rời khỏi Lilpaw Home, nhưng xin lưu ý các tài khoản đã bị xóa sẽ không được mở trở lại."
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></TextView>
+    <Button
+        android:id="@+id/btn_dongyhuytk"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/customshapeborder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Đồng ý"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></Button>
+</LinearLayout>

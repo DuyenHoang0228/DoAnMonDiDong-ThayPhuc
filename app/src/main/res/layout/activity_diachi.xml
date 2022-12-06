@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".diachi"
+    android:orientation="vertical"
+    android:background="#FAE5EC">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserratregular"
+            android:textSize="15sp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_diachi"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_themdiachimoi"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/customshapeborder"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Thêm địa chỉ mới"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:fontFamily="@font/montserratbold"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

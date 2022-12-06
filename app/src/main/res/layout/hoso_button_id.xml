@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp">
+    
+    <TextView
+        android:id="@+id/txt_becung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bé cưng 1"
+        android:backgroundTint="#FFA0CA"
+        android:background="@drawable/backgroundvoucher"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="19sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+</LinearLayout>

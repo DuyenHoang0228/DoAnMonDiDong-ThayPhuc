@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DSLichhenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sắp tới"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="19sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="15dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:src="@drawable/line_hr_pink"/>
+
+    <com.nhom4.view.ExpandableHeightGridView
+        android:id="@+id/rv_lichsaptoi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"/>
+</LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hoàn tất"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="19sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:src="@drawable/line_hr_pink"/>
+
+
+        <com.nhom4.view.ExpandableHeightGridView
+            android:id="@+id/rv_lichhoantat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

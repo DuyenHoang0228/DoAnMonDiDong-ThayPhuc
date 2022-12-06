@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giỏ hàng của bạn đang trống."
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#878787"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vui lòng thêm sản phẩm vào giỏ hàng."
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#878787" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2.5dp"
+        android:src="@drawable/line_hr_gray"/>
+
+    <TextView
+        android:id="@+id/txt_xacnhancanhbao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xác nhận"
+        android:textSize="13sp"
+        android:textColor="#FF8ABE"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:textAlignment="center"/>
+
+</LinearLayout>

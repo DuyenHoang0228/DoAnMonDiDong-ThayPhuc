@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/option_mn2"
+        android:title=""
+        app:showAsAction="always"
+        android:icon="@drawable/icon_ba_cham_trang">
+    <menu>
+            <item android:title="Tìm kiếm"
+                android:id="@+id/item_timkiem2"
+                app:showAsAction="always"
+                android:icon="@drawable/ic_baseline_search_white_24"></item>
+            <item android:title="Shop cho chó"
+                android:id="@+id/item_shopchocho2"
+                app:showAsAction="always"
+                android:icon="@drawable/shopping"></item>
+            <item android:title="Shop cho mèo"
+                android:id="@+id/item_shopchomeo2"
+                app:showAsAction="always"
+                android:icon="@drawable/shopping"></item>
+            <item android:title="Spa"
+                android:icon="@drawable/petspa"
+                app:showAsAction="always"
+                android:id="@+id/item_spa2"></item>
+            <item android:title="Ưu đãi"
+                android:id="@+id/item_uudai2"
+                app:showAsAction="always"
+                android:icon="@drawable/coupon"></item>
+            <item android:title="Thương hiệu"
+                android:id="@+id/item_thuonghieu2"
+                app:showAsAction="always"
+                android:icon="@drawable/price"></item>
+            <item android:title="Blog"
+                android:id="@+id/item_blog2"
+                app:showAsAction="always"
+                android:icon="@drawable/newspaper"></item>
+            <item android:title="Trang chủ"
+                android:id="@+id/item_trangchu2"
+                app:showAsAction="always"
+                android:icon="@drawable/ic_baseline_home_24"></item>
+        </menu>
+    </item>
+</menu>

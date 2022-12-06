@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dangky"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/imv_quaylai"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_return_pink"
+        android:layout_marginStart="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng ký tài khoản"
+        android:textColor="#FA579F"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FFC6DF"
+        android:background="@drawable/customshape">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_account"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/edt_nhapsdt"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:fontFamily="@font/montserrat"
+            android:hint="Nhập số điện thoại"
+            android:inputType="phone"
+            android:layout_marginEnd="50dp"
+            android:textSize="16sp">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFC6DF"
+        android:background="@drawable/customshape">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_password"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_nhapmatkhau"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFC6DF"
+                    android:hint="Mật khẩu mới"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="textPassword" android:layout_marginRight="10dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFC6DF"
+        android:background="@drawable/customshape">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_password"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_nhaplaimatkhau"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFC6DF"
+                    android:hint="Nhập lại mật khẩu"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="textPassword" android:layout_marginRight="10dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/cb_dongydieukhoan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đồng ý với điều khoản sử dụng Lilpaw Home"
+        android:checked="true"
+        android:button="@null"
+        android:drawableLeft="@drawable/checkbox_defaultselected"
+        android:drawablePadding="5dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#FA579F"/>
+    <Button
+        android:id="@+id/btn_dangky"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#FA579F"
+        android:layout_gravity="center"
+        android:text="Đăng ký"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:padding="5dp"/>
+
+
+</LinearLayout>

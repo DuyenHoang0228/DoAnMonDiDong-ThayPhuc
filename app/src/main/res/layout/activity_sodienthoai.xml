@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sodienthoai"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#FAE5EC">
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số điện thoại hiện tại của bạn"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat"
+        android:textSize="15sp"></TextView>
+    <TextView
+        android:id="@+id/txt_sodienthoaihientai"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/customshapeborderwhite"
+        android:text="Bạn chưa có số điện thoại! Bấm thay đổi để thêm!"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="15sp"
+        android:gravity="center_vertical"></TextView>
+    <Button
+        android:id="@+id/btn_thaydoisodienthoai"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/customshapeborder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Thay đổi"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="15sp"></Button>
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".DSLichhenActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_uudaivanchuyen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ưu đãi mua hàng"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_uudaivanchuyensub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chỉ có thể chọn được 1 voucher"
+                android:fontFamily="@font/montserrat"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/tv_uudaivanchuyen"/>
+
+            <ImageView
+                android:id="@+id/linebreaker1"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:src="@drawable/line_hr_pink"
+                android:layout_below="@id/tv_uudaivanchuyensub"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_vouchervanchuyen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/linebreaker1"/>
+
+            <TextView
+                android:id="@+id/tv_uudaimuahang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ưu đãi mua hàng"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/rv_vouchervanchuyen"/>
+
+            <TextView
+                android:id="@+id/tv_uudaimuahangsub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chỉ có thể chọn được 1 voucher"
+                android:fontFamily="@font/montserrat"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/tv_uudaimuahang"/>
+
+            <ImageView
+                android:id="@+id/linebreaker2"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:src="@drawable/line_hr_pink"
+                android:layout_below="@+id/tv_uudaimuahangsub"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_vouchermuahang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linebreaker2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="110dp" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txt_chuthichvoucher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0 Voucher đã được chọn."
+            android:fontFamily="@font/montserrat"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btn_apmavoucher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFA0CA"
+            android:fontFamily="@font/montserrat_bold"
+            android:padding="10dp"
+            android:text="Đồng ý"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

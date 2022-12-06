@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity"
+    android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/ln_editchat"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/lilpawhome"
+                android:background="@drawable/customborder"
+                android:layout_gravity="bottom"
+                />
+
+            <TextView
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/customshapeborder"
+                android:backgroundTint="#FFCFE4"
+                android:text="Chào mừng bạn đến với ứng dụng mua sắm trực tuyến sản phấm cho thú cưng, Lilpaw Home có thể giúp gì cho bạn?"
+                android:fontFamily="@font/montserrat"/>
+
+        </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="20dp"
+        android:divider="@null"
+        android:dividerHeight="20dp"
+        />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/ln_editchat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            >
+
+            <EditText
+                android:id="@+id/edt_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/customshapeborder"
+                android:backgroundTint="#FFCFE4"
+                android:drawableEnd="@drawable/icon_them_chat"
+                android:hint="Nhập tin nhắn của bạn..."
+                android:textSize="13dp"
+                android:layout_weight="2"/>
+
+            <Button
+
+                android:id="@+id/btn_sendmessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/customshapeborder"
+                android:backgroundTint="#FFA0CA"
+                android:text="Gửi"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+
+
+
+    
+</RelativeLayout>

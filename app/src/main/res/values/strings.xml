@@ -1,3 +1,316 @@
 <resources>
-    <string name="app_name">LilpawHome_Application</string>
+    <string name="app_name">Lilpaw Home</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="be_cung">Bé cưng %1$s</string>
+    <string name="mo_ta_thu_cung">Hơi ngáo xíu thôi nhưng mà dễ thương thân thiện, chỉ cần nhìn mặt nó thôi là đủ làm mình cười cả ngày rồi chứ không cần phải xem hài nữa. Tính nuôi để giữ nhà mà ai tới nó cũng vẫy đuôi, thấy nuôi tốn cơm quá.</string>
+    <string name="mo_ta_thu_cung_meo">Nhìn mặt bé là đủ biết bé nó hiền lành mức nào rồi. Bé rất nhút nhát trước người lạ nhưng khi quen hơi rồi thì quấn mãi không thôi. Rất thích ăn chúc chích và hạt.</string>
+    <string name="brand_sp">Thương hiệu: %1$s</string>
+    <string name="diadiemnhanhang">Thảo Duyên | 012345678 \n
+Số 106, khu phố 3, Linh Xuân, Thủ Đức, TP.HCM </string>
+    <string name="luuythanhtoan">Bạn sẽ được tích lũy tổng giá trị mua hàng để đổi được nhiều ưu đãi có giá trị. Đặt hàng ngay nào!</string>
+    <string name="VND">%1$d VNĐ</string>
+    <string name="soluongsp">x %1$s</string>
+    <string name="visa_mastercard">Visa, MasterCard - %1$s</string>
+    <string name="internetbanking">Internet Banking - %1$s</string>
+    <string-array name="array_nganhang">
+        <item>Chọn ngân hàng</item>
+        <item>BIDV - Ngân hàng Đầu tư và Phát triển Việt Nam</item>
+        <item>Viettanbank - Ngân hàng Công thương Việt Nam</item>
+        <item>Vietcombank - Ngân hàng Ngoại Thương Việt Nam</item>
+        <item>VPBank - Ngân hàng Việt Nam Thịnh Vượng</item>
+        <item>MB - Ngân hàng Quân đội Việt Nam</item>
+        <item>ACB - Ngân hàng TMCP Á Châu</item>
+        <item>TPBank - Ngân hàng TMCP Tiên Phong</item>
+        <item>TPBank - Ngân hàng TMCP Nam Á</item>
+        <item>Nam A Bank - Ngân hàng TMCP Sài Gòn</item>
+        <item>Techcombank - Ngân hàng Kỹ thương </item>
+        <item>SCB - Ngân hàng Sài Gòn Thương Tín</item>
+        <item>Agribank - Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam</item>
+    </string-array>
+    <string-array name="array_default_quanhuyen">
+        <item>Chọn Quận/Huyện</item>
+    </string-array>
+    <string-array name="array_tinh">
+        <item>Chọn tỉnh</item>
+        <item>An Giang</item>
+        <item>Bình Định</item>
+        <item>Bình Dương</item>
+        <item>Bình Thuận</item>
+        <item>Hà Nội</item>
+        <item>Quảng Bình</item>
+        <item>Quảng Nam</item>
+        <item>Quảng Ngãi</item>
+        <item>TP Hồ Chí Minh</item>
+    </string-array>
+    <string-array name="array_quangngai">
+        <item>Chọn Quận/Huyện</item>
+        <item>Thành phố Quảng Ngãi</item>
+        <item>Huyện Bình Sơn</item>
+        <item>Huyện Trà Bồng</item>
+        <item>Huyện Sơn Tịnh</item>
+        <item>Huyện Tư Nghĩa</item>
+    </string-array>
+    <string-array name="array_quangnam">
+        <item>Chọn Quận/Huyện</item>
+        <item>Thành phố Tam Kỳ</item>
+        <item>Thành phố Hội An</item>
+        <item>Huyện Tây Giang</item>
+        <item>Huyện Đông Giang</item>
+    </string-array>
+    <string-array name="array_binhthuan">
+        <item>Chọn Quận/Huyện</item>
+        <item>Thành phố Phan Thiết</item>
+        <item>Thị xã La Gi</item>
+        <item>Huyện Tuy Phong</item>
+        <item>Huyện Bắc Bình</item>
+    </string-array>
+    <string-array name="array_angiang">
+        <item>Chọn Quận/Huyện</item>
+        <item>Thành phố Long Xuyên</item>
+        <item>Thành phố Châu Đốc</item>
+        <item>Huyện Tri Tôn</item>
+        <item>Huyện Chợ Mới</item>
+    </string-array>
+    <string-array name="array_binhduong">
+        <item>Chọn Quận/Huyện</item>
+        <item>Thành phố Thủ Dầu Một</item>
+        <item>Thành phố Dĩ An</item>
+        <item>Thành phố Thuận An</item>
+        <item>Huyện Bàu Bàng</item>
+    </string-array>
+    <string-array name="array_hanoi">
+        <item>Chọn Quận/Huyện</item>
+        <item>Quận Ba Đình</item>
+        <item>Quận Hoàn Kiếm</item>
+        <item>Quận Tây Hồ</item>
+        <item>Quận Đống Đa</item>
+        <item>Quận Hai Bà Trưng</item>
+        <item>Quận Thanh Xuân</item>
+        <item>Quận Hoàng Mai</item>
+        <item>Quận Nam Từ Liêm</item>
+        <item>Huyện Sóc Sơn</item>
+        <item>Huyện Thanh Trì</item>
+        <item>Quận Hà Đông</item>
+    </string-array>
+    <string-array name="array_binhdinh">
+        <item>Chọn Quận/Huyện</item>
+        <item>Thành phố Quy Nhơn</item>
+        <item>Huyện Tuy Phước</item>
+        <item>Thị xã An Nhơn</item>
+        <item>Huyện Vân Canh</item>
+    </string-array>
+    <string-array name="array_quangbinh">
+        <item>Chọn Quận/Huyện</item>
+        <item>Thành phố Đồng Hới</item>
+        <item>Huyện Quảng Ninh</item>
+        <item>Huyện Tuyên Hóa</item>
+        <item>Huyện Quảng Trạch</item>
+        <item>Thị xã Ba Đồn</item>
+        <item>Huyện Bố Trạch</item>
+        <item>Huyện Lệ Thủy</item>
+    </string-array>
+    <string-array name="array_hcm">
+        <item>Chọn Quận/Huyện</item>
+        <item>Quận 1</item>
+        <item>Quận 3</item>
+        <item>Quận 4</item>
+        <item>Quận 5</item>
+        <item>Quận 6</item>
+        <item>Quận 7</item>
+        <item>Quận 8</item>
+        <item>Thành phố Thủ Đức</item>
+        <item>Quận 10</item>
+        <item>Quận 11</item>
+        <item>Quận 12</item>
+        <item>Huyện Củ Chi</item>
+        <item>Quận Bình Tân</item>
+        <item>Quận Tân Bình</item>
+        <item>Quận Phú Nhuận</item>
+        <item>Quận Gò Vấp</item>
+    </string-array>
+    <string-array name="helpContent">
+        <item> Khách hàng đặt hàng qua Lilpaw Home tại giỏ hàng trên app và chọn phương thức thanh toán và vận chuyển phù hợp.
+        </item>
+        <item>Lilpaw Home có 3 cách thức thanh toán chính đó là: thanh toán khi nhận hàng COD, thanh toán chuyển khoản và thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY.\n \n Trong trường hợp khách hàng cần phương thức thanh toán khác, vui lòng liên hệ trực tiếp với LilPaw Home.\n\n Thanh toán khi nhận hàng (COD) cho nhân viên giao hàng.\n\n Thanh toán qua chuyển khoản ngân hàng\n\n Thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY\n\nĐối với các phương thức khác sau khi chuyển khoản xong, quý khách hàng vui lòng gửi ủy nhiệm chi, sao kê hoặc chụp ảnh màn hình gửi Lilpaw Home qua zalo, viber, inbox fanpage.\n
+        Lưu ý:  Lilpaw Home chỉ chuẩn bị và đóng hàng khi nhận được thông báo chuyển tiền từ ngân hàng.</item>
+        <item> Nếu bạn không hài lòng với sản phẩm mới được giao hàng hoặc dịch vụ khách hàng của Lilpaw Home và muốn đổi trả sản phẩm, Lilpaw Home sẵn sàng đổi trả cho bạn. Bên dưới đây là 1 số thông tin hữu ích về đổi trả sản phẩm.
+
+Lilpaw Home sẵn sàng đổi trả sản phẩm đã bán.
+Lilpaw Home khuyến khích quý khách hàng nên kiểm tra sản phẩm trước khi thanh toán.
+Lilpaw Home có chính sách đổi trả 30 ngày cho đơn hàng giao tại TP Hồ Chí Minh.\n \n
+
+1. Tình trạng sản phẩm được đổi trả\n
+Còn nguyên tem nhãn bao bì, mới 100%
+Còn hạn sử dụng (date) trên 06 tháng
+Có hóa đơn mua hàng từ Lilpaw Home
+Còn mới, không dơ bẩn bám vết bẩn, có mùi hôi..
+Không có dấu hiệu đã sử dụng như mở nắp bao bì, chai, lọ…
+Không có ghi chú, băng dính do thêm vào từ bên ngoài\n\n
+
+2. Phương thức đổi trả và thời gian giải quyết\n
+Chụp ảnh sản phẩm muốn đổi trả kèm hóa đơn mua hàng gửi về zalo, viber hoặc inbox fanpage.
+Thời gian xử lý đổi trả là 2 – 4 giờ kể từ lúc nhận được yêu cầu.
+Khách hàng không tốn phí hay phụ phí khi đổi trả.
+Áp dụng đổi trả tại văn phòng kho của Lilpaw Home, tại số 5 đường 11B,  KDC Dương Hồng, Bình Hưng, Bình Chánh, TPHCM
+Nếu khách hàng muốn đổi trả tận nơi, cần chi trả tiền ship cho dịch vụ giao hàng.
+Không xử lý đổi trả sau thời gian 30 ngày kể từ ngày giao hàng.
+Khách hàng có thể đổi sản phẩm khác; hoặc nhận giftcash có giá trị tương đương; hoặc nhận tiền chuyển khoản.
+Hàng khuyến mãi, hàng tặng, hàng mua bằng Giftcash không đổi trả.
+Nếu đơn hàng yêu cầu đổi trả phát sinh từ sai sót của Lilpaw Home, Lilpaw Home sẽ xử lý lỗi trong 2 giờ kể từ khi nhận thông báo, khách hàng không tốn phí và áp dụng cho tất cả đơn hàng nội thành TP Hồ Chí Minh và ở các tỉnh thành khác.\n\n
+
+3. Hướng dẫn đóng gói để đổi trả sản phẩm\n
+Sản phẩm nếu đổi trả nên cho lại vào thùng carton Lilpaw Home đã giao hàng. Nếu không còn, quý khách hàng tham khảo cách đóng gói sản phẩm bên dưới.
+
+Hàng nhẹ, nhỏ, gọn, không dễ vỡ: Cho vào túi giấy / bọc / màng quấn nylon, dán băng keo ôm sát vào hàng hóa để định hình và niêm phong kiện hàng. Nhỡ dán nhãn tên người nhận là Lilpaw Home kèm số điện thoại và địa chỉ.
+Hàng chất lỏng, thủy tinh, dễ vỡ: Đóng gói với màng xốp khí (bubble wrap), dán băng keo kín xung quanh, và cho vào thùng giấy carton, chèn kín giấy báo xung quanh để tránh xê dịch khi vận chuyển, niêm phong kỹ miệng và đáy thùng. Nhỡ dán nhãn tên người nhận là Lilpaw Home kèm số điện thoại và địa chỉ. Nhớ ghi chú hàng dễ vỡ.
+Hàng nặng, lớn, cồng kềnh: Đóng gói trong thùng giấy carton, chèn kín giấy báo xung quanh để tránh hàng hóa bị xê dịch, niêm phong kỹ miệng và đáy thùng. Nhỡ dán nhãn tên người nhận là Lilpaw Home kèm số điện thoại và địa chỉ. Nhớ ghi chú hàng nặng.
+Nhằm tránh rắc rối và tiết kiệm thời gian cho khách hàng, Lilpaw Home khuyến khích bạn nên kiểm tra sản phẩm trước khi thanh toán. </item>
+        <item>1. Mục đích thu thập thông tin cá nhân\n
+Việc thu thập dữ liệu chủ yếu trên website LilPaw Home bao gồm: họ tên, email, điện thoại, địa chỉ khách hàng.
+
+Đây là các thông tin mà chúng tôi cần thành viên cung cấp bắt buộc khi gửi thông tin nhờ tư vấn hay muốn mua sản phẩm và để chúng tôi liên hệ xác nhận lại với khách hàng trên website nhằm đảm bảo quyền lợi cho cho người tiêu dùng.
+
+Ngoài ra, thành viên có trách nhiệm thông báo kịp thời cho website chúng tôi về những hành vi sử dụng trái phép, lạm dụng, vi phạm bảo mật, lưu giữ tên đăng ký và mật khẩu của bên thứ ba để có biện pháp giải quyết phù hợp.\n\n
+
+2. Phạm vi sử dụng thông tin\n
+Chúng tôi sử dụng thông tin thành viên cung cấp để:
+
+Liên hệ xác nhận đơn hàng và giao hàng cho thành viên khi nhận được yêu cầu từ thành viên;
+
+Cung cấp thông tin về sản phẩm đến khách hàng nếu có yêu cầu từ khách hàng;
+
+Gửi email tiếp thị, khuyến mại về sản phẩm, kiến thức liên quan
+
+Gửi các thông báo về các hoạt động trên website
+
+Liên lạc và giải quyết với người dùng trong những trường hợp đặc biệt;
+
+Khi có yêu cầu của cơ quan tư pháp bao gồm: Viện kiểm sát, tòa án, cơ quan công an điều tra liên quan đến hành vi vi phạm pháp luật nào đó của khách hàng.\n\n
+
+3. Thời gian lưu trữ thông tin\n
+Dữ liệu cá nhân của thành viên sẽ được lưu trữ cho đến khi có yêu cầu ban quản trị hủy bỏ.
+
+Còn lại trong mọi trường hợp thông tin cá nhân thành viên sẽ được bảo mật trên máy chủ của chúng tôi\n\n
+
+4. Những người hoặc tổ chức có thể được tiếp cận với thông tin đó\n
+Những thông tin thu thập của thành viên sẽ được ban quản trị tiếp cận
+
+Các cơ quan chức năng khi có yêu cầu\n\n
+
+5. Địa chỉ của đơn vị thu thập và quản lý thông tin, bao gồm cách thức liên lạc để người tiêu dùng có thể hỏi về hoạt động thu thập, xử lý thông tin liên quan đến cá nhân mình
+HỘ KINH DOANH THÚ CƯNG SÀI GÒN
+
+Địa chỉ:
+
+05 đường số 11B, khu nhà ở tại Lô số 8 thuộc khu 9A+B (9B8), Khu chức năng số 9, đô thị mới Nam Thành phố, Bình Hưng, Bình Chánh, TPHCM
+
+Điện thoại: 0707.76.07.96\n\n
+
+6. Phương thức và công cụ để người tiêu dùng tiếp cận và chỉnh sửa dữ liệu cá nhân của mình trên hệ thống thương mại điện tử của đơn vị thu thập thông tin
+Thành viên có quyền tự kiểm tra, cập nhật, điều chỉnh hoặc hủy bỏ thông tin cá nhân của mình bằng cách liên hệ với ban quản trị website thực hiện việc này.
+
+Thành viên có quyền gửi khiếu nại về nội dung bảo mật thông tin đề nghị liên hệ Ban quản trị của website. Khi tiếp nhận những phản hồi này, chúng tôi sẽ xác nhận lại thông tin, trường hợp đúng như phản ánh của thành viên tùy theo mức độ, chúng tôi sẽ có những biện pháp xử lý kịp thời.\n\n
+
+7. Cơ chế tiếp nhận và giải quyết khiếu nại của người tiêu dùng liên quan đến việc thông tin cá nhân bị sử dụng sai mục đích hoặc phạm vi đã thông báo
+Thông tin cá nhân của thành viên được cam kết bảo mật tuyệt đối theo chính sách bảo vệ thông tin cá nhân.
+
+Việc thu thập và sử dụng thông tin của mỗi thành viên chỉ được thực hiện khi có sự đồng ý của khách hàng đó trừ những trường hợp pháp luật có quy định khác.
+
+Không sử dụng, không chuyển giao, cung cấp hay tiết lộ cho  bên thứ 3 nào về thông tin cá nhân của thành viên khi không có sự cho phép đồng ý từ thành viên.
+
+Trong trường hợp máy chủ lưu trữ thông tin bị hacker tấn công dẫn đến mất mát dữ liệu cá nhân thành viên, chúng tôi sẽ có trách nhiệm thông báo vụ việc cho cơ quan chức năng điều tra xử lý kịp thời và thông báo cho thành viên được biết.
+
+Bảo mật tuyệt đối mọi thông tin giao dịch trực tuyến của thành viên bao gồm thông tin hóa đơn kế toán chứng từ số hóa</item>
+        <item>Lilpaw Home miễn phí vận chuyển tại nội thành Tiền Giang, Kiên Giang, Cần Thơ, Bà Rịa - Vũng Tàu, Bình Dương, Đồng Nai, Thành phố Hồ Chí Minh và Thủ đô Hà Nội cho các đơn hàng từ 90.000đ trở lên. Các đơn hàng dưới 90.000đ Quý khách chỉ mất 10.000đ phí vận chuyển.
+
+Đối với những khách hàng thuộc khu vực khác miễn phí vận chuyển đối với đơn hàng từ 249.000đ trở lên. Cước phí vận chuyển 25.000đ đơn hàng dưới 249.000đ (Áp dụng đối với trọng lượng đơn hàng từ 1 kg trở xuống và kích thước thùng đóng gói đơn hàng nhỏ hơn 25 x 18 x 15):</item>
+
+
+    </string-array>
+    <string name="help_conten1">
+        Lilpaw Home có 3 cách thức thanh toán chính đó là: thanh toán khi nhận hàng COD, thanh toán chuyển khoản và thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY.\n \n Trong trường hợp khách hàng cần phương thức thanh toán khác, vui lòng liên hệ trực tiếp với LilPaw Home.\n\n Thanh toán khi nhận hàng (COD) cho nhân viên giao hàng.\n\n Thanh toán qua chuyển khoản ngân hàng\n\n Thanh toán qua ứng dụng thanh toán/ví điện tử VNPAY\n\nĐối với các phương thức khác sau khi chuyển khoản xong, quý khách hàng vui lòng gửi ủy nhiệm chi, sao kê hoặc chụp ảnh màn hình gửi Lilpaw Home qua zalo, viber, inbox fanpage.\n
+        Lưu ý:  Lilpaw Home chỉ chuẩn bị và đóng hàng khi nhận được thông báo chuyển tiền từ ngân hàng.
+
+    </string>
+    <string name="cacdieukhoan">
+        ĐIỀU 1: ĐỊNH NGHĨA \n
+Người mua: Là người mua sản phẩm trên website bán hàng trực tuyến Sendo.vn được Bên A sử dụng theo những điều kiện được ghi nhận trong bản thỏa thuận này.
+
+Hoàn tất giao dịch: Khi người mua nhận được sản phẩm của bên A và xác nhận hài lòng với sản phẩm/dịch vụ đó.
+
+Dịch vụ thanh toán và giao hàng đảm bảo: Được hiểu là dịch vụ thanh toán và giao hàng đảm bảo của Công ty cổ phần Công nghệ Sen Đỏ. Người mua được giao hàng tại nhà sau khi thực hiện thanh toán trực tuyến qua cổng thanh toán Senpay.vn hoặc thanh toán trực tiếp khi nhận hàng (COD)
+
+Xác nhận hoàn tất giao dịch:Khi người mua gửi thông tin xác nhận đã nhận được sản phẩm đúng chất lượng, số lượng của bên A trên website Sendo.vn.
+
+Khóa tài khoản:Là tài khoản của người mua được đưa vào trạng thái kiểm soát khi các giao dịch thanh toán cho bên A được nghi vấn có dấu hiệu vi phạm pháp luật là giả mạo hoặc có rủi ro.
+
+Senpay: được hiểu rằng là dịch vụ thanh toán trực tuyến do Công ty cổ phần Công nghệ Sen Đỏ và các đối tác cung cấp.
+
+Dịch vụ vận chuyển: được hiểu là dịch vụ chuyển phát các bưu phẩm bưu kiện, do các đối tác vận chuyển của Công ty cổ phần Công nghệ Sen Đỏ cung cấp
+
+Sen Đỏ hay Sendo.vn: được hiểu là sàn giao dịch Thương mại điện tử (TMĐT) trực tuyến thông qua website Sendo.vn do Công ty cổ phần Công nghệ Sen Đỏ cung cấp.
+
+ĐIỀU 2: QUYỀN VÀ TRÁCH NHIỆM CỦA BÊN A
+2.1 Giao dịch hợp pháp và bán hàng trung thực: Bên A cam kết:
+
+a) Chỉ được phép sử dụng Thanh toán và giao hàng của bên B để chấp nhận cho việc bán và vận chuyển sản phẩm, dịch vụ hoặc nhận tiền một cách hợp pháp. Nghiêm cấm các hành vi mà pháp luật hiện hành chưa hoặc không cho phép, bao gồm nhưng không giới hạn rửa tiền, đưa/nhận hối lộ, buôn bán các sản phẩm có nguồn gốc vi phạm pháp luật, lừa đảo người mua. Đồng thời, Bên A phải có trách nhiệm đảm bảo các hàng hóa cung cấp cho người mua được thanh toán qua các công cụ thanh toán trực tuyến của Bên B phải là hàng hóa được phép giao dịch và tuân thủ theo đúng các quy định của pháp luật Việt Nam hiện hành (nếu có).
+
+b) Đảm bảo tính chính xác, trung thực của các thông tin về hàng hóa, dịch vụ của mình chào bán, đặc biệt là tình trạng tồn kho và giá cả. Bên A cam kết bán hàng đúng giá đã niêm yết, giá đã bao gồm các loại thuế theo quy định của pháp luật.
+
+2.2 Cam kết về tài chính: Bên A cam kết
+
+a) Không yêu cầu người mua cung cấp các thông tin tài chính cá nhân như tài khoản ngân hàng, số thẻ tín dụng, mật khẩu đăng nhập tài khoản SenPay…
+
+b) Cung cấp cho người mua những chính sách đổi/trả và bảo hành một cách rõ ràng và hợp lý, cung cấp cho Bên B nội dung các chính sách đó khi được yêu cầu và có trách nhiệm thông báo mỗi khi có thay đổi hoặc cập nhật.
+
+c) Giá niêm yết bán hàng là giá thật. Người mua chỉ thanh toán đúng giá niêm yết và bên A chỉ nhận thanh toán từ bên B đúng giá trị đã niêm yết trừ đi các khoản phụ phí (nếu có) như phí vận chuyển, phí đổi trả hàng và các loại phí khác.
+
+2.3 Theo dõi và kiểm soát giao dịch:
+
+Khi nhận được thông tin thông báo (tin nhắn và/hoặc email) của Sen Đỏ thông báo về giao dịch phát sinh, bên A có trách nhiệm kiểm tra lại một lần nữa bằng cách đăng nhập vào trang “Quản lý đơn hàng" của tài khoản Người bán trên Sen Đỏ:
+
+a) Nếu có hàng, Bên A xác nhận có hàng và chuyển hàng hoá hoặc thực hiện dịch vụ cho người mua theo đúng chất lượng, thời hạn đã cam kết trong mô tả khi đăng bán. Đồng thời lưu lại các chứng từ hợp lệ như hóa đơn bán hàng, phiếu xuất kho, vận đơn của hãng vận chuyển… để đối chiếu trong trường hợp cần thiết.
+
+b) Nếu hết hàng, Bên A chọn lựa giữa việc hoãn đơn hàng đến khi có hàng hoặc xác nhận Hết hàng để đơn hàng tự động hủy.
+
+c) Trong vòng 24h kể từ khi đơn hàng phát sinh mà bên A không vào xác nhận tình trạng còn hàng, bên B giữ mọi quyền hủy đơn hàng mà không cần báo trước.
+
+d) Nếu Bên A vi phạm nhiều lần việc trì hoãn không xác nhận đơn hàng khiến đơn hàng bị hủy hoặc đăng bán sản phẩm mà không có hàng, Bên B có quyền gỡ bỏ sản phẩm đã đăng, gỡ bỏ gian hàng của Bên A trong vòng 7 ngày đến vĩnh viễn tùy mức độ và mật độ vi phạm.
+
+2.4 Thanh toán:
+
+Sau 24h kể từ khi nhận hàng mà người mua không có khiếu nại gì, đơn hàng sẽ tự động hoàn tất. Bên A chỉ nhận được thanh toán khi đơn hàng ở trạng thái hoàn tất, nếu có xảy ra khiếu nại, thời hạn thanh toán sẽ kéo dài cho đến khi khiếu nại được xử lý xong.
+
+
+Tùy vào địa chỉ giao hàng, thời gian người bán nhận được thanh toán sẽ khác nhau:
+
+1. Đối với các đơn hàng đi TP.HCM, Hà Nội và Đà Nẵng: người bán nhận thanh toán sau 3-5 ngày làm việc kể từ khi người mua nhận được hàng
+
+2. Đối với các đơn hàng đi các tỉnh/thành phố khác: người bán nhận thanh toán sau 5-7 ngày làm việc kể từ khi người mua nhận được hàng
+
+Tiền hàng sẽ được chuyển vào tài khoản Senpay của Bên A. Bên A có thể tiến hành gửi lệnh rút tiền trên hệ thống của Senpay bất kể lúc nào. Lệnh rút tiền sẽ được Senpay kiểm duyệt và thanh toán tối đa trong vòng 48h (bốn mươi tám giờ) bằng phương thức chuyển khoản của ngân hàng. Phí chuyển khoản do bên A thanh toán theo quy định của ngân hàng được cụ thể tại Quy định sử dụng dịch vụ của Senpay. Nội dung cụ thể quy định về cơ chế vận hành hệ thống Senpay (thanh toán điện tử), cũng như quyền và nghĩa vụ của các bên tham gia khi sử dụng các dịch vụ trên được quy định đầy đủ tại trang website senpay.vn
+
+2.5 Sở hữu trí tuệ và An toàn bảo mật: Bên A cam kết
+
+a) Tôn trọng quyền sở hữu trí tuệ của Sen Đỏ và các sản phẩm, dịch vụ khác của bên B; không tự ý thay đổi tên gọi, hình ảnh, và các thành phần liên quan đến thương hiệu của các sản phẩm của bên B tại bất kỳ đâu.
+
+b) Hợp tác và cung cấp thông tin theo yêu cầu của bên B trong quá trình điều tra các trường hợp nghi ngờ phạm pháp, lừa đảo hoặc vi phạm các quy định của SenPay và Sen Đỏ
+
+c) Thực hiện đúng các hướng dẫn an toàn của Sen Đỏ, tự bảo mật tài khoản và chịu trách nhiệm nếu để xảy ra mất mát do rò rỉ thông tin từ phía mình.
+
+2.6 Hoàn lại tiền:
+
+a) Bên A bị người mua khiếu nại không nhận được hàng hoặc hàng hoá (Vận chuyển là giữa Sen Đỏ và Đơn vị vận chuyển, nếu KH không nhận được hàng là trách nhiệm của đơn vị vận chuyển chứ không phải Bên A) không đúng như mô tả và yêu cầu trả lại hàng mà bên A không đưa ra được bằng chứng hợp lý chứng minh mình đã chuyển hàng theo đúng mô tả.
+
+b) Bên B chứng minh được rằng nguồn gốc của khoản tiền do người mua thanh toán cho bên A có nguồn gốc phi pháp hoặc liên quan đến một giao dịch lừa đảo; thì bên B có quyền giữ lại khoản tiền liên quan đến giao dịch thanh toán đó để trả lại cho người bị hại theo đúng quy định của pháp luật.
+
+2.7 Chấm dứt hợp tác:
+
+Bên A có thể chấm dứt hợp tác và ngừng chấp nhận thanh toán bằng dịch vụ Thanh toán Senpay và giao hàng đảm bảo của Sen Đỏ bằng việc thông báo qua địa chỉ mail của Trung tâm Dịch vụ khách hàng Sen Đỏ hotronguoiban@sendo.vn hoặc gọi số 1900 6771 trong vòng 7 (bảy) ngày. Khi đó, bên A phải có trách nhiệm đăng nhập tài khoản để theo dõi và giải quyết những tồn đọng về xung đột lợi ích (nếu có) với bên B và người mua phát sinh trong suốt quá trình sử dụng dịch vụ trước đó nhằm đảm bảo Bên B không phải chịu bất kỳ trách nhiệm nào liên quan đến các nghĩa vụ giữa Bên A và người mua.
+
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gioithieuapp"><b>LILPAW HOME</b> là ứng dụng hỗ trợ bạn chăm sóc thú cưng, cung cấp đa dạng các sản phẩm cho bé yêu của bạn</string>
 </resources>

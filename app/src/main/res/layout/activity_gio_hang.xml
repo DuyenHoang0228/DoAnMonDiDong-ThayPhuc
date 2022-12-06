@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GioHangActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imv_emptycart"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="80dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_emptycart"/>
+
+                <TextView
+                    android:id="@+id/txt_emptycart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Giỏ hàng của bạn đang trống"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="22sp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="220dp"
+                    android:layout_marginBottom="100dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_giohang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="60dp"/>
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <CheckBox
+            android:id="@+id/cbox_tatca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:buttonTint="#FFA0CA"
+            android:fontFamily="@font/montserrat"
+            android:text="Tất cả"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:gravity="end"
+                android:text="Tổng thanh toán"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_tongthanhtoan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="end"
+                android:text="233.000đ"
+                android:textColor="#FF0071"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_muahang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FFA0CA"
+            android:fontFamily="@font/montserrat_bold"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:text="Mua hàng"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

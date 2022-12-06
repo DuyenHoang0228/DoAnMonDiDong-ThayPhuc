@@ -1,26 +1,580 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_lipawhome_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_lipawhome_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LilpawHome_Application"
         tools:targetApi="31">
         <activity
+            android:name=".PTVanchuyenActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DungNgayVoucher"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SanPhamYeuThich"
+            android:exported="true"
+            android:label="Sản phẩm yêu thích">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".KhoVoucher"
+            android:exported="false"
+            android:label="Kho Voucher">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".khachhangthanthiet"
+            android:exported="true"
+            android:label="Khách Hàng thân thiết">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+        </activity>
+        <activity
+            android:name=".HinhAnhDanhGiaSanPham"
+            android:exported="false"
+            android:label="Ảnh từ người mua">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".thongbaodangkythanhcong"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".FormDanhGiaSanPham"
+            android:exported="false"
+            android:label="Đánh giá sản phẩm">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DanhGiaCuaToi"
+            android:exported="false"
+            android:label="Đánh giá của tôi">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DanhGiaSanPham"
+            android:exported="false"
+            android:label="Đánh giá sản phẩm">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ChiTietVoucher"
+            android:exported="false"
+            android:label="Chi tiết Voucher">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ShopChoMeo2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TrangSanPhamActivity"
+            android:exported="false"
+            android:label="Trang sản phẩm">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ShopChoCho1"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UserActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SanPhamTheoThuongHieuActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ShopChoCho2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ThuongHieuActivity"
+            android:exported="false"
+            android:label="Thương hiệu">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.NoActionBar">
+            >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+
+        </activity>
+        <activity
+            android:name=".suadiachi"
+            android:exported="false"
+            android:label="Sửa địa chỉ">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".thongbao"
+            android:exported="false"
+            android:label="Thông báo">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".thongbaoemail"
+            android:exported="false"
+            android:label="Thông báo Email">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".caidatthongbao"
+            android:exported="false"
+            android:label="Cài đặt thông báo">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".themtaikhoannganhang"
+            android:exported="false"
+            android:label="Thêm tài khoản ngân hàng">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".taikhoannganhang"
+            android:exported="false"
+            android:label="Tài khoản ngân hàng">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".themdiachi"
+            android:exported="false"
+            android:label="Thêm địa chỉ">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".diachi"
+            android:exported="false"
+            android:label="Địa chỉ">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".datlaimatkhau"
+            android:exported="false"
+            android:label="Đặt lại mật khẩu">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".nhaplaimatkhau"
+            android:exported="false"
+            android:label="Nhập lại mật khẩu">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".nhapemailmoi"
+            android:exported="false"
+            android:label="Nhập Email mới">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".nhapsodienthoaimoi"
+            android:exported="false"
+            android:label="Nhập số điện thoại mới">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".email"
+            android:exported="false"
+            android:label="Email">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".sodienthoai"
+            android:exported="false"
+            android:label="Số điện thoại">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".taikhoanvabaomat"
+            android:exported="false"
+            android:label="Tài khoản và bảo mật">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".thietlaptaikhoan"
+            android:exported="false"
+            android:label="Thiết lập tài khoản">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DanhmucActivity"
+            android:exported="false"
+            android:label="Lịch hẹn">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SubHelpActivity2"
+            android:exported="false"
+            android:label="Trợ giúp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HelpActivity"
+            android:exported="false"
+            android:label="Trợ giúp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".NoticeActivity"
+            android:exported="false"
+            android:label="Thông báo">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".quenmatkhau2"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".quenmatkhau1"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".dangky"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".dangnhap2"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".dangnhap1"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".manhinhkhoidong"
+            android:exported="true"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:label="Nhắn tin">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ShopChoMeo1"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DiachiTTActivity"
+            android:exported="false"
+            android:label="Địa chỉ">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DsDonmuaActivity"
+            android:exported="false"
+            android:label="Đơn mua">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DonHangActivity"
+            android:exported="false"
+            android:label="Thông tin đơn hàng">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".PhuongthucTTActivity"
+            android:exported="false"
+            android:label="Phương thức thanh toán">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".VoucherTTActivity"
+            android:exported="false"
+            android:label="Kho Voucher">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ThanhtoanActivity"
+            android:exported="false"
+            android:label="Thanh toán">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".GioHangActivity"
+            android:exported="false"
+            android:label="Giỏ hàng">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HosoMeoDetailActivity"
+            android:exported="false"
+            android:label="Chi tiết hồ sơ">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TaoHosoActivity"
+            android:exported="false"
+            android:label="Tạo hồ sơ thú cưng">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HosoChoDetailActivity"
+            android:exported="false"
+            android:label="Chi tiết hồ sơ">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ChonHosoActivity"
+            android:exported="false"
+            android:label="Hồ sơ thú cưng">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
 
+        </activity>
+        <activity
+            android:name=".LichhenDetailActivity"
+            android:exported="false"
+            android:label="Chi tiết lịch hẹn">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DSLichhenActivity"
+            android:exported="false"
+            android:label="Danh sách lịch hẹn">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".BlogDetailActivity"
+            android:exported="false"
+            android:label="Bài đăng">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".BlogActivity"
+            android:exported="false"
+            android:label="Danh sách bài đăng">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SpaActivity2"
+            android:exported="true"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SpaActivity1"
+            android:exported="false"
+            android:theme="@style/Theme.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UuDaiMain"
+            android:exported="false"
+            android:label="Ưu đãi">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".gioithieuapp2"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".gioithieuapp1"
+            android:exported="false"
+            android:theme="@style/Theme.offactionbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".xemtatcaSPActivity"
+            android:exported="false"
+            android:label="Danh sách sản phẩm">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Doitentaikhoan"
+            android:exported="false"
+            android:label="Đổi tên tài khoản">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".cacdieukhoansudung"
+            android:exported="false"
+            android:label="Các điều khoản sử dụng">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

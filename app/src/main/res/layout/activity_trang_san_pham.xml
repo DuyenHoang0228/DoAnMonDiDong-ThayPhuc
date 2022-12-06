@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangSanPhamActivity"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <ImageView
+                android:id="@+id/imv_anhsanpham"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/spsuacho"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_thuonghieu_trangsanpham"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="DOG WASH"
+                android:textColor="#000000"/>
+            <TextView
+                android:id="@+id/txt_tensanpham_trangsanpham"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sản phẩm dầu gội cho chó hương thơm dịu mát phòng ngừa ghẻ nấm và vi khuẩn"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="#000000"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_weight="7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="360000đ"
+                        android:id="@+id/txt_giamoi_trangsanpham"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="#FF0101"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="500000đ"
+                        android:id="@+id/txt_giacu"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:foreground="@drawable/strikethroughtext"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/txt_giamgia"
+                    android:backgroundTint="#FF0000"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Tiết kiệm 30%"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                            android:background="@drawable/custom_background_discount"
+                    android:gravity="right"
+                    android:textColor="#FFFFFF"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:background="@drawable/customborder">
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="4.5"
+                    style="@style/CustomRatingBarStyle"
+                    android:isIndicator="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"/>
+                <TextView
+                    android:id="@+id/txt_sosaodanhgia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.5 |"
+                    android:layout_gravity="center"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/montserrat_semibold"/>
+                <TextView
+                    android:id="@+id/txt_soluotdaban"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Số lượt đã bán: 1020  "
+                    android:layout_gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/montserrat_semibold"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imv_traitim"
+                    android:src="@drawable/icon_sp_yeu_thich"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imv_chiase"
+                    android:src="@drawable/icon_share"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_tieudethongtinsanpham"
+                android:text="Thông tin sản phẩm"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="#000000"
+
+                android:textSize="13sp"/>
+            <TextView
+                android:layout_marginTop="13dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Thương hiệu đến từ công ty uy tín Synergy Labs của Mỹ được đánh giá là 1 trong những công ty danh tiếng nhất toàn cầu về các sản phẩm chuyên dụng chăm sóc sức khỏe cho thú cưng. - Thương hiệu đến từ công ty uy tín Synergy Labs của Mỹ được đánh giá là 1 trong những công ty danh tiếng nhất toàn cầu về các sản phẩm chuyên dụng chăm sóc sức khỏe cho thú cưng. - Thương hiệu đến từ công ty uy tín Synergy Labs của Mỹ được đánh giá là 1 trong những công ty danh tiếng nhất toàn cầu về các sản phẩm chuyên dụng chăm sóc sức khỏe cho thú cưng."
+                android:id="@+id/txt_thongtinsanpham"
+                android:textColor="#000000"
+
+                android:fontFamily="@font/montserrat"
+                />
+            <Button
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_xemthem"
+                android:backgroundTint="#FFA0CA"
+                android:textColor="#FFFFFF"
+                android:text="Xem thêm"/>
+<!--            chưa xử lý-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_danhgiasanpham"
+                    android:text="Đánh giá sản phẩm"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="13sp"
+                    />
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="4.5"
+                        style="@style/CustomRatingBarStyle"
+                        android:isIndicator="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"/>
+                    <TextView
+                        android:id="@+id/txt_sosaodanhgia_soluotdaban"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4/5 (100 lượt đánh giá)"
+                        android:layout_gravity="center"
+                        android:textSize="13sp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/montserrat"
+                        android:layout_marginLeft="10dp"/>
+
+
+                    <TextView
+                        android:id="@+id/txt_loaisanpham1"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/txt_idsanpham"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/txt_stringhinhsp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/txt_xemtatcadanhgia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right"
+                    android:textColor="#FF0000"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Xem tất cả → "
+
+                    android:layout_marginLeft="20dp"/>
+                />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Hình ảnh từ người mua"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="12sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_weight="4">
+                <ImageView
+                    android:id="@+id/imv_anhdanhgia1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/spbong"/>
+                <ImageView
+                    android:id="@+id/imv_anhdanhgia2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/spcaomong"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+                <ImageView
+                    android:id="@+id/imv_anhdanhgia3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/spcancau"/>
+                <ImageView
+                    android:id="@+id/imv_anhdanhgia4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/xemthem"/>
+            </LinearLayout>
+            <com.nhom4.view.ExpandableHeightGridView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gv_danhgiasanpham"/>
+<!--                đánh giá-->
+
+
+            <com.nhom4.view.ExpandableHeightGridView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gv_sanphamdexuat"
+                android:numColumns="2"
+                android:layout_marginBottom="60dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <LinearLayout
+            android:background="@drawable/custom_rectangle_bg_button"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Mua ngay"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="13sp"
+                android:id="@+id/btn_muangay"
+                android:backgroundTint="#FFA0CA"
+                android:padding="0dp"
+                android:textColor="#FFFFFF"
+                android:layout_margin="0dp"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="0dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_rectangle_bg_button_white">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="13sp"
+                android:text="Thêm vào giỏ hàng"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#FFA0CA"
+                android:padding="0dp"
+                android:id="@+id/btn_themvaogiohang"
+                android:layout_margin="0dp"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="0dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

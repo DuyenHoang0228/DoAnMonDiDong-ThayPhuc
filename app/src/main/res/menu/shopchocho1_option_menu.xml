@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Lọc"
+        android:id="@+id/mn_locshopchocho1"
+        app:showAsAction="always"
+        android:icon="@drawable/icon_filter_pink"
+        >
+        <menu>
+            <item
+                android:title="Thức ăn"
+                android:id="@+id/mn_thucanchocho"
+
+                app:showAsAction="always">
+                <menu>
+                    <item
+                        android:title="Hạt"
+                        android:id="@+id/mn_hatchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Pate"
+                        android:id="@+id/mn_patechocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Sữa"
+                        android:id="@+id/mn_suachocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Snack"
+                        android:id="@+id/mn_snackchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Dinh dưỡng"
+                        android:id="@+id/mn_dinhduongchocho"
+                        app:showAsAction="withText"/>
+
+                </menu>
+
+            </item>
+            <item
+                android:title="Đồ dùng"
+                android:id="@+id/mn_dodungchocho"
+                app:showAsAction="withText">
+                <menu>
+                    <item
+                        android:title="Khay vệ sinh"
+                        android:id="@+id/mn_khayvesinhchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Chén ăn"
+                        android:id="@+id/mn_chenanchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Chăm sóc lông móng"
+                        android:id="@+id/mn_longmongchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Chăm sóc tai mắt miệng"
+                        android:id="@+id/mn_taimatmiengchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Sữa tắm, dầu gội"
+                        android:id="@+id/mn_suatamchocho"
+                        app:showAsAction="withText"/>
+                </menu>
+            </item>
+            <item
+                android:title="Đồ chơi"
+                android:id="@+id/mn_dochoichocho"
+                app:showAsAction="withText">
+                <menu>
+                    <item
+                        android:title="Xương đồ chơi"
+                        android:id="@+id/mn_xuongchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Gối bông cho chó"
+                        android:id="@+id/mn_goichocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Cào móng"
+                        android:id="@+id/mn_caomongchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Banh bóng"
+                        android:id="@+id/mn_banhbongchocho"
+                        app:showAsAction="withText"/>
+                </menu>
+            </item>
+            <item
+                android:title="Phụ kiện"
+                android:id="@+id/mn_phukienchocho"
+                app:showAsAction="withText">
+                <menu>
+                    <item
+                        android:title="Vòng cổ"
+                        android:id="@+id/mn_vongcochocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Quần áo"
+                        android:id="@+id/mn_quanaochocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Dây dắt và yếm"
+                        android:id="@+id/mn_daydatchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Rọ mõm"
+                        android:id="@+id/mn_romomchocho"
+                        app:showAsAction="withText"/>
+                </menu>
+            </item>
+            <item
+                android:title="Chuồng, lồng"
+                android:id="@+id/mn_chuonglongchocho"
+                app:showAsAction="withText">
+                <menu>
+                    <item
+                        android:title="Nệm ổ"
+                        android:id="@+id/mn_nemochocho"/>
+                    <item
+                        android:title="Lồng vận chuyển"
+                        android:id="@+id/mn_longvanchuyenchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Balo vận chuyển"
+                        android:id="@+id/mn_balovanchuyenchocho"
+                        app:showAsAction="withText"/>
+                </menu>
+            </item>
+            <item
+                android:title="Khác"
+                android:id="@+id/mn_khac"
+                app:showAsAction="withText">
+                <menu>
+                    <item
+                        android:title="Sản phẩm hiếm"
+                        android:id="@+id/mn_sanphamhiemchocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Sản phẩm bán chạy"
+                        android:id="@+id/mn_sanphambanchaychocho"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Sản phẩm mới nhất"
+                        android:id="@+id/mn_sanphammoinhatchocho"
+                        app:showAsAction="withText"/>
+
+
+                </menu>
+            </item>
+            <item
+                android:title="Lọc sản phẩm"
+                android:id="@+id/mn_locsp"
+                app:showAsAction="withText"
+                >
+                <menu>
+                    <item
+                        android:title="Giá tăng dần"
+                        android:id="@+id/mn_giatangdan"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Giá giảm dần"
+                        android:id="@+id/mn_giagiamdan"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Lượt mua tăng dần"
+                        android:id="@+id/mn_luotmuatangdan"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Lượt mua giảm dần"
+                        android:id="@+id/mn_luotmuagiamdan"
+                        app:showAsAction="withText"/>
+                    <item
+                        android:title="Đánh giá cao"
+                        android:id="@+id/mn_danhgiacao"
+                        app:showAsAction="withText"/>
+                </menu>
+            </item>
+
+        </menu>
+    </item>
+
+
+
+
+
+
+</menu>

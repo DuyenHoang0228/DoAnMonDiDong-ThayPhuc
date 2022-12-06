@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_sanpham"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="310dp"
+    android:orientation="vertical"
+    android:background="@drawable/bordersanpham">
+
+    <ImageView
+        android:id="@+id/imv_hinhsanpham"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="1dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/hinhsanpham"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_tensanpham"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imv_hinhsanpham"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:paddingTop="5dp"
+        android:text="[Siêu giảm gá] Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản - Thơm ngon bổ dưỡng cho mèo cưng"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imv_hinhsanpham" />
+
+    <TextView
+        android:id="@+id/txt_brandsanpham"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linear_layout_giatien"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/montserrat_light"
+        android:paddingBottom="5dp"
+        android:text="Hãng: Felipro"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/linear_layout_giatien"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imv_hinhsanpham" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_giatien"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="3dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_brandsanpham">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:orientation="vertical"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/txt_giasanphamdagiam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="32.000 đ"
+                android:textColor="#D44837"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txt_giasanphamchuagiam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:foreground="@drawable/strikethroughtext"
+                android:text="36.000 đ"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/imv_gioHang"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_cart" />
+
+        <TextView
+            android:id="@+id/txt_loaisanpham1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/txt_idsanpham"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/txt_stringhinhsp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/txt_tongtiensp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Lọc"
+        android:id="@+id/mn_locshopchomeo2"
+        app:showAsAction="always"
+        android:icon="@drawable/icon_filter_pink">
+        <menu>
+            <item
+                android:title="Sản phẩm hiếm"
+                android:id="@+id/mn_sanphamhiemchomeo"
+                app:showAsAction="withText"/>
+            <item
+                android:title="Sản phẩm bán chạy"
+                android:id="@+id/mn_sanphambanchaychomeo"
+                app:showAsAction="withText"/>
+            <item
+                android:title="Sản phẩm mới nhất"
+                android:id="@+id/mn_sanphammoinhatchomeo"
+                app:showAsAction="withText"/>
+            <item
+                android:title="Giá tăng dần"
+                android:id="@+id/mn_giatangdan"
+                app:showAsAction="withText"/>
+            <item
+                android:title="Giá giảm dần"
+                android:id="@+id/mn_giagiamdan"
+                app:showAsAction="withText"/>
+            <item
+                android:title="Lượt mua tăng dần"
+                android:id="@+id/mn_luotmuatangdan"
+                app:showAsAction="withText"/>
+            <item
+                android:title="Lượt mua giảm dần"
+                android:id="@+id/mn_luotmuagiamdan"
+                app:showAsAction="withText"/>
+            <item
+                android:title="Đánh giá cao"
+                android:id="@+id/mn_danhgiacao"
+                app:showAsAction="withText"/>
+        </menu>
+    </item>
+</menu>
