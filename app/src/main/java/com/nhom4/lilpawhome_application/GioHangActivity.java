@@ -41,7 +41,7 @@ public class GioHangActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_gio_hang);
         binding = ActivityGioHangBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
         binding.rvGiohang.setLayoutManager(RecyclerViewLayoutManager);
 

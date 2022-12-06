@@ -8,11 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.nhom4.view.adapters.AdapterBlog;
@@ -40,7 +43,7 @@ public class BlogActivity extends AppCompatActivity {
 
         loadData();
 
-        adapter = new AdapterBlog(blogs);
+        adapter = new AdapterBlog(blogs, BlogActivity.this);
 
         // Thiết lập phương hướng của RecyclerView (ngang hay dọc)
         VerticalLayout = new LinearLayoutManager(BlogActivity.this, LinearLayoutManager.VERTICAL, false);
@@ -54,7 +57,10 @@ public class BlogActivity extends AppCompatActivity {
                 R.drawable.line_divider));
 
         recyclerView.setAdapter(adapter);
+
     }
+
+
 
     private void loadData() {
         blogs = new ArrayList<>();

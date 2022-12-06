@@ -195,20 +195,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="20dp">
+            android:layout_marginLeft="20dp"
+            android:weightSum="3">
 
             <ImageView
+                android:layout_weight="1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:src="@drawable/icon_dat_lich" />
 
             <TableLayout
+                android:layout_weight="2"
                 android:id="@+id/tb_giohen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
-                <TableRow>
+                <TableRow
+                    android:gravity="center">
                     <androidx.cardview.widget.CardView
                         android:layout_marginStart="20dp"
                         app:cardCornerRadius="10dp">
@@ -239,7 +243,8 @@
                             android:gravity="center"/>
                     </androidx.cardview.widget.CardView>
                 </TableRow>
-                <TableRow android:layout_marginTop="10dp">
+                <TableRow android:layout_marginTop="10dp"
+                    android:gravity="center" >
                     <androidx.cardview.widget.CardView
                         android:layout_marginStart="20dp"
                         app:cardCornerRadius="10dp">
@@ -269,7 +274,8 @@
                             android:gravity="center"/>
                     </androidx.cardview.widget.CardView>
                 </TableRow>
-                <TableRow android:layout_marginTop="10dp">
+                <TableRow android:layout_marginTop="10dp"
+                    android:gravity="center">
                     <androidx.cardview.widget.CardView
                         android:layout_marginStart="20dp"
                         app:cardCornerRadius="10dp">
@@ -298,8 +304,9 @@
                             android:textSize="20sp"
                             android:gravity="center"/>
                     </androidx.cardview.widget.CardView>
-                </TableRow>
-                <TableRow android:layout_marginTop="10dp">
+                </TableRow >
+                <TableRow android:layout_marginTop="10dp"
+                    android:gravity="center">
                     <androidx.cardview.widget.CardView
                         android:layout_marginStart="20dp"
                         app:cardCornerRadius="10dp">
