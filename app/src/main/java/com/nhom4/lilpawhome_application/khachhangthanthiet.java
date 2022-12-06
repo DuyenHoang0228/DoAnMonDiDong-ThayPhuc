@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -14,7 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.nhom4.databases.DBHelperSanPham;
+import com.nhom4.models.SanPhamLilPawHome;
 import com.nhom4.view.adapters.AdapterVoucher;
+import com.nhom4.view.adapters.HorAdapterSanphamLilPawHome;
 import com.nhom4.view.adapters.HorSanPhamAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityKhachhangthanthietBinding;
 import com.nhom4.models.ChiTieuKhachHang;
@@ -32,7 +36,11 @@ public class khachhangthanthiet extends AppCompatActivity {
     HorSanPhamAdapter adapter2;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager Horizontallayout;
+    RecyclerView recyclerView;
     ChiTieuKhachHang chitieu;
+    DBHelperSanPham dbHelperSanPham;
+    ArrayList<SanPhamLilPawHome> spXemThem;
+    HorAdapterSanphamLilPawHome adapter4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +50,17 @@ public class khachhangthanthiet extends AppCompatActivity {
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        createDb();
         loadData();
         addEvent();
         level();
         makeColor();
     }
 
+    private void createDb() {
+        dbHelperSanPham=new DBHelperSanPham(khachhangthanthiet.this);
+        dbHelperSanPham.createSampleData();
+    }
     private void level() {
         //du lieu khach hang
         chitieu = new ChiTieuKhachHang("littlemermaid@user", 25, 6000000);
@@ -103,24 +115,51 @@ public class khachhangthanthiet extends AppCompatActivity {
 
     private void loadData() {
 
-        //data recyclerview xem them san pham
+//        //data recyclerview xem them san pham
+//        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+//        binding.rcvXemthemsanpham.setLayoutManager(RecyclerViewLayoutManager);
+//        //add sp
+//        dsXemThemSanPham = new ArrayList<>();
+//        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+//
+//        // truyen du lieu
+//        adapter2= new HorSanPhamAdapter(dsXemThemSanPham);
+//        Horizontallayout=new LinearLayoutManager(khachhangthanthiet.this,LinearLayoutManager.HORIZONTAL,false);
+//        binding.rcvXemthemsanpham.setLayoutManager(Horizontallayout);
+//        binding.rcvXemthemsanpham.setAdapter(adapter2);
+
+        recyclerView = (RecyclerView) findViewById(R.id.rcv_xemthemsanpham);
         RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
-        binding.rcvXemthemsanpham.setLayoutManager(RecyclerViewLayoutManager);
+        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
         //add sp
-        dsXemThemSanPham = new ArrayList<>();
-        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
-        dsXemThemSanPham.add(new SanPham(R.drawable.hinhsanpham, "Thức ăn cho mèo Felipro 500g - Giảm sỏi mật - Vị hải sản", 32000, 36000, "Hãng: Felipiro", "Mèo", "Thức ăn"));
+        spXemThem= new ArrayList<>();
 
-        // truyen du lieu
-        adapter2= new HorSanPhamAdapter(dsXemThemSanPham);
+        //truy vấn
+        Cursor c=dbHelperSanPham.getData(" SELECT * FROM "+ DBHelperSanPham.TBL_NAME +
+                " WHERE "+ DBHelperSanPham.COL_CATE1+" like '%chomeo' ");
+        while(c.moveToNext())
+        {
+            spXemThem.add(new SanPhamLilPawHome(c.getInt(0),c.getString(1),c.getDouble(2), c.getDouble(3),
+                    c.getDouble(4),c.getString(5),c.getString(6),c.getString(7),c.getString(8),c.getString(9),
+                    c.getString(10),c.getDouble(11),c.getDouble(12),c.getDouble(13)));
+        }
+        c.close();
+        adapter4= new HorAdapterSanphamLilPawHome(khachhangthanthiet.this, spXemThem, new HorAdapterSanphamLilPawHome.ItemClickListener() {
+            @Override
+            public void onItemClick(SanPhamLilPawHome details) {
+                Intent intent = new Intent(khachhangthanthiet.this, TrangSanPhamActivity.class);
+                intent.putExtra("IDsanpham",details.getIdSanPham());
+                startActivity(intent);
+            }
+        });
+
         Horizontallayout=new LinearLayoutManager(khachhangthanthiet.this,LinearLayoutManager.HORIZONTAL,false);
-        binding.rcvXemthemsanpham.setLayoutManager(Horizontallayout);
-        binding.rcvXemthemsanpham.setAdapter(adapter2);
-
-
+        recyclerView.setLayoutManager(Horizontallayout);
+        recyclerView.setAdapter(adapter4);
 
     }
 
@@ -139,6 +178,7 @@ public class khachhangthanthiet extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private void makeColor() {

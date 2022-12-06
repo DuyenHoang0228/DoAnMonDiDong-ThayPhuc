@@ -27,6 +27,7 @@ public class gioithieuapp2 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(gioithieuapp2.this, dangnhap1.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

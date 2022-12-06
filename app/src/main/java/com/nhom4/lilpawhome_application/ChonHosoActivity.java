@@ -1,5 +1,8 @@
 package com.nhom4.lilpawhome_application;
 
+import static com.nhom4.lilpawhome_application.Utils_Spa.DB_NAME;
+import static com.nhom4.lilpawhome_application.Utils_Spa.DB_PATH_SUFFIX;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -9,18 +12,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.nhom4.models.ThuCung;
 import com.nhom4.view.adapters.AdapterChonHoso;
 import com.nhom4.lilpawhome_application.databinding.ActivityChonHosoBinding;
 import com.nhom4.models.HoSo;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChonHosoActivity extends AppCompatActivity {
 
@@ -30,6 +44,9 @@ public class ChonHosoActivity extends AppCompatActivity {
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     ArrayList<HoSo> hoSoList;
 
+    ArrayList<ThuCung> thuCungs;
+    SQLiteDatabase dbb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,26 +54,91 @@ public class ChonHosoActivity extends AppCompatActivity {
         binding = ActivityChonHosoBinding.inflate(getLayoutInflater());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(binding.getRoot());
-
+        copyDB();
         loadData();
-        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
-        binding.rvHosothucung.setLayoutManager(RecyclerViewLayoutManager);
 
-        adapter = new AdapterChonHoso(hoSoList);
-
-        // Thiết lập phương hướng của RecyclerView (ngang hay dọc)
-        VerticalLayout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        binding.rvHosothucung.setLayoutManager(VerticalLayout);
-
-        //Tạo khoảng cách giữa các item trong RecyclerView
-        DividerItemDecoration dividerItemDecoration1 = new DividerItemDecoration(binding.rvHosothucung.getContext(),
-                VerticalLayout.getOrientation());
-        binding.rvHosothucung.addItemDecoration(dividerItemDecoration1);
-        dividerItemDecoration1.setDrawable(ContextCompat.getDrawable(getBaseContext(),
-                R.drawable.line_divider));
-
+        binding.rvHosothucung.setExpanded(true);
+        adapter = new AdapterChonHoso(hoSoList, ChonHosoActivity.this, R.layout.hoso_button_id);
         binding.rvHosothucung.setAdapter(adapter);
-        binding.rvHosothucung.setNestedScrollingEnabled(true);
+
+        addIntent();
+        //addEvent();
+        loadDB();
+    }
+
+    private void addEvent() {
+        binding.rvHosothucung.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Intent intent = new Intent(ChonHosoActivity.this, HosoChoDetailActivity.class);
+
+                    startActivity(intent);
+
+           }
+        });
+    }
+
+    private void loadDB() {
+        thuCungs = new ArrayList<>();
+        dbb = openOrCreateDatabase(DB_NAME, MODE_PRIVATE,null);
+
+        Cursor c = dbb.query(Utils_Spa.TBL_NAME, null,null,
+                null,null,null,null);
+        while (c.moveToNext()){
+            thuCungs.add(new ThuCung(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getString(4), c.getDouble(5)));
+        }
+        c.close();
+    }
+
+    private void addIntent() {
+        binding.btnThemthucung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChonHosoActivity.this, TaoHosoActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+    private void copyDB() {
+        File dbPath = getDatabasePath(DB_NAME);
+        if(!dbPath.exists()) {
+            if(copyDBFromAssets()){
+                Toast.makeText(ChonHosoActivity.this,
+                        "Copy database successful!", Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(ChonHosoActivity.this, "Copy database fail!", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    protected void onResume() {
+        loadDB();
+        super.onResume();
+    }
+    private boolean copyDBFromAssets() {
+        String dbPath = getApplicationInfo().dataDir + DB_PATH_SUFFIX + DB_NAME;
+
+        //Directory database in folder assets
+
+        try {
+            InputStream inputStream = getAssets().open(DB_NAME);
+            File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
+            if (!f.exists()){
+                f.mkdir();
+            }
+            OutputStream outputStream = new FileOutputStream(dbPath);
+            byte[] buffer = new byte[1024]; int length;
+            while ((length=inputStream.read(buffer))>0){
+                outputStream.write(buffer,0,length);
+            }
+            outputStream.flush(); outputStream.close(); inputStream.close();
+            return true;
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
     }
 
     private void loadData() {

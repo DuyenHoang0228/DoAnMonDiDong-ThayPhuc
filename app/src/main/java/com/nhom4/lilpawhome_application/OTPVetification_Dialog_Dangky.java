@@ -90,6 +90,7 @@ public class OTPVetification_Dialog_Dangky extends Dialog {
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), dangky.class);
                 view.getContext().startActivity(intent);
+
             }
         });
     }
