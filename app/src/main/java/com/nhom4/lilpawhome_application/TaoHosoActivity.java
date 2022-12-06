@@ -1,10 +1,12 @@
 package com.nhom4.lilpawhome_application;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -31,6 +33,17 @@ public class TaoHosoActivity extends AppCompatActivity {
         binding = ActivityTaoHosoBinding.inflate(getLayoutInflater());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(binding.getRoot());
+        addEvent();
+    }
+
+    private void addEvent() {
+        binding.txtLuuthaydoiHs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(TaoHosoActivity.this, "Tạo hồ sơ thành công", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
 
     }
 

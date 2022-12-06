@@ -10,7 +10,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.nhom4.databases.DBHelperSanPham;
 import com.nhom4.lilpawhome_application.databinding.ActivityDungNgayVoucherBinding;
@@ -40,6 +42,34 @@ public class DungNgayVoucher extends AppCompatActivity {
                 new ColorDrawable(Color.parseColor("#ffffff")));
         createDB();
         loadData();
+        addEvent();
+    }
+
+    private void addEvent() {
+        ImageView imvgiohang = findViewById(R.id.imv_giohang);
+        imvgiohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DungNgayVoucher.this, GioHangActivity.class);
+                startActivity(intent);
+            }
+        });
+        ImageView imvTroVe=findViewById(R.id.imv_trove);
+        imvTroVe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+        binding.grSanpham.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(DungNgayVoucher.this, TrangSanPhamActivity.class);
+                SanPhamLilPawHome spitem = spDungVoucher.get(i);
+                intent.putExtra("IDsanpham",spitem.getIdSanPham());
+                startActivity(intent);
+            }
+        });
     }
 
     private void createDB() {

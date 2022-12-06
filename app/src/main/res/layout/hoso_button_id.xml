@@ -3,8 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/backgroundvoucher"
-    android:backgroundTint="#FFA0CA"
+
     android:paddingTop="15dp"
     android:paddingBottom="15dp">
     
@@ -13,10 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bé cưng 1"
+        android:backgroundTint="#FFA0CA"
+        android:background="@drawable/backgroundvoucher"
         android:fontFamily="@font/montserrat_medium"
         android:textSize="19sp"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
 
 </LinearLayout>
