@@ -39,12 +39,17 @@ ActivityTaikhoanvabaomatBinding binding;
     }
 
     private void addEvent() {
+       //GetExtra từ đổi tên
 
+        //Intent qua đổi tên
        binding.txtNameofaccount.setOnClickListener(new View.OnClickListener() {
            @Override
           public void onClick(View view) {
-              Intent intent = new Intent(taikhoanvabaomat.this, Doitentaikhoan.class);
-              startActivity(intent);
+             Intent intent = new Intent(taikhoanvabaomat.this, Doitentaikhoan.class);
+             startActivity(intent);
+             Intent y=getIntent();
+             String tenmoi=y.getStringExtra("doiten");
+             binding.txtNameofaccount.setText(tenmoi);
           }
        });
         binding.btnSodienthoai.setOnClickListener(new View.OnClickListener() {

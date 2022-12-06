@@ -145,8 +145,6 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                     binding.imvTraitim.setTag("full");
                     addFavorite();
                     Toast.makeText(TrangSanPhamActivity.this, "Thêm sản phẩm vào yêu thích", Toast.LENGTH_SHORT).show();
-
-
                 }
                 else
                 {

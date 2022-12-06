@@ -44,7 +44,7 @@ public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnIte
     ActivitySpa1Binding binding;
     ArrayAdapter<String> adapter;
     ArrayList<ThuCung> thuCungs;
-    public static SQLiteDatabase db;
+    public SQLiteDatabase db;
     ArrayList<String> Petname, Species;
     ArrayList<Integer> Pettype, Gender;
     ArrayList<Double> Weight;
@@ -180,7 +180,7 @@ public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnIte
             if(copyDBFromAssets()){
                 Toast.makeText(SpaActivity1.this,
                         "Copy database successful!", Toast.LENGTH_LONG).show();
-            }else {
+            }else{
                 Toast.makeText(SpaActivity1.this, "Copy database fail!", Toast.LENGTH_LONG).show();
             }
         }

@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/customshapeborderwhite"
+        android:text=""
         android:hint="Số điện thoại"
         android:textColor="@color/black"
         android:fontFamily="@font/montserratregular"

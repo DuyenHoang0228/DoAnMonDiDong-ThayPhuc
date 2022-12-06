@@ -44,20 +44,29 @@
                         android:layout_height="wrap_content"
                         android:text="Địa điểm nhận hàng"
                         android:fontFamily="@font/montserrat"
-                        android:textSize="14sp"
+                        android:textSize="13sp"
                         android:textColor="@color/black"
                         android:layout_marginLeft="5dp"/>
 
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/txt_hotensdt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/diadiemnhanhang"
                     android:fontFamily="@font/montserrat"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textColor="@color/black"
-                    android:paddingTop="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="19dp"/>
+
+                <TextView
+                    android:id="@+id/txt_diachi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
                     android:paddingLeft="19dp"/>
 
             </LinearLayout>
@@ -100,11 +109,11 @@
                 android:layout_gravity="center"/>
 
             <TextView
-                android:layout_width="160dp"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:text="@string/luuythanhtoan"
                 android:fontFamily="@font/montserrat"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="#EC1313"
                 android:justificationMode="inter_word"
                 android:layout_marginLeft="15dp"/>
@@ -144,7 +153,7 @@
                 android:fontFamily="@font/montserrat_semibold"
                 android:text="Phương thức vận chuyển"
                 android:textColor="#FF2875"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -153,13 +162,14 @@
                 android:src="@drawable/line_hr_white" />
 
             <TextView
+                android:id="@+id/txt_hinhthucvc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/montserrat_semibold"
                 android:text="Tiết kiệm"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -167,7 +177,7 @@
                 android:fontFamily="@font/montserrat"
                 android:text="Đừng quên vào Lilpaw Home để săn thêm mã ưu đãi nhé"
                 android:textColor="#FFFFFF"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/txt_ngaynhanhang"
@@ -176,7 +186,7 @@
                 android:fontFamily="@font/montserrat"
                 android:text="Nhận hàng vào 3-5 ngày sau"
                 android:textColor="#FFFFFF"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -195,9 +205,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:text="32.000 VNĐ"
+                    android:text="32000 VNĐ"
                     android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    android:textSize="13sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -211,41 +221,41 @@
                     android:fontFamily="@font/montserrat"
                     android:text=">>"
                     android:textColor="#FFFFFF"
-                    android:textSize="17sp" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_tinnhan"
+            android:id="@+id/item_tinnhan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="15dp">
+            android:padding="15dp"
+            android:gravity="center_vertical"
+            android:weightSum="4">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tin nhắn"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat"
-                android:textSize="14sp" />
+                android:textSize="13sp"
+                android:layout_weight="3"/>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
 
-            <TextView
+            <EditText
                 android:id="@+id/txt_luuydonhang"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:text="Lưu ý cho người bán..."
+                android:hint="Lưu ý cho người bán..."
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat"
-                android:textSize="14sp" />
+                android:textSize="13sp"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
@@ -267,7 +277,7 @@
                 android:text="Tổng số tiền:"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
             <View
                 android:layout_width="0dp"
@@ -282,7 +292,7 @@
                 android:text="283.000 VNĐ"
                 android:textColor="#FF2875"
                 android:fontFamily="@font/montserrat_bold"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
         </LinearLayout>
 
@@ -293,7 +303,7 @@
 
 
         <LinearLayout
-            android:id="@+id/ll_vouchertt"
+            android:id="@+id/item_vouchertt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -314,7 +324,7 @@
                 android:text="Voucher"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:layout_marginLeft="5dp"
                 android:layout_gravity="center"/>
 
@@ -334,7 +344,8 @@
                 android:text="Giảm 5%"
                 android:textColor="#FF2875"
                 android:fontFamily="@font/montserrat"
-                android:textSize="11sp"
+                android:textSize="10sp"
+                android:visibility="gone"
                 android:background="@drawable/backgroundstroke" />
 
             <TextView
@@ -348,7 +359,8 @@
                 android:text="Miễn phí vận chuyển"
                 android:textColor="#9E7E44"
                 android:fontFamily="@font/montserrat"
-                android:textSize="11sp"
+                android:textSize="10sp"
+                android:visibility="gone"
                 android:background="@drawable/backgroundstroke_brown"/>
 
             <TextView
@@ -357,12 +369,12 @@
                 android:text=">>"
                 android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/black"
-                android:textSize="20dp"/>
+                android:textSize="15dp"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_phuongthucthanhtoan"
+            android:id="@+id/item_phuongthucthanhtoan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -384,7 +396,7 @@
                 android:text="Phương thức thanh toán"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:layout_marginLeft="3dp"
                 android:layout_gravity="center"/>
 
@@ -401,7 +413,7 @@
                 android:text="Xem tất cả"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat_medium"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -409,7 +421,7 @@
                 android:text=">>"
                 android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/black"
-                android:textSize="20dp"/>
+                android:textSize="15dp"/>
 
         </LinearLayout>
 
@@ -454,7 +466,7 @@
                 android:layout_height="wrap_content"
                 android:text="Chi tiết thanh toán"
                 android:fontFamily="@font/montserrat_semibold"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:textColor="@color/black" />
 
         </LinearLayout>
@@ -472,7 +484,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tổng tiền hàng"
                 android:fontFamily="@font/montserrat"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textColor="@color/black"/>
 
             <View
@@ -486,7 +498,7 @@
                 android:layout_height="wrap_content"
                 android:text="283.000 VNĐ"
                 android:fontFamily="@font/montserrat"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -504,7 +516,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tổng tiền vận chuyển"
                 android:fontFamily="@font/montserrat"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textColor="@color/black"/>
 
             <View
@@ -518,7 +530,7 @@
                 android:layout_height="wrap_content"
                 android:text="32.000 VNĐ"
                 android:fontFamily="@font/montserrat"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -536,7 +548,7 @@
                 android:layout_height="wrap_content"
                 android:text="Giảm giá"
                 android:fontFamily="@font/montserrat"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textColor="@color/black"/>
 
             <View
@@ -550,7 +562,7 @@
                 android:layout_height="wrap_content"
                 android:text="46.150 VNĐ"
                 android:fontFamily="@font/montserrat"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -568,7 +580,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tổng thanh toán"
                 android:fontFamily="@font/montserrat_bold"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="@color/black"/>
 
             <View
@@ -582,7 +594,7 @@
                 android:layout_height="wrap_content"
                 android:text="268.850 VNĐ"
                 android:fontFamily="@font/montserrat_bold"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
