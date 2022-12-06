@@ -61,7 +61,10 @@ public class dangnhap2 extends AppCompatActivity {
                     else {
                         Toast.makeText(dangnhap2.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(dangnhap2.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
+                        finishAndRemoveTask();
                     }
                 }
             }

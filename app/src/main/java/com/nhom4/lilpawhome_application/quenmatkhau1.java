@@ -27,8 +27,7 @@ public class quenmatkhau1 extends AppCompatActivity {
         binding.imvQuaylai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(quenmatkhau1.this, dangnhap2.class);
-                startActivity(intent);
+                finish();
             }
         });
         binding.btnTieptheo.setOnClickListener(new View.OnClickListener() {

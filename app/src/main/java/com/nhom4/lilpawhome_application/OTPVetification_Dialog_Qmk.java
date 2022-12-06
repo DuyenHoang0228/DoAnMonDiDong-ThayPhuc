@@ -77,8 +77,9 @@ public class OTPVetification_Dialog_Qmk extends Dialog {
                     Toast.makeText(view.getContext(), "Xác nhận mã OTP thành công!",
                             Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), quenmatkhau2.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     view.getContext().startActivity(intent);
-                    cancel();
+                   cancel();
                     }
                 }
         });
@@ -88,8 +89,7 @@ public class OTPVetification_Dialog_Qmk extends Dialog {
         thoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), quenmatkhau1.class);
-                view.getContext().startActivity(intent);
+                dismiss();
             }
         });
     }

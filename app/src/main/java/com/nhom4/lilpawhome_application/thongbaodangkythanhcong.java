@@ -26,7 +26,10 @@ ActivityThongbaodangkythanhcongBinding binding;
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(thongbaodangkythanhcong.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+                finishAndRemoveTask();
             }
         });
     }
