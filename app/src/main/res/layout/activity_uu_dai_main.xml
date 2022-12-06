@@ -47,7 +47,7 @@
                 android:text="SĂN VOUCHER"
                 android:layout_gravity="center"
                 android:textColor="#A200A6"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 android:paddingTop="10dp"/>
 
             <TextView
@@ -57,7 +57,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/nunito_black"
                 android:textColor="#FF0071"
-                android:textSize="22sp" />
+                android:textAlignment="center"
+                android:textSize="16sp" />
 
             <com.nhom4.view.ExpandableHeightGridView
                 android:id="@+id/gv_vouchernguoidungmoi"
@@ -90,7 +91,7 @@
                 android:text="SĂN VOUCHER"
                 android:layout_gravity="center"
                 android:textColor="#A200A6"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 android:paddingTop="10dp"/>
 
             <TextView
@@ -100,7 +101,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/nunito_black"
                 android:textColor="#FF0071"
-                android:textSize="22sp" />
+                android:textAlignment="center"
+                android:textSize="16sp" />
 
             <com.nhom4.view.ExpandableHeightGridView
                 android:id="@+id/gv_vouchermuanhieu"
@@ -133,7 +135,7 @@
                 android:text="VOUCHER THƯƠNG HIỆU"
                 android:layout_gravity="center"
                 android:textColor="#A200A6"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 android:paddingTop="10dp"/>
 
             <com.nhom4.view.ExpandableHeightGridView
@@ -167,9 +169,9 @@
                 android:gravity="start">
 
                 <ImageView
-                    android:layout_width="150dp"
+                    android:layout_width="100dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/flashsalelogo"/>
+                    android:src="@drawable/flashsalelogo" />
 
                 <TextView
                     android:id="@+id/cd_hour"
