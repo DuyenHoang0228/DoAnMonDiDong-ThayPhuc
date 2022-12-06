@@ -36,7 +36,6 @@ public class DanhmucActivity extends AppCompatActivity {
     ExpandableDMAdapter expandableDMAdapter1, expandableDMAdapter2;
     ExpandableListView expandableListView1,expandableListView2;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

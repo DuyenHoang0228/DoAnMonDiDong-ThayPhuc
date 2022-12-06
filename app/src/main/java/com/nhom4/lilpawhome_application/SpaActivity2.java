@@ -113,8 +113,8 @@ public class SpaActivity2 extends AppCompatActivity implements AdapterView.OnIte
         if(binding.cbDuonglong.isChecked()){
             dichvu = dichvu + " \n " +binding.cbDuonglong.getText().toString();
         }
-        if(binding.cbTamvesinh.isChecked()) {
-            dichvu = dichvu + " \n " + binding.cbDuonglong.getText().toString();
+        if(binding.cbNhuomlong.isChecked()) {
+            dichvu = dichvu + " \n " + binding.cbNhuomlong.getText().toString();
         }
         if(dichvu=="") {
             Toast.makeText(SpaActivity2.this, "Bạn chưa chọn dịch vụ", Toast.LENGTH_SHORT).show();

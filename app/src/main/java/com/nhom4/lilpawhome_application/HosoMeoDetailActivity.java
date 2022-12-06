@@ -1,9 +1,11 @@
 package com.nhom4.lilpawhome_application;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -32,6 +34,50 @@ public class HosoMeoDetailActivity extends AppCompatActivity {
         ArrayAdapter adapterGiongmeo = new ArrayAdapter(this,android.R.layout.simple_list_item_1,giongmeo);
         binding.autotxtGiongmeo.setAdapter(adapterGiongmeo);
         binding.autotxtGiongmeo.setThreshold(1);
+        addEvent();
+
+    }
+
+    private void addEvent() {
+        binding.txtLuuthaydoiHs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(HosoMeoDetailActivity.this, "Đã lưu thay đổi", Toast.LENGTH_SHORT).show();
+            }
+        });
+        binding.txtXoaHs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(HosoMeoDetailActivity.this);
+                builder.setTitle("Xác nhận xóa");
+                builder.setIcon(android.R.drawable.ic_dialog_info);
+                builder.setMessage("Những thông tin bạn đã điền sẽ không được lưu?");
+
+                builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //close activity
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("Quay lại", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                Dialog dialog = builder.create();
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.show();
+            }
+        });
+        binding.txtSpaHs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HosoMeoDetailActivity.this, SpaActivity1.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //Thêm menu

@@ -1,8 +1,10 @@
 package com.nhom4.view.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,12 +23,14 @@ public class diachiAdapter extends RecyclerView.Adapter<diachiAdapter.MyView> {
     public class MyView extends RecyclerView.ViewHolder{
 
         TextView txttennguoinhan, txtsodienthoai, txtdiachi;
+        LinearLayout itemdiachi;
 
         public MyView(@NonNull View itemView) {
             super(itemView);
             txttennguoinhan = itemView.findViewById(R.id.txt_tennguoimua);
             txtsodienthoai = itemView.findViewById(R.id.txt_sdtnguoimua);
             txtdiachi = itemView.findViewById(R.id.txt_diachinguoimua);
+            itemdiachi = itemView.findViewById(R.id.item_diachi);
         }
     }
 

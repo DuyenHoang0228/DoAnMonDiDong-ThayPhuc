@@ -47,8 +47,10 @@ public class ThanhtoanActivity extends AppCompatActivity {
     Double giamgiaMH = 0.0, giamgiaVC = 0.0;
     Double tongtienvanchuyen;
     Double ordervalue;
-    Bundle bundlediachi, bundlevoucher;
-    boolean apmavanchuyen, apmamuahang;
+    Bundle bundlediachi, bundlevoucher, bundlephuongthuctt;
+    String phuongthuctt, phuongthucttchinh;
+    int iconphuongthuctt;
+    boolean apmavanchuyen, apmamuahang, dachonPTTT=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +116,23 @@ public class ThanhtoanActivity extends AppCompatActivity {
             binding.txtHinhthucvc.setText(hinhthuc);
             binding.txtTienvanchuyen.setText(giavanchuyen);
             binding.txtNgaynhanhang.setText(ngaygiao);
+        } else if (action.equals("fromPhuongthucTT")){
+            if (phuongthucttchinh == "ATM"){
+                for (int i = 0; i <= phuongThucTTS.size()-1; i++){
+                    phuongThucTTS.get(i).setSelected(false);
+                }
+                phuongThucTTS.get(1).setSelected(true);
+                phuongThucTTS.get(1).setTenphuphuongthuc(phuongthuctt);
+                phuongThucTTS.get(1).setIconphuongthuc(iconphuongthuctt);
+            } else {
+                for (int i = 0; i <= phuongThucTTS.size()-1; i++){
+                    phuongThucTTS.get(i).setSelected(false);
+                }
+                phuongThucTTS.get(2).setSelected(true);
+                phuongThucTTS.get(2).setTenphuphuongthuc(phuongthuctt);
+                phuongThucTTS.get(2).setIconphuongthuc(iconphuongthuctt);
+            }
+            adapterPT.notifyDataSetChanged();
         }
         calculateOrderValue();
         super.onResume();
@@ -259,6 +278,14 @@ public class ThanhtoanActivity extends AppCompatActivity {
                     maxdiscountVC = bundlevoucher.getDouble("VouchertoidaVC");
                 }
             }
+        } else if (requestCode == 4){
+            if (resultCode == Activity.RESULT_OK){
+                bundlephuongthuctt = data.getExtras();
+                phuongthuctt = bundlephuongthuctt.getString("Phuongthuc");
+                iconphuongthuctt = bundlephuongthuctt.getInt("Icon");
+                phuongthucttchinh = bundlephuongthuctt.getString("Phuongthucchinh");
+                action = data.getAction();
+            }
         }
     }
 
@@ -290,6 +317,37 @@ public class ThanhtoanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ThanhtoanActivity.this, PhuongthucTTActivity.class);
                 startActivityForResult(intent, 4);
+            }
+        });
+        binding.btnMuahang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0; i <= phuongThucTTS.size()-1; i++){
+                    if (phuongThucTTS.get(i).isSelected()){
+                        dachonPTTT = true;
+                    }
+                }
+                if (dachonPTTT) {
+                    Toast.makeText(ThanhtoanActivity.this, "Bạn đã đặt hàng thành công.", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ThanhtoanActivity.this, DsDonmuaActivity.class);
+                    Bundle bundle = new Bundle();
+                    int soluongsp = 0;
+                    for (int j = 0; j <= MainActivity.manggiohang.size()-1; j++){
+                        soluongsp += MainActivity.manggiohang.get(j).getSoluongsp();
+                    }
+                    bundle.putInt("Hinhsp", MainActivity.manggiohang.get(0).getIdAnhSanPham());
+                    bundle.putString("Brand", MainActivity.manggiohang.get(0).getThuongHieuSanPham());
+                    bundle.putString("Tensp", MainActivity.manggiohang.get(0).getTenSanPham());
+                    bundle.putInt("Soluong", soluongsp);
+                    bundle.putString("Thanhtien", String.format("%.0f VNĐ", finalordervalue));
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                    finish();
+                    MainActivity.manggiohang.clear();
+                    MainActivity.tongthanhtoan = 0;
+                }else{
+                    Toast.makeText(ThanhtoanActivity.this, "Bạn chưa lựa chọn phương thức thanh toán.", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

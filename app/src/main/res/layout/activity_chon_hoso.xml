@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:fillViewport="true">
 
-                <androidx.recyclerview.widget.RecyclerView
+                <com.nhom4.view.ExpandableHeightGridView
                     android:id="@+id/rv_hosothucung"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
