@@ -1,5 +1,7 @@
 package com.nhom4.view.adapters;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nhom4.lilpawhome_application.BlogDetailActivity;
 import com.nhom4.lilpawhome_application.R;
 import com.nhom4.models.Blog;
 
@@ -17,11 +20,11 @@ import java.util.List;
 public class AdapterBlog extends RecyclerView.Adapter<AdapterBlog.MyView> {
 
     List<Blog> blogs;
-
+    Activity activity;
     // Tạo MyView class từ Adapter để mở rộng sang class ViewHolder
     public class MyView extends RecyclerView.ViewHolder {
 
-        ImageView imvhinhblog;
+        ImageView imvhinhblog, imvDocthem;
         TextView txtblogtitle, txtblogcategory1, txtblogcategory2, txtblogsubtitle;
 
         public MyView(@NonNull View itemView) {
@@ -33,11 +36,13 @@ public class AdapterBlog extends RecyclerView.Adapter<AdapterBlog.MyView> {
             txtblogcategory1 = itemView.findViewById(R.id.txt_blogcategory1);
             txtblogcategory2 = itemView.findViewById(R.id.txt_blogcategory2);
             txtblogsubtitle = itemView.findViewById(R.id.txt_blogsubtitle);
+            imvDocthem = itemView.findViewById(R.id.imv_docthemblog);
         }
     }
 
-    public AdapterBlog(List<Blog> blogs) {
+    public AdapterBlog(List<Blog> blogs, Activity activity) {
         this.blogs = blogs;
+        this.activity = activity;
     }
 
     @NonNull
@@ -60,6 +65,13 @@ public class AdapterBlog extends RecyclerView.Adapter<AdapterBlog.MyView> {
         holder.txtblogcategory1.setText(b.getBlogCategory1());
         holder.txtblogcategory2.setText(b.getBlogCategory2());
         holder.txtblogsubtitle.setText(b.getBlogSubtitle());
+        holder.imvDocthem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(activity, BlogDetailActivity.class);
+                activity.startActivity(intent);
+            }
+        });
 
     }
 

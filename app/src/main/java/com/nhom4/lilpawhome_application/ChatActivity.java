@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.nhom4.view.adapters.ChatAdapter;
 import com.nhom4.lilpawhome_application.databinding.ActivityChatBinding;
@@ -43,9 +44,14 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 message ms = new message(binding.edtChat.getText().toString());
-                Listmessage.add(ms);
-                binding.edtChat.setText("");
-                binding.lvMessage.setAdapter(adapter);
+                if(!ms.getMessage().equals("")){
+                    Listmessage.add(ms);
+                    binding.edtChat.setText("");
+                    binding.lvMessage.setAdapter(adapter);
+                }else {
+                    Toast.makeText(ChatActivity.this, "Hãy nhập thắc mắc của bạn", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }

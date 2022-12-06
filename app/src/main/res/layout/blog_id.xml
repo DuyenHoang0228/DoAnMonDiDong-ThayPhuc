@@ -73,6 +73,7 @@
         android:layout_marginTop="10dp"/>
 
     <ImageView
+        android:id="@+id/imv_docthemblog"
         android:layout_width="165dp"
         android:layout_height="45dp"
         android:layout_gravity="end"

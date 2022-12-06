@@ -275,7 +275,6 @@
             android:fontFamily="@font/montserrat"
             android:textColor="@color/black"
             android:textSize="17sp"
-            android:padding="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/backgroundvoucher"
             android:backgroundTint="#4DFFA0CA"/>
@@ -284,47 +283,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:gravity="center">
 
             <TextView
+                android:id="@+id/txt_luuthaydoi_hs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lưu thay đổi"
-                android:fontFamily="@font/montserrat_bold"
-                android:background="@drawable/backgroundvoucher"
-                android:backgroundTint="#FFA0CA"
-                android:textSize="17sp"
-                android:textColor="@color/white"
-                android:padding="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Xóa"
-                android:fontFamily="@font/montserrat_bold"
-                android:background="@drawable/backgroundvoucher"
-                android:backgroundTint="#FFA0CA"
-                android:textSize="17sp"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/white"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Spa"
-                android:layout_marginLeft="70dp"
+                android:text="Thêm hồ sơ"
                 android:fontFamily="@font/montserrat_bold"
                 android:background="@drawable/backgroundvoucher"
                 android:backgroundTint="#FFA0CA"
                 android:textSize="17sp"
                 android:textColor="@color/white"
                 android:padding="10dp"
-                android:layout_gravity="end"
                 android:gravity="center"/>
+
+
 
         </LinearLayout>
 
