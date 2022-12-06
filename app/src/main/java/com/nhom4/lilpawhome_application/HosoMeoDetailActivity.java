@@ -35,7 +35,27 @@ public class HosoMeoDetailActivity extends AppCompatActivity {
         binding.autotxtGiongmeo.setAdapter(adapterGiongmeo);
         binding.autotxtGiongmeo.setThreshold(1);
         addEvent();
+        getData();
 
+    }
+
+    private void getData() {
+        Intent intent = getIntent();
+        String giong = intent.getStringExtra("giongcho");
+        String ten = intent.getStringExtra("ten");
+        int gioitinh = intent.getIntExtra("gioitinh", 0);
+        Double cannang = intent.getDoubleExtra("cannang", 0);
+
+        if(gioitinh == 0){
+            binding.rbtnDuc.setChecked(true);
+        }else {
+            binding.rbtnCai.setChecked(true);
+        }
+        binding.edtCannang.setText(cannang + "");
+        binding.edtMotathucung.setHint("Nhập mô tả cho thú cưng");
+        binding.autotxtGiongmeo.setText(giong);
+        binding.edtTenthucung.setText(ten);
+        binding.edtSinhnhatpet.setHint("Thêm sinh nhật cho thú cưng");
     }
 
     private void addEvent() {
