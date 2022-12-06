@@ -62,7 +62,7 @@ public class ChonHosoActivity extends AppCompatActivity {
         binding.rvHosothucung.setAdapter(adapter);
 
         addIntent();
-        //addEvent();
+        addEvent();
         loadDB();
     }
 
@@ -70,9 +70,26 @@ public class ChonHosoActivity extends AppCompatActivity {
         binding.rvHosothucung.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                int pettype = thuCungs.get(i).getPettype();
+                String giong = thuCungs.get(i).getSpecies();
+                String name = thuCungs.get(i).getPetname();
+                int gioitinh = thuCungs.get(i).getGender();
+                Double cannang = thuCungs.get(i).getWeight();
+                if (pettype ==0) {
                     Intent intent = new Intent(ChonHosoActivity.this, HosoChoDetailActivity.class);
-
+                    intent.putExtra("giongcho", giong);
+                    intent.putExtra("ten", name);
+                    intent.putExtra("gioitinh", gioitinh);
+                    intent.putExtra("cannang", cannang);
                     startActivity(intent);
+                } else {
+                    Intent intent = new Intent(ChonHosoActivity.this, HosoMeoDetailActivity.class);
+                    intent.putExtra("giongcho", giong);
+                    intent.putExtra("ten", name);
+                    intent.putExtra("gioitinh", gioitinh);
+                    intent.putExtra("cannang", cannang);
+                    startActivity(intent);
+                }
 
            }
         });
@@ -149,7 +166,8 @@ public class ChonHosoActivity extends AppCompatActivity {
         hoSoList.add(new HoSo(getString(R.string.be_cung, "Leon")));
         hoSoList.add(new HoSo(getString(R.string.be_cung, "Loid")));
         hoSoList.add(new HoSo(getString(R.string.be_cung, "Lego")));
-
+        hoSoList.add(new HoSo("Bé cưng Lurk"));
+        hoSoList.add(new HoSo("Bé cưng Lex"));
     }
 
     //Thêm menu
