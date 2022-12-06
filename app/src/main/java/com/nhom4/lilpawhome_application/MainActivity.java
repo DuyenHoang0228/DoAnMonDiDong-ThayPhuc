@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         });
         copyDBdiachi();
         loadBanner();
+
         loadData();
         addEvent();
         createCart();//Tạo function thực hiện tạo giỏ hàng nếu không có mảng giỏ hàng nào tồn tại
@@ -320,6 +321,7 @@ public class MainActivity extends AppCompatActivity {
         loadSPdexuat();
         loadSPchocho();
         loadSPchomeo();
+
 
     }
 

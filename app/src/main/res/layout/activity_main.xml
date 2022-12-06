@@ -23,13 +23,21 @@
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
             <ImageView
                 android:id="@+id/imv_drawer"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
 
-                android:src="@drawable/icon_menu" />
+                android:src="@drawable/icon_menu"
+                android:layout_gravity="center"
+                android:layout_weight="2"/>
             <EditText
                 android:id="@+id/edt_timkiem"
 
@@ -43,6 +51,7 @@
                 android:textSize="13dp"
                 android:padding="5dp"
                 android:drawableEnd="@drawable/icon_find_grey"
+                android:layout_weight="4"
                 />
             <ImageView
                 android:id="@+id/imv_giohang"
@@ -50,7 +59,9 @@
                 android:layout_height="25dp"
                 android:layout_marginLeft="5dp"
 
-                android:src="@drawable/icon_cart" />
+                android:src="@drawable/icon_cart"
+                android:layout_gravity="center"
+                android:layout_weight="2"/>
             <ImageView
                 android:id="@+id/imv_chat"
                 android:layout_width="25dp"
@@ -59,8 +70,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/icon_chat"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 />
+            </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 <!--    <RelativeLayout-->
 <!--        android:layout_width="match_parent"-->
