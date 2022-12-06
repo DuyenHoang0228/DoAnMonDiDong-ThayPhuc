@@ -58,7 +58,7 @@ public class SanPhamYeuThich extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(SanPhamYeuThich.this, TrangSanPhamActivity.class);
-                SanPhamLilPawHome spitem = spYeuThich.get(position);
+                SanPhamLilPawHome spitem = MainActivity.spYeuThich.get(position);
                 intent.putExtra("IDsanpham",spitem.getIdSanPham());
                 startActivity(intent);
             }

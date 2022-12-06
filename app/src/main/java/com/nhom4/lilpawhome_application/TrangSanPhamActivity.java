@@ -129,7 +129,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                 intentt();
             }
         });
-        binding.txtXemtatcaTrangsp.setOnClickListener(new View.OnClickListener() {
+        binding.txtXemtatcadanhgia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TrangSanPhamActivity.this, DanhGiaSanPham.class);
@@ -232,7 +232,7 @@ public class TrangSanPhamActivity extends AppCompatActivity {
                 }
             }
         }
-        if(exists==false){
+        if(!exists){
             binding.imvTraitim.setImageResource(R.drawable.icon_sp_yeu_thich);
             binding.imvTraitim.setTag("empty");
         }else {

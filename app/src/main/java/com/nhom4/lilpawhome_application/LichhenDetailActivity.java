@@ -12,13 +12,53 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.nhom4.lilpawhome_application.databinding.ActivityLichhenDetailBinding;
+import com.nhom4.models.LichHen;
+import com.nhom4.models.ThuCung;
+
+import java.util.ArrayList;
+
 public class LichhenDetailActivity extends AppCompatActivity {
+
+    ActivityLichhenDetailBinding binding;
+    ArrayList<ThuCung> thuCungs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lichhen_detail);
+        //setContentView(R.layout.activity_lichhen_detail);
+        binding = ActivityLichhenDetailBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getData();
+    }
+
+    private void getData() {
+        Intent intent = getIntent();
+        int stt = intent.getIntExtra("stt",0);
+        LichHen l = MainActivity.lichhenST.get(stt);
+        binding.txtDichvudatlich.setText(l.getDichvu());
+        binding.txtCosodatlich.setText(l.getCoso());
+        binding.txtNgaygiolichhen.setText(l.getDate()+  " | " + l.getGio());
+        binding.txtTennguoidatlich.setText("Hoàng Ngọc Thảo Duyên");
+        binding.txtSdtnguoidatlich.setText("+84 12345678");
+        binding.txtThucungdatlich.setText(l.getThucung());
+        binding.txtGiongthucungdatlich.setText(l.getGiong());
+        binding.txtGioitinhthucungdatlich.setText("...");
+        binding.txtCannangthucungdatlich.setText("...");
+
+        Intent intent1 = getIntent();
+        int ht = intent1.getIntExtra("ht", 0);
+        LichHen ll = DSLichhenActivity.lichhenHT.get(ht);
+        binding.txtDichvudatlich.setText(ll.getDichvu());
+        binding.txtCosodatlich.setText(ll.getCoso());
+        binding.txtNgaygiolichhen.setText(ll.getDate()+  " | " + ll.getGio());
+        binding.txtTennguoidatlich.setText("Hoàng Ngọc Thảo Duyên");
+        binding.txtSdtnguoidatlich.setText("+84 12345678");
+        binding.txtThucungdatlich.setText(ll.getThucung());
+        binding.txtGiongthucungdatlich.setText(ll.getGiong());
+        binding.txtGioitinhthucungdatlich.setText("...");
+        binding.txtCannangthucungdatlich.setText("...");
     }
 
     //Thêm menu

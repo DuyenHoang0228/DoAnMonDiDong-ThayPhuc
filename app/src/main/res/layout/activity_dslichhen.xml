@@ -25,7 +25,7 @@
             android:layout_height="5dp"
             android:src="@drawable/line_hr_pink"/>
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.nhom4.view.ExpandableHeightGridView
             android:id="@+id/rv_lichsaptoi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
             android:src="@drawable/line_hr_pink"/>
 
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.nhom4.view.ExpandableHeightGridView
             android:id="@+id/rv_lichhoantat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

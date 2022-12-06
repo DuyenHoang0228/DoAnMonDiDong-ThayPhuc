@@ -28,9 +28,10 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/txt_ngaygiolichhen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="05/11/2022 | 7:30 - 8:30"
+                android:text="05/11/2022 | 7:30"
                 android:textSize="16sp"
                 android:fontFamily="@font/montserrat_medium"
                 android:textColor="#FA579F"/>
@@ -44,6 +45,7 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/txt_cosodatlich"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1."
@@ -76,9 +78,10 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/txt_dichvudatlich"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tắm rửa"
+                android:text="Tắm, vệ sinh"
                 android:textSize="16sp"
                 android:fontFamily="@font/montserrat_medium"
                 android:textColor="#FA579F"/>
@@ -102,6 +105,7 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/txt_tennguoidatlich"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hoàng Ngọc Thảo Duyên"
@@ -118,6 +122,7 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/txt_sdtnguoidatlich"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="+84 12345678"
@@ -158,6 +163,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/txt_thucungdatlich"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Mèo"
@@ -182,6 +188,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/txt_gioitinhthucungdatlich"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cái"
@@ -214,6 +221,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/txt_giongthucungdatlich"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Mướp"
@@ -238,6 +246,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/txt_cannangthucungdatlich"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="4kg"

@@ -90,6 +90,16 @@ public class SpaActivity1 extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SpaActivity1.this, SpaActivity2.class);
+                String thucung = binding.spinnerChonthucung.getSelectedItem().toString();
+                intent.putExtra("ThuCung", thucung );
+                intent.putExtra("giong", binding.edtGiongchomeo.getText().toString());
+                intent.putExtra("cannang", binding.edtCannang.getText().toString());
+                if(binding.rbtnDuc.isChecked()) {
+                    intent.putExtra("gioitinh", "Đực");
+                }
+                if (binding.rbtnCai.isChecked()) {
+                    intent.putExtra("gioitinh", "Cái");
+                }
                 startActivity(intent);
             }
         });

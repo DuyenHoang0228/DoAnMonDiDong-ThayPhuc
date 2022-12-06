@@ -22,6 +22,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.nhom4.models.LichHen;
 import com.nhom4.view.adapters.Danhmuc1Adapter;
 import com.nhom4.view.adapters.HorSanPhamAdapter;
 import com.nhom4.view.adapters.SanphamAdapter;
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     public static double tongthanhtoan;
     Cursor c;
     public static ArrayList<SanPhamLilPawHome> spYeuThich;
+    public static ArrayList<LichHen> lichhenST;
+    public static String[] TinhTrang = {"0", "0", "0", "0", "0", "0", "0", "1"};
     private ImageSlider imageSlider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         addEvent();
         createCart();//Tạo function thực hiện tạo giỏ hàng nếu không có mảng giỏ hàng nào tồn tại
         createDanhSachYeuThich();
+        createlichhenST();
     }
 
     private void createCart() {
@@ -115,6 +119,16 @@ public class MainActivity extends AppCompatActivity {
     private void createDanhSachYeuThich(){
         if(spYeuThich==null){
             spYeuThich = new ArrayList<>();
+        }
+    }
+    private void createlichhenST(){
+        if(lichhenST==null){
+            lichhenST = new ArrayList<>();
+            MainActivity.lichhenST.add(new LichHen("Dịch vụ: Tắm, vệ sinh", "Thú cưng: Mèo", "Giống: Mướp", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
+                 "05/11/2022", "7:30"));
+            MainActivity.lichhenST.add(new LichHen("Dịch vụ: Tắm, vệ sinh", "Thú cưng: Chó", "Giống: Husky", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
+                "05/11/2022", "8:30"));
+
         }
     }
     private void addEvent() {

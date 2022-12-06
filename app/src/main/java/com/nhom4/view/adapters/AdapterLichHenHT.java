@@ -1,8 +1,11 @@
 package com.nhom4.view.adapters;
 
+import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,56 +16,64 @@ import com.nhom4.models.LichHen;
 
 import java.util.List;
 
-public class AdapterLichHenHT extends RecyclerView.Adapter<AdapterLichHenHT.MyView>{
+public class AdapterLichHenHT extends BaseAdapter {
 
+    Activity activity;
+    int item_layout;
     List<LichHen> lichhens;
 
-    public class MyView extends RecyclerView.ViewHolder {
-
-        TextView txtdichvu, txtthucung, txtgiong, txtcoso, txtday, txtdate, txtgio;
-
-        public MyView(@NonNull View itemView) {
-            super(itemView);
-
-            // Tìm các thuộc tính có trong file layout list sản phẩm
-            txtdichvu = itemView.findViewById(R.id.txt_dichvu);
-            txtthucung = itemView.findViewById(R.id.txt_thucung);
-            txtgiong = itemView.findViewById(R.id.txt_giong);
-            txtcoso = itemView.findViewById(R.id.txt_coso);
-            txtday = itemView.findViewById(R.id.txt_day);
-            txtdate = itemView.findViewById(R.id.txt_date);
-            txtgio = itemView.findViewById(R.id.txt_gio);
-        }
-    }
-
-    public AdapterLichHenHT(List<LichHen> lichhens) {
+    public AdapterLichHenHT(Activity activity, int item_layout, List<LichHen> lichhens) {
+        this.activity = activity;
+        this.item_layout = item_layout;
         this.lichhens = lichhens;
     }
-
-    @NonNull
     @Override
-    public AdapterLichHenHT.MyView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Nạp layout của file blog_id vào LayoutInflater
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.lichhen_hoantat_id, parent, false);
-
-        // Xuất layout ra màn hình
-        return new MyView(itemView);
+    public int getCount() {
+        return lichhens.size();
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyView holder, int position) {
-        LichHen l = lichhens.get(position);
-        holder.txtdichvu.setText(l.getDichvu());
+    public Object getItem(int i) {
+        return lichhens.get(i);
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        AdapterLichHenST.ViewHolder holder;
+        if(view==null) {
+            holder = new AdapterLichHenST.ViewHolder();
+            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(item_layout, null);
+
+            // Tìm các thuộc tính có trong file layout list lịch hẹn
+            holder.txtDichVu = view.findViewById(R.id.txt_dichvu);
+            holder.txtthucung = view.findViewById(R.id.txt_thucung);
+            holder.txtgiong = view.findViewById(R.id.txt_giong);
+            holder.txtcoso = view.findViewById(R.id.txt_coso);
+            //txtday = view.findViewById(R.id.txt_day);
+            holder.txtdate = view.findViewById(R.id.txt_date);
+            holder.txtgio = view.findViewById(R.id.txt_gio);
+            view.setTag(holder);
+        }
+        else {
+            holder = (AdapterLichHenST.ViewHolder) view.getTag();
+        }
+        LichHen l = lichhens.get(i);
+        holder.txtDichVu.setText(l.getDichvu());
         holder.txtthucung.setText(l.getThucung());
         holder.txtgiong.setText(l.getGiong());
         holder.txtcoso.setText(l.getCoso());
-        holder.txtday.setText(l.getDay());
+        //holder.txtday.setText(l.getDay());
         holder.txtdate.setText(l.getDate());
         holder.txtgio.setText(l.getGio());
+        return view;
     }
-
-    @Override
-    public int getItemCount() {
-        return lichhens.size();
+    public static class ViewHolder{
+        TextView txtdate, txtcoso, txtDichVu, txtthucung, txtgio, txtgiong;
     }
 }

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -28,7 +29,7 @@ public class DSLichhenActivity extends AppCompatActivity {
     ActivityDslichhenBinding binding;
     AdapterLichHenST adapterST;
     AdapterLichHenHT adapterHT;
-    ArrayList<LichHen> lichhenST, lichhenHT;
+    public static ArrayList<LichHen>  lichhenHT;
     LinearLayoutManager VerticalLayoutST, VerticalLayoutHT;
     RecyclerView.LayoutManager RecyclerViewLayoutManagerST, RecyclerViewLayoutManagerHT;
 
@@ -43,62 +44,52 @@ public class DSLichhenActivity extends AppCompatActivity {
 
         loadDataST();
 
-        RecyclerViewLayoutManagerST = new LinearLayoutManager(getApplicationContext());
-        binding.rvLichsaptoi.setLayoutManager(RecyclerViewLayoutManagerST);
-
-        adapterST = new AdapterLichHenST(lichhenST);
-
-        // Thiết lập phương hướng của RecyclerView (ngang hay dọc)
-        VerticalLayoutST = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        binding.rvLichsaptoi.setLayoutManager(VerticalLayoutST);
-
-        //Tạo khoảng cách giữa các item trong RecyclerView
-        DividerItemDecoration dividerItemDecoration1 = new DividerItemDecoration(binding.rvLichsaptoi.getContext(),
-                VerticalLayoutST.getOrientation());
-        binding.rvLichsaptoi.addItemDecoration(dividerItemDecoration1);
-        dividerItemDecoration1.setDrawable(ContextCompat.getDrawable(getBaseContext(),
-                R.drawable.line_divider));
-
+        binding.rvLichsaptoi.setExpanded(true);
+        adapterST = new AdapterLichHenST(DSLichhenActivity.this, R.layout.lichhen_saptoi_id, MainActivity.lichhenST);
         binding.rvLichsaptoi.setAdapter(adapterST);
 
-        RecyclerViewLayoutManagerHT = new LinearLayoutManager(getApplicationContext());
-        binding.rvLichhoantat.setLayoutManager(RecyclerViewLayoutManagerHT);
+
 
         loadDataHT();
-        adapterHT = new AdapterLichHenHT(lichhenHT);
-
-        // Thiết lập phương hướng của RecyclerView (ngang hay dọc)
-        VerticalLayoutHT = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        binding.rvLichhoantat.setLayoutManager(VerticalLayoutHT);
-
-        //Tạo khoảng cách giữa các item trong RecyclerView
-        DividerItemDecoration dividerItemDecoration2 = new DividerItemDecoration(binding.rvLichhoantat.getContext(),
-                VerticalLayoutHT.getOrientation());
-        binding.rvLichhoantat.addItemDecoration(dividerItemDecoration2);
-        dividerItemDecoration2.setDrawable(ContextCompat.getDrawable(getBaseContext(),
-                R.drawable.line_divider));
-
+        binding.rvLichhoantat.setExpanded(true);
+        adapterHT = new AdapterLichHenHT(DSLichhenActivity.this, R.layout.lichhen_hoantat_id, lichhenHT);
         binding.rvLichhoantat.setAdapter(adapterHT);
+        addEvent();
+
     }
 
+    private void addEvent() {
+        binding.rvLichsaptoi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(DSLichhenActivity.this, LichhenDetailActivity.class);
+                intent.putExtra("stt", i);
+                startActivity(intent);
+            }
+        });
+        binding.rvLichhoantat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(DSLichhenActivity.this, LichhenDetailActivity.class);
+                intent.putExtra("ht", i);
+                startActivity(intent);
+            }
+        });
+    }
+
+
     private void loadDataST() {
-        lichhenST = new ArrayList<>();
-        lichhenST.add(new LichHen("Dịch vụ: Tắm rửa", "Thú cưng: Mèo", "Giống: Mướp", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
-                "Thứ bảy", "05/11/2022", "7:30 - 8:30"));
-        lichhenST.add(new LichHen("Dịch vụ: Tắm rửa", "Thú cưng: Chó", "Giống: Husky", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
-                "Thứ bảy", "05/11/2022", "7:30 - 8:30"));
-        lichhenST.add(new LichHen("Dịch vụ: Tắm rửa", "Thú cưng: Chó", "Giống: Husky", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
-                "Chủ Nhật", "06/11/2022", "7:30 - 8:30"));
+
     }
 
     private void loadDataHT() {
         lichhenHT = new ArrayList<>();
-        lichhenHT.add(new LichHen("Dịch vụ: Tắm rửa", "Thú cưng: Mèo", "Giống: Mướp", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
-                "Thứ bảy", "05/11/2022", "7:30 - 8:30"));
-        lichhenHT.add(new LichHen("Dịch vụ: Tắm rửa", "Thú cưng: Chó", "Giống: Husky", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
-                "Thứ bảy", "05/11/2022", "7:30 - 8:30"));
-        lichhenHT.add(new LichHen("Dịch vụ: Tắm rửa", "Thú cưng: Chó", "Giống: Husky", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
-                "Thứ bảy", "05/11/2022", "7:30 - 8:30"));
+        lichhenHT.add(new LichHen("Dịch vụ: Tắm, vệ sinh", "Thú cưng: Mèo", "Giống: Mướp", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
+                "05/11/2022", "7:30"));
+        lichhenHT.add(new LichHen("Dịch vụ: Cắt tỉa lông móng", "Thú cưng: Chó", "Giống: Husky", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
+                "05/11/2022", "9:30"));
+        lichhenHT.add(new LichHen("Dịch vụ: Tắm, vệ sinh", "Thú cưng: Chó", "Giống: Husky", "CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1.",
+                "05/11/2022", "15:30"));
     }
 
     //Thêm menu

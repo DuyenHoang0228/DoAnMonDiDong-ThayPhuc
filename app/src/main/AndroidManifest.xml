@@ -511,7 +511,7 @@
         </activity>
         <activity
             android:name=".SpaActivity2"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.offactionbar">
             <meta-data
                 android:name="android.app.lib_name"

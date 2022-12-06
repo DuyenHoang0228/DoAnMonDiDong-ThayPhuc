@@ -1,14 +1,13 @@
 package com.nhom4.models;
 
 public class LichHen {
-    String dichvu, thucung, giong, coso, day, date, gio;
+    String dichvu, thucung, giong, coso, date, gio;
 
-    public LichHen(String dichvu, String thucung, String giong, String coso, String day, String date, String gio) {
+    public LichHen(String dichvu, String thucung, String giong, String coso, String date, String gio) {
         this.dichvu = dichvu;
         this.thucung = thucung;
         this.giong = giong;
         this.coso = coso;
-        this.day = day;
         this.date = date;
         this.gio = gio;
     }
@@ -43,14 +42,6 @@ public class LichHen {
 
     public void setCoso(String coso) {
         this.coso = coso;
-    }
-
-    public String getDay() {
-        return day;
-    }
-
-    public void setDay(String day) {
-        this.day = day;
     }
 
     public String getDate() {

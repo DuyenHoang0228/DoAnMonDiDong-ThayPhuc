@@ -2,52 +2,105 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical">
+<LinearLayout
+    android:padding="10dp"
+    android:weightSum="10"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/backgroundvoucher"
-    android:backgroundTint="#FFA0CA"
-    android:padding="10dp">
-
+    android:backgroundTint="#FFA0CA">
     <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/icon_saptoi"
+        android:layout_weight="2"/>
+
+    <LinearLayout
+        android:layout_weight="8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon_saptoi"/>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp">
-
-        <TextView
-            android:id="@+id/txt_dichvu"
-            android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dịch vụ: Tắm rửa"
-            android:fontFamily="@font/montserrat"
-            android:textColor="@color/white"
-            android:textSize="16sp"/>
+            android:weightSum="10">
+            <LinearLayout
+                android:layout_weight="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txt_dichvu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dịch vụ: Tắm rửa"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
 
-        <TextView
-            android:id="@+id/txt_thucung"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thú cưng: Mèo"
-            android:fontFamily="@font/montserrat"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:layout_below="@+id/txt_dichvu"
-            android:layout_marginTop="5dp"/>
+                <TextView
+                    android:id="@+id/txt_thucung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thú cưng: Mèo"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/txt_dichvu"
+                    android:layout_marginTop="5dp"/>
 
-        <TextView
-            android:id="@+id/txt_giong"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Giống: Mướp"
-            android:fontFamily="@font/montserrat"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/txt_thucung"/>
+                <TextView
+                    android:id="@+id/txt_giong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Giống: Mướp"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/txt_thucung"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="5"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgroundvoucher"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:paddingBottom="2dp"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/txt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="06/11/2022"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/line_hr_pink" />
+
+                <TextView
+                    android:id="@+id/txt_gio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="7:30 - 8:30"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </LinearLayout>
         <TextView
             android:id="@+id/txt_coso"
             android:layout_width="wrap_content"
@@ -55,60 +108,12 @@
             android:text="CS1: Nguyễn Đình Chiểu, Đa Kao, Quận 1."
             android:fontFamily="@font/montserrat"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/txt_giong"/>
-
-        <LinearLayout
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_toRightOf="@+id/txt_dichvu"
-            android:background="@drawable/backgroundvoucher"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="5dp"
-            android:paddingBottom="2dp">
-
-
-            <TextView
-                android:id="@+id/txt_day"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
-                android:text="Chủ nhật,"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/txt_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
-                android:text="06/11/2022"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:backgroundTint="@color/black"
-                android:src="@drawable/line_hr_pink" />
-
-            <TextView
-                android:id="@+id/txt_gio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_semibold"
-                android:text="7:30 - 8:30"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-
+    </LinearLayout>
+</LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
 </LinearLayout>
