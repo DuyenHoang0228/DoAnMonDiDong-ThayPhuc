@@ -27,8 +27,7 @@ public class quenmatkhau2 extends AppCompatActivity {
         binding.imvQuaylai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(quenmatkhau2.this, quenmatkhau1.class);
-                startActivity(intent);
+              finish();
             }
         });
         binding.btnXacnhan.setOnClickListener(new View.OnClickListener() {
@@ -46,8 +45,11 @@ public class quenmatkhau2 extends AppCompatActivity {
                             if (!matkhau.equals(nhaplaimatkhau)) {
                                 Toast.makeText(quenmatkhau2.this, "Mật khẩu không trùng khớp", Toast.LENGTH_SHORT).show();
                             } else {
+                                Toast.makeText(quenmatkhau2.this, "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(quenmatkhau2.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
+                                //finishAndRemoveTask();
                             }
                         } else {
                             String[] kituchuoi1 = matkhau.split("");
@@ -64,7 +66,10 @@ public class quenmatkhau2 extends AppCompatActivity {
                             if (count == 0 && dif == 0) {
                                 Toast.makeText(quenmatkhau2.this, "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(quenmatkhau2.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
+
+
                             } else if (count > 0) {
                                 Toast.makeText(quenmatkhau2.this, "Mật khẩu không được chứa kí tự trống", Toast.LENGTH_SHORT).show();
                             } else {
