@@ -21,7 +21,7 @@ public class PhuongthucTTActivity extends AppCompatActivity {
     ActivityPhuongthucttBinding binding;
     AdapterPhuongThucTT adapter;
     ArrayList<PhuongThucTTMother> mList;
-    ArrayList<PhuongThucTTChild> cList1, cList2;
+    public static ArrayList<PhuongThucTTChild> cList1, cList2;
     LinearLayoutManager VerticalLayout;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
 

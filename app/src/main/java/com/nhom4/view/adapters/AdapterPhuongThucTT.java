@@ -1,5 +1,6 @@
 package com.nhom4.view.adapters;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nhom4.lilpawhome_application.PhuongthucTTActivity;
 import com.nhom4.lilpawhome_application.R;
 import com.nhom4.models.PhuongThucTTChild;
 import com.nhom4.models.PhuongThucTTMother;
@@ -70,6 +72,7 @@ public class AdapterPhuongThucTT extends RecyclerView.Adapter<AdapterPhuongThucT
         }else{
             holder.imvarrowimage.setImageResource(R.drawable.arrow_right);
         }
+
 
         AdapterPhuongThucTTNested adapter = new AdapterPhuongThucTTNested(clist);
         holder.itemnestedphuongthuc.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));

@@ -1,9 +1,12 @@
 package com.nhom4.view.adapters;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +24,7 @@ public class HorAdapterPhuongThucTT extends RecyclerView.Adapter<HorAdapterPhuon
     public class MyView extends RecyclerView.ViewHolder {
         ImageView iconphuongthuc;
         TextView txttenphuongthuc, txttenphuphuongthuc;
+        LinearLayout itemhorphuongthuctt;
 
         public MyView(@NonNull View itemView) {
             super(itemView);
@@ -28,6 +32,7 @@ public class HorAdapterPhuongThucTT extends RecyclerView.Adapter<HorAdapterPhuon
             iconphuongthuc = itemView.findViewById(R.id.icon_phuongthuc);
             txttenphuongthuc = itemView.findViewById(R.id.txt_tenphuongthuc);
             txttenphuphuongthuc = itemView.findViewById(R.id.txt_tenphuphuongthuc);
+            itemhorphuongthuctt = itemView.findViewById(R.id.item_horphuongthuctt);
         }
     }
 
@@ -49,6 +54,21 @@ public class HorAdapterPhuongThucTT extends RecyclerView.Adapter<HorAdapterPhuon
         holder.iconphuongthuc.setImageResource(p.getIconphuongthuc());
         holder.txttenphuongthuc.setText(p.getTenphuongthuc());
         holder.txttenphuphuongthuc.setText(p.getTenphuphuongthuc());
+        if (p.isSelected){
+            holder.itemhorphuongthuctt.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFADD1")));
+        } else {
+            holder.itemhorphuongthuctt.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#D8D8D8")));
+        }
+        holder.itemhorphuongthuctt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0; i <= phuongThucTTList.size()-1; i++){
+                    phuongThucTTList.get(i).setSelected(false);
+                }
+                phuongThucTTList.get(holder.getAdapterPosition()).setSelected(true);
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override

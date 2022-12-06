@@ -25,7 +25,7 @@
         android:fontFamily="@font/montserrat_medium"
         android:text="Đơn hàng từ 100K"
         android:textColor="#C66666"
-        android:textSize="10sp"
+        android:textSize="8sp"
         app:layout_constraintStart_toEndOf="@+id/imv_logovoucher"
         app:layout_constraintTop_toTopOf="@+id/txt_tieudevoucher" />
 
@@ -37,26 +37,24 @@
         android:fontFamily="@font/montserrat_semibold"
         android:text="Giảm 20K"
         android:textColor="#FF0071"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/imv_voucheruudai"
         app:layout_constraintTop_toTopOf="@+id/imv_voucheruudai" />
 
     <Button
         android:id="@+id/btn_luuvoucher"
-        android:layout_width="31dp"
-        android:layout_height="14dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
         android:backgroundTint="#FF3991"
         android:fontFamily="@font/nunito_black"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:minWidth="0dp"
-        android:minHeight="0dp"
         android:paddingHorizontal="0dp"
         android:paddingVertical="0dp"
         android:text="LƯU"
-        android:textSize="8sp"
+        android:textSize="9sp"
+        android:minWidth="40dp"
+        android:minHeight="25dp"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/imv_voucheruudai"
         app:layout_constraintEnd_toEndOf="@+id/imv_voucheruudai" />
