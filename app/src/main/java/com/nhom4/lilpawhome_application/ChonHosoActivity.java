@@ -63,14 +63,16 @@ public class ChonHosoActivity extends AppCompatActivity {
 
         addIntent();
         //addEvent();
-        //loadDB();
+        loadDB();
     }
 
     private void addEvent() {
         binding.rvHosothucung.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Intent intent = new Intent(ChonHosoActivity.this, HosoChoDetailActivity.class);
 
+                    startActivity(intent);
 
            }
         });
