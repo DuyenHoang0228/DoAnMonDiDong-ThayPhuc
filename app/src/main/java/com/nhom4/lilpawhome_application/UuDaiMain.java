@@ -45,6 +45,7 @@ public class UuDaiMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uu_dai_main);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sliderView = findViewById(R.id.slider_banneruudai);
         AdapterBannerUudai adapterBannerUudai = new AdapterBannerUudai(images);
@@ -171,7 +172,15 @@ public class UuDaiMain extends AppCompatActivity {
             Intent intent = new Intent(UuDaiMain.this, BlogActivity.class);
             startActivity(intent);
         }
-        return true;
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

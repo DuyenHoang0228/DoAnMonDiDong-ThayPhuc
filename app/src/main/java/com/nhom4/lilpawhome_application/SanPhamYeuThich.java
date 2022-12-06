@@ -84,11 +84,7 @@ public class SanPhamYeuThich extends AppCompatActivity {
     }
 
 
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.shopchocho1_option_menu,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId())
         {
