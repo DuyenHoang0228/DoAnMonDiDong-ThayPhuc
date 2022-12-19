@@ -40,7 +40,7 @@ public class ChoxacnhanFragment extends Fragment {
     }
 
     private void addNewOrder() {
-        if (getActivity().getIntent() != null){
+        try {
             Bundle bundle = getActivity().getIntent().getExtras();
             int hinhsp = bundle.getInt("Hinhsp");
             String brand = bundle.getString("Brand");
@@ -49,6 +49,8 @@ public class ChoxacnhanFragment extends Fragment {
             String thanhtien = bundle.getString("Thanhtien");
             donHangs.add(new DonHang(hinhsp, brand, tensp, soluong, thanhtien));
             adapter.notifyDataSetChanged();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
