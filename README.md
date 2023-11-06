@@ -1,6 +1,7 @@
-# DoAnMonDiDong-ThayPhuc
-cùng làm bài và vui vẻ bên nhau
-Lilpaw Home Application
+# DoAnMonDiDong-ThayPhuc- Lilpaw Home Application
+Phát triển ứng dụng LilPaw Home về mua hàng và đặt lịch liên quan đến thú cưng
+
+
 
 Prototype: https://www.figma.com/file/efZiBAI7EvLiqZZPmzr2oK/Lilpaw-Home-Application?node-id=0%3A1&t=Rpj3LZXhdCiAaTXa-1
 
